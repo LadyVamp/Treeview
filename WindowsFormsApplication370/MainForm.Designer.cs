@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication370
+﻿namespace Treeview
 {
     partial class MainForm
     {

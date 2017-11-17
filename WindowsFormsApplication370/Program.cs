@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
-namespace WindowsFormsApplication370
+namespace Treeview
 {
     static class Program
     {

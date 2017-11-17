@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace WindowsFormsApplication370
+namespace Treeview
 {
     class TreeNode : IEnumerable<TreeNode>
     {

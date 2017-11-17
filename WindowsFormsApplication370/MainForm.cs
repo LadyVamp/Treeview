@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using ExmapleNS;
 using System.Data.SqlClient;
 
-namespace WindowsFormsApplication370
+namespace Treeview
 {
     public partial class MainForm : Form
     {
