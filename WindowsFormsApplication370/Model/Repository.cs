@@ -18,11 +18,9 @@ namespace Treeview
             using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Default"].ConnectionString))
             {
                 DataSet = new DataSet();
-                //LoadTable(conn, "Org");
-                //LoadTable(conn, "Div");
-                //LoadTable(conn, "Unit");
-                //LoadTable(conn, "Cooperator");
+                LoadTable(conn, "TRoot");
                 LoadTable(conn, "TCatalog");
+                LoadTable(conn, "TSubcatalog");
                 LoadTable(conn, "TFile");
             }
         }

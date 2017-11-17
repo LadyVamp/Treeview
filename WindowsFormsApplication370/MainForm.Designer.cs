@@ -46,11 +46,11 @@
             this.ftMain.ImageExpand = ((System.Drawing.Image)(resources.GetObject("ftMain.ImageExpand")));
             this.ftMain.IsEditMode = false;
             this.ftMain.Location = new System.Drawing.Point(0, 0);
-            this.ftMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ftMain.Margin = new System.Windows.Forms.Padding(4);
             this.ftMain.Name = "ftMain";
             this.ftMain.Readonly = true;
             this.ftMain.ShowExpandBoxes = true;
-            this.ftMain.Size = new System.Drawing.Size(264, 476);
+            this.ftMain.Size = new System.Drawing.Size(350, 541);
             this.ftMain.TabIndex = 1;
             this.ftMain.DoubleClick += new System.EventHandler(this.ftMain_DoubleClick);
             // 
@@ -58,10 +58,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 476);
+            this.ClientSize = new System.Drawing.Size(1061, 541);
             this.Controls.Add(this.ftMain);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Main Form";
             this.ResumeLayout(false);

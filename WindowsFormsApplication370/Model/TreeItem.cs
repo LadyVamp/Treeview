@@ -13,39 +13,25 @@ namespace Treeview
         public IEnumerator<TreeNode> GetEnumerator()
         {
             if(Row == null)
-                //return Repository.DataSet.Tables["Org"].Rows.Cast<DataRow>().Select(r => new TreeNode() { Row = r }).GetEnumerator();
-                return Repository.DataSet.Tables["TCatalog"].Rows.Cast<DataRow>().Select(r => new TreeNode() { Row = r }).GetEnumerator();
+                return Repository.DataSet.Tables["TRoot"].Rows.Cast<DataRow>().Select(r => new TreeNode() { Row = r }).GetEnumerator();
 
             switch (Row.Table.TableName)
             {
-                //case "Org": return GetEnumerator("Div", "Org_Id");
-                //case "Div": return GetEnumerator("Unit", "Div_Id");
-                //case "Unit": return GetEnumerator("Cooperator", "Unit_Id");
-                //case "Cooperator": return new List<TreeNode>().GetEnumerator();//empty
-
-                ////case "Catalog": return GetEnumerator("Catalog", "ParentId");
-                ////case "Catalog": return GetEnumerator("File", "CatalogId");
-                //case "TCatalog": return GetEnumerator("TFile", "CatalogId");
-                //case "TFile": return new List<TreeNode>().GetEnumerator();//empty
-
-                //case "TCatalog": return GetEnumerator("TCatalog", "ParentId");
-                case "TCatalog": return GetEnumerator("TFile", "CatalogId");
+                case "TRoot": return GetEnumerator("TCatalog", "RootId");
+                case "TCatalog": return GetEnumerator("TSubcatalog", "CatalogId");
+                case "TSubcatalog": return GetEnumerator("TFile", "SubCatalogId");
                 case "TFile": return new List<TreeNode>().GetEnumerator();//empty
             }
 
             throw new Exception("Hmm...");
         }
 
-        //public IEnumerator<TreeNode> GetEnumerator(string table, string parentIdField)
-        //{
-        //    var id = (int)Row["Id"];
-        //    return Repository.DataSet.Tables[table].Rows.Cast<DataRow>().Where(r => r[parentIdField].Equals(id)).Select(r => new TreeNode() { Row = r }).GetEnumerator();
-        //}
         public IEnumerator<TreeNode> GetEnumerator(string table, string parentIdField)
         {
             var id = (int)Row["Id"];
             return Repository.DataSet.Tables[table].Rows.Cast<DataRow>().Where(r => r[parentIdField].Equals(id)).Select(r => new TreeNode() { Row = r }).GetEnumerator();
         }
+
 
         IEnumerator IEnumerable.GetEnumerator()
         {
@@ -69,7 +55,6 @@ namespace Treeview
         public override string ToString()
         {
             return Row == null ? "root" : Row["Name"].ToString();
-            //return Row == null ? "root" : Row["Title"].ToString();
         }
     }
 }
