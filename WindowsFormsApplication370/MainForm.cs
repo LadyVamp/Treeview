@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 namespace Treeview
 {
     public partial class MainForm : Form
+        //public partial class MainForm : MetroFramework.Forms.MetroForm
     {
         public MainForm()
         {

@@ -57,9 +57,9 @@
             // 
             // btnOpenSearchForm
             // 
-            this.btnOpenSearchForm.Location = new System.Drawing.Point(391, 37);
+            this.btnOpenSearchForm.Location = new System.Drawing.Point(137, 12);
             this.btnOpenSearchForm.Name = "btnOpenSearchForm";
-            this.btnOpenSearchForm.Size = new System.Drawing.Size(287, 23);
+            this.btnOpenSearchForm.Size = new System.Drawing.Size(202, 32);
             this.btnOpenSearchForm.TabIndex = 3;
             this.btnOpenSearchForm.Text = "Открыть форму поиска";
             this.btnOpenSearchForm.UseVisualStyleBackColor = true;

@@ -38,6 +38,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ExternalDll\FastTree.dll</HintPath>
     </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -76,9 +88,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Repository.cs" />
     <Compile Include="Model\TreeItem.cs" />
-    <Compile Include="SearchForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="RepositoryDB2TFileWithoutId.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryDB2TFileWithoutId.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SearchForm.cs" />
     <Compile Include="SearchForm.Designer.cs">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
@@ -101,6 +116,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,6 +129,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RepositoryDB2TFileWithoutId.xsc">
+      <DependentUpon>RepositoryDB2TFileWithoutId.xsd</DependentUpon>
+    </None>
+    <None Include="RepositoryDB2TFileWithoutId.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepositoryDB2TFileWithoutId.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepositoryDB2TFileWithoutId.xss">
+      <DependentUpon>RepositoryDB2TFileWithoutId.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
