@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApplication370.Properties {
+namespace Treeview.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -30,17 +30,6 @@ namespace WindowsFormsApplication370.Properties {
         public string TESTConnectionString {
             get {
                 return ((string)(this["TESTConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-O9H5H8N;Initial Catalog=RepositoryDB2;Integrated Security=Tru" +
-            "e;Pooling=False")]
-        public string RepositoryDB2ConnectionString {
-            get {
-                return ((string)(this["RepositoryDB2ConnectionString"]));
             }
         }
     }
