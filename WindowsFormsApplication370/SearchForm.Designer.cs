@@ -44,19 +44,23 @@
             this.fileContentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subCatalogIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbPdf = new System.Windows.Forms.RadioButton();
             this.rbRtf = new System.Windows.Forms.RadioButton();
             this.rbTxt = new System.Windows.Forms.RadioButton();
             this.rbDocx = new System.Windows.Forms.RadioButton();
             this.rbDoc = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtMinSize = new System.Windows.Forms.TextBox();
-            this.txtMaxSize = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtMaxSize = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtMinSize = new System.Windows.Forms.TextBox();
             this.btnSizeFilter = new System.Windows.Forms.Button();
-            this.rbPdf = new System.Windows.Forms.RadioButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.btnDate = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -200,6 +204,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Формат";
             // 
+            // rbPdf
+            // 
+            this.rbPdf.AutoSize = true;
+            this.rbPdf.Location = new System.Drawing.Point(19, 75);
+            this.rbPdf.Name = "rbPdf";
+            this.rbPdf.Size = new System.Drawing.Size(49, 21);
+            this.rbPdf.TabIndex = 4;
+            this.rbPdf.TabStop = true;
+            this.rbPdf.Text = "pdf";
+            this.rbPdf.UseVisualStyleBackColor = true;
+            // 
             // rbRtf
             // 
             this.rbRtf.AutoSize = true;
@@ -259,12 +274,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Размер";
             // 
-            // txtMinSize
+            // label4
             // 
-            this.txtMinSize.Location = new System.Drawing.Point(39, 31);
-            this.txtMinSize.Name = "txtMinSize";
-            this.txtMinSize.Size = new System.Drawing.Size(55, 22);
-            this.txtMinSize.TabIndex = 0;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(100, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(24, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "кБ";
             // 
             // txtMaxSize
             // 
@@ -272,24 +289,6 @@
             this.txtMaxSize.Name = "txtMaxSize";
             this.txtMaxSize.Size = new System.Drawing.Size(57, 22);
             this.txtMaxSize.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "От";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "До";
             // 
             // label3
             // 
@@ -300,47 +299,89 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "кБ";
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(100, 64);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(24, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "кБ";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "До";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "От";
+            // 
+            // txtMinSize
+            // 
+            this.txtMinSize.Location = new System.Drawing.Point(39, 31);
+            this.txtMinSize.Name = "txtMinSize";
+            this.txtMinSize.Size = new System.Drawing.Size(55, 22);
+            this.txtMinSize.TabIndex = 0;
             // 
             // btnSizeFilter
             // 
-            this.btnSizeFilter.Location = new System.Drawing.Point(416, 121);
+            this.btnSizeFilter.Location = new System.Drawing.Point(406, 122);
             this.btnSizeFilter.Name = "btnSizeFilter";
-            this.btnSizeFilter.Size = new System.Drawing.Size(171, 33);
+            this.btnSizeFilter.Size = new System.Drawing.Size(151, 33);
             this.btnSizeFilter.TabIndex = 7;
             this.btnSizeFilter.Text = "Применить фильтр";
             this.btnSizeFilter.UseVisualStyleBackColor = true;
             this.btnSizeFilter.Click += new System.EventHandler(this.btnSizeFilter_Click);
             // 
-            // rbPdf
+            // dateTimePicker1
             // 
-            this.rbPdf.AutoSize = true;
-            this.rbPdf.Location = new System.Drawing.Point(19, 75);
-            this.rbPdf.Name = "rbPdf";
-            this.rbPdf.Size = new System.Drawing.Size(49, 21);
-            this.rbPdf.TabIndex = 4;
-            this.rbPdf.TabStop = true;
-            this.rbPdf.Text = "pdf";
-            this.rbPdf.UseVisualStyleBackColor = true;
+            this.dateTimePicker1.Location = new System.Drawing.Point(586, 122);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 8;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(586, 150);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.TabIndex = 9;
+            // 
+            // btnDate
+            // 
+            this.btnDate.Location = new System.Drawing.Point(792, 121);
+            this.btnDate.Name = "btnDate";
+            this.btnDate.Size = new System.Drawing.Size(133, 34);
+            this.btnDate.TabIndex = 10;
+            this.btnDate.Text = "Фильтр по дате";
+            this.btnDate.UseVisualStyleBackColor = true;
+            this.btnDate.Click += new System.EventHandler(this.btnDate_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Location = new System.Drawing.Point(577, 94);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(371, 100);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Дата";
             // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 532);
+            this.Controls.Add(this.btnDate);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnSizeFilter);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.Name = "SearchForm";
             this.Text = "SearchForm";
             this.Load += new System.EventHandler(this.SearchForm_Load);
@@ -385,5 +426,9 @@
         private System.Windows.Forms.TextBox txtMinSize;
         private System.Windows.Forms.Button btnSizeFilter;
         private System.Windows.Forms.RadioButton rbPdf;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button btnDate;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

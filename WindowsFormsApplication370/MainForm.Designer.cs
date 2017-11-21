@@ -51,13 +51,13 @@
             this.ftMain.Name = "ftMain";
             this.ftMain.Readonly = true;
             this.ftMain.ShowExpandBoxes = true;
-            this.ftMain.Size = new System.Drawing.Size(350, 541);
+            this.ftMain.Size = new System.Drawing.Size(488, 541);
             this.ftMain.TabIndex = 1;
             this.ftMain.DoubleClick += new System.EventHandler(this.ftMain_DoubleClick);
             // 
             // btnOpenSearchForm
             // 
-            this.btnOpenSearchForm.Location = new System.Drawing.Point(137, 12);
+            this.btnOpenSearchForm.Location = new System.Drawing.Point(261, 12);
             this.btnOpenSearchForm.Name = "btnOpenSearchForm";
             this.btnOpenSearchForm.Size = new System.Drawing.Size(202, 32);
             this.btnOpenSearchForm.TabIndex = 3;
@@ -69,7 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 541);
+            this.ClientSize = new System.Drawing.Size(1125, 541);
             this.Controls.Add(this.btnOpenSearchForm);
             this.Controls.Add(this.ftMain);
             this.IsMdiContainer = true;

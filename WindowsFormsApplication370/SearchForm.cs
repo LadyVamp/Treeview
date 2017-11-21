@@ -134,6 +134,11 @@ namespace Treeview
             }
         }
 
-
+        //Фильтр по дате
+        private void btnDate_Click(object sender, EventArgs e)
+        {
+            tFileBindingSource.Filter = string.Format("Date >= #{0:MM.dd.yyyy} 00:00:00# AND Date <= #{1:MM.dd.yyyy} 23:59:59#"
+, dateTimePicker1.Value, dateTimePicker2.Value);
+        }
     }
 }

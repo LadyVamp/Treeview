@@ -47,12 +47,8 @@ namespace Treeview
 
         private void btnOpenSearchForm_Click(object sender, EventArgs e)
         {
-            //SearchForm newForm = new SearchForm(this);
-            //newForm.Show();
-
            SearchForm f2 = new SearchForm();
             f2.Show();
-
-    }
+        }
     }
 }
