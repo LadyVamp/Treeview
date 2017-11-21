@@ -44,14 +44,24 @@
             this.fileContentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subCatalogIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbDoc = new System.Windows.Forms.RadioButton();
-            this.rbDocx = new System.Windows.Forms.RadioButton();
-            this.rbTxt = new System.Windows.Forms.RadioButton();
             this.rbRtf = new System.Windows.Forms.RadioButton();
+            this.rbTxt = new System.Windows.Forms.RadioButton();
+            this.rbDocx = new System.Windows.Forms.RadioButton();
+            this.rbDoc = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtMinSize = new System.Windows.Forms.TextBox();
+            this.txtMaxSize = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSizeFilter = new System.Windows.Forms.Button();
+            this.rbPdf = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tFileBindingSource
@@ -178,54 +188,22 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rbPdf);
             this.groupBox1.Controls.Add(this.rbRtf);
             this.groupBox1.Controls.Add(this.rbTxt);
             this.groupBox1.Controls.Add(this.rbDocx);
             this.groupBox1.Controls.Add(this.rbDoc);
             this.groupBox1.Location = new System.Drawing.Point(27, 94);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(181, 87);
+            this.groupBox1.Size = new System.Drawing.Size(181, 107);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Формат";
             // 
-            // rbDoc
-            // 
-            this.rbDoc.AutoSize = true;
-            this.rbDoc.Location = new System.Drawing.Point(19, 22);
-            this.rbDoc.Name = "rbDoc";
-            this.rbDoc.Size = new System.Drawing.Size(52, 21);
-            this.rbDoc.TabIndex = 0;
-            this.rbDoc.TabStop = true;
-            this.rbDoc.Text = "doc";
-            this.rbDoc.UseVisualStyleBackColor = true;
-            // 
-            // rbDocx
-            // 
-            this.rbDocx.AutoSize = true;
-            this.rbDocx.Location = new System.Drawing.Point(19, 50);
-            this.rbDocx.Name = "rbDocx";
-            this.rbDocx.Size = new System.Drawing.Size(58, 21);
-            this.rbDocx.TabIndex = 1;
-            this.rbDocx.TabStop = true;
-            this.rbDocx.Text = "docx";
-            this.rbDocx.UseVisualStyleBackColor = true;
-            // 
-            // rbTxt
-            // 
-            this.rbTxt.AutoSize = true;
-            this.rbTxt.Location = new System.Drawing.Point(106, 23);
-            this.rbTxt.Name = "rbTxt";
-            this.rbTxt.Size = new System.Drawing.Size(43, 21);
-            this.rbTxt.TabIndex = 2;
-            this.rbTxt.TabStop = true;
-            this.rbTxt.Text = "txt";
-            this.rbTxt.UseVisualStyleBackColor = true;
-            // 
             // rbRtf
             // 
             this.rbRtf.AutoSize = true;
-            this.rbRtf.Location = new System.Drawing.Point(106, 50);
+            this.rbRtf.Location = new System.Drawing.Point(107, 48);
             this.rbRtf.Name = "rbRtf";
             this.rbRtf.Size = new System.Drawing.Size(42, 21);
             this.rbRtf.TabIndex = 3;
@@ -233,15 +211,136 @@
             this.rbRtf.Text = "rtf";
             this.rbRtf.UseVisualStyleBackColor = true;
             // 
+            // rbTxt
+            // 
+            this.rbTxt.AutoSize = true;
+            this.rbTxt.Location = new System.Drawing.Point(106, 21);
+            this.rbTxt.Name = "rbTxt";
+            this.rbTxt.Size = new System.Drawing.Size(43, 21);
+            this.rbTxt.TabIndex = 2;
+            this.rbTxt.TabStop = true;
+            this.rbTxt.Text = "txt";
+            this.rbTxt.UseVisualStyleBackColor = true;
+            // 
+            // rbDocx
+            // 
+            this.rbDocx.AutoSize = true;
+            this.rbDocx.Location = new System.Drawing.Point(19, 48);
+            this.rbDocx.Name = "rbDocx";
+            this.rbDocx.Size = new System.Drawing.Size(58, 21);
+            this.rbDocx.TabIndex = 1;
+            this.rbDocx.TabStop = true;
+            this.rbDocx.Text = "docx";
+            this.rbDocx.UseVisualStyleBackColor = true;
+            // 
+            // rbDoc
+            // 
+            this.rbDoc.AutoSize = true;
+            this.rbDoc.Location = new System.Drawing.Point(19, 21);
+            this.rbDoc.Name = "rbDoc";
+            this.rbDoc.Size = new System.Drawing.Size(52, 21);
+            this.rbDoc.TabIndex = 0;
+            this.rbDoc.TabStop = true;
+            this.rbDoc.Text = "doc";
+            this.rbDoc.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtMaxSize);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtMinSize);
+            this.groupBox2.Location = new System.Drawing.Point(246, 94);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(154, 107);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Размер";
+            // 
+            // txtMinSize
+            // 
+            this.txtMinSize.Location = new System.Drawing.Point(39, 31);
+            this.txtMinSize.Name = "txtMinSize";
+            this.txtMinSize.Size = new System.Drawing.Size(55, 22);
+            this.txtMinSize.TabIndex = 0;
+            // 
+            // txtMaxSize
+            // 
+            this.txtMaxSize.Location = new System.Drawing.Point(37, 61);
+            this.txtMaxSize.Name = "txtMaxSize";
+            this.txtMaxSize.Size = new System.Drawing.Size(57, 22);
+            this.txtMaxSize.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "От";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "До";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(100, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "кБ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(100, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(24, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "кБ";
+            // 
+            // btnSizeFilter
+            // 
+            this.btnSizeFilter.Location = new System.Drawing.Point(416, 121);
+            this.btnSizeFilter.Name = "btnSizeFilter";
+            this.btnSizeFilter.Size = new System.Drawing.Size(171, 33);
+            this.btnSizeFilter.TabIndex = 7;
+            this.btnSizeFilter.Text = "Применить фильтр";
+            this.btnSizeFilter.UseVisualStyleBackColor = true;
+            this.btnSizeFilter.Click += new System.EventHandler(this.btnSizeFilter_Click);
+            // 
+            // rbPdf
+            // 
+            this.rbPdf.AutoSize = true;
+            this.rbPdf.Location = new System.Drawing.Point(19, 75);
+            this.rbPdf.Name = "rbPdf";
+            this.rbPdf.Size = new System.Drawing.Size(49, 21);
+            this.rbPdf.TabIndex = 4;
+            this.rbPdf.TabStop = true;
+            this.rbPdf.Text = "pdf";
+            this.rbPdf.UseVisualStyleBackColor = true;
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 532);
+            this.Controls.Add(this.btnSizeFilter);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.groupBox2);
             this.Name = "SearchForm";
             this.Text = "SearchForm";
             this.Load += new System.EventHandler(this.SearchForm_Load);
@@ -250,6 +349,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +376,14 @@
         private System.Windows.Forms.RadioButton rbTxt;
         private System.Windows.Forms.RadioButton rbDocx;
         private System.Windows.Forms.RadioButton rbDoc;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtMaxSize;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtMinSize;
+        private System.Windows.Forms.Button btnSizeFilter;
+        private System.Windows.Forms.RadioButton rbPdf;
     }
 }

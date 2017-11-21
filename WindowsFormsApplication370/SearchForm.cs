@@ -45,7 +45,7 @@ namespace Treeview
 
             if (dataGridView1.DataSource == tFileBindingSource)
             {
-                tFileBindingSource.Filter = " Name LIKE'" + txtSearch.Text + "%'";
+                tFileBindingSource.Filter = "name LIKE'" + txtSearch.Text + "%'";
                 //где Исполнитель - название столбца в DatagridView
             }
         }
@@ -58,7 +58,7 @@ namespace Treeview
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     row.Selected = false;
-                    this.tFileBindingSource.Filter = "(Keywords LIKE '" + txtSearch.Text + "*')";
+                    this.tFileBindingSource.Filter = "(keywords LIKE '" + txtSearch.Text + "*')";
                 }
             }
 
@@ -94,7 +94,45 @@ namespace Treeview
             this.tFileBindingSource.Filter = "(type LIKE 'rtf')";
         }
 
+        private void rbPdf_CheckedChanged(object sender, EventArgs e)
+        {
+            tFileBindingSource.Filter = null;
+            this.tFileBindingSource.Filter = "(type LIKE 'rtf')";
+        }
 
+        //Фильтр по размеру файла
+        private void btnSizeFilter_Click(object sender, EventArgs e)
+        {
+            tFileBindingSource.Filter = null;
+            try
+            {
+                if (txtMinSize.Text != "" && txtMaxSize.Text != "") //оба заполнены
+                {
+                    tFileBindingSource.Filter = null;
+                    this.tFileBindingSource.Filter = "size >= '" + int.Parse(txtMinSize.Text) + "'";
+                    this.tFileBindingSource.Filter = "size <= '" + int.Parse(txtMaxSize.Text) + "'";
+                }
+                else if (txtMinSize.Text == "" && txtMaxSize.Text == "") //оба пустые 
+                {
+                    MessageBox.Show("Поля min и max размер не заполнены");
+                }
+                else if (txtMinSize.Text != "" && txtMaxSize.Text == "") //заполнен только min
+                {
+                    tFileBindingSource.Filter = null;
+                    this.tFileBindingSource.Filter = "size >= '" + int.Parse(txtMinSize.Text) + "'";
+                }
+                else if (txtMaxSize.Text != "" && txtMinSize.Text == "") //заполнен только max
+                {
+                    tFileBindingSource.Filter = null;
+                    this.tFileBindingSource.Filter = "size <= '" + int.Parse(txtMaxSize.Text) + "'";
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
 
     }
