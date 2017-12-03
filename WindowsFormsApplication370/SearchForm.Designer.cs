@@ -54,12 +54,17 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.btnDate = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.repositoryDB3TFile = new WindowsFormsApplication370.RepositoryDB3TFile();
+            this.tFileBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tFileTableAdapter1 = new WindowsFormsApplication370.RepositoryDB3TFileTableAdapters.TFileTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FileGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tFileBindingSource
@@ -313,6 +318,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Дата";
             // 
+            // repositoryDB3TFile
+            // 
+            this.repositoryDB3TFile.DataSetName = "RepositoryDB3TFile";
+            this.repositoryDB3TFile.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tFileBindingSource1
+            // 
+            this.tFileBindingSource1.DataMember = "TFile";
+            this.tFileBindingSource1.DataSource = this.repositoryDB3TFile;
+            // 
+            // tFileTableAdapter1
+            // 
+            this.tFileTableAdapter1.ClearBeforeFill = true;
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -335,6 +354,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,5 +387,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button btnDate;
         private System.Windows.Forms.GroupBox groupBox3;
+        private WindowsFormsApplication370.RepositoryDB3TFile repositoryDB3TFile;
+        private System.Windows.Forms.BindingSource tFileBindingSource1;
+        private WindowsFormsApplication370.RepositoryDB3TFileTableAdapters.TFileTableAdapter tFileTableAdapter1;
     }
 }

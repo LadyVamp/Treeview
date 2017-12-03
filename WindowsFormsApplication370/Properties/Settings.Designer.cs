@@ -43,5 +43,16 @@ namespace WindowsFormsApplication370.Properties {
                 return ((string)(this["RepositoryDB2ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-O9H5H8N;Initial Catalog=RepositoryDB3;Integrated Security=Tru" +
+            "e")]
+        public string RepositoryDB3ConnectionString {
+            get {
+                return ((string)(this["RepositoryDB3ConnectionString"]));
+            }
+        }
     }
 }

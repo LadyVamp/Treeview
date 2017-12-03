@@ -85,6 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RepositoryDB2TFileWithoutId.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RepositoryDB3TFile.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryDB3TFile.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +138,17 @@
     </None>
     <None Include="RepositoryDB2TFileWithoutId.xss">
       <DependentUpon>RepositoryDB2TFileWithoutId.xsd</DependentUpon>
+    </None>
+    <None Include="RepositoryDB3TFile.xsc">
+      <DependentUpon>RepositoryDB3TFile.xsd</DependentUpon>
+    </None>
+    <None Include="RepositoryDB3TFile.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepositoryDB3TFile.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepositoryDB3TFile.xss">
+      <DependentUpon>RepositoryDB3TFile.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
