@@ -66,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tFileBindingSource
@@ -264,12 +265,13 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtMaxSize);
             this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.btnSizeFilter);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtMinSize);
             this.groupBox2.Location = new System.Drawing.Point(246, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(154, 107);
+            this.groupBox2.Size = new System.Drawing.Size(290, 107);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Размер";
@@ -326,7 +328,7 @@
             // 
             // btnSizeFilter
             // 
-            this.btnSizeFilter.Location = new System.Drawing.Point(406, 122);
+            this.btnSizeFilter.Location = new System.Drawing.Point(130, 27);
             this.btnSizeFilter.Name = "btnSizeFilter";
             this.btnSizeFilter.Size = new System.Drawing.Size(151, 33);
             this.btnSizeFilter.TabIndex = 7;
@@ -336,21 +338,21 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(586, 122);
+            this.dateTimePicker1.Location = new System.Drawing.Point(18, 23);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(586, 150);
+            this.dateTimePicker2.Location = new System.Drawing.Point(18, 54);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker2.TabIndex = 9;
             // 
             // btnDate
             // 
-            this.btnDate.Location = new System.Drawing.Point(792, 121);
+            this.btnDate.Location = new System.Drawing.Point(224, 20);
             this.btnDate.Name = "btnDate";
             this.btnDate.Size = new System.Drawing.Size(133, 34);
             this.btnDate.TabIndex = 10;
@@ -360,9 +362,12 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(577, 94);
+            this.groupBox3.Controls.Add(this.btnDate);
+            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.dateTimePicker2);
+            this.groupBox3.Location = new System.Drawing.Point(542, 94);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(371, 100);
+            this.groupBox3.Size = new System.Drawing.Size(364, 107);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Дата";
@@ -372,10 +377,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 532);
-            this.Controls.Add(this.btnDate);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.btnSizeFilter);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtSearch);
@@ -392,6 +393,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
