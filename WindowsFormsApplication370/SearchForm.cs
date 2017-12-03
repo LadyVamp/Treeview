@@ -7,29 +7,117 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Treeview
 {
     public partial class SearchForm : Form
         //public partial class SearchForm : MetroFramework.Forms.MetroForm
     {
+        //public SearchForm()
+        //{
+        //    InitializeComponent();
+        //}
+
         public SearchForm()
         {
             InitializeComponent();
+            //FileGrid.ColumnCount = 8;
+            //FileGrid.Columns[0].Name = "ID";
+            //FileGrid.Columns[1].Name = "filename";
+            //FileGrid.Columns[2].Name = "type";
+            //FileGrid.Columns[3].Name = "date";
+            //FileGrid.Columns[4].Name = "size";
+            //FileGrid.Columns[5].Name = "keywords";
+            //FileGrid.Columns[6].Name = "filecontent";
+            //FileGrid.Columns[7].Name = "catalogid";
+            //FileGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //FileGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //FileGrid.MultiSelect = false;
         }
+
+        //private void SearchForm_Load(object sender, EventArgs e)
+        //{
+        //    // TODO: данная строка кода позволяет загрузить данные в таблицу "repositoryDB2TFileWithoutId.TFile". При необходимости она может быть перемещена или удалена.
+        //    this.tFileTableAdapter.Fill(this.repositoryDB2TFileWithoutId.TFile);
+        //    dataGridView1.Columns[0].Width = 240;
+        //    dataGridView1.Columns[1].Width = 60;
+        //    dataGridView1.Columns[2].Width = 80;
+        //    dataGridView1.Columns[3].Width = 30;
+        //    dataGridView1.Columns[4].Width = 150;
+        //    dataGridView1.Columns[5].Width = 50;
+        //    dataGridView1.Columns[6].Width = 30;
+        //}
+
+
+        private const string CONNECTION_STRING =
+  "Data Source=DESKTOP-O9H5H8N;Initial Catalog=RepositoryDB3;Integrated Security=True";
+
+        SqlConnection con = new SqlConnection(CONNECTION_STRING);
+        SqlCommand cmd;
+        SqlDataAdapter adapter;
+        DataTable dt = new DataTable();
 
         private void SearchForm_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "repositoryDB2TFileWithoutId.TFile". При необходимости она может быть перемещена или удалена.
-            this.tFileTableAdapter.Fill(this.repositoryDB2TFileWithoutId.TFile);
-            dataGridView1.Columns[0].Width = 240;
-            dataGridView1.Columns[1].Width = 60;
-            dataGridView1.Columns[2].Width = 80;
-            dataGridView1.Columns[3].Width = 30;
-            dataGridView1.Columns[4].Width = 150;
-            dataGridView1.Columns[5].Width = 50;
-            dataGridView1.Columns[6].Width = 30;
+            ViewTFile();
+
+            //заполнить dataGridView при запуске формы
+            DataSet ds = new DataSet();
+            SqlConnection dataBaseConnection = new SqlConnection(CONNECTION_STRING);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM TFile", dataBaseConnection);
+            dataAdapter.Fill(ds, "TFile");
+            FileGrid.DataSource = ds.Tables["TFile"];
+            FileGrid.Columns[0].HeaderText = "ID";
+            FileGrid.Columns[1].HeaderText = "Название";
+            FileGrid.Columns[2].HeaderText = "Формат";
+            FileGrid.Columns[3].HeaderText = "Дата изменения";
+            FileGrid.Columns[4].HeaderText = "Размер, КБ";
+            FileGrid.Columns[5].HeaderText = "Ключевые слова";
+            FileGrid.Columns[6].HeaderText = "Содержание";
+            FileGrid.Columns[7].HeaderText = "IdCatalog";
+            FileGrid.Columns[0].Width = 30;
+            FileGrid.Columns[1].Width = 80;
+            FileGrid.Columns[2].Width = 80;
+            FileGrid.Columns[3].Width = 60;
+            FileGrid.Columns[4].Width = 60;
+            FileGrid.Columns[5].Width = 100;
+            FileGrid.Columns[6].Width = 60;
+            FileGrid.Columns[7].Width = 100;
         }
+
+        private void populate(String id, String filename, string type, string date, string size, string keywords, string filecontent, string catalogid)
+        {
+            FileGrid.Rows.Add(id, filename, type, date, size, keywords, filecontent, catalogid);
+        }
+
+
+        //  Read 
+        private void ViewTFile()
+        {
+            FileGrid.Rows.Clear();
+            string sql = "SELECT * FROM TFile";
+            cmd = new SqlCommand(sql, con);
+            try
+            {
+                con.Open();
+                adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                foreach (DataRow row in dt.Rows)
+                {
+                    populate(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(), row[5].ToString(), row[6].ToString(), row[7].ToString());
+                }
+                con.Close();
+                dt.Rows.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                con.Close();
+            }
+        }
+
+
 
 
         //Типа живой поиск (не работает)
@@ -43,7 +131,7 @@ namespace Treeview
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
 
-            if (dataGridView1.DataSource == tFileBindingSource)
+            if (FileGrid.DataSource == tFileBindingSource)
             {
                 tFileBindingSource.Filter = "name LIKE'" + txtSearch.Text + "%'";
                 //где Исполнитель - название столбца в DatagridView
@@ -55,7 +143,7 @@ namespace Treeview
             tFileBindingSource.Filter = null;
             try
             {
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                foreach (DataGridViewRow row in FileGrid.Rows)
                 {
                     row.Selected = false;
                     this.tFileBindingSource.Filter = "(keywords LIKE '" + txtSearch.Text + "*')";
