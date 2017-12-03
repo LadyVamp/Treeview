@@ -116,9 +116,9 @@
             // 
             this.btnSearch.Location = new System.Drawing.Point(331, 35);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(226, 30);
+            this.btnSearch.Size = new System.Drawing.Size(153, 30);
             this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Поиск по ключевым словам";
+            this.btnSearch.Text = "Поиск по тексту";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // txtSearch

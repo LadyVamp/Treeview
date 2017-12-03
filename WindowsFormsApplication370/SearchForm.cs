@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
+
 namespace Treeview
 {
     public partial class SearchForm : Form
@@ -56,23 +58,23 @@ namespace Treeview
                 tFileBindingSource.Filter = "name LIKE'" + txtSearch.Text + "%'";
             }
         }
-        //Поиск по ключевым словам (не работает)
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            tFileBindingSource.Filter = null;
-            try
-            {
-                foreach (DataGridViewRow row in FileGrid.Rows)
-                {
-                    row.Selected = false;
-                    this.tFileBindingSource.Filter = "(keywords LIKE '" + txtSearch.Text + "*')";
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Такого названия нет");
-            }
-        }
+        ////Поиск по ключевым словам (не работает)
+        //private void btnSearch_Click(object sender, EventArgs e)
+        //{
+        //    tFileBindingSource.Filter = null;
+        //    try
+        //    {
+        //        foreach (DataGridViewRow row in FileGrid.Rows)
+        //        {
+        //            row.Selected = false;
+        //            this.tFileBindingSource.Filter = "(keywords LIKE '" + txtSearch.Text + "*')";
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        MessageBox.Show("Такого названия нет");
+        //    }
+        //}
         //Радиокнопки по формату (не работает)
         private void rbDoc_CheckedChanged(object sender, EventArgs e)
         {
@@ -137,5 +139,37 @@ namespace Treeview
             tFileBindingSource.Filter = string.Format("Date >= #{0:MM.dd.yyyy} 00:00:00# AND Date <= #{1:MM.dd.yyyy} 23:59:59#"
 , dateTimePicker1.Value, dateTimePicker2.Value);
         }
+
+        //типа полнотекстовый поиск (не работает)
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            tFileBindingSource1.Filter = null;
+            try
+            {
+                foreach (DataGridViewRow row in FileGrid.Rows)
+                {
+                    row.Selected = false;
+                    this.tFileBindingSource1.Filter = "select * from TFile where CONTAINS (Filecontent, '" + txtSearch.Text + "')";
+                }
+            }
+            //select* from TFile where CONTAINS(Filecontent, @word)
+            catch
+            {
+                MessageBox.Show("Такого названия нет");
+            }
+       
+    }
+
+        //using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["CONNECTION_STRING"].ConnectionString))
+        //con.Open();
+        //using (var command = new SqlCommand(con))
+        //    // select * from TFile where CONTAINS(Filecontent, 'JS')
+        //{
+        //    command.Parameters.Add("@word", DbType.String).Value = txtSearch.Text;
+        //    command.CommandText = "SELECT * FROM TFile WHERE CONTAINS (Filecontent, @word)";
+        //    command.ExecuteNonQuery();
+        //}
+
+    
     }
 }
