@@ -141,24 +141,57 @@ namespace Treeview
         }
 
         //типа полнотекстовый поиск (не работает)
+        //select* from TFile where CONTAINS(Filecontent, 'JS')
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            tFileBindingSource1.Filter = null;
-            try
+            for (int i = 0; i < FileGrid.RowCount; i++)
             {
-                foreach (DataGridViewRow row in FileGrid.Rows)
-                {
-                    row.Selected = false;
-                    this.tFileBindingSource1.Filter = "select * from TFile where CONTAINS (Filecontent, '" + txtSearch.Text + "')";
-                }
+                FileGrid.Rows[i].Selected = false;
+                for (int j = 0; j < FileGrid.ColumnCount; j++)
+                    if (FileGrid.Rows[i].Cells[j].Value != null)
+                        if (FileGrid.Rows[i].Cells[j].Value.ToString().Contains(txtSearch.Text))
+                        {
+                            FileGrid.Rows[i].Selected = true;
+                            break;
+                        }
             }
-            //select* from TFile where CONTAINS(Filecontent, @word)
-            catch
-            {
-                MessageBox.Show("Такого названия нет");
-            }
-       
-    }
+
+
+            //for (int i = 0; i < FileGrid.RowCount; i++)
+            //{
+            //    FileGrid.Rows[i].Selected = false;
+            //    for (int j = 0; j < FileGrid.ColumnCount; j++)
+            //        if (FileGrid.Rows[i].Cells[j].Value != null)
+            //            if (FileGrid.Rows[i].Cells[j].Value.ToString().Contains(txtSearch.Text))
+            //            {
+            //                DataGridViewCell cell = FileGrid.Rows[i].Cells[j];
+
+            //                FileGrid.Rows[i].Selected = true;
+            //                FileGrid.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+            //                FileGrid.CurrentCell = cell;
+            //                break;
+            //            }
+            //}
+
+
+
+
+
+            //tFileBindingSource1.Filter = null;
+            //try
+            //{
+            //    foreach (DataGridViewRow row in FileGrid.Rows)
+            //    {
+            //        row.Selected = false;
+            //        this.tFileBindingSource1.Filter = "select * from TFile where CONTAINS (Filecontent, '" + txtSearch.Text + "')";
+            //    }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Такого названия нет");
+            //}
+
+        }
 
         //using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["CONNECTION_STRING"].ConnectionString))
         //con.Open();
@@ -170,6 +203,6 @@ namespace Treeview
         //    command.ExecuteNonQuery();
         //}
 
-    
+
     }
 }
