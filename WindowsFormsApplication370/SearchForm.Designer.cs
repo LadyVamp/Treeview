@@ -35,7 +35,9 @@
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.FileGrid = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tFileBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryDB3TFile = new WindowsFormsApplication370.RepositoryDB3TFile();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbPdf = new System.Windows.Forms.RadioButton();
             this.rbRtf = new System.Windows.Forms.RadioButton();
@@ -54,8 +56,6 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.btnDate = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.repositoryDB3TFile = new WindowsFormsApplication370.RepositoryDB3TFile();
-            this.tFileBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tFileTableAdapter1 = new WindowsFormsApplication370.RepositoryDB3TFileTableAdapters.TFileTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,12 +67,12 @@
             this.catalogIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FileGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFile)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tFileBindingSource
@@ -136,11 +136,11 @@
             this.txtSearch.Size = new System.Drawing.Size(313, 22);
             this.txtSearch.TabIndex = 3;
             // 
-            // FileGrid
+            // dataGridView1
             // 
-            this.FileGrid.AutoGenerateColumns = false;
-            this.FileGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FileGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.filenameDataGridViewTextBoxColumn,
             this.typeDataGridViewTextBoxColumn,
@@ -149,12 +149,22 @@
             this.keywordsDataGridViewTextBoxColumn,
             this.filecontentDataGridViewTextBoxColumn,
             this.catalogIdDataGridViewTextBoxColumn});
-            this.FileGrid.DataSource = this.tFileBindingSource1;
-            this.FileGrid.Location = new System.Drawing.Point(12, 233);
-            this.FileGrid.Name = "FileGrid";
-            this.FileGrid.RowTemplate.Height = 24;
-            this.FileGrid.Size = new System.Drawing.Size(936, 262);
-            this.FileGrid.TabIndex = 4;
+            this.dataGridView1.DataSource = this.tFileBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 233);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(936, 262);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // tFileBindingSource1
+            // 
+            this.tFileBindingSource1.DataMember = "TFile";
+            this.tFileBindingSource1.DataSource = this.repositoryDB3TFile;
+            // 
+            // repositoryDB3TFile
+            // 
+            this.repositoryDB3TFile.DataSetName = "RepositoryDB3TFile";
+            this.repositoryDB3TFile.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -337,16 +347,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Дата";
             // 
-            // repositoryDB3TFile
-            // 
-            this.repositoryDB3TFile.DataSetName = "RepositoryDB3TFile";
-            this.repositoryDB3TFile.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tFileBindingSource1
-            // 
-            this.tFileBindingSource1.DataMember = "TFile";
-            this.tFileBindingSource1.DataSource = this.repositoryDB3TFile;
-            // 
             // tFileTableAdapter1
             // 
             this.tFileTableAdapter1.ClearBeforeFill = true;
@@ -406,7 +406,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 532);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.FileGrid);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.groupBox2);
@@ -416,14 +416,14 @@
             this.Load += new System.EventHandler(this.SearchForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FileGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFile)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,7 +436,7 @@
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView FileGrid;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbRtf;
         private System.Windows.Forms.RadioButton rbTxt;
