@@ -83,44 +83,44 @@ namespace Treeview
         //}
 
 
-        ////Фильтр по размеру файла
-        //private void btnSizeFilter_Click(object sender, EventArgs e)
-        //{
-        //    tFileBindingSource1.Filter = null;
-        //    try
-        //    {
-        //        if (txtMinSize.Text != "" && txtMaxSize.Text != "") //оба заполнены
-        //        {
-        //            tFileBindingSource1.Filter = null;
-        //            this.tFileBindingSource1.Filter = "size >= '" + int.Parse(txtMinSize.Text) + "'";
-        //            this.tFileBindingSource1.Filter = "size <= '" + int.Parse(txtMaxSize.Text) + "'";
-        //        }
-        //        else if (txtMinSize.Text == "" && txtMaxSize.Text == "") //оба пустые 
-        //        {
-        //            MessageBox.Show("Поля min и max размер не заполнены");
-        //        }
-        //        else if (txtMinSize.Text != "" && txtMaxSize.Text == "") //заполнен только min
-        //        {
-        //            tFileBindingSource1.Filter = null;
-        //            this.tFileBindingSource1.Filter = "size >= '" + int.Parse(txtMinSize.Text) + "'";
-        //        }
-        //        else if (txtMaxSize.Text != "" && txtMinSize.Text == "") //заполнен только max
-        //        {
-        //            tFileBindingSource1.Filter = null;
-        //            this.tFileBindingSource1.Filter = "size <= '" + int.Parse(txtMaxSize.Text) + "'";
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-        //        //Фильтр по дате
-        //        private void btnDate_Click(object sender, EventArgs e)
-        //        {
-        //            tFileBindingSource1.Filter = string.Format("Date >= #{0:MM.dd.yyyy} 00:00:00# AND Date <= #{1:MM.dd.yyyy} 23:59:59#"
-        //, dateTimePicker1.Value, dateTimePicker2.Value);
-        //        }
+        //Фильтр по размеру файла
+        private void btnSizeFilter_Click(object sender, EventArgs e)
+        {
+            tFileBindingSource1.Filter = null;
+            try
+            {
+                if (txtMinSize.Text != "" && txtMaxSize.Text != "") //оба заполнены
+                {
+                    tFileBindingSource1.Filter = null;
+                    this.tFileBindingSource1.Filter = "size >= '" + int.Parse(txtMinSize.Text) + "'";
+                    this.tFileBindingSource1.Filter = "size <= '" + int.Parse(txtMaxSize.Text) + "'";
+                }
+                else if (txtMinSize.Text == "" && txtMaxSize.Text == "") //оба пустые 
+                {
+                    MessageBox.Show("Поля min и max размер не заполнены");
+                }
+                else if (txtMinSize.Text != "" && txtMaxSize.Text == "") //заполнен только min
+                {
+                    tFileBindingSource1.Filter = null;
+                    this.tFileBindingSource1.Filter = "size >= '" + int.Parse(txtMinSize.Text) + "'";
+                }
+                else if (txtMaxSize.Text != "" && txtMinSize.Text == "") //заполнен только max
+                {
+                    tFileBindingSource1.Filter = null;
+                    this.tFileBindingSource1.Filter = "size <= '" + int.Parse(txtMaxSize.Text) + "'";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+//        //Фильтр по дате
+//        private void btnDate_Click(object sender, EventArgs e)
+//        {
+//            tFileBindingSource1.Filter = string.Format("Date >= #{0:MM.dd.yyyy} 00:00:00# AND Date <= #{1:MM.dd.yyyy} 23:59:59#"
+//, dateTimePicker1.Value, dateTimePicker2.Value);
+//        }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -184,9 +184,6 @@ namespace Treeview
             //}
 
 
-
-
-
             //string selectString =
             //        "Filecontent Like '%" + txtSearch.Text.Trim() + "%'";
 
@@ -235,77 +232,13 @@ namespace Treeview
         }
 
         // ---Фильтр по формату---
-        //сокращенная версия для чекбокса
-        //private void cbDoc_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    if (cbDoc.Checked)
-        //    {
-        //        DataSet ds = new DataSet();
-        //        SqlConnection con = new SqlConnection(CONNECTION_STRING);
-        //        SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='rtf'", con);
-        //        da.Fill(ds, "TFile");
-        //        dataGridView1.DataSource = ds.Tables["TFile"];
-        //    }
-        //}
-
-        //  по одному из форматов
-        //private void cbDoc_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    switch (cbDoc.CheckState)
-        //    {
-        //        case CheckState.Checked:
-        //            DataSet ds = new DataSet();
-        //            SqlConnection con = new SqlConnection(CONNECTION_STRING);
-        //            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc'", con);
-        //            da.Fill(ds, "TFile");
-        //            dgvTFile.DataSource = ds.Tables["TFile"];
-        //            break;
-        //        case CheckState.Unchecked:
-        //            FillDgv();
-        //            break;
-        //        case CheckState.Indeterminate:
-        //            // Code for indeterminate state.
-        //            break;
-        //    }
-        //}
-
-
-        //private void cbDoc_Click(object sender, EventArgs e)
-        //{
-        //    if ((cbDoc.Checked == true) && (cbDocx.Checked == true))
-        //    {
-        //            DataSet ds = new DataSet();
-        //            SqlConnection con = new SqlConnection(CONNECTION_STRING);
-        //            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' and type='docx'", con);
-        //            da.Fill(ds, "TFile");
-        //            dgvTFile.DataSource = ds.Tables["TFile"];
-        //    }
-        //        //else if (cbTxt.Checked == true) //doc и txt
-        //        //{
-        //        //    DataSet ds = new DataSet();
-        //        //    SqlConnection con = new SqlConnection(CONNECTION_STRING);
-        //        //    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' and type='txt'", con);
-        //        //    da.Fill(ds, "TFile");
-        //        //    dgvTFile.DataSource = ds.Tables["TFile"];
-        //        //}
-        //        //else if (cbTxt.Checked == true) //doc и rtf
-        //        //{
-        //        //    DataSet ds = new DataSet();
-        //        //    SqlConnection con = new SqlConnection(CONNECTION_STRING);
-        //        //    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' and type='rtf'", con);
-        //        //    da.Fill(ds, "TFile");
-        //        //    dgvTFile.DataSource = ds.Tables["TFile"];
-        //        //}
-
-        //    }
-
         private void btnType_Click(object sender, EventArgs e)
         {
+            DataSet ds = new DataSet();
+            SqlConnection con = new SqlConnection(CONNECTION_STRING);
             //выбран 1 чекбокс
             if (cbDoc.Checked == true)
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -313,8 +246,6 @@ namespace Treeview
 
             if (cbDocx.Checked == true)
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -322,8 +253,6 @@ namespace Treeview
 
             if (cbTxt.Checked == true)
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='txt'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -331,8 +260,6 @@ namespace Treeview
 
             if (cbRtf.Checked == true)
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -342,8 +269,6 @@ namespace Treeview
                 //doc и docx
             if ((cbDoc.Checked == true) && (cbDocx.Checked == true))
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -351,8 +276,6 @@ namespace Treeview
                 //doc и txt
             if ((cbDoc.Checked == true) && (cbTxt.Checked == true))
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='txt'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -361,8 +284,6 @@ namespace Treeview
                 //doc и rtf
             if ((cbDoc.Checked == true) && (cbRtf.Checked == true))
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -370,8 +291,6 @@ namespace Treeview
                 //docx и rtf
             if ((cbDocx.Checked == true) && (cbRtf.Checked == true))
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -379,8 +298,6 @@ namespace Treeview
                 //docx и txt
             if ((cbDocx.Checked == true) && (cbTxt.Checked == true))
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx' OR type='txt'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -388,8 +305,6 @@ namespace Treeview
                 //rtf и txt
             if ((cbRtf.Checked == true) && (cbTxt.Checked == true))
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='rtf' OR type='txt'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -399,8 +314,6 @@ namespace Treeview
                 //doc, docx, txt
             if ((cbDoc.Checked == true) && (cbDocx.Checked == true) && (cbTxt.Checked == true))
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx' OR type='txt'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -408,8 +321,6 @@ namespace Treeview
                 //doc, docx, rtf
             if ((cbDoc.Checked == true) && (cbDocx.Checked == true) && (cbRtf.Checked == true))
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -417,8 +328,6 @@ namespace Treeview
                 //docx, txt, rtf
             if ((cbDocx.Checked == true) && (cbTxt.Checked == true) && (cbRtf.Checked == true))
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx' OR type='txt' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -426,8 +335,6 @@ namespace Treeview
                 //doc, txt, rtf
             if ((cbDoc.Checked == true) && (cbTxt.Checked == true) && (cbRtf.Checked == true))
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='txt' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
@@ -435,8 +342,6 @@ namespace Treeview
             //4 чекбокса
             if ((cbDoc.Checked == true) && (cbDocx.Checked == true) && (cbTxt.Checked == true) && (cbRtf.Checked == true))
             {
-                DataSet ds = new DataSet();
-                SqlConnection con = new SqlConnection(CONNECTION_STRING);
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx' OR type='txt' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
