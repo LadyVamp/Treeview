@@ -39,6 +39,7 @@
             this.tFileBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryDB3TFile = new WindowsFormsApplication370.RepositoryDB3TFile();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSizeFilter = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaxSize = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,8 +48,10 @@
             this.txtMinSize = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.btnDate = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnDateFilter = new System.Windows.Forms.Button();
+            this.cbDate2 = new System.Windows.Forms.CheckBox();
+            this.cbDate1 = new System.Windows.Forms.CheckBox();
             this.tFileTableAdapter1 = new WindowsFormsApplication370.RepositoryDB3TFileTableAdapters.TFileTableAdapter();
             this.cbDoc = new System.Windows.Forms.CheckBox();
             this.cbDocx = new System.Windows.Forms.CheckBox();
@@ -57,7 +60,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnType = new System.Windows.Forms.Button();
             this.btnFill = new System.Windows.Forms.Button();
-            this.btnSizeFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTFile)).BeginInit();
@@ -157,12 +159,22 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtMinSize);
-            this.groupBox2.Location = new System.Drawing.Point(288, 94);
+            this.groupBox2.Location = new System.Drawing.Point(319, 94);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(248, 107);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Размер";
+            // 
+            // btnSizeFilter
+            // 
+            this.btnSizeFilter.Location = new System.Drawing.Point(139, 24);
+            this.btnSizeFilter.Name = "btnSizeFilter";
+            this.btnSizeFilter.Size = new System.Drawing.Size(103, 30);
+            this.btnSizeFilter.TabIndex = 6;
+            this.btnSizeFilter.Text = "Применить";
+            this.btnSizeFilter.UseVisualStyleBackColor = true;
+            this.btnSizeFilter.Click += new System.EventHandler(this.btnSizeFilter_Click);
             // 
             // label4
             // 
@@ -216,38 +228,59 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(18, 23);
+            this.dateTimePicker1.Location = new System.Drawing.Point(6, 24);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(187, 22);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(18, 54);
+            this.dateTimePicker2.Location = new System.Drawing.Point(6, 51);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(187, 22);
             this.dateTimePicker2.TabIndex = 9;
-            // 
-            // btnDate
-            // 
-            this.btnDate.Location = new System.Drawing.Point(224, 20);
-            this.btnDate.Name = "btnDate";
-            this.btnDate.Size = new System.Drawing.Size(133, 34);
-            this.btnDate.TabIndex = 10;
-            this.btnDate.Text = "Фильтр по дате";
-            this.btnDate.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnDate);
+            this.groupBox3.Controls.Add(this.btnDateFilter);
+            this.groupBox3.Controls.Add(this.cbDate2);
+            this.groupBox3.Controls.Add(this.cbDate1);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Location = new System.Drawing.Point(559, 94);
+            this.groupBox3.Location = new System.Drawing.Point(599, 94);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(383, 107);
+            this.groupBox3.Size = new System.Drawing.Size(349, 107);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Дата";
+            // 
+            // btnDateFilter
+            // 
+            this.btnDateFilter.Location = new System.Drawing.Point(232, 22);
+            this.btnDateFilter.Name = "btnDateFilter";
+            this.btnDateFilter.Size = new System.Drawing.Size(106, 29);
+            this.btnDateFilter.TabIndex = 13;
+            this.btnDateFilter.Text = "Применить";
+            this.btnDateFilter.UseVisualStyleBackColor = true;
+            this.btnDateFilter.Click += new System.EventHandler(this.btnDateFilter_Click);
+            // 
+            // cbDate2
+            // 
+            this.cbDate2.AutoSize = true;
+            this.cbDate2.Location = new System.Drawing.Point(199, 51);
+            this.cbDate2.Name = "cbDate2";
+            this.cbDate2.Size = new System.Drawing.Size(18, 17);
+            this.cbDate2.TabIndex = 12;
+            this.cbDate2.UseVisualStyleBackColor = true;
+            // 
+            // cbDate1
+            // 
+            this.cbDate1.AutoSize = true;
+            this.cbDate1.Location = new System.Drawing.Point(199, 24);
+            this.cbDate1.Name = "cbDate1";
+            this.cbDate1.Size = new System.Drawing.Size(18, 17);
+            this.cbDate1.TabIndex = 11;
+            this.cbDate1.UseVisualStyleBackColor = true;
             // 
             // tFileTableAdapter1
             // 
@@ -327,16 +360,6 @@
             this.btnFill.UseVisualStyleBackColor = true;
             this.btnFill.Click += new System.EventHandler(this.btnFill_Click);
             // 
-            // btnSizeFilter
-            // 
-            this.btnSizeFilter.Location = new System.Drawing.Point(139, 24);
-            this.btnSizeFilter.Name = "btnSizeFilter";
-            this.btnSizeFilter.Size = new System.Drawing.Size(103, 30);
-            this.btnSizeFilter.TabIndex = 6;
-            this.btnSizeFilter.Text = "Применить";
-            this.btnSizeFilter.UseVisualStyleBackColor = true;
-            this.btnSizeFilter.Click += new System.EventHandler(this.btnSizeFilter_Click);
-            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -360,6 +383,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -384,7 +408,6 @@
         private System.Windows.Forms.TextBox txtMinSize;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button btnDate;
         private System.Windows.Forms.GroupBox groupBox3;
         private WindowsFormsApplication370.RepositoryDB3TFile repositoryDB3TFile;
         private System.Windows.Forms.BindingSource tFileBindingSource1;
@@ -397,5 +420,8 @@
         private System.Windows.Forms.Button btnFill;
         private System.Windows.Forms.Button btnType;
         private System.Windows.Forms.Button btnSizeFilter;
+        private System.Windows.Forms.CheckBox cbDate2;
+        private System.Windows.Forms.CheckBox cbDate1;
+        private System.Windows.Forms.Button btnDateFilter;
     }
 }

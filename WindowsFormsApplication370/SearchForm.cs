@@ -317,6 +317,7 @@ namespace Treeview
             }
         }
 
+
         // ---Фильтр по размеру---
         private void btnSizeFilter_Click(object sender, EventArgs e)
         {
@@ -343,7 +344,37 @@ namespace Treeview
         }
 
 
+        //---Фильтр по дате---
+        private void btnDateFilter_Click(object sender, EventArgs e)
+        {
+            //Select* From TFile Where Date >= '2017-11-29' AND Date <= '2017-12-2'
+            DataSet ds = new DataSet();
+            SqlConnection con = new SqlConnection(CONNECTION_STRING);
+
+            if ((cbDate1.Checked == true)&& (cbDate2.Checked == false))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE Date>='" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+            if ((cbDate2.Checked == true) && (cbDate1.Checked == false))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE Date<='" + dateTimePicker2.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+            if ((cbDate1.Checked == true) && (cbDate2.Checked == true))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE Date>='" + dateTimePicker1.Value.Date + "' AND date<='" + dateTimePicker2.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+            if ((cbDate1.Checked == false) && (cbDate2.Checked == false))
+            {
+                MessageBox.Show("Выберите дату(ы) и поставьте галочку(и)");
+            }
+        }
 
 
-    }
+}
 }
