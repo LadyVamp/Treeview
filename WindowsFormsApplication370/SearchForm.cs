@@ -82,122 +82,10 @@ namespace Treeview
         //    }
         //}
 
-
-        
-//        //Фильтр по дате
-//        private void btnDate_Click(object sender, EventArgs e)
-//        {
-//            tFileBindingSource1.Filter = string.Format("Date >= #{0:MM.dd.yyyy} 00:00:00# AND Date <= #{1:MM.dd.yyyy} 23:59:59#"
-//, dateTimePicker1.Value, dateTimePicker2.Value);
-//        }
-
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             (dgvTFile.DataSource as DataTable).DefaultView.RowFilter =
         String.Format("filename like '{0}%'", txtSearch.Text);
-        }
-
-
-        //типа полнотекстовый поиск (не работает)
-        //select* from TFile where CONTAINS(Filecontent, 'JS')
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            //     string selectString =
-            //"Filename Like '%" + txtSearch.Text.Trim() + "%'";
-
-            //     DataRowCollection allRows =
-            //         ((DataTable)dataGridView1.DataSource).Rows;
-
-            //     DataRow[] searchedRows =
-            //         ((DataTable)dataGridView1.DataSource).
-            //             Select(selectString);
-
-            //     int rowIndex = allRows.IndexOf(searchedRows[0]);
-
-            //     dataGridView1.CurrentCell =
-            //         dataGridView1[0, rowIndex];
-
-            for (int i = 0; i < dgvTFile.RowCount; i++)
-                if (dgvTFile[1, i].FormattedValue.ToString().
-                    Contains(txtSearch.Text.Trim()))
-                {
-                    dgvTFile.CurrentCell = dgvTFile[0, i];
-                    return;
-                }
-
-
-            //int findrow = 0;
-            //for (int col = 0; col < dataGridView1.Columns.Count; col++) //Table0 ака DataGridView
-            //{
-            //    for (int row = findrow; row < dataGridView1.Rows.Count; row++)
-            //        if (dataGridView1[col, row].Value.ToString() == txtSearch.Text)
-            //        {
-            //            dataGridView1.CurrentCell = dataGridView1[col, row];
-            //            findrow = dataGridView1.CurrentRow.Index + 1;
-            //            return;
-            //        }
-            //}
-
-
-
-            //for (int i = 0; i < dataGridView1.RowCount; i++)
-            //{
-            //    dataGridView1.Rows[i].Selected = false;
-            //    for (int j = 0; j < dataGridView1.ColumnCount; j++)
-            //        if (dataGridView1.Rows[i].Cells[j].Value != null)
-            //            if (dataGridView1.Rows[i].Cells[j].Value.ToString().ToLower().Contains(txtSearch.Text.ToLower()))
-            //            {
-            //                dataGridView1.Rows[i].Selected = true;
-            //                break;
-            //            }
-            //}
-
-
-            //string selectString =
-            //        "Filecontent Like '%" + txtSearch.Text.Trim() + "%'";
-
-            //DataRowCollection allRows =
-            //    ((DataTable)FileGrid.DataSource).Rows;
-
-            //DataRow[] searchedRows =
-            //    ((DataTable)FileGrid.DataSource).
-            //        Select(selectString);
-
-            //int rowIndex = allRows.IndexOf(searchedRows[0]);
-
-            //FileGrid.CurrentCell =
-            //    FileGrid[0, rowIndex];
-
-            //for (int i = 0; i < FileGrid.RowCount; i++)
-            //{
-            //    FileGrid.Rows[i].Selected = false;
-            //    for (int j = 0; j < FileGrid.ColumnCount; j++)
-            //        if (FileGrid.Rows[i].Cells[j].Value != null)
-            //            if (FileGrid.Rows[i].Cells[j].Value.ToString().Contains(txtSearch.Text))
-            //            {
-            //                FileGrid.Rows[i].Selected = true;
-            //                break;
-            //            }
-            //}
-
-
-            //for (int i = 0; i < FileGrid.RowCount; i++)
-            //{
-            //    FileGrid.Rows[i].Selected = false;
-            //    for (int j = 0; j < FileGrid.ColumnCount; j++)
-            //        if (FileGrid.Rows[i].Cells[j].Value != null)
-            //            if (FileGrid.Rows[i].Cells[j].Value.ToString().Contains(txtSearch.Text))
-            //            {
-            //                DataGridViewCell cell = FileGrid.Rows[i].Cells[j];
-
-            //                FileGrid.Rows[i].Selected = true;
-            //                FileGrid.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-            //                FileGrid.CurrentCell = cell;
-            //                break;
-            //            }
-            //}
-
-
         }
 
         // ---Фильтр по формату---
@@ -212,21 +100,18 @@ namespace Treeview
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-
             if (cbDocx.Checked == true)
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-
             if (cbTxt.Checked == true)
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='txt'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-
             if (cbRtf.Checked == true)
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='rtf'", con);
@@ -375,6 +260,22 @@ namespace Treeview
             }
         }
 
-
-}
+        //---Типа полнотекстовый поиск---
+        //выделит строку, где упоминается слово из текстбокса
+        //select * from TFile where CONTAINS(Filecontent, 'JS')
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgvTFile.RowCount; i++)
+            {
+                dgvTFile.Rows[i].Selected = false;
+                for (int j = 0; j < dgvTFile.ColumnCount; j++)
+                    if (dgvTFile.Rows[i].Cells[j].Value != null)
+                        if (dgvTFile.Rows[i].Cells[j].Value.ToString().ToLower().Contains(txtSearch.Text.ToLower()))
+                        {
+                            dgvTFile.Rows[i].Selected = true;
+                            break;
+                        }
+            }
+        }
+    }
 }

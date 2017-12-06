@@ -33,7 +33,6 @@
             this.repositoryDB2TFileWithoutId = new WindowsFormsApplication370.RepositoryDB2TFileWithoutId();
             this.tFileTableAdapter = new WindowsFormsApplication370.RepositoryDB2TFileWithoutIdTableAdapters.TFileTableAdapter();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvTFile = new System.Windows.Forms.DataGridView();
             this.tFileBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -60,6 +59,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnType = new System.Windows.Forms.Button();
             this.btnFill = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTFile)).BeginInit();
@@ -114,15 +114,6 @@
             this.metroTextBox1.UseStyleColors = true;
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(331, 35);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(153, 30);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Поиск по тексту";
-            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
@@ -360,16 +351,26 @@
             this.btnFill.UseVisualStyleBackColor = true;
             this.btnFill.Click += new System.EventHandler(this.btnFill_Click);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(331, 35);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(186, 30);
+            this.btnSearch.TabIndex = 17;
+            this.btnSearch.Text = "Поиск по тексту";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 532);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnFill);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvTFile);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Name = "SearchForm";
@@ -396,7 +397,6 @@
         private System.Windows.Forms.BindingSource tFileBindingSource;
         private WindowsFormsApplication370.RepositoryDB2TFileWithoutIdTableAdapters.TFileTableAdapter tFileTableAdapter;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dgvTFile;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -423,5 +423,6 @@
         private System.Windows.Forms.CheckBox cbDate2;
         private System.Windows.Forms.CheckBox cbDate1;
         private System.Windows.Forms.Button btnDateFilter;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
