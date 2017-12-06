@@ -27,3 +27,4 @@ C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview_old\WindowsFormsAp
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview_old\WindowsFormsApplication370\obj\Debug\WindowsFormsApplication370.pdb
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.SearchForm.resources
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\bin\Debug\MetroFramework.dll
+C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.ContentForm.resources

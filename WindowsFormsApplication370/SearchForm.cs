@@ -277,5 +277,34 @@ namespace Treeview
                         }
             }
         }
+
+        // TODO
+        //Даблклик по ячейке открывает текст статьи
+        //private void dgvTFile_CellContentDoubleClick(object sender, EventArgs e)
+        private void dgvTFile_CellMouseClick(object sender, EventArgs e)
+        {
+            //ContentForm frm = new ContentForm(); //passing id into constructor of the new form
+            //frm.Show();
+
+            //var form = new ContentForm();
+            //if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //{
+            //}
+            dgvTFile.CurrentCell.Style.BackColor = Color.Red;
+            //даже перекрашивание не работает o_O
+
+        }
+
+        //private void dgvTFile_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    //string familiya = "";
+        //    //string imya = "";
+        //    //string ochestvo = "";
+        //    //imya = dgvTFile.Rows[dgvTFile.CurrentRow.Index].Cells[0].Value.ToString();
+        //    //familiya = dgvTFile.Rows[dgvTFile.CurrentRow.Index].Cells[1].Value.ToString();
+        //    //ochestvo = dgvTFile.Rows[dgvTFile.CurrentRow.Index].Cells[2].Value.ToString();
+        //    //richTextBox1.Text = imya + "; " + familiya + "; " + ochestvo;
+        //}
+
     }
 }

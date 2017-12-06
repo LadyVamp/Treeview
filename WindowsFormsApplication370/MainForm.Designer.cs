@@ -53,6 +53,7 @@
             this.ftMain.ShowExpandBoxes = true;
             this.ftMain.Size = new System.Drawing.Size(488, 541);
             this.ftMain.TabIndex = 1;
+            //this.ftMain.NodeChildrenNeeded += new System.EventHandler<FastTreeNS.NodeChildrenNeededEventArgs>(this.ftMain_NodeChildrenNeeded);
             this.ftMain.DoubleClick += new System.EventHandler(this.ftMain_DoubleClick);
             // 
             // btnOpenSearchForm

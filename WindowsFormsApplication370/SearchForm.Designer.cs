@@ -128,7 +128,7 @@
             this.dgvTFile.Location = new System.Drawing.Point(12, 233);
             this.dgvTFile.Name = "dgvTFile";
             this.dgvTFile.RowTemplate.Height = 24;
-            this.dgvTFile.Size = new System.Drawing.Size(936, 262);
+            this.dgvTFile.Size = new System.Drawing.Size(936, 271);
             this.dgvTFile.TabIndex = 4;
             // 
             // tFileBindingSource1
@@ -150,7 +150,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtMinSize);
-            this.groupBox2.Location = new System.Drawing.Point(319, 94);
+            this.groupBox2.Location = new System.Drawing.Point(310, 94);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(248, 107);
             this.groupBox2.TabIndex = 6;
@@ -324,7 +324,7 @@
             this.groupBox1.Controls.Add(this.cbRtf);
             this.groupBox1.Controls.Add(this.cbDocx);
             this.groupBox1.Controls.Add(this.cbTxt);
-            this.groupBox1.Location = new System.Drawing.Point(27, 94);
+            this.groupBox1.Location = new System.Drawing.Point(12, 94);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(255, 107);
             this.groupBox1.TabIndex = 5;

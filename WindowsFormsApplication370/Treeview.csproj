@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContentForm.Designer.cs">
+      <DependentUpon>ContentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FieldPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     <Compile Include="SearchForm.Designer.cs">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ContentForm.resx">
+      <DependentUpon>ContentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FieldPanel.resx">
       <DependentUpon>FieldPanel.cs</DependentUpon>
     </EmbeddedResource>
