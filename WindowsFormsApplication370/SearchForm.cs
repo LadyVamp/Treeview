@@ -83,38 +83,7 @@ namespace Treeview
         //}
 
 
-        //Фильтр по размеру файла
-        private void btnSizeFilter_Click(object sender, EventArgs e)
-        {
-            tFileBindingSource1.Filter = null;
-            try
-            {
-                if (txtMinSize.Text != "" && txtMaxSize.Text != "") //оба заполнены
-                {
-                    tFileBindingSource1.Filter = null;
-                    this.tFileBindingSource1.Filter = "size >= '" + int.Parse(txtMinSize.Text) + "'";
-                    this.tFileBindingSource1.Filter = "size <= '" + int.Parse(txtMaxSize.Text) + "'";
-                }
-                else if (txtMinSize.Text == "" && txtMaxSize.Text == "") //оба пустые 
-                {
-                    MessageBox.Show("Поля min и max размер не заполнены");
-                }
-                else if (txtMinSize.Text != "" && txtMaxSize.Text == "") //заполнен только min
-                {
-                    tFileBindingSource1.Filter = null;
-                    this.tFileBindingSource1.Filter = "size >= '" + int.Parse(txtMinSize.Text) + "'";
-                }
-                else if (txtMaxSize.Text != "" && txtMinSize.Text == "") //заполнен только max
-                {
-                    tFileBindingSource1.Filter = null;
-                    this.tFileBindingSource1.Filter = "size <= '" + int.Parse(txtMaxSize.Text) + "'";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 //        //Фильтр по дате
 //        private void btnDate_Click(object sender, EventArgs e)
 //        {
@@ -347,7 +316,31 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
         }
-       
+
+        // ---Фильтр по размеру---
+        private void btnSizeFilter_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection con = new SqlConnection(CONNECTION_STRING);
+            if (txtMinSize.Text != "" && txtMaxSize.Text == "") //заполнен только min 
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE size>='" + txtMinSize.Text + "'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+            if (txtMinSize.Text != "" && txtMaxSize.Text != "") //оба заполнены 
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE size>='" + txtMinSize.Text + "' AND size<='" + txtMaxSize.Text + "'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+            if (txtMaxSize.Text != "" && txtMinSize.Text == "") //заполнен только max 
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE size<='" + txtMaxSize.Text + "'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+        }
 
 
 

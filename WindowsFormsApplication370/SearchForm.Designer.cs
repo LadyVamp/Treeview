@@ -42,7 +42,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaxSize = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnSizeFilter = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMinSize = new System.Windows.Forms.TextBox();
@@ -56,8 +55,9 @@
             this.cbTxt = new System.Windows.Forms.CheckBox();
             this.cbRtf = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnFill = new System.Windows.Forms.Button();
             this.btnType = new System.Windows.Forms.Button();
+            this.btnFill = new System.Windows.Forms.Button();
+            this.btnSizeFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTFile)).BeginInit();
@@ -150,16 +150,16 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnSizeFilter);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtMaxSize);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.btnSizeFilter);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtMinSize);
             this.groupBox2.Location = new System.Drawing.Point(288, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(265, 107);
+            this.groupBox2.Size = new System.Drawing.Size(248, 107);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Размер";
@@ -188,15 +188,6 @@
             this.label3.Size = new System.Drawing.Size(24, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "кБ";
-            // 
-            // btnSizeFilter
-            // 
-            this.btnSizeFilter.Location = new System.Drawing.Point(130, 30);
-            this.btnSizeFilter.Name = "btnSizeFilter";
-            this.btnSizeFilter.Size = new System.Drawing.Size(109, 32);
-            this.btnSizeFilter.TabIndex = 7;
-            this.btnSizeFilter.Text = "Применить";
-            this.btnSizeFilter.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -316,6 +307,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Формат";
             // 
+            // btnType
+            // 
+            this.btnType.Location = new System.Drawing.Point(128, 24);
+            this.btnType.Name = "btnType";
+            this.btnType.Size = new System.Drawing.Size(110, 30);
+            this.btnType.TabIndex = 16;
+            this.btnType.Text = "Применить";
+            this.btnType.UseVisualStyleBackColor = true;
+            this.btnType.Click += new System.EventHandler(this.btnType_Click);
+            // 
             // btnFill
             // 
             this.btnFill.Location = new System.Drawing.Point(833, 35);
@@ -326,15 +327,15 @@
             this.btnFill.UseVisualStyleBackColor = true;
             this.btnFill.Click += new System.EventHandler(this.btnFill_Click);
             // 
-            // btnType
+            // btnSizeFilter
             // 
-            this.btnType.Location = new System.Drawing.Point(128, 24);
-            this.btnType.Name = "btnType";
-            this.btnType.Size = new System.Drawing.Size(110, 30);
-            this.btnType.TabIndex = 16;
-            this.btnType.Text = "Применить";
-            this.btnType.UseVisualStyleBackColor = true;
-            this.btnType.Click += new System.EventHandler(this.btnType_Click);
+            this.btnSizeFilter.Location = new System.Drawing.Point(139, 24);
+            this.btnSizeFilter.Name = "btnSizeFilter";
+            this.btnSizeFilter.Size = new System.Drawing.Size(103, 30);
+            this.btnSizeFilter.TabIndex = 6;
+            this.btnSizeFilter.Text = "Применить";
+            this.btnSizeFilter.UseVisualStyleBackColor = true;
+            this.btnSizeFilter.Click += new System.EventHandler(this.btnSizeFilter_Click);
             // 
             // SearchForm
             // 
@@ -381,7 +382,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMinSize;
-        private System.Windows.Forms.Button btnSizeFilter;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button btnDate;
@@ -396,5 +396,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnFill;
         private System.Windows.Forms.Button btnType;
+        private System.Windows.Forms.Button btnSizeFilter;
     }
 }
