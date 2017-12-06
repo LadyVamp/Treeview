@@ -57,6 +57,7 @@
             this.cbRtf = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFill = new System.Windows.Forms.Button();
+            this.btnType = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTFile)).BeginInit();
@@ -156,9 +157,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtMinSize);
-            this.groupBox2.Location = new System.Drawing.Point(246, 94);
+            this.groupBox2.Location = new System.Drawing.Point(288, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(290, 107);
+            this.groupBox2.Size = new System.Drawing.Size(265, 107);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Размер";
@@ -190,11 +191,11 @@
             // 
             // btnSizeFilter
             // 
-            this.btnSizeFilter.Location = new System.Drawing.Point(130, 27);
+            this.btnSizeFilter.Location = new System.Drawing.Point(130, 30);
             this.btnSizeFilter.Name = "btnSizeFilter";
-            this.btnSizeFilter.Size = new System.Drawing.Size(151, 33);
+            this.btnSizeFilter.Size = new System.Drawing.Size(109, 32);
             this.btnSizeFilter.TabIndex = 7;
-            this.btnSizeFilter.Text = "Применить фильтр";
+            this.btnSizeFilter.Text = "Применить";
             this.btnSizeFilter.UseVisualStyleBackColor = true;
             // 
             // label2
@@ -250,9 +251,9 @@
             this.groupBox3.Controls.Add(this.btnDate);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Location = new System.Drawing.Point(542, 94);
+            this.groupBox3.Location = new System.Drawing.Point(559, 94);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(364, 107);
+            this.groupBox3.Size = new System.Drawing.Size(383, 107);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Дата";
@@ -270,7 +271,6 @@
             this.cbDoc.TabIndex = 12;
             this.cbDoc.Text = ".doc";
             this.cbDoc.UseVisualStyleBackColor = true;
-            this.cbDoc.CheckedChanged += new System.EventHandler(this.cbDoc_CheckedChanged);
             // 
             // cbDocx
             // 
@@ -281,39 +281,37 @@
             this.cbDocx.TabIndex = 13;
             this.cbDocx.Text = ".docx";
             this.cbDocx.UseVisualStyleBackColor = true;
-            this.cbDocx.CheckedChanged += new System.EventHandler(this.cbDocx_CheckedChanged);
             // 
             // cbTxt
             // 
             this.cbTxt.AutoSize = true;
-            this.cbTxt.Location = new System.Drawing.Point(83, 31);
+            this.cbTxt.Location = new System.Drawing.Point(74, 30);
             this.cbTxt.Name = "cbTxt";
             this.cbTxt.Size = new System.Drawing.Size(48, 21);
             this.cbTxt.TabIndex = 14;
             this.cbTxt.Text = ".txt";
             this.cbTxt.UseVisualStyleBackColor = true;
-            this.cbTxt.CheckedChanged += new System.EventHandler(this.cbTxt_CheckedChanged);
             // 
             // cbRtf
             // 
             this.cbRtf.AutoSize = true;
-            this.cbRtf.Location = new System.Drawing.Point(83, 62);
+            this.cbRtf.Location = new System.Drawing.Point(75, 64);
             this.cbRtf.Name = "cbRtf";
             this.cbRtf.Size = new System.Drawing.Size(47, 21);
             this.cbRtf.TabIndex = 15;
             this.cbRtf.Text = ".rtf";
             this.cbRtf.UseVisualStyleBackColor = true;
-            this.cbRtf.CheckedChanged += new System.EventHandler(this.cbRtf_CheckedChanged);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnType);
             this.groupBox1.Controls.Add(this.cbDoc);
             this.groupBox1.Controls.Add(this.cbRtf);
             this.groupBox1.Controls.Add(this.cbDocx);
             this.groupBox1.Controls.Add(this.cbTxt);
             this.groupBox1.Location = new System.Drawing.Point(27, 94);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(170, 107);
+            this.groupBox1.Size = new System.Drawing.Size(255, 107);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Формат";
@@ -327,6 +325,16 @@
             this.btnFill.Text = "Сброс";
             this.btnFill.UseVisualStyleBackColor = true;
             this.btnFill.Click += new System.EventHandler(this.btnFill_Click);
+            // 
+            // btnType
+            // 
+            this.btnType.Location = new System.Drawing.Point(128, 24);
+            this.btnType.Name = "btnType";
+            this.btnType.Size = new System.Drawing.Size(110, 30);
+            this.btnType.TabIndex = 16;
+            this.btnType.Text = "Применить";
+            this.btnType.UseVisualStyleBackColor = true;
+            this.btnType.Click += new System.EventHandler(this.btnType_Click);
             // 
             // SearchForm
             // 
@@ -387,5 +395,6 @@
         private System.Windows.Forms.CheckBox cbRtf;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnFill;
+        private System.Windows.Forms.Button btnType;
     }
 }

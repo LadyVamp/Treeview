@@ -234,6 +234,7 @@ namespace Treeview
 
         }
 
+        // ---Фильтр по формату---
         //сокращенная версия для чекбокса
         //private void cbDoc_CheckedChanged(object sender, EventArgs e)
         //{
@@ -247,77 +248,201 @@ namespace Treeview
         //    }
         //}
 
-        private void cbDoc_CheckedChanged(object sender, EventArgs e)
+        //  по одному из форматов
+        //private void cbDoc_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    switch (cbDoc.CheckState)
+        //    {
+        //        case CheckState.Checked:
+        //            DataSet ds = new DataSet();
+        //            SqlConnection con = new SqlConnection(CONNECTION_STRING);
+        //            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc'", con);
+        //            da.Fill(ds, "TFile");
+        //            dgvTFile.DataSource = ds.Tables["TFile"];
+        //            break;
+        //        case CheckState.Unchecked:
+        //            FillDgv();
+        //            break;
+        //        case CheckState.Indeterminate:
+        //            // Code for indeterminate state.
+        //            break;
+        //    }
+        //}
+
+
+        //private void cbDoc_Click(object sender, EventArgs e)
+        //{
+        //    if ((cbDoc.Checked == true) && (cbDocx.Checked == true))
+        //    {
+        //            DataSet ds = new DataSet();
+        //            SqlConnection con = new SqlConnection(CONNECTION_STRING);
+        //            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' and type='docx'", con);
+        //            da.Fill(ds, "TFile");
+        //            dgvTFile.DataSource = ds.Tables["TFile"];
+        //    }
+        //        //else if (cbTxt.Checked == true) //doc и txt
+        //        //{
+        //        //    DataSet ds = new DataSet();
+        //        //    SqlConnection con = new SqlConnection(CONNECTION_STRING);
+        //        //    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' and type='txt'", con);
+        //        //    da.Fill(ds, "TFile");
+        //        //    dgvTFile.DataSource = ds.Tables["TFile"];
+        //        //}
+        //        //else if (cbTxt.Checked == true) //doc и rtf
+        //        //{
+        //        //    DataSet ds = new DataSet();
+        //        //    SqlConnection con = new SqlConnection(CONNECTION_STRING);
+        //        //    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' and type='rtf'", con);
+        //        //    da.Fill(ds, "TFile");
+        //        //    dgvTFile.DataSource = ds.Tables["TFile"];
+        //        //}
+
+        //    }
+
+        private void btnType_Click(object sender, EventArgs e)
         {
-            switch (cbDoc.CheckState)
+            //выбран 1 чекбокс
+            if (cbDoc.Checked == true)
             {
-                case CheckState.Checked:
-                    DataSet ds = new DataSet();
-                    SqlConnection con = new SqlConnection(CONNECTION_STRING);
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc'", con);
-                    da.Fill(ds, "TFile");
-                    dgvTFile.DataSource = ds.Tables["TFile"];
-                    break;
-                case CheckState.Unchecked:
-                    FillDgv();
-                    break;
-                case CheckState.Indeterminate:
-                    // Code for indeterminate state.
-                    break;
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            if (cbDocx.Checked == true)
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            if (cbTxt.Checked == true)
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='txt'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            if (cbRtf.Checked == true)
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='rtf'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //выбрано 2 чекбокса
+                //doc и docx
+            if ((cbDoc.Checked == true) && (cbDocx.Checked == true))
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+                //doc и txt
+            if ((cbDoc.Checked == true) && (cbTxt.Checked == true))
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='txt'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+                //doc и rtf
+            if ((cbDoc.Checked == true) && (cbRtf.Checked == true))
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='rtf'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+                //docx и rtf
+            if ((cbDocx.Checked == true) && (cbRtf.Checked == true))
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx' OR type='rtf'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+                //docx и txt
+            if ((cbDocx.Checked == true) && (cbTxt.Checked == true))
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx' OR type='txt'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+                //rtf и txt
+            if ((cbRtf.Checked == true) && (cbTxt.Checked == true))
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='rtf' OR type='txt'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //выбрано 3 чекбокса
+                //doc, docx, txt
+            if ((cbDoc.Checked == true) && (cbDocx.Checked == true) && (cbTxt.Checked == true))
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx' OR type='txt'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+                //doc, docx, rtf
+            if ((cbDoc.Checked == true) && (cbDocx.Checked == true) && (cbRtf.Checked == true))
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx' OR type='rtf'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+                //docx, txt, rtf
+            if ((cbDocx.Checked == true) && (cbTxt.Checked == true) && (cbRtf.Checked == true))
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx' OR type='txt' OR type='rtf'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+                //doc, txt, rtf
+            if ((cbDoc.Checked == true) && (cbTxt.Checked == true) && (cbRtf.Checked == true))
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='txt' OR type='rtf'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+            //4 чекбокса
+            if ((cbDoc.Checked == true) && (cbDocx.Checked == true) && (cbTxt.Checked == true) && (cbRtf.Checked == true))
+            {
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(CONNECTION_STRING);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx' OR type='txt' OR type='rtf'", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
             }
         }
-
-        private void cbDocx_CheckedChanged(object sender, EventArgs e)
-        {
-            switch (cbDocx.CheckState)
-            {
-                case CheckState.Checked:
-                    DataSet ds = new DataSet();
-                    SqlConnection con = new SqlConnection(CONNECTION_STRING);
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx'", con);
-                    da.Fill(ds, "TFile");
-                    dgvTFile.DataSource = ds.Tables["TFile"];
-                    break;
-                case CheckState.Unchecked:
-                    FillDgv();
-                    break;
-            }
-        }
-
-        private void cbTxt_CheckedChanged(object sender, EventArgs e)
-        {
-            switch (cbTxt.CheckState)
-            {
-                case CheckState.Checked:
-                    DataSet ds = new DataSet();
-                    SqlConnection con = new SqlConnection(CONNECTION_STRING);
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='txt'", con);
-                    da.Fill(ds, "TFile");
-                    dgvTFile.DataSource = ds.Tables["TFile"];
-                    break;
-                case CheckState.Unchecked:
-                    FillDgv();
-                    break;
-            }
-        }
-
-        private void cbRtf_CheckedChanged(object sender, EventArgs e)
-        {
-            switch (cbRtf.CheckState)
-            {
-                case CheckState.Checked:
-                    DataSet ds = new DataSet();
-                    SqlConnection con = new SqlConnection(CONNECTION_STRING);
-                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='rtf'", con);
-                    da.Fill(ds, "TFile");
-                    dgvTFile.DataSource = ds.Tables["TFile"];
-                    break;
-                case CheckState.Unchecked:
-                    FillDgv();
-                    break;
-            }
-        }
-
+       
 
 
 
