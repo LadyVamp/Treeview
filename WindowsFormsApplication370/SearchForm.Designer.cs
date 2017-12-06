@@ -35,7 +35,7 @@
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTFile = new System.Windows.Forms.DataGridView();
             this.tFileBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryDB3TFile = new WindowsFormsApplication370.RepositoryDB3TFile();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -55,16 +55,11 @@
             this.cbDocx = new System.Windows.Forms.CheckBox();
             this.cbTxt = new System.Windows.Forms.CheckBox();
             this.cbRtf = new System.Windows.Forms.CheckBox();
-            this.rbTxt = new System.Windows.Forms.RadioButton();
-            this.rbRtf = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbPdf = new System.Windows.Forms.RadioButton();
-            this.rbDocx = new System.Windows.Forms.RadioButton();
-            this.rbDoc = new System.Windows.Forms.RadioButton();
             this.btnFill = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFile)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -125,7 +120,6 @@
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Поиск по тексту";
             this.btnSearch.UseVisualStyleBackColor = true;
-            //this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // txtSearch
             // 
@@ -134,14 +128,14 @@
             this.txtSearch.Size = new System.Drawing.Size(313, 22);
             this.txtSearch.TabIndex = 3;
             // 
-            // dataGridView1
+            // dgvTFile
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 233);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(936, 262);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvTFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTFile.Location = new System.Drawing.Point(12, 233);
+            this.dgvTFile.Name = "dgvTFile";
+            this.dgvTFile.RowTemplate.Height = 24;
+            this.dgvTFile.Size = new System.Drawing.Size(936, 262);
+            this.dgvTFile.TabIndex = 4;
             // 
             // tFileBindingSource1
             // 
@@ -202,7 +196,6 @@
             this.btnSizeFilter.TabIndex = 7;
             this.btnSizeFilter.Text = "Применить фильтр";
             this.btnSizeFilter.UseVisualStyleBackColor = true;
-            //this.btnSizeFilter.Click += new System.EventHandler(this.btnSizeFilter_Click);
             // 
             // label2
             // 
@@ -251,7 +244,6 @@
             this.btnDate.TabIndex = 10;
             this.btnDate.Text = "Фильтр по дате";
             this.btnDate.UseVisualStyleBackColor = true;
-            //this.btnDate.Click += new System.EventHandler(this.btnDate_Click);
             // 
             // groupBox3
             // 
@@ -272,7 +264,7 @@
             // cbDoc
             // 
             this.cbDoc.AutoSize = true;
-            this.cbDoc.Location = new System.Drawing.Point(560, 35);
+            this.cbDoc.Location = new System.Drawing.Point(6, 30);
             this.cbDoc.Name = "cbDoc";
             this.cbDoc.Size = new System.Drawing.Size(57, 21);
             this.cbDoc.TabIndex = 12;
@@ -283,7 +275,7 @@
             // cbDocx
             // 
             this.cbDocx.AutoSize = true;
-            this.cbDocx.Location = new System.Drawing.Point(623, 35);
+            this.cbDocx.Location = new System.Drawing.Point(6, 64);
             this.cbDocx.Name = "cbDocx";
             this.cbDocx.Size = new System.Drawing.Size(63, 21);
             this.cbDocx.TabIndex = 13;
@@ -294,7 +286,7 @@
             // cbTxt
             // 
             this.cbTxt.AutoSize = true;
-            this.cbTxt.Location = new System.Drawing.Point(686, 35);
+            this.cbTxt.Location = new System.Drawing.Point(83, 31);
             this.cbTxt.Name = "cbTxt";
             this.cbTxt.Size = new System.Drawing.Size(48, 21);
             this.cbTxt.TabIndex = 14;
@@ -305,7 +297,7 @@
             // cbRtf
             // 
             this.cbRtf.AutoSize = true;
-            this.cbRtf.Location = new System.Drawing.Point(749, 35);
+            this.cbRtf.Location = new System.Drawing.Point(83, 62);
             this.cbRtf.Name = "cbRtf";
             this.cbRtf.Size = new System.Drawing.Size(47, 21);
             this.cbRtf.TabIndex = 15;
@@ -313,74 +305,18 @@
             this.cbRtf.UseVisualStyleBackColor = true;
             this.cbRtf.CheckedChanged += new System.EventHandler(this.cbRtf_CheckedChanged);
             // 
-            // rbTxt
-            // 
-            this.rbTxt.AutoSize = true;
-            this.rbTxt.Location = new System.Drawing.Point(106, 21);
-            this.rbTxt.Name = "rbTxt";
-            this.rbTxt.Size = new System.Drawing.Size(43, 21);
-            this.rbTxt.TabIndex = 2;
-            this.rbTxt.TabStop = true;
-            this.rbTxt.Text = "txt";
-            this.rbTxt.UseVisualStyleBackColor = true;
-            // 
-            // rbRtf
-            // 
-            this.rbRtf.AutoSize = true;
-            this.rbRtf.Location = new System.Drawing.Point(107, 48);
-            this.rbRtf.Name = "rbRtf";
-            this.rbRtf.Size = new System.Drawing.Size(42, 21);
-            this.rbRtf.TabIndex = 3;
-            this.rbRtf.TabStop = true;
-            this.rbRtf.Text = "rtf";
-            this.rbRtf.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbPdf);
-            this.groupBox1.Controls.Add(this.rbRtf);
-            this.groupBox1.Controls.Add(this.rbTxt);
-            this.groupBox1.Controls.Add(this.rbDocx);
-            this.groupBox1.Controls.Add(this.rbDoc);
+            this.groupBox1.Controls.Add(this.cbDoc);
+            this.groupBox1.Controls.Add(this.cbRtf);
+            this.groupBox1.Controls.Add(this.cbDocx);
+            this.groupBox1.Controls.Add(this.cbTxt);
             this.groupBox1.Location = new System.Drawing.Point(27, 94);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(181, 107);
+            this.groupBox1.Size = new System.Drawing.Size(170, 107);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Формат";
-            // 
-            // rbPdf
-            // 
-            this.rbPdf.AutoSize = true;
-            this.rbPdf.Location = new System.Drawing.Point(19, 75);
-            this.rbPdf.Name = "rbPdf";
-            this.rbPdf.Size = new System.Drawing.Size(49, 21);
-            this.rbPdf.TabIndex = 4;
-            this.rbPdf.TabStop = true;
-            this.rbPdf.Text = "pdf";
-            this.rbPdf.UseVisualStyleBackColor = true;
-            // 
-            // rbDocx
-            // 
-            this.rbDocx.AutoSize = true;
-            this.rbDocx.Location = new System.Drawing.Point(19, 48);
-            this.rbDocx.Name = "rbDocx";
-            this.rbDocx.Size = new System.Drawing.Size(58, 21);
-            this.rbDocx.TabIndex = 1;
-            this.rbDocx.TabStop = true;
-            this.rbDocx.Text = "docx";
-            this.rbDocx.UseVisualStyleBackColor = true;
-            // 
-            // rbDoc
-            // 
-            this.rbDoc.AutoSize = true;
-            this.rbDoc.Location = new System.Drawing.Point(19, 21);
-            this.rbDoc.Name = "rbDoc";
-            this.rbDoc.Size = new System.Drawing.Size(52, 21);
-            this.rbDoc.TabIndex = 0;
-            this.rbDoc.TabStop = true;
-            this.rbDoc.Text = "doc";
-            this.rbDoc.UseVisualStyleBackColor = true;
             // 
             // btnFill
             // 
@@ -398,12 +334,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 532);
             this.Controls.Add(this.btnFill);
-            this.Controls.Add(this.cbRtf);
-            this.Controls.Add(this.cbTxt);
-            this.Controls.Add(this.cbDocx);
-            this.Controls.Add(this.cbDoc);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTFile);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.groupBox2);
@@ -413,7 +345,7 @@
             this.Load += new System.EventHandler(this.SearchForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFile)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -433,7 +365,7 @@
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTFile;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaxSize;
@@ -453,12 +385,7 @@
         private System.Windows.Forms.CheckBox cbDocx;
         private System.Windows.Forms.CheckBox cbTxt;
         private System.Windows.Forms.CheckBox cbRtf;
-        private System.Windows.Forms.RadioButton rbTxt;
-        private System.Windows.Forms.RadioButton rbRtf;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbPdf;
-        private System.Windows.Forms.RadioButton rbDocx;
-        private System.Windows.Forms.RadioButton rbDoc;
         private System.Windows.Forms.Button btnFill;
     }
 }
