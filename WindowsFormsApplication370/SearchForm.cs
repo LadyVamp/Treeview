@@ -226,6 +226,10 @@ namespace Treeview
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
+            if (txtMaxSize.Text == "" && txtMinSize.Text == "")
+            {
+                MessageBox.Show("Введите минимальный и (или) максимальный размер файла");
+            }
         }
 
 
