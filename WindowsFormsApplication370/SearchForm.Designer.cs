@@ -34,7 +34,6 @@
             this.tFileTableAdapter = new WindowsFormsApplication370.RepositoryDB2TFileWithoutIdTableAdapters.TFileTableAdapter();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.dgvTFile = new System.Windows.Forms.DataGridView();
             this.tFileBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryDB3TFile = new WindowsFormsApplication370.RepositoryDB3TFile();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -60,14 +59,15 @@
             this.btnType = new System.Windows.Forms.Button();
             this.btnFill = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.dgvTFile = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFile)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTFile)).BeginInit();
             this.SuspendLayout();
             // 
             // tFileBindingSource
@@ -121,15 +121,6 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(313, 22);
             this.txtSearch.TabIndex = 3;
-            // 
-            // dgvTFile
-            // 
-            this.dgvTFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTFile.Location = new System.Drawing.Point(12, 233);
-            this.dgvTFile.Name = "dgvTFile";
-            this.dgvTFile.RowTemplate.Height = 24;
-            this.dgvTFile.Size = new System.Drawing.Size(936, 271);
-            this.dgvTFile.TabIndex = 4;
             // 
             // tFileBindingSource1
             // 
@@ -361,15 +352,26 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // dgvTFile
+            // 
+            this.dgvTFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTFile.Location = new System.Drawing.Point(12, 207);
+            this.dgvTFile.Name = "dgvTFile";
+            this.dgvTFile.RowTemplate.Height = 24;
+            this.dgvTFile.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTFile.Size = new System.Drawing.Size(936, 319);
+            this.dgvTFile.TabIndex = 18;
+            this.dgvTFile.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTFile_CellDoubleClick);
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 532);
+            this.Controls.Add(this.dgvTFile);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnFill);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgvTFile);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
@@ -378,7 +380,6 @@
             this.Load += new System.EventHandler(this.SearchForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFile)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -387,6 +388,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTFile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,7 +400,6 @@
         private WindowsFormsApplication370.RepositoryDB2TFileWithoutIdTableAdapters.TFileTableAdapter tFileTableAdapter;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dgvTFile;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaxSize;
@@ -424,5 +425,6 @@
         private System.Windows.Forms.CheckBox cbDate1;
         private System.Windows.Forms.Button btnDateFilter;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridView dgvTFile;
     }
 }

@@ -285,29 +285,50 @@ namespace Treeview
         // TODO
         //Даблклик по ячейке открывает текст статьи
         //private void dgvTFile_CellContentDoubleClick(object sender, EventArgs e)
-        private void dgvTFile_CellDoubleClick(object sender, EventArgs e)
+        //private void dgvTFile_CellDoubleClick(object sender, EventArgs e)
+        //{
+        //    //ContentForm frm = new ContentForm(); //passing id into constructor of the new form
+        //    //frm.Show();
+
+        //    MessageBox.Show("Test!!!");
+
+        //    //var form = new ContentForm();
+        //    //if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+        //    //{
+        //    //}
+        //    //dgvTFile.CurrentCell.Style.BackColor = Color.Red;
+        //    //даже перекрашивание не работает o_O
+
+        //}
+
+        private void dgvTFile_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //ContentForm frm = new ContentForm(); //passing id into constructor of the new form
+            ContentForm frm = new ContentForm(); //passing id into constructor of the new form
             //frm.Show();
+            frm.txtID.Text = this.dgvTFile.CurrentRow.Cells[0].Value.ToString();
+            frm.txtFilename.Text = this.dgvTFile.CurrentRow.Cells[1].Value.ToString();
+            frm.txtType.Text = this.dgvTFile.CurrentRow.Cells[2].Value.ToString();
+            frm.txtDate.Text = this.dgvTFile.CurrentRow.Cells[3].Value.ToString();
+            frm.txtSize.Text = this.dgvTFile.CurrentRow.Cells[4].Value.ToString();
+            frm.txtKeywords.Text = this.dgvTFile.CurrentRow.Cells[5].Value.ToString();
+            frm.txtCatID.Text = this.dgvTFile.CurrentRow.Cells[7].Value.ToString();
+            frm.rtbFilecontent.Text = this.dgvTFile.CurrentRow.Cells[6].Value.ToString();
 
-            MessageBox.Show("Test!!!");
+            frm.ShowDialog();
 
-            //var form = new ContentForm();
-            //if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            //{
-            //}
-            //dgvTFile.CurrentCell.Style.BackColor = Color.Red;
-            //даже перекрашивание не работает o_O
+
 
         }
 
-        private void dgvTFile_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if ((((DataGridView)sender).Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewButtonCell) != null)
-            {
-                MessageBox.Show("ОК");
-            }
-        }
+        //private void dgvTFile_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if ((((DataGridView)sender).Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewButtonCell) != null)
+        //    {
+        //        MessageBox.Show("ОК");
+        //    }
+        //}
+
+
 
         //private void dgvTFile_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         //{
