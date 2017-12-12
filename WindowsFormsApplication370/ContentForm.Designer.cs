@@ -43,7 +43,7 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtKeywords = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearchContent = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnClearHighlight = new System.Windows.Forms.Button();
@@ -169,12 +169,12 @@
             this.txtKeywords.Size = new System.Drawing.Size(272, 22);
             this.txtKeywords.TabIndex = 19;
             // 
-            // textBox1
+            // txtSearchContent
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(272, 22);
-            this.textBox1.TabIndex = 21;
+            this.txtSearchContent.Location = new System.Drawing.Point(142, 112);
+            this.txtSearchContent.Name = "txtSearchContent";
+            this.txtSearchContent.Size = new System.Drawing.Size(272, 22);
+            this.txtSearchContent.TabIndex = 21;
             // 
             // label7
             // 
@@ -212,7 +212,7 @@
             this.ClientSize = new System.Drawing.Size(834, 461);
             this.Controls.Add(this.btnClearHighlight);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearchContent);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtKeywords);
             this.Controls.Add(this.label6);
@@ -253,7 +253,7 @@
         public System.Windows.Forms.TextBox txtDate;
         public System.Windows.Forms.TextBox txtKeywords;
         public System.Windows.Forms.RichTextBox richTextBox1;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txtSearchContent;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnClearHighlight;

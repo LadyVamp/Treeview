@@ -25,7 +25,7 @@ namespace Treeview
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Regex reg = new Regex(textBox1.Text); //textBox1 - поле для ввода искомого текста
+            Regex reg = new Regex(txtSearchContent.Text); //textBox1 - поле для ввода искомого текста
             MatchCollection match = reg.Matches(richTextBox1.Text);
 
             foreach (Match mat in match)
