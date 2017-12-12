@@ -293,7 +293,7 @@ namespace Treeview
             frm.txtSize.Text = this.dgvTFile.CurrentRow.Cells[4].Value.ToString();
             frm.txtKeywords.Text = this.dgvTFile.CurrentRow.Cells[5].Value.ToString();
             frm.txtCatID.Text = this.dgvTFile.CurrentRow.Cells[7].Value.ToString();
-            frm.richTextBox1.Text = this.dgvTFile.CurrentRow.Cells[6].Value.ToString();
+            frm.rtbFilecontent.Text = this.dgvTFile.CurrentRow.Cells[6].Value.ToString();
 
             frm.ShowDialog();
         }

@@ -23,23 +23,23 @@ namespace Treeview
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSearchContent_Click(object sender, EventArgs e)
         {
-            Regex reg = new Regex(txtSearchContent.Text); //textBox1 - поле для ввода искомого текста
-            MatchCollection match = reg.Matches(richTextBox1.Text);
+            Regex reg = new Regex(txtSearchContent.Text); 
+            MatchCollection match = reg.Matches(rtbFilecontent.Text);
 
             foreach (Match mat in match)
             {
-                richTextBox1.Select(mat.Index, mat.Length);
-                richTextBox1.SelectionBackColor = Color.Red;
+                rtbFilecontent.Select(mat.Index, mat.Length);
+                rtbFilecontent.SelectionBackColor = Color.Red;
             }
         }
 
         private void btnClearHighlight_Click(object sender, EventArgs e)
         {
-            richTextBox1.SelectionStart = 0;
-            richTextBox1.SelectAll();
-            richTextBox1.SelectionBackColor = Color.White;
+            rtbFilecontent.SelectionStart = 0;
+            rtbFilecontent.SelectAll();
+            rtbFilecontent.SelectionBackColor = Color.White;
         }
     }
 }

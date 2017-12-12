@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbFilecontent = new System.Windows.Forms.RichTextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtType = new System.Windows.Forms.TextBox();
             this.txtFilename = new System.Windows.Forms.TextBox();
@@ -45,17 +45,17 @@
             this.txtKeywords = new System.Windows.Forms.TextBox();
             this.txtSearchContent = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearchContent = new System.Windows.Forms.Button();
             this.btnClearHighlight = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // rtbFilecontent
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(28, 157);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(792, 292);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.rtbFilecontent.Location = new System.Drawing.Point(28, 157);
+            this.rtbFilecontent.Name = "rtbFilecontent";
+            this.rtbFilecontent.Size = new System.Drawing.Size(792, 292);
+            this.rtbFilecontent.TabIndex = 0;
+            this.rtbFilecontent.Text = "";
             // 
             // txtID
             // 
@@ -185,15 +185,15 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "Поиск по тексту";
             // 
-            // button1
+            // btnSearchContent
             // 
-            this.button1.Location = new System.Drawing.Point(420, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Найти";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSearchContent.Location = new System.Drawing.Point(420, 112);
+            this.btnSearchContent.Name = "btnSearchContent";
+            this.btnSearchContent.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchContent.TabIndex = 22;
+            this.btnSearchContent.Text = "Найти";
+            this.btnSearchContent.UseVisualStyleBackColor = true;
+            this.btnSearchContent.Click += new System.EventHandler(this.btnSearchContent_Click);
             // 
             // btnClearHighlight
             // 
@@ -211,7 +211,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 461);
             this.Controls.Add(this.btnClearHighlight);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSearchContent);
             this.Controls.Add(this.txtSearchContent);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtKeywords);
@@ -228,7 +228,7 @@
             this.Controls.Add(this.txtFilename);
             this.Controls.Add(this.txtType);
             this.Controls.Add(this.txtID);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtbFilecontent);
             this.Name = "ContentForm";
             this.Text = "ContentForm";
             this.Load += new System.EventHandler(this.ContentForm_Load);
@@ -252,10 +252,10 @@
         public System.Windows.Forms.TextBox txtCatID;
         public System.Windows.Forms.TextBox txtDate;
         public System.Windows.Forms.TextBox txtKeywords;
-        public System.Windows.Forms.RichTextBox richTextBox1;
+        public System.Windows.Forms.RichTextBox rtbFilecontent;
         public System.Windows.Forms.TextBox txtSearchContent;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearchContent;
         private System.Windows.Forms.Button btnClearHighlight;
     }
 }
