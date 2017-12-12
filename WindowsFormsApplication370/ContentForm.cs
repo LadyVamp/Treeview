@@ -23,7 +23,7 @@ namespace Treeview
 
         }
 
-        //Поиск по тексту
+        //Поиск по тексту с использованием регулярных выражений
         private void btnSearchContent_Click(object sender, EventArgs e)
         {
             RegexOptions option = RegexOptions.IgnoreCase; //совпадения независимо от регистра

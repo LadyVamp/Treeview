@@ -282,7 +282,7 @@ namespace Treeview
             }
         }
 
-        //Даблклик по ячейке открывает текст статьи
+        //Даблклик по строке dgv открывает форму ContentForm с инфой о статье и текстом
         private void dgvTFile_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ContentForm frm = new ContentForm(); 
@@ -299,7 +299,6 @@ namespace Treeview
         }
 
         // TODO
-        //подсветка для искомого слова
         //btn Вход для администратора
         // Админка, CRUD для TFile 
        

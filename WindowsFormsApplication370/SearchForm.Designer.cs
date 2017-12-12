@@ -117,7 +117,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(12, 35);
+            this.txtSearch.Location = new System.Drawing.Point(12, 25);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(313, 22);
             this.txtSearch.TabIndex = 3;
@@ -141,7 +141,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtMinSize);
-            this.groupBox2.Location = new System.Drawing.Point(310, 94);
+            this.groupBox2.Location = new System.Drawing.Point(310, 84);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(248, 107);
             this.groupBox2.TabIndex = 6;
@@ -229,7 +229,7 @@
             this.groupBox3.Controls.Add(this.cbDate1);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Location = new System.Drawing.Point(599, 94);
+            this.groupBox3.Location = new System.Drawing.Point(599, 84);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(349, 107);
             this.groupBox3.TabIndex = 11;
@@ -315,7 +315,7 @@
             this.groupBox1.Controls.Add(this.cbRtf);
             this.groupBox1.Controls.Add(this.cbDocx);
             this.groupBox1.Controls.Add(this.cbTxt);
-            this.groupBox1.Location = new System.Drawing.Point(12, 94);
+            this.groupBox1.Location = new System.Drawing.Point(12, 84);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(255, 107);
             this.groupBox1.TabIndex = 5;
@@ -334,7 +334,7 @@
             // 
             // btnFill
             // 
-            this.btnFill.Location = new System.Drawing.Point(833, 35);
+            this.btnFill.Location = new System.Drawing.Point(873, 25);
             this.btnFill.Name = "btnFill";
             this.btnFill.Size = new System.Drawing.Size(75, 23);
             this.btnFill.TabIndex = 16;
@@ -344,11 +344,11 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(331, 35);
+            this.btnSearch.Location = new System.Drawing.Point(331, 25);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(186, 30);
+            this.btnSearch.Size = new System.Drawing.Size(90, 30);
             this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "Поиск по тексту";
+            this.btnSearch.Text = "Поиск";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
