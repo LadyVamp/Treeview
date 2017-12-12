@@ -46,6 +46,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnClearHighlight = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -194,11 +195,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnClearHighlight
+            // 
+            this.btnClearHighlight.Location = new System.Drawing.Point(502, 111);
+            this.btnClearHighlight.Name = "btnClearHighlight";
+            this.btnClearHighlight.Size = new System.Drawing.Size(188, 23);
+            this.btnClearHighlight.TabIndex = 23;
+            this.btnClearHighlight.Text = "Очистить выделенное";
+            this.btnClearHighlight.UseVisualStyleBackColor = true;
+            this.btnClearHighlight.Click += new System.EventHandler(this.btnClearHighlight_Click);
+            // 
             // ContentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.btnClearHighlight);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label7);
@@ -244,5 +256,6 @@
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClearHighlight;
     }
 }

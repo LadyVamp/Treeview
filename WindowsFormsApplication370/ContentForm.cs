@@ -34,5 +34,12 @@ namespace Treeview
                 richTextBox1.SelectionBackColor = Color.Red;
             }
         }
+
+        private void btnClearHighlight_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionStart = 0;
+            richTextBox1.SelectAll();
+            richTextBox1.SelectionBackColor = Color.White;
+        }
     }
 }
