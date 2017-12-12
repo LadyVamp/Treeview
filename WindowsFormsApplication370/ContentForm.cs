@@ -23,18 +23,20 @@ namespace Treeview
 
         }
 
+        //Поиск по тексту
         private void btnSearchContent_Click(object sender, EventArgs e)
         {
-            Regex reg = new Regex(txtSearchContent.Text); 
+            RegexOptions option = RegexOptions.IgnoreCase; //совпадения независимо от регистра
+            Regex reg = new Regex(txtSearchContent.Text, option);
             MatchCollection match = reg.Matches(rtbFilecontent.Text);
 
             foreach (Match mat in match)
             {
                 rtbFilecontent.Select(mat.Index, mat.Length);
-                rtbFilecontent.SelectionBackColor = Color.Red;
+                rtbFilecontent.SelectionBackColor = Color.GreenYellow;
             }
         }
-
+        //Очистка от подсветки
         private void btnClearHighlight_Click(object sender, EventArgs e)
         {
             rtbFilecontent.SelectionStart = 0;
