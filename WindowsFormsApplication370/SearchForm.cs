@@ -282,29 +282,10 @@ namespace Treeview
             }
         }
 
-        // TODO
         //Даблклик по ячейке открывает текст статьи
-        //private void dgvTFile_CellContentDoubleClick(object sender, EventArgs e)
-        //private void dgvTFile_CellDoubleClick(object sender, EventArgs e)
-        //{
-        //    //ContentForm frm = new ContentForm(); //passing id into constructor of the new form
-        //    //frm.Show();
-
-        //    MessageBox.Show("Test!!!");
-
-        //    //var form = new ContentForm();
-        //    //if (form.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-        //    //{
-        //    //}
-        //    //dgvTFile.CurrentCell.Style.BackColor = Color.Red;
-        //    //даже перекрашивание не работает o_O
-
-        //}
-
         private void dgvTFile_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ContentForm frm = new ContentForm(); //passing id into constructor of the new form
-            //frm.Show();
+            ContentForm frm = new ContentForm(); 
             frm.txtID.Text = this.dgvTFile.CurrentRow.Cells[0].Value.ToString();
             frm.txtFilename.Text = this.dgvTFile.CurrentRow.Cells[1].Value.ToString();
             frm.txtType.Text = this.dgvTFile.CurrentRow.Cells[2].Value.ToString();
@@ -315,31 +296,13 @@ namespace Treeview
             frm.rtbFilecontent.Text = this.dgvTFile.CurrentRow.Cells[6].Value.ToString();
 
             frm.ShowDialog();
-
-
-
         }
 
-        //private void dgvTFile_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if ((((DataGridView)sender).Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewButtonCell) != null)
-        //    {
-        //        MessageBox.Show("ОК");
-        //    }
-        //}
-
-
-
-        //private void dgvTFile_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    //string familiya = "";
-        //    //string imya = "";
-        //    //string ochestvo = "";
-        //    //imya = dgvTFile.Rows[dgvTFile.CurrentRow.Index].Cells[0].Value.ToString();
-        //    //familiya = dgvTFile.Rows[dgvTFile.CurrentRow.Index].Cells[1].Value.ToString();
-        //    //ochestvo = dgvTFile.Rows[dgvTFile.CurrentRow.Index].Cells[2].Value.ToString();
-        //    //richTextBox1.Text = imya + "; " + familiya + "; " + ochestvo;
-        //}
+        // TODO
+        //подсветка для искомого слова
+        //btn Вход для администратора
+        // Админка, CRUD для TFile 
+       
 
     }
 }
