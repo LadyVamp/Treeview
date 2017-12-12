@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ftMain = new FastTreeNS.FastTree();
             this.btnOpenSearchForm = new System.Windows.Forms.Button();
+            this.btnCallLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ftMain
@@ -53,7 +54,6 @@
             this.ftMain.ShowExpandBoxes = true;
             this.ftMain.Size = new System.Drawing.Size(488, 541);
             this.ftMain.TabIndex = 1;
-            //this.ftMain.NodeChildrenNeeded += new System.EventHandler<FastTreeNS.NodeChildrenNeededEventArgs>(this.ftMain_NodeChildrenNeeded);
             this.ftMain.DoubleClick += new System.EventHandler(this.ftMain_DoubleClick);
             // 
             // btnOpenSearchForm
@@ -68,11 +68,22 @@
             this.btnOpenSearchForm.UseVisualStyleBackColor = false;
             this.btnOpenSearchForm.Click += new System.EventHandler(this.btnOpenSearchForm_Click);
             // 
+            // btnCallLogin
+            // 
+            this.btnCallLogin.Location = new System.Drawing.Point(261, 65);
+            this.btnCallLogin.Name = "btnCallLogin";
+            this.btnCallLogin.Size = new System.Drawing.Size(202, 27);
+            this.btnCallLogin.TabIndex = 20;
+            this.btnCallLogin.Text = "Вход для администратора";
+            this.btnCallLogin.UseVisualStyleBackColor = true;
+            this.btnCallLogin.Click += new System.EventHandler(this.btnCallLogin_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1125, 541);
+            this.Controls.Add(this.btnCallLogin);
             this.Controls.Add(this.btnOpenSearchForm);
             this.Controls.Add(this.ftMain);
             this.IsMdiContainer = true;
@@ -87,6 +98,7 @@
 
         private FastTreeNS.FastTree ftMain;
         private System.Windows.Forms.Button btnOpenSearchForm;
+        private System.Windows.Forms.Button btnCallLogin;
     }
 }
 

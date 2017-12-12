@@ -60,7 +60,6 @@
             this.btnFill = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvTFile = new System.Windows.Forms.DataGridView();
-            this.btnCallLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).BeginInit();
@@ -335,7 +334,7 @@
             // 
             // btnFill
             // 
-            this.btnFill.Location = new System.Drawing.Point(873, 55);
+            this.btnFill.Location = new System.Drawing.Point(873, 12);
             this.btnFill.Name = "btnFill";
             this.btnFill.Size = new System.Drawing.Size(75, 23);
             this.btnFill.TabIndex = 16;
@@ -364,22 +363,11 @@
             this.dgvTFile.TabIndex = 18;
             this.dgvTFile.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTFile_CellDoubleClick);
             // 
-            // btnCallLogin
-            // 
-            this.btnCallLogin.Location = new System.Drawing.Point(737, 12);
-            this.btnCallLogin.Name = "btnCallLogin";
-            this.btnCallLogin.Size = new System.Drawing.Size(211, 27);
-            this.btnCallLogin.TabIndex = 19;
-            this.btnCallLogin.Text = "Вход для администратора";
-            this.btnCallLogin.UseVisualStyleBackColor = true;
-            this.btnCallLogin.Click += new System.EventHandler(this.btnCallLogin_Click);
-            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(954, 532);
-            this.Controls.Add(this.btnCallLogin);
             this.Controls.Add(this.dgvTFile);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnFill);
@@ -438,6 +426,5 @@
         private System.Windows.Forms.Button btnDateFilter;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvTFile;
-        private System.Windows.Forms.Button btnCallLogin;
     }
 }

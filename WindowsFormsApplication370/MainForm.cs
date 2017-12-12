@@ -51,5 +51,10 @@ namespace Treeview
             f2.Show();
         }
 
+        private void btnCallLogin_Click(object sender, EventArgs e)
+        {
+            LoginForm f = new LoginForm();
+            f.Show();
+        }
     }
 }
