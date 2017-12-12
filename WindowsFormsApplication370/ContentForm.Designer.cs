@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rtbFilecontent = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtType = new System.Windows.Forms.TextBox();
             this.txtFilename = new System.Windows.Forms.TextBox();
@@ -43,15 +43,18 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtKeywords = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // rtbFilecontent
+            // richTextBox1
             // 
-            this.rtbFilecontent.Location = new System.Drawing.Point(28, 116);
-            this.rtbFilecontent.Name = "rtbFilecontent";
-            this.rtbFilecontent.Size = new System.Drawing.Size(792, 333);
-            this.rtbFilecontent.TabIndex = 0;
-            this.rtbFilecontent.Text = "";
+            this.richTextBox1.Location = new System.Drawing.Point(28, 157);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(792, 292);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
             // 
             // txtID
             // 
@@ -165,11 +168,40 @@
             this.txtKeywords.Size = new System.Drawing.Size(272, 22);
             this.txtKeywords.TabIndex = 19;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(142, 112);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(272, 22);
+            this.textBox1.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 117);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(115, 17);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Поиск по тексту";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(420, 112);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Найти";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ContentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtKeywords);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
@@ -184,7 +216,7 @@
             this.Controls.Add(this.txtFilename);
             this.Controls.Add(this.txtType);
             this.Controls.Add(this.txtID);
-            this.Controls.Add(this.rtbFilecontent);
+            this.Controls.Add(this.richTextBox1);
             this.Name = "ContentForm";
             this.Text = "ContentForm";
             this.Load += new System.EventHandler(this.ContentForm_Load);
@@ -208,6 +240,9 @@
         public System.Windows.Forms.TextBox txtCatID;
         public System.Windows.Forms.TextBox txtDate;
         public System.Windows.Forms.TextBox txtKeywords;
-        public System.Windows.Forms.RichTextBox rtbFilecontent;
+        public System.Windows.Forms.RichTextBox richTextBox1;
+        public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }
