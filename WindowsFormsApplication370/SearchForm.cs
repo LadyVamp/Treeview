@@ -264,9 +264,12 @@ namespace Treeview
             }
         }
 
+        
         //---Типа полнотекстовый поиск---
-        //выделит строку, где упоминается слово из текстбокса
-        //select * from TFile where CONTAINS(Filecontent, 'JS')
+        /*
+            выделит строку, где упоминается слово из текстбокса
+            select * from TFile where CONTAINS(Filecontent, 'JS')
+        */
         private void btnSearch_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dgvTFile.RowCount; i++)
@@ -298,10 +301,16 @@ namespace Treeview
             frm.ShowDialog();
         }
 
+        //Вход для администратора
+        private void btnCallLogin_Click(object sender, EventArgs e)
+        {
+            LoginForm f = new LoginForm();
+            f.Show();
+        }
+
         // TODO
-        //btn Вход для администратора
         // Админка, CRUD для TFile 
-       
+
 
     }
 }
