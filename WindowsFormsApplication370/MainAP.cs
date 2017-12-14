@@ -22,6 +22,12 @@ namespace Treeview
 
         }
 
+        private void btnEditTFile_Click(object sender, EventArgs e)
+        {
+            EditTFileForm f = new EditTFileForm();
+            f.Show();
+        }
+
         //TODO
         // CRUD https://metanit.com/sharp/adonet/3.5.php
     }

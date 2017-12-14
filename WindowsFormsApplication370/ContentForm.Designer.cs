@@ -221,7 +221,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtDate);
-            this.groupBox1.Location = new System.Drawing.Point(16, 0);
+            this.groupBox1.Location = new System.Drawing.Point(16, 7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(816, 108);
             this.groupBox1.TabIndex = 24;

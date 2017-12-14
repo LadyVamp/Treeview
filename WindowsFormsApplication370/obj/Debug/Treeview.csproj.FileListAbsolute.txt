@@ -30,3 +30,4 @@ C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplic
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.ContentForm.resources
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.LoginForm.resources
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.MainAP.resources
+C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.EditTFileForm.resources

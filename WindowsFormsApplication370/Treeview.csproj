@@ -76,6 +76,12 @@
     <Compile Include="Controls\InputForm.designer.cs">
       <DependentUpon>InputForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditTFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTFileForm.Designer.cs">
+      <DependentUpon>EditTFileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\InputForm.resx">
       <DependentUpon>InputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTFileForm.resx">
+      <DependentUpon>EditTFileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -181,11 +190,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="ExternalDll\FastTree.dll" />
+    <None Include="Resources\icons8-plus-26.png" />
+    <None Include="Resources\icons8-Save-26.png" />
+    <None Include="Resources\icons8-Trash-26.png" />
+    <None Include="Resources\icons8-Eye-26.png" />
+    <None Include="Resources\icons8-Data Backup-261.png" />
+    <None Include="Resources\icons8-Data Backup-26.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
