@@ -70,6 +70,7 @@
             // 
             // dgvTFileEF
             // 
+            this.dgvTFileEF.BackgroundColor = System.Drawing.SystemColors.MenuBar;
             this.dgvTFileEF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTFileEF.Location = new System.Drawing.Point(403, 12);
             this.dgvTFileEF.Name = "dgvTFileEF";
@@ -333,6 +334,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.ClientSize = new System.Drawing.Size(1187, 532);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvTFileEF);
