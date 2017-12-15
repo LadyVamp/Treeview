@@ -44,12 +44,12 @@ namespace Treeview
             dgvTFileEF.Columns[6].HeaderText = "Содержание";
             dgvTFileEF.Columns[7].HeaderText = "IdCatalog";
             dgvTFileEF.Columns[0].Width = 20;
-            dgvTFileEF.Columns[1].Width = 200;
-            dgvTFileEF.Columns[2].Width = 35;
-            dgvTFileEF.Columns[3].Width = 70;
-            dgvTFileEF.Columns[4].Width = 50;
+            dgvTFileEF.Columns[1].Width = 280;
+            dgvTFileEF.Columns[2].Width = 40;
+            dgvTFileEF.Columns[3].Width = 80;
+            dgvTFileEF.Columns[4].Width = 60;
             dgvTFileEF.Columns[5].Width = 100;
-            dgvTFileEF.Columns[6].Width = 190;
+            dgvTFileEF.Columns[6].Width = 300;
             dgvTFileEF.Columns[7].Width = 50;
         }
 
@@ -202,40 +202,27 @@ namespace Treeview
             int id = Convert.ToInt32(selected);
             DeleteFile(id);
         }
-        private void txtSizeEF_KeyPress(object sender, KeyPressEventArgs e) //ввод только цифр в текстбокс
+
+
+        //private void txtSizeEF_KeyPress(object sender, KeyPressEventArgs e) //ввод только цифр (не работает o_O)
+        //{
+        //    if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (txtSizeEF.Text.IndexOf(",") == -1) && (txtSizeEF.Text.Length != 0)))
+        //    {
+        //        if (e.KeyChar != (char)Keys.Back) e.Handled = true;
+        //    }
+
+        //}
+        // --- end CRUD for TFile ---
+
+        //ввод только цифр, точек, запятых и backspace в текстбокс
+        private void txtSizeEF_KeyPress(object sender, KeyPressEventArgs e)
         {
             char c = e.KeyChar;
             e.Handled = !(char.IsDigit(c) || c == '.' || c == ',' || c == '\b');
         }
-        // --- end CRUD for TFile ---
 
-
-        // При выделении строки из dgv подставить значения в текстбоксы/комбобоксы 
-        private void dgvTFileEF_CurrentCellChanged(object sender, EventArgs e)
-        {
-            if (dgvTFileEF.CurrentCell != null && dgvTFileEF.CurrentCell.RowIndex >= 0)
-            {
-                txtFilenameEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["filename"].Value.ToString();
-                cmbTypeEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["type"].Value.ToString();
-                dtpEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["date"].Value.ToString();
-                txtSizeEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["size"].Value.ToString();
-                txtKeyEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["keywords"].Value.ToString();
-                rtbContentEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["filecontent"].Value.ToString();
-                cmbCatIDEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["catalogId"].Value.ToString();
-            }
-        }
-
-        //Даблклик по строке dgv открывает добавляет данные в текстбоксы
-        //private void dgvTFileEF_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    txtFilenameEF.Text = this.dgvTFileEF.CurrentRow.Cells[1].Value.ToString();
-        //    cmbTypeEF.Text = this.dgvTFileEF.CurrentRow.Cells[2].Value.ToString();
-        //    dtpEF.Text = this.dgvTFileEF.CurrentRow.Cells[3].Value.ToString();
-        //    txtSizeEF.Text = this.dgvTFileEF.CurrentRow.Cells[4].Value.ToString();
-        //    txtKeyEF.Text = this.dgvTFileEF.CurrentRow.Cells[5].Value.ToString();
-        //    rtbContentEF.Text = this.dgvTFileEF.CurrentRow.Cells[6].Value.ToString();
-        //    cmbCatIDEF.Text = this.dgvTFileEF.CurrentRow.Cells[7].Value.ToString();
-        //}
+        //TODO
+        // при выделении строки из dgv подставить значения в текстбоксы 
 
 
 

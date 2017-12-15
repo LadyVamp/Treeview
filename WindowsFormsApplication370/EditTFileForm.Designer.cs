@@ -58,7 +58,6 @@
             this.tFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tFileTableAdapter = new WindowsFormsApplication370.RepositoryDB3DataSetTFileTableAdapters.TFileTableAdapter();
             this.tTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTFileEF)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tCatalogBindingSource)).BeginInit();
@@ -67,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tTypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTFileEF
@@ -76,9 +74,9 @@
             this.dgvTFileEF.Location = new System.Drawing.Point(403, 12);
             this.dgvTFileEF.Name = "dgvTFileEF";
             this.dgvTFileEF.RowTemplate.Height = 24;
-            this.dgvTFileEF.Size = new System.Drawing.Size(1015, 508);
+            this.dgvTFileEF.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTFileEF.Size = new System.Drawing.Size(772, 508);
             this.dgvTFileEF.TabIndex = 5;
-            this.dgvTFileEF.CurrentCellChanged += new System.EventHandler(this.dgvTFileEF_CurrentCellChanged);
             // 
             // btnInsertFile
             // 
@@ -330,15 +328,11 @@
             // 
             this.tFileTableAdapter.ClearBeforeFill = true;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // EditTFileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1423, 532);
+            this.ClientSize = new System.Drawing.Size(1187, 532);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvTFileEF);
             this.Name = "EditTFileForm";
@@ -353,7 +347,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -389,6 +382,5 @@
         private System.Windows.Forms.ComboBox cmbTypeEF;
         private System.Windows.Forms.BindingSource tTypeBindingSource;
         private System.Windows.Forms.TextBox txtSizeEF;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
