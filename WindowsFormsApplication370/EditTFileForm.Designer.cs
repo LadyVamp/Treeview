@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTFileEF = new System.Windows.Forms.DataGridView();
             this.btnInsertFile = new System.Windows.Forms.Button();
             this.btnDelFile = new System.Windows.Forms.Button();
             this.btnUpdFile = new System.Windows.Forms.Button();
@@ -48,67 +48,71 @@
             this.txtKeyEF = new System.Windows.Forms.TextBox();
             this.txtFilenameEF = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTFileEF)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvTFileEF
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(403, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(772, 508);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvTFileEF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTFileEF.Location = new System.Drawing.Point(403, 12);
+            this.dgvTFileEF.Name = "dgvTFileEF";
+            this.dgvTFileEF.RowTemplate.Height = 24;
+            this.dgvTFileEF.Size = new System.Drawing.Size(772, 508);
+            this.dgvTFileEF.TabIndex = 5;
             // 
             // btnInsertFile
             // 
             this.btnInsertFile.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_Save_26;
             this.btnInsertFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsertFile.Location = new System.Drawing.Point(13, 415);
+            this.btnInsertFile.Location = new System.Drawing.Point(13, 404);
             this.btnInsertFile.Name = "btnInsertFile";
-            this.btnInsertFile.Size = new System.Drawing.Size(97, 34);
+            this.btnInsertFile.Size = new System.Drawing.Size(97, 42);
             this.btnInsertFile.TabIndex = 4;
             this.btnInsertFile.Text = "Insert";
             this.btnInsertFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnInsertFile.UseVisualStyleBackColor = true;
+            this.btnInsertFile.Click += new System.EventHandler(this.btnInsertFile_Click);
             // 
             // btnDelFile
             // 
             this.btnDelFile.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_Trash_26;
             this.btnDelFile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnDelFile.Location = new System.Drawing.Point(129, 467);
+            this.btnDelFile.Location = new System.Drawing.Point(129, 452);
             this.btnDelFile.Name = "btnDelFile";
-            this.btnDelFile.Size = new System.Drawing.Size(97, 31);
+            this.btnDelFile.Size = new System.Drawing.Size(97, 40);
             this.btnDelFile.TabIndex = 3;
             this.btnDelFile.Text = "Delete";
             this.btnDelFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelFile.UseVisualStyleBackColor = true;
+            this.btnDelFile.Click += new System.EventHandler(this.btnDelFile_Click);
             // 
             // btnUpdFile
             // 
             this.btnUpdFile.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_Data_Backup_261;
             this.btnUpdFile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnUpdFile.Location = new System.Drawing.Point(129, 415);
+            this.btnUpdFile.Location = new System.Drawing.Point(129, 404);
             this.btnUpdFile.Name = "btnUpdFile";
-            this.btnUpdFile.Size = new System.Drawing.Size(97, 34);
+            this.btnUpdFile.Size = new System.Drawing.Size(97, 42);
             this.btnUpdFile.TabIndex = 2;
             this.btnUpdFile.Text = "Update";
             this.btnUpdFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdFile.UseVisualStyleBackColor = true;
+            this.btnUpdFile.Click += new System.EventHandler(this.btnUpdFile_Click);
             // 
             // btnViewFile
             // 
             this.btnViewFile.BackgroundImage = global::WindowsFormsApplication370.Properties.Resources.icons8_Eye_26;
             this.btnViewFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnViewFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnViewFile.Location = new System.Drawing.Point(256, 415);
+            this.btnViewFile.Location = new System.Drawing.Point(256, 404);
             this.btnViewFile.Name = "btnViewFile";
-            this.btnViewFile.Size = new System.Drawing.Size(97, 34);
+            this.btnViewFile.Size = new System.Drawing.Size(97, 42);
             this.btnViewFile.TabIndex = 0;
             this.btnViewFile.Text = "View";
             this.btnViewFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewFile.UseVisualStyleBackColor = true;
+            this.btnViewFile.Click += new System.EventHandler(this.btnViewFile_Click);
             // 
             // groupBox1
             // 
@@ -140,7 +144,7 @@
             // 
             this.rtbContentEF.Location = new System.Drawing.Point(12, 251);
             this.rtbContentEF.Name = "rtbContentEF";
-            this.rtbContentEF.Size = new System.Drawing.Size(367, 147);
+            this.rtbContentEF.Size = new System.Drawing.Size(367, 139);
             this.rtbContentEF.TabIndex = 26;
             this.rtbContentEF.Text = "";
             // 
@@ -155,9 +159,11 @@
             // 
             // dtpEF
             // 
+            this.dtpEF.CustomFormat = "dd.MM.yyyy";
+            this.dtpEF.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEF.Location = new System.Drawing.Point(155, 154);
             this.dtpEF.Name = "dtpEF";
-            this.dtpEF.Size = new System.Drawing.Size(200, 22);
+            this.dtpEF.Size = new System.Drawing.Size(128, 22);
             this.dtpEF.TabIndex = 23;
             // 
             // cmbTypeEF
@@ -261,11 +267,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 532);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTFileEF);
             this.Name = "EditTFileForm";
             this.Text = "EditTFileForm";
             this.Load += new System.EventHandler(this.EditTFileForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTFileEF)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -278,7 +284,7 @@
         private System.Windows.Forms.Button btnDelFile;
         private System.Windows.Forms.Button btnUpdFile;
         private System.Windows.Forms.Button btnInsertFile;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTFileEF;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox txtKeyEF;
