@@ -28,7 +28,6 @@ namespace Treeview
             f.Show();
         }
 
-        //TODO
-        // CRUD https://metanit.com/sharp/adonet/3.5.php
+
     }
 }
