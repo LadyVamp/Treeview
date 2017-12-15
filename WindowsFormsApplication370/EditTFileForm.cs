@@ -203,26 +203,19 @@ namespace Treeview
             DeleteFile(id);
         }
 
-
-        //private void txtSizeEF_KeyPress(object sender, KeyPressEventArgs e) //ввод только цифр (не работает o_O)
-        //{
-        //    if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (txtSizeEF.Text.IndexOf(",") == -1) && (txtSizeEF.Text.Length != 0)))
-        //    {
-        //        if (e.KeyChar != (char)Keys.Back) e.Handled = true;
-        //    }
-
-        //}
-        // --- end CRUD for TFile ---
-
         //ввод только цифр, точек, запятых и backspace в текстбокс
-        private void txtSizeEF_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtSizeEF_KeyPress(object sender, KeyPressEventArgs e) 
         {
             char c = e.KeyChar;
             e.Handled = !(char.IsDigit(c) || c == '.' || c == ',' || c == '\b');
         }
 
+        // --- end CRUD for TFile ---
+            
+
         //TODO
         // при выделении строки из dgv подставить значения в текстбоксы 
+
 
 
 
