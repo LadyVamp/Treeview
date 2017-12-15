@@ -28,28 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvTFileEF = new System.Windows.Forms.DataGridView();
             this.btnInsertFile = new System.Windows.Forms.Button();
             this.btnDelFile = new System.Windows.Forms.Button();
             this.btnUpdFile = new System.Windows.Forms.Button();
             this.btnViewFile = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbTypeEF = new System.Windows.Forms.ComboBox();
+            this.cmbCatIDEF = new System.Windows.Forms.ComboBox();
+            this.tCatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryDB3DataSetTCatalog = new WindowsFormsApplication370.RepositoryDB3DataSetTCatalog();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.rtbContentEF = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpEF = new System.Windows.Forms.DateTimePicker();
-            this.cmbTypeEF = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCatIDEF = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtSizeEF = new System.Windows.Forms.TextBox();
             this.txtKeyEF = new System.Windows.Forms.TextBox();
             this.txtFilenameEF = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
+            this.tCatalogTableAdapter = new WindowsFormsApplication370.RepositoryDB3DataSetTCatalogTableAdapters.TCatalogTableAdapter();
+            this.fKTCatalogTCatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryDB3DataSetTFile = new WindowsFormsApplication370.RepositoryDB3DataSetTFile();
+            this.tFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tFileTableAdapter = new WindowsFormsApplication370.RepositoryDB3DataSetTFileTableAdapters.TFileTableAdapter();
+            this.tTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtSizeEF = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTFileEF)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tCatalogBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTCatalog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKTCatalogTCatalogBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTFile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvTFileEF
@@ -58,6 +74,7 @@
             this.dgvTFileEF.Location = new System.Drawing.Point(403, 12);
             this.dgvTFileEF.Name = "dgvTFileEF";
             this.dgvTFileEF.RowTemplate.Height = 24;
+            this.dgvTFileEF.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTFileEF.Size = new System.Drawing.Size(772, 508);
             this.dgvTFileEF.TabIndex = 5;
             // 
@@ -116,13 +133,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtSizeEF);
+            this.groupBox1.Controls.Add(this.cmbTypeEF);
+            this.groupBox1.Controls.Add(this.cmbCatIDEF);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.rtbContentEF);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dtpEF);
-            this.groupBox1.Controls.Add(this.cmbTypeEF);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtCatIDEF);
             this.groupBox1.Controls.Add(this.btnDelFile);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btnInsertFile);
@@ -130,7 +149,6 @@
             this.groupBox1.Controls.Add(this.btnViewFile);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnUpdFile);
-            this.groupBox1.Controls.Add(this.txtSizeEF);
             this.groupBox1.Controls.Add(this.txtKeyEF);
             this.groupBox1.Controls.Add(this.txtFilenameEF);
             this.groupBox1.Controls.Add(this.label);
@@ -139,6 +157,51 @@
             this.groupBox1.Size = new System.Drawing.Size(385, 508);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
+            // 
+            // cmbTypeEF
+            // 
+            this.cmbTypeEF.FormattingEnabled = true;
+            this.cmbTypeEF.Items.AddRange(new object[] {
+            "doc",
+            "docx",
+            "txt",
+            "rtf"});
+            this.cmbTypeEF.Location = new System.Drawing.Point(155, 83);
+            this.cmbTypeEF.Name = "cmbTypeEF";
+            this.cmbTypeEF.Size = new System.Drawing.Size(55, 24);
+            this.cmbTypeEF.TabIndex = 29;
+            // 
+            // cmbCatIDEF
+            // 
+            this.cmbCatIDEF.DataSource = this.tCatalogBindingSource;
+            this.cmbCatIDEF.DisplayMember = "ID";
+            this.cmbCatIDEF.FormattingEnabled = true;
+            this.cmbCatIDEF.Location = new System.Drawing.Point(94, 196);
+            this.cmbCatIDEF.Name = "cmbCatIDEF";
+            this.cmbCatIDEF.Size = new System.Drawing.Size(55, 24);
+            this.cmbCatIDEF.TabIndex = 28;
+            this.cmbCatIDEF.ValueMember = "ID";
+            // 
+            // tCatalogBindingSource
+            // 
+            this.tCatalogBindingSource.DataMember = "TCatalog";
+            this.tCatalogBindingSource.DataSource = this.repositoryDB3DataSetTCatalog;
+            // 
+            // repositoryDB3DataSetTCatalog
+            // 
+            this.repositoryDB3DataSetTCatalog.DataSetName = "RepositoryDB3DataSetTCatalog";
+            this.repositoryDB3DataSetTCatalog.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.tCatalogBindingSource;
+            this.comboBox1.DisplayMember = "Catalog";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(155, 196);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(224, 24);
+            this.comboBox1.TabIndex = 27;
+            this.comboBox1.ValueMember = "Catalog";
             // 
             // rtbContentEF
             // 
@@ -166,19 +229,6 @@
             this.dtpEF.Size = new System.Drawing.Size(128, 22);
             this.dtpEF.TabIndex = 23;
             // 
-            // cmbTypeEF
-            // 
-            this.cmbTypeEF.FormattingEnabled = true;
-            this.cmbTypeEF.Items.AddRange(new object[] {
-            "doc",
-            "docx",
-            "txt",
-            "rtf"});
-            this.cmbTypeEF.Location = new System.Drawing.Point(155, 86);
-            this.cmbTypeEF.Name = "cmbTypeEF";
-            this.cmbTypeEF.Size = new System.Drawing.Size(89, 24);
-            this.cmbTypeEF.TabIndex = 22;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -196,13 +246,6 @@
             this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 20;
             this.label1.Text = "Название";
-            // 
-            // txtCatIDEF
-            // 
-            this.txtCatIDEF.Location = new System.Drawing.Point(86, 193);
-            this.txtCatIDEF.Name = "txtCatIDEF";
-            this.txtCatIDEF.Size = new System.Drawing.Size(45, 22);
-            this.txtCatIDEF.TabIndex = 13;
             // 
             // label5
             // 
@@ -231,13 +274,6 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Формат";
             // 
-            // txtSizeEF
-            // 
-            this.txtSizeEF.Location = new System.Drawing.Point(155, 116);
-            this.txtSizeEF.Name = "txtSizeEF";
-            this.txtSizeEF.Size = new System.Drawing.Size(87, 22);
-            this.txtSizeEF.TabIndex = 14;
-            // 
             // txtKeyEF
             // 
             this.txtKeyEF.Location = new System.Drawing.Point(155, 53);
@@ -261,6 +297,36 @@
             this.label.TabIndex = 15;
             this.label.Text = "Размер, кБ";
             // 
+            // tCatalogTableAdapter
+            // 
+            this.tCatalogTableAdapter.ClearBeforeFill = true;
+            // 
+            // fKTCatalogTCatalogBindingSource
+            // 
+            this.fKTCatalogTCatalogBindingSource.DataMember = "FK_TCatalog_TCatalog";
+            this.fKTCatalogTCatalogBindingSource.DataSource = this.tCatalogBindingSource;
+            // 
+            // repositoryDB3DataSetTFile
+            // 
+            this.repositoryDB3DataSetTFile.DataSetName = "RepositoryDB3DataSetTFile";
+            this.repositoryDB3DataSetTFile.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tFileBindingSource
+            // 
+            this.tFileBindingSource.DataMember = "TFile";
+            this.tFileBindingSource.DataSource = this.repositoryDB3DataSetTFile;
+            // 
+            // tFileTableAdapter
+            // 
+            this.tFileTableAdapter.ClearBeforeFill = true;
+            // 
+            // txtSizeEF
+            // 
+            this.txtSizeEF.Location = new System.Drawing.Point(155, 119);
+            this.txtSizeEF.Name = "txtSizeEF";
+            this.txtSizeEF.Size = new System.Drawing.Size(100, 22);
+            this.txtSizeEF.TabIndex = 30;
+            // 
             // EditTFileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -274,6 +340,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTFileEF)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tCatalogBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTCatalog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKTCatalogTCatalogBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTFile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -290,15 +362,24 @@
         public System.Windows.Forms.TextBox txtKeyEF;
         private System.Windows.Forms.Label label;
         public System.Windows.Forms.TextBox txtFilenameEF;
-        public System.Windows.Forms.TextBox txtSizeEF;
-        public System.Windows.Forms.TextBox txtCatIDEF;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpEF;
-        private System.Windows.Forms.ComboBox cmbTypeEF;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox rtbContentEF;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private WindowsFormsApplication370.RepositoryDB3DataSetTCatalog repositoryDB3DataSetTCatalog;
+        private System.Windows.Forms.BindingSource tCatalogBindingSource;
+        private WindowsFormsApplication370.RepositoryDB3DataSetTCatalogTableAdapters.TCatalogTableAdapter tCatalogTableAdapter;
+        private System.Windows.Forms.BindingSource fKTCatalogTCatalogBindingSource;
+        private System.Windows.Forms.ComboBox cmbCatIDEF;
+        private WindowsFormsApplication370.RepositoryDB3DataSetTFile repositoryDB3DataSetTFile;
+        private System.Windows.Forms.BindingSource tFileBindingSource;
+        private WindowsFormsApplication370.RepositoryDB3DataSetTFileTableAdapters.TFileTableAdapter tFileTableAdapter;
+        private System.Windows.Forms.ComboBox cmbTypeEF;
+        private System.Windows.Forms.BindingSource tTypeBindingSource;
+        private System.Windows.Forms.TextBox txtSizeEF;
     }
 }

@@ -55,12 +55,16 @@ namespace Treeview
 
         private void EditTFileForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "repositoryDB3DataSetTFile.TFile". При необходимости она может быть перемещена или удалена.
+            this.tFileTableAdapter.Fill(this.repositoryDB3DataSetTFile.TFile);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "repositoryDB3DataSetTCatalog.TCatalog". При необходимости она может быть перемещена или удалена.
+            this.tCatalogTableAdapter.Fill(this.repositoryDB3DataSetTCatalog.TCatalog);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "repositoryDB3DataSetTCatalog.TCatalog". При необходимости она может быть перемещена или удалена.
+            this.tCatalogTableAdapter.Fill(this.repositoryDB3DataSetTCatalog.TCatalog);
             con.Open(); //подключение открывается только при запуске формы
             FillDgv();
+            con.Close();
         }
-
-        //TODO
-        //CRUD-кнопки (из crud v3 - sp)
 
         // --- CRUD for TFile ---
         //  Create
@@ -77,7 +81,7 @@ namespace Treeview
             cmd.Parameters.AddWithValue("@catalogId", catalogId);
             try
             {
-                //con.Open();
+                con.Open();
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     clearTxts();
@@ -93,37 +97,6 @@ namespace Treeview
             }
         }
 
-        ////  Read  
-        //private void ViewFile()
-        //{
-        //    //dgvTFileEF.Rows.Clear();
-        //    string sql = "SELECT * FROM TFile";
-        //    cmd = new SqlCommand(sql, con);
-        //    try
-        //    {
-        //        //con.Open();
-        //        adapter = new SqlDataAdapter(cmd);
-        //        adapter.Fill(dt);
-        //        //foreach (DataRow row in dt.Rows)
-        //        //{
-        //        //    populate(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(), row[5].ToString(), row[6].ToString(), row[7].ToString());
-        //        //}
-        //        FillDgv();
-        //        //con.Close();
-        //        dt.Rows.Clear();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //        con.Close();
-        //    }
-        //}
-
-        //private void populate(String id, string filename, string type, DateTime date, string size, string keywords, string filecontent, string catalogId)
-        //{
-        //    dgvTFile.Rows.Add(id, filename, type, date, size, keywords, filecontent, catalogId);
-        //}
-
         private void clearTxts()
         {
             txtFilenameEF.Text = "";
@@ -131,7 +104,7 @@ namespace Treeview
             cmbTypeEF.Text = "";
             txtSizeEF.Text = "";
             dtpEF.Text = "";
-            txtCatIDEF.Text = "";
+            cmbCatIDEF.Text = "";
             rtbContentEF.Text = "";
         }
 
@@ -142,7 +115,7 @@ namespace Treeview
             cmd = new SqlCommand(sql, con);
             try
             {
-                //con.Open();
+                con.Open();
                 adapter = new SqlDataAdapter(cmd);
                 adapter.UpdateCommand = con.CreateCommand();
                 adapter.UpdateCommand.CommandText = sql;
@@ -157,7 +130,7 @@ namespace Treeview
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                //con.Close();
+                con.Close();
             }
         }
 
@@ -168,7 +141,7 @@ namespace Treeview
             cmd = new SqlCommand(sql, con);
             try
             {
-                //con.Open();
+                con.Open();
                 MessageBox.Show(con.State.ToString());
                 adapter = new SqlDataAdapter(cmd);
                 adapter.DeleteCommand = con.CreateCommand();
@@ -187,27 +160,26 @@ namespace Treeview
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                //con.Close();
+                con.Close();
             }
         }
 
 
         private void btnInsertFile_Click(object sender, EventArgs e)
         {
-            if (txtFilenameEF.Text == "" || cmbTypeEF.Text == "" || dtpEF.Value.ToString() == "" || txtSizeEF.Text == "" || txtKeyEF.Text == "" || rtbContentEF.Text == "" || txtCatIDEF.Text == "")
+            if (txtFilenameEF.Text == "" || cmbTypeEF.Text == "" || dtpEF.Value.ToString() == "" || txtSizeEF.Text == "" || txtKeyEF.Text == "" || rtbContentEF.Text == "" || cmbCatIDEF.Text == "")
             {
                 MessageBox.Show("Поля не заполнены");
             }
             else
             {
-                InsertFile(txtFilenameEF.Text, cmbTypeEF.Text, dtpEF.Value.ToString(), txtSizeEF.Text, txtKeyEF.Text, rtbContentEF.Text, txtCatIDEF.Text);
+                InsertFile(txtFilenameEF.Text, cmbTypeEF.Text, dtpEF.Value.ToString(), txtSizeEF.Text, txtKeyEF.Text, rtbContentEF.Text, cmbCatIDEF.Text);
             }
         }
-        //cmd.Parameters.AddWithValue("@date", dtpEF.Value.ToString("dd/MM/yyyy"));
 
         private void btnUpdFile_Click(object sender, EventArgs e)
         {
-            if (txtFilenameEF.Text == "" || cmbTypeEF.Text == "" || dtpEF.Text == "" || txtSizeEF.Text == "" || txtKeyEF.Text == "" || rtbContentEF.Text == "" || txtCatIDEF.Text == "")
+            if (txtFilenameEF.Text == "" || cmbTypeEF.Text == "" || dtpEF.Text == "" || txtSizeEF.Text == "" || txtKeyEF.Text == "" || rtbContentEF.Text == "" || cmbCatIDEF.Text == "")
             {
                 MessageBox.Show("Поля не заполнены");
             }
@@ -215,7 +187,7 @@ namespace Treeview
             {
                 String selected = dgvTFileEF.SelectedRows[0].Cells[0].Value.ToString();
                 int id = Convert.ToInt32(selected);
-                UpdateFile(id, txtFilenameEF.Text, cmbTypeEF.Text, dtpEF.Text, txtSizeEF.Text, txtKeyEF.Text, rtbContentEF.Text, txtCatIDEF.Text);
+                UpdateFile(id, txtFilenameEF.Text, cmbTypeEF.Text, dtpEF.Text, txtSizeEF.Text, txtKeyEF.Text, rtbContentEF.Text, cmbCatIDEF.Text);
             }
         }
 
@@ -230,7 +202,22 @@ namespace Treeview
             int id = Convert.ToInt32(selected);
             DeleteFile(id);
         }
+
+
+        private void txtSizeEF_KeyPress(object sender, KeyPressEventArgs e) //ввод только цифр (не работает o_O)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (txtSizeEF.Text.IndexOf(",") == -1) && (txtSizeEF.Text.Length != 0)))
+            {
+                if (e.KeyChar != (char)Keys.Back) e.Handled = true;
+            }
+
+        }
         // --- end CRUD for TFile ---
+
+        //TODO
+        // при выделении строки из dgv подставить значения в текстбоксы 
+
+
 
     }
 }
