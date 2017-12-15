@@ -211,13 +211,23 @@ namespace Treeview
         }
 
         // --- end CRUD for TFile ---
-            
-
-        //TODO
-        // при выделении строки из dgv подставить значения в текстбоксы 
 
 
+        // При выделении строки из dgv подставить значения в текстбоксы 
+        private void dgvTFileEF_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (dgvTFileEF.CurrentCell != null && dgvTFileEF.CurrentCell.RowIndex >= 0)
+            {
+                txtFilenameEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["filename"].Value.ToString();
+                cmbTypeEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["type"].Value.ToString();
+                dtpEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["date"].Value.ToString();
+                txtSizeEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["size"].Value.ToString();
+                txtKeyEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["keywords"].Value.ToString();
+                rtbContentEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["filecontent"].Value.ToString();
+                cmbCatIDEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["catalogId"].Value.ToString();
+            }
+        }
 
 
-    }
+        }
 }

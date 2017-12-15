@@ -77,6 +77,7 @@
             this.dgvTFileEF.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTFileEF.Size = new System.Drawing.Size(772, 508);
             this.dgvTFileEF.TabIndex = 5;
+            this.dgvTFileEF.CurrentCellChanged += new System.EventHandler(this.dgvTFileEF_CurrentCellChanged);
             // 
             // btnInsertFile
             // 
