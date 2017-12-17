@@ -35,10 +35,10 @@
             // btnOpenSearchForm
             // 
             this.btnOpenSearchForm.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOpenSearchForm.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnOpenSearchForm.Location = new System.Drawing.Point(261, 12);
+            this.btnOpenSearchForm.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnOpenSearchForm.Location = new System.Drawing.Point(79, 86);
             this.btnOpenSearchForm.Name = "btnOpenSearchForm";
-            this.btnOpenSearchForm.Size = new System.Drawing.Size(202, 32);
+            this.btnOpenSearchForm.Size = new System.Drawing.Size(202, 46);
             this.btnOpenSearchForm.TabIndex = 3;
             this.btnOpenSearchForm.Text = "Открыть форму поиска";
             this.btnOpenSearchForm.UseVisualStyleBackColor = false;
@@ -46,9 +46,9 @@
             // 
             // btnCallLogin
             // 
-            this.btnCallLogin.Location = new System.Drawing.Point(261, 65);
+            this.btnCallLogin.Location = new System.Drawing.Point(79, 161);
             this.btnCallLogin.Name = "btnCallLogin";
-            this.btnCallLogin.Size = new System.Drawing.Size(202, 27);
+            this.btnCallLogin.Size = new System.Drawing.Size(202, 44);
             this.btnCallLogin.TabIndex = 20;
             this.btnCallLogin.Text = "Вход для администратора";
             this.btnCallLogin.UseVisualStyleBackColor = true;
@@ -58,7 +58,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1125, 541);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(381, 340);
             this.Controls.Add(this.btnCallLogin);
             this.Controls.Add(this.btnOpenSearchForm);
             this.IsMdiContainer = true;
