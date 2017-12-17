@@ -64,18 +64,6 @@
     <Compile Include="ContentForm.Designer.cs">
       <DependentUpon>ContentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\FieldPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\FieldPanel.designer.cs">
-      <DependentUpon>FieldPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\InputForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\InputForm.designer.cs">
-      <DependentUpon>InputForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="EditTFileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,8 +90,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Model\Repository.cs" />
-    <Compile Include="Model\TreeItem.cs" />
     <Compile Include="RepositoryDB2TFileWithoutId.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -132,12 +118,6 @@
     </Compile>
     <EmbeddedResource Include="ContentForm.resx">
       <DependentUpon>ContentForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FieldPanel.resx">
-      <DependentUpon>FieldPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\InputForm.resx">
-      <DependentUpon>InputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditTFileForm.resx">
       <DependentUpon>EditTFileForm.cs</DependentUpon>
@@ -224,7 +204,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="ExternalDll\FastTree.dll" />
     <None Include="Resources\icons8-plus-26.png" />
     <None Include="Resources\icons8-Save-26.png" />
     <None Include="Resources\icons8-Trash-26.png" />
