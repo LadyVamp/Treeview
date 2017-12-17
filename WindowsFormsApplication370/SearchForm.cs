@@ -52,9 +52,10 @@ namespace Treeview
             dgvTFile.Columns[7].Width = 50;
         }
 
-        private void btnFill_Click(object sender, EventArgs e) //Кнопка Сброс
+        private void btnReset_Click(object sender, EventArgs e) //Кнопка Сброс
         {
             FillDgv();
+            ResetFilters();
         }
 
         private void SearchForm_Load(object sender, EventArgs e)
@@ -64,6 +65,22 @@ namespace Treeview
             LoadTreeviewKeyword();
         }
 
+        private void ResetFilters() //Сброс фильтров и текстбоксов
+        {
+            txtSearch.Text = "";
+            txtKeywords.Text = "";
+            cbDoc.Checked = false;
+            cbDocx.Checked = false;
+            cbTxt.Checked = false;
+            cbRtf.Checked = false;
+            txtMinSize.Text = "";
+            txtMaxSize.Text = "";
+            cbDate1.Checked = false;
+            cbDate2.Checked = false;
+        }
+      
+
+        //Поле поиска
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             (dgvTFile.DataSource as DataTable).DefaultView.RowFilter =
@@ -100,7 +117,6 @@ namespace Treeview
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-
             //выбрано 2 чекбокса
             //doc и docx
             if ((cbDoc.Checked == true) && (cbDocx.Checked == true))
@@ -116,7 +132,6 @@ namespace Treeview
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-
             //doc и rtf
             if ((cbDoc.Checked == true) && (cbRtf.Checked == true))
             {
@@ -145,7 +160,6 @@ namespace Treeview
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-
             //выбрано 3 чекбокса
             //doc, docx, txt
             if ((cbDoc.Checked == true) && (cbDocx.Checked == true) && (cbTxt.Checked == true))
@@ -331,8 +345,10 @@ namespace Treeview
             String.Format("keywords like '%{0}%'", txtKeywords.Text);
         }
 
+        // --- Применить Все фильтры ---
         private void btnAllSearch_Click(object sender, EventArgs e)
         {
+            //      КОМБО 1  Текстбокс + мин размер + мин дата + ключевое слово
             //select * from TFile where Type='doc' and Date >= '2017-11-29' and size > 10 and Keywords = 'nodejs'
             DataSet ds = new DataSet();
             SqlConnection con = new SqlConnection(CONNECTION_STRING);
@@ -347,13 +363,69 @@ namespace Treeview
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
+
+            //select * from TFile where Type='doc' or Type='docx' and Date >= '2015-11-29' and size >= 10 and Keywords = 'nodejs'
+           else if (
+                ((cbDoc.Checked == true) //doc
+                || (cbDocx.Checked == true))//docx
+                && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+                && (txtMinSize.Text != "" && txtMaxSize.Text == "") //minSize
+                && (txtKeywords.Text != "") //Keywords
+                )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx') AND size>=" + txtMinSize.Text + "AND keywords like '" + txtKeywords.Text + "' and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size >= 10) and (Keywords = 'nodejs')
+            else if (
+               ((cbDoc.Checked == true) //doc
+               || (cbDocx.Checked == true)//docx
+               || (cbTxt.Checked == true))//txt
+               && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+               && (txtMinSize.Text != "" && txtMaxSize.Text == "") //minSize
+               && (txtKeywords.Text != "") //Keywords
+               )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx' or type='txt') AND size>=" + txtMinSize.Text + "AND keywords like '" + txtKeywords.Text + "' and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //select * from TFile where (Type='doc' or Type='docx' or Type='txt' or Type='rtf') and (Date >= '2015-11-29') and (size >= 10) and (Keywords = 'nodejs')
+            else if (
+               ((cbDoc.Checked == true) //doc
+               || (cbDocx.Checked == true)//docx
+               || (cbTxt.Checked == true)//txt
+               || (cbRtf.Checked == true))//rtf
+               && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+               && (txtMinSize.Text != "" && txtMaxSize.Text == "") //minSize
+               && (txtKeywords.Text != "") //Keywords
+               )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx' or type='txt' or type='rtf') AND size>=" + txtMinSize.Text + "AND keywords like '" + txtKeywords.Text + "' and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+            // end КОМБО 1
+
+            //TODO
+            // комбо 2: вариации с чекбоксами + макс размер + мин дата
+            //select * from TFile where (Type='doc' or Type='docx') and (Date >= '2015-11-29') and (size <= 50) and (Keywords = 'nodejs')
+
+            // комбо 3: вариации с чекбоксами + диапазон размеров + диапазон дат
+            //select * from TFile where (Type='doc' or Type='docx') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 23) and(size <= 50))
+            
+            //админка для ключевых слов
+
         }
 
-       
-
-    //TODO 
-    // мегакнопка, которая объединит все фильтры!
 
 
-}// end SearchForm
+        //TODO 
+        // мегакнопка, которая объединит все фильтры!
+
+
+    }// end SearchForm
 } //end namespace Treeview
