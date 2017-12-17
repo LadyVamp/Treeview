@@ -60,8 +60,6 @@
             this.btnFill = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvTFile = new System.Windows.Forms.DataGridView();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.btnShowTree = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).BeginInit();
@@ -143,18 +141,18 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtMinSize);
-            this.groupBox2.Location = new System.Drawing.Point(586, 84);
+            this.groupBox2.Location = new System.Drawing.Point(310, 84);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(265, 97);
+            this.groupBox2.Size = new System.Drawing.Size(248, 107);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Размер";
             // 
             // btnSizeFilter
             // 
-            this.btnSizeFilter.Location = new System.Drawing.Point(139, 27);
+            this.btnSizeFilter.Location = new System.Drawing.Point(139, 24);
             this.btnSizeFilter.Name = "btnSizeFilter";
-            this.btnSizeFilter.Size = new System.Drawing.Size(109, 30);
+            this.btnSizeFilter.Size = new System.Drawing.Size(103, 30);
             this.btnSizeFilter.TabIndex = 6;
             this.btnSizeFilter.Text = "Применить";
             this.btnSizeFilter.UseVisualStyleBackColor = true;
@@ -163,7 +161,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(102, 65);
+            this.label4.Location = new System.Drawing.Point(100, 64);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 17);
             this.label4.TabIndex = 5;
@@ -171,7 +169,7 @@
             // 
             // txtMaxSize
             // 
-            this.txtMaxSize.Location = new System.Drawing.Point(39, 62);
+            this.txtMaxSize.Location = new System.Drawing.Point(37, 61);
             this.txtMaxSize.Name = "txtMaxSize";
             this.txtMaxSize.Size = new System.Drawing.Size(57, 22);
             this.txtMaxSize.TabIndex = 1;
@@ -188,7 +186,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 65);
+            this.label2.Location = new System.Drawing.Point(7, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 17);
             this.label2.TabIndex = 3;
@@ -212,18 +210,16 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(6, 24);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(116, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(187, 22);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(6, 51);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(116, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(187, 22);
             this.dateTimePicker2.TabIndex = 9;
             // 
             // groupBox3
@@ -233,18 +229,18 @@
             this.groupBox3.Controls.Add(this.cbDate1);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Location = new System.Drawing.Point(905, 84);
+            this.groupBox3.Location = new System.Drawing.Point(599, 84);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(277, 97);
+            this.groupBox3.Size = new System.Drawing.Size(349, 107);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Дата";
             // 
             // btnDateFilter
             // 
-            this.btnDateFilter.Location = new System.Drawing.Point(165, 23);
+            this.btnDateFilter.Location = new System.Drawing.Point(232, 22);
             this.btnDateFilter.Name = "btnDateFilter";
-            this.btnDateFilter.Size = new System.Drawing.Size(101, 29);
+            this.btnDateFilter.Size = new System.Drawing.Size(106, 29);
             this.btnDateFilter.TabIndex = 13;
             this.btnDateFilter.Text = "Применить";
             this.btnDateFilter.UseVisualStyleBackColor = true;
@@ -253,7 +249,7 @@
             // cbDate2
             // 
             this.cbDate2.AutoSize = true;
-            this.cbDate2.Location = new System.Drawing.Point(127, 56);
+            this.cbDate2.Location = new System.Drawing.Point(199, 51);
             this.cbDate2.Name = "cbDate2";
             this.cbDate2.Size = new System.Drawing.Size(18, 17);
             this.cbDate2.TabIndex = 12;
@@ -262,7 +258,7 @@
             // cbDate1
             // 
             this.cbDate1.AutoSize = true;
-            this.cbDate1.Location = new System.Drawing.Point(127, 24);
+            this.cbDate1.Location = new System.Drawing.Point(199, 24);
             this.cbDate1.Name = "cbDate1";
             this.cbDate1.Size = new System.Drawing.Size(18, 17);
             this.cbDate1.TabIndex = 11;
@@ -285,7 +281,7 @@
             // cbDocx
             // 
             this.cbDocx.AutoSize = true;
-            this.cbDocx.Location = new System.Drawing.Point(6, 63);
+            this.cbDocx.Location = new System.Drawing.Point(6, 64);
             this.cbDocx.Name = "cbDocx";
             this.cbDocx.Size = new System.Drawing.Size(63, 21);
             this.cbDocx.TabIndex = 13;
@@ -305,7 +301,7 @@
             // cbRtf
             // 
             this.cbRtf.AutoSize = true;
-            this.cbRtf.Location = new System.Drawing.Point(75, 63);
+            this.cbRtf.Location = new System.Drawing.Point(75, 64);
             this.cbRtf.Name = "cbRtf";
             this.cbRtf.Size = new System.Drawing.Size(47, 21);
             this.cbRtf.TabIndex = 15;
@@ -319,16 +315,16 @@
             this.groupBox1.Controls.Add(this.cbRtf);
             this.groupBox1.Controls.Add(this.cbDocx);
             this.groupBox1.Controls.Add(this.cbTxt);
-            this.groupBox1.Location = new System.Drawing.Point(273, 87);
+            this.groupBox1.Location = new System.Drawing.Point(12, 84);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(264, 94);
+            this.groupBox1.Size = new System.Drawing.Size(255, 107);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Формат";
             // 
             // btnType
             // 
-            this.btnType.Location = new System.Drawing.Point(128, 31);
+            this.btnType.Location = new System.Drawing.Point(128, 24);
             this.btnType.Name = "btnType";
             this.btnType.Size = new System.Drawing.Size(110, 30);
             this.btnType.TabIndex = 16;
@@ -359,39 +355,19 @@
             // dgvTFile
             // 
             this.dgvTFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTFile.Location = new System.Drawing.Point(273, 184);
+            this.dgvTFile.Location = new System.Drawing.Point(12, 207);
             this.dgvTFile.Name = "dgvTFile";
             this.dgvTFile.RowTemplate.Height = 24;
             this.dgvTFile.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTFile.Size = new System.Drawing.Size(909, 329);
+            this.dgvTFile.Size = new System.Drawing.Size(936, 319);
             this.dgvTFile.TabIndex = 18;
             this.dgvTFile.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTFile_CellDoubleClick);
-            // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(12, 115);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(252, 398);
-            this.treeView1.TabIndex = 19;
-            //this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            // 
-            // btnShowTree
-            // 
-            this.btnShowTree.Location = new System.Drawing.Point(12, 84);
-            this.btnShowTree.Name = "btnShowTree";
-            this.btnShowTree.Size = new System.Drawing.Size(142, 23);
-            this.btnShowTree.TabIndex = 20;
-            this.btnShowTree.Text = "Показать дерево";
-            this.btnShowTree.UseVisualStyleBackColor = true;
-            this.btnShowTree.Click += new System.EventHandler(this.btnShowTree_Click);
             // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1194, 613);
-            this.Controls.Add(this.btnShowTree);
-            this.Controls.Add(this.treeView1);
+            this.ClientSize = new System.Drawing.Size(954, 532);
             this.Controls.Add(this.dgvTFile);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnFill);
@@ -450,7 +426,5 @@
         private System.Windows.Forms.Button btnDateFilter;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvTFile;
-        private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.Button btnShowTree;
     }
 }

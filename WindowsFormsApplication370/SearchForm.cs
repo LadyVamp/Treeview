@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 
-
 namespace Treeview
 {
     public partial class SearchForm : Form
@@ -23,8 +22,8 @@ namespace Treeview
         private const string CONNECTION_STRING =
   "Data Source=DESKTOP-O9H5H8N;Initial Catalog=RepositoryDB3;Integrated Security=True";
         SqlConnection con = new SqlConnection(CONNECTION_STRING);
-        SqlCommand cmd;
-        SqlDataAdapter adapter;
+        //SqlCommand cmd;
+        //SqlDataAdapter adapter;
         DataTable dt = new DataTable();
 
         //заполнить datagridview dgvTFile
@@ -302,124 +301,8 @@ namespace Treeview
             frm.ShowDialog();
         }
 
-        //private void btnShowTree_Click(object sender, EventArgs e)
-        //{
-        //    treeView1.Nodes.Clear();
-        //    SqlCommand cmd = new SqlCommand("select * from TKeyword", con);
-        //    try
-        //    {
-        //        //SqlDataReader dr = cmd.ExecuteReader();
-        //        //while (dr.Read())
-        //        //{
-        //        //    TreeNode node = new TreeNode(dr.["Keyword"]);
-        //        //    node.Nodes.Add(dr["ID"]);
-        //        //    node.Nodes.Add(dr["ParentKeyId"]);
-        //        //    node.Nodes.Add(dr["FileId"]);
-
-        //        //    treeView1.Nodes.Add(node);
-        //        //}
-
-        //        //or
-        //        SqlDataAdapter da = new SqlDataAdapter();
-        //        DataSet ds = new DataSet();
-        //        da.Fill(ds);
-
-        //        //DataTable dt = new DataTable();
-        //        //da.Fill(dt);
-
-        //        //foreach (DataRow dr in ds.Tables[0].Rows)
-        //        //{
-        //        //    TreeNode node = new TreeNode(dr["ID"].ToString());
-        //        //    node.Nodes.Add(dr["Keyword"].ToString());
-        //        //    node.Nodes.Add(dr["ParentKeyId"].ToString());
-        //        //    node.Nodes.Add(dr["FileId"].ToString());
-
-        //        //    treeView1.Nodes.Add(node);
-        //        //}
-        //        //or
-        //        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-        //        {
-        //            TreeNode node = new TreeNode(ds.Tables[0].Rows[i]["ID"].ToString());
-        //            node.Nodes.Add(ds.Tables[0].Rows[i]["Keyword"].ToString());
-        //            node.Nodes.Add(ds.Tables[0].Rows[i]["ParentKeyId"].ToString());
-        //            node.Nodes.Add(ds.Tables[0].Rows[i]["FileId"].ToString());
-
-        //            treeView1.Nodes.Add(node);
-        //        }
-
-        //        //or
-
-
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        //Application.ExitThread();
-        //    }
-
-        //}
-
         // TODO
-        //Ключевые слова в виде дерева и по ним поиск
-
-
-        //private void btnShowTree_Click(object sender, EventArgs e)
-        //{
-        //    System.Data.DataTable dt = new System.Data.DataTable();
-        //    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TKeyword", con);
-        //    da.Fill(dt);
-        //    if (dt.Rows.Count > 0)
-        //    {
-        //        treeView1.Nodes.Clear();
-        //        for (int i = 0; i < dt.Rows.Count; i++)
-        //        {
-        //            //TreeNode node = new TreeNode(dt.Rows[i]["ID"].ToString());
-        //            //treeView1.Nodes.Add(dt.Rows[i]["ID"].ToString());
-        //            treeView1.Nodes.Add(dt.Rows[i]["Keyword"].ToString());
-        //            treeView1.Nodes.Add(dt.Rows[i]["ParentKeyId"].ToString());
-        //            treeView1.Nodes.Add(dt.Rows[i]["FileId"].ToString());
-        //        }
-        //    }
-        //}
-
-
-        //BuildNodes(con, treeView1.Nodes, "TCatalog");
-        //BuildNodes(con, treeView1.Nodes[1].Nodes, "TFile");
-        //BuildNodes(con, treeView1.Nodes[2].Nodes, "TKeyword");
-        //private void BuildNodes(SqlConnection con, TreeNodeCollection nodes, string tableName)
-        //{
-        //    using (var command = new SqlCommand(string.Format("SELECT * FROM {0}", tableName), con))
-        //    using (var reader = command.ExecuteReader())
-        //    {
-        //        var table = reader.GetSchemaTable();
-        //        foreach (DataRow col in table.Rows)
-        //            nodes.Add(col[0].ToString());
-        //    }
-        //}
-
-        private void btnShowTree_Click(object sender, EventArgs e)
-        {
-            //TreeViewHitTestInfo tvht;
-            //Point pt = treeView1.PointToClient(MousePosition);
-
-            //tvht = treeView1.HitTest(pt);
-            //if (tvht != null)
-            //{
-            //    if (tvht.Node.Nodes.Count == 0)
-            //    {
-            //        for (int i = 0; i < 100; i++)
-            //            tvht.Node.Nodes.Add(tvht.Node.Text + i);
-            //    }
-            //}
-
-
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    treeView1.Nodes.Add("Item" + i);
-            //}
-        }
-
+        // Админка, CRUD для TFile 
 
 
     }
