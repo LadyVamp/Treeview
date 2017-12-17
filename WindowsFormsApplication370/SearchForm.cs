@@ -301,8 +301,53 @@ namespace Treeview
             frm.ShowDialog();
         }
 
-        // TODO
-        // Админка, CRUD для TFile 
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        //Загрузить treeview для TKeyword
+        private void btnLoadTreeview_Click(object sender, EventArgs e)
+        {
+            /*
+             * Эта конструкция несовместима с тем treeview, что на MainForm.
+             * Ошибки в стиле "TreeNode не содержит определение для Name/Tag/Text"
+             * Создам версию, в которой нет Главного Героя (treeview, что на MainForm) ...
+             */
+
+            //DataTable dt = new DataTable();
+            //SqlDataAdapter da = new SqlDataAdapter("Select * from TKeyword", con);
+            //da.Fill(dt);
+            //treeView1.Nodes.Add("Keywords");
+
+            //foreach (DataRow dr in dt.Rows)
+            //{
+            //    TreeNode myTreeNode = new TreeNode
+            //    {
+            //        Text = dr["Keyword"].ToString(),
+            //        Name = dr["ID"].ToString(),
+            //        Tag = dr["ParentKeyId"].ToString()
+            //    };
+
+            //    // вариант 1: работа с указателем на ноду 
+            //    TreeNode rooTreeNode = treeView1.Nodes.Find(myTreeNode.Tag.ToString(), true).FirstOrDefault();
+            //    // вариант 2: работа с индексом ноды 
+            //    // int rooTreeNode2 = treeView1.Nodes.IndexOfKey(myTreeNode.Tag.ToString()); 
+            //    if (rooTreeNode == null)
+            //    {
+            //        treeView1.Nodes.Add(myTreeNode);
+            //    }
+            //    else
+            //    {
+            //        // вариант 1 
+            //        rooTreeNode.Nodes.Add(myTreeNode);
+            //        // вариант 2 
+            //        // treeView1.Nodes[rooTreeNode2].Nodes.Add(myTreeNode); 
+            //    }
+            //}
+        }
+
+
 
 
     }
