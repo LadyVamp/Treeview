@@ -120,9 +120,9 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(12, 25);
+            this.txtSearch.Location = new System.Drawing.Point(296, 12);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(313, 22);
+            this.txtSearch.Size = new System.Drawing.Size(348, 22);
             this.txtSearch.TabIndex = 3;
             // 
             // tFileBindingSource1
@@ -144,16 +144,16 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtMinSize);
-            this.groupBox2.Location = new System.Drawing.Point(296, 88);
+            this.groupBox2.Location = new System.Drawing.Point(547, 105);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(305, 107);
+            this.groupBox2.Size = new System.Drawing.Size(242, 90);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Размер";
             // 
             // btnSizeFilter
             // 
-            this.btnSizeFilter.Location = new System.Drawing.Point(183, 24);
+            this.btnSizeFilter.Location = new System.Drawing.Point(130, 19);
             this.btnSizeFilter.Name = "btnSizeFilter";
             this.btnSizeFilter.Size = new System.Drawing.Size(105, 30);
             this.btnSizeFilter.TabIndex = 6;
@@ -164,7 +164,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(153, 64);
+            this.label4.Location = new System.Drawing.Point(100, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 17);
             this.label4.TabIndex = 5;
@@ -172,7 +172,7 @@
             // 
             // txtMaxSize
             // 
-            this.txtMaxSize.Location = new System.Drawing.Point(90, 61);
+            this.txtMaxSize.Location = new System.Drawing.Point(37, 51);
             this.txtMaxSize.Name = "txtMaxSize";
             this.txtMaxSize.Size = new System.Drawing.Size(57, 22);
             this.txtMaxSize.TabIndex = 1;
@@ -180,7 +180,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(153, 36);
+            this.label3.Location = new System.Drawing.Point(100, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 17);
             this.label3.TabIndex = 4;
@@ -189,7 +189,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 64);
+            this.label2.Location = new System.Drawing.Point(7, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 17);
             this.label2.TabIndex = 3;
@@ -198,7 +198,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 34);
+            this.label1.Location = new System.Drawing.Point(7, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 17);
             this.label1.TabIndex = 2;
@@ -206,7 +206,7 @@
             // 
             // txtMinSize
             // 
-            this.txtMinSize.Location = new System.Drawing.Point(92, 31);
+            this.txtMinSize.Location = new System.Drawing.Point(39, 21);
             this.txtMinSize.Name = "txtMinSize";
             this.txtMinSize.Size = new System.Drawing.Size(55, 22);
             this.txtMinSize.TabIndex = 0;
@@ -232,16 +232,16 @@
             this.groupBox3.Controls.Add(this.cbDate1);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Location = new System.Drawing.Point(637, 88);
+            this.groupBox3.Location = new System.Drawing.Point(795, 105);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(389, 107);
+            this.groupBox3.Size = new System.Drawing.Size(353, 90);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Дата";
             // 
             // btnDateFilter
             // 
-            this.btnDateFilter.Location = new System.Drawing.Point(262, 24);
+            this.btnDateFilter.Location = new System.Drawing.Point(234, 20);
             this.btnDateFilter.Name = "btnDateFilter";
             this.btnDateFilter.Size = new System.Drawing.Size(105, 29);
             this.btnDateFilter.TabIndex = 13;
@@ -284,7 +284,7 @@
             // cbDocx
             // 
             this.cbDocx.AutoSize = true;
-            this.cbDocx.Location = new System.Drawing.Point(6, 64);
+            this.cbDocx.Location = new System.Drawing.Point(6, 57);
             this.cbDocx.Name = "cbDocx";
             this.cbDocx.Size = new System.Drawing.Size(63, 21);
             this.cbDocx.TabIndex = 13;
@@ -304,7 +304,7 @@
             // cbRtf
             // 
             this.cbRtf.AutoSize = true;
-            this.cbRtf.Location = new System.Drawing.Point(75, 64);
+            this.cbRtf.Location = new System.Drawing.Point(74, 57);
             this.cbRtf.Name = "cbRtf";
             this.cbRtf.Size = new System.Drawing.Size(47, 21);
             this.cbRtf.TabIndex = 15;
@@ -318,16 +318,16 @@
             this.groupBox1.Controls.Add(this.cbRtf);
             this.groupBox1.Controls.Add(this.cbDocx);
             this.groupBox1.Controls.Add(this.cbTxt);
-            this.groupBox1.Location = new System.Drawing.Point(12, 88);
+            this.groupBox1.Location = new System.Drawing.Point(296, 105);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(278, 107);
+            this.groupBox1.Size = new System.Drawing.Size(245, 90);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Формат";
             // 
             // btnType
             // 
-            this.btnType.Location = new System.Drawing.Point(150, 24);
+            this.btnType.Location = new System.Drawing.Point(128, 29);
             this.btnType.Name = "btnType";
             this.btnType.Size = new System.Drawing.Size(97, 30);
             this.btnType.TabIndex = 16;
@@ -337,7 +337,7 @@
             // 
             // btnFill
             // 
-            this.btnFill.Location = new System.Drawing.Point(951, 12);
+            this.btnFill.Location = new System.Drawing.Point(1193, 11);
             this.btnFill.Name = "btnFill";
             this.btnFill.Size = new System.Drawing.Size(75, 23);
             this.btnFill.TabIndex = 16;
@@ -347,7 +347,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(331, 25);
+            this.btnSearch.Location = new System.Drawing.Point(650, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(90, 32);
             this.btnSearch.TabIndex = 17;
@@ -358,34 +358,34 @@
             // dgvTFile
             // 
             this.dgvTFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTFile.Location = new System.Drawing.Point(296, 201);
+            this.dgvTFile.Location = new System.Drawing.Point(12, 201);
             this.dgvTFile.Name = "dgvTFile";
             this.dgvTFile.RowTemplate.Height = 24;
             this.dgvTFile.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTFile.Size = new System.Drawing.Size(730, 319);
+            this.dgvTFile.Size = new System.Drawing.Size(1256, 319);
             this.dgvTFile.TabIndex = 18;
             this.dgvTFile.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTFile_CellDoubleClick);
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(12, 201);
+            this.treeView1.Location = new System.Drawing.Point(12, 12);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(278, 321);
+            this.treeView1.Size = new System.Drawing.Size(278, 183);
             this.treeView1.TabIndex = 19;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // txtKeywords
             // 
-            this.txtKeywords.Location = new System.Drawing.Point(452, 25);
+            this.txtKeywords.Location = new System.Drawing.Point(296, 62);
             this.txtKeywords.Name = "txtKeywords";
-            this.txtKeywords.Size = new System.Drawing.Size(225, 22);
+            this.txtKeywords.Size = new System.Drawing.Size(245, 22);
             this.txtKeywords.TabIndex = 20;
             // 
             // btnSearchKeywords
             // 
-            this.btnSearchKeywords.Location = new System.Drawing.Point(683, 25);
+            this.btnSearchKeywords.Location = new System.Drawing.Point(547, 62);
             this.btnSearchKeywords.Name = "btnSearchKeywords";
-            this.btnSearchKeywords.Size = new System.Drawing.Size(214, 32);
+            this.btnSearchKeywords.Size = new System.Drawing.Size(213, 32);
             this.btnSearchKeywords.TabIndex = 21;
             this.btnSearchKeywords.Text = "Поиск по ключевым словам";
             this.btnSearchKeywords.UseVisualStyleBackColor = true;
@@ -395,7 +395,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 532);
+            this.ClientSize = new System.Drawing.Size(1283, 532);
             this.Controls.Add(this.btnSearchKeywords);
             this.Controls.Add(this.txtKeywords);
             this.Controls.Add(this.treeView1);
