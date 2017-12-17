@@ -83,6 +83,16 @@ namespace WindowsFormsApplication370.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_database_administrator_26 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-database-administrator-26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_Eye_26 {
             get {
                 object obj = ResourceManager.GetObject("icons8-Eye-26", resourceCulture);
@@ -106,6 +116,16 @@ namespace WindowsFormsApplication370.Properties {
         internal static System.Drawing.Bitmap icons8_Save_26 {
             get {
                 object obj = ResourceManager.GetObject("icons8-Save-26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_filled_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-filled-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

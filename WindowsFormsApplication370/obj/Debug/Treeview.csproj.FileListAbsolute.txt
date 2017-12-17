@@ -16,7 +16,6 @@ C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplic
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\bin\Debug\WindowsFormsApplication370.exe
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\bin\Debug\WindowsFormsApplication370.pdb
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.csprojResolveAssemblyReference.cache
-C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.MainForm.resources
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\WindowsFormsApplication370.Properties.Resources.resources
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.csproj.GenerateResource.Cache
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview_old\WindowsFormsApplication370\bin\Debug\WindowsFormsApplication370.exe.config
@@ -28,3 +27,4 @@ C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplic
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.LoginForm.resources
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.MainAP.resources
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.EditTFileForm.resources
+C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.Form1.resources
