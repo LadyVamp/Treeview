@@ -328,7 +328,12 @@ namespace Treeview
         private void btnSearchKeywords_Click(object sender, EventArgs e)
         {
             (dgvTFile.DataSource as DataTable).DefaultView.RowFilter =
-            String.Format("keywords like '{0}%'", txtKeywords.Text);
+            String.Format("keywords like '%{0}%'", txtKeywords.Text);
         }
-    }
-}
+
+        //TODO 
+        // мегакнопка, которая объединит все фильтры!
+
+
+    }// end SearchForm
+} //end namespace Treeview

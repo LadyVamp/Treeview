@@ -144,7 +144,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtMinSize);
-            this.groupBox2.Location = new System.Drawing.Point(547, 105);
+            this.groupBox2.Location = new System.Drawing.Point(650, 105);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(242, 90);
             this.groupBox2.TabIndex = 6;
@@ -232,7 +232,7 @@
             this.groupBox3.Controls.Add(this.cbDate1);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Location = new System.Drawing.Point(795, 105);
+            this.groupBox3.Location = new System.Drawing.Point(915, 105);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(353, 90);
             this.groupBox3.TabIndex = 11;
@@ -318,7 +318,7 @@
             this.groupBox1.Controls.Add(this.cbRtf);
             this.groupBox1.Controls.Add(this.cbDocx);
             this.groupBox1.Controls.Add(this.cbTxt);
-            this.groupBox1.Location = new System.Drawing.Point(296, 105);
+            this.groupBox1.Location = new System.Drawing.Point(323, 105);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 90);
             this.groupBox1.TabIndex = 5;
@@ -376,14 +376,14 @@
             // 
             // txtKeywords
             // 
-            this.txtKeywords.Location = new System.Drawing.Point(296, 62);
+            this.txtKeywords.Location = new System.Drawing.Point(323, 62);
             this.txtKeywords.Name = "txtKeywords";
             this.txtKeywords.Size = new System.Drawing.Size(245, 22);
             this.txtKeywords.TabIndex = 20;
             // 
             // btnSearchKeywords
             // 
-            this.btnSearchKeywords.Location = new System.Drawing.Point(547, 62);
+            this.btnSearchKeywords.Location = new System.Drawing.Point(574, 62);
             this.btnSearchKeywords.Name = "btnSearchKeywords";
             this.btnSearchKeywords.Size = new System.Drawing.Size(213, 32);
             this.btnSearchKeywords.TabIndex = 21;
