@@ -63,6 +63,7 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.txtKeywords = new System.Windows.Forms.TextBox();
             this.btnSearchKeywords = new System.Windows.Forms.Button();
+            this.btnAllSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).BeginInit();
@@ -278,6 +279,7 @@
             this.cbDoc.Name = "cbDoc";
             this.cbDoc.Size = new System.Drawing.Size(57, 21);
             this.cbDoc.TabIndex = 12;
+            this.cbDoc.Tag = "doc";
             this.cbDoc.Text = ".doc";
             this.cbDoc.UseVisualStyleBackColor = true;
             // 
@@ -288,6 +290,7 @@
             this.cbDocx.Name = "cbDocx";
             this.cbDocx.Size = new System.Drawing.Size(63, 21);
             this.cbDocx.TabIndex = 13;
+            this.cbDocx.Tag = "docx";
             this.cbDocx.Text = ".docx";
             this.cbDocx.UseVisualStyleBackColor = true;
             // 
@@ -298,6 +301,7 @@
             this.cbTxt.Name = "cbTxt";
             this.cbTxt.Size = new System.Drawing.Size(48, 21);
             this.cbTxt.TabIndex = 14;
+            this.cbTxt.Tag = "txt";
             this.cbTxt.Text = ".txt";
             this.cbTxt.UseVisualStyleBackColor = true;
             // 
@@ -308,6 +312,7 @@
             this.cbRtf.Name = "cbRtf";
             this.cbRtf.Size = new System.Drawing.Size(47, 21);
             this.cbRtf.TabIndex = 15;
+            this.cbRtf.Tag = "rtf";
             this.cbRtf.Text = ".rtf";
             this.cbRtf.UseVisualStyleBackColor = true;
             // 
@@ -391,11 +396,22 @@
             this.btnSearchKeywords.UseVisualStyleBackColor = true;
             this.btnSearchKeywords.Click += new System.EventHandler(this.btnSearchKeywords_Click);
             // 
+            // btnAllSearch
+            // 
+            this.btnAllSearch.Location = new System.Drawing.Point(1164, 62);
+            this.btnAllSearch.Name = "btnAllSearch";
+            this.btnAllSearch.Size = new System.Drawing.Size(104, 37);
+            this.btnAllSearch.TabIndex = 22;
+            this.btnAllSearch.Text = "Все фильтры";
+            this.btnAllSearch.UseVisualStyleBackColor = true;
+            this.btnAllSearch.Click += new System.EventHandler(this.btnAllSearch_Click);
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 532);
+            this.Controls.Add(this.btnAllSearch);
             this.Controls.Add(this.btnSearchKeywords);
             this.Controls.Add(this.txtKeywords);
             this.Controls.Add(this.treeView1);
@@ -460,5 +476,6 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TextBox txtKeywords;
         private System.Windows.Forms.Button btnSearchKeywords;
+        private System.Windows.Forms.Button btnAllSearch;
     }
 }

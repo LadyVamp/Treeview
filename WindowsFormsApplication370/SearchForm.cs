@@ -14,7 +14,7 @@ namespace Treeview
 {
     public partial class SearchForm : Form
     {
-           public SearchForm()
+        public SearchForm()
         {
             InitializeComponent();
         }
@@ -102,14 +102,14 @@ namespace Treeview
             }
 
             //выбрано 2 чекбокса
-                //doc и docx
+            //doc и docx
             if ((cbDoc.Checked == true) && (cbDocx.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //doc и txt
+            //doc и txt
             if ((cbDoc.Checked == true) && (cbTxt.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='txt'", con);
@@ -117,28 +117,28 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-                //doc и rtf
+            //doc и rtf
             if ((cbDoc.Checked == true) && (cbRtf.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //docx и rtf
+            //docx и rtf
             if ((cbDocx.Checked == true) && (cbRtf.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //docx и txt
+            //docx и txt
             if ((cbDocx.Checked == true) && (cbTxt.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx' OR type='txt'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //rtf и txt
+            //rtf и txt
             if ((cbRtf.Checked == true) && (cbTxt.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='rtf' OR type='txt'", con);
@@ -147,28 +147,28 @@ namespace Treeview
             }
 
             //выбрано 3 чекбокса
-                //doc, docx, txt
+            //doc, docx, txt
             if ((cbDoc.Checked == true) && (cbDocx.Checked == true) && (cbTxt.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx' OR type='txt'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //doc, docx, rtf
+            //doc, docx, rtf
             if ((cbDoc.Checked == true) && (cbDocx.Checked == true) && (cbRtf.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //docx, txt, rtf
+            //docx, txt, rtf
             if ((cbDocx.Checked == true) && (cbTxt.Checked == true) && (cbRtf.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx' OR type='txt' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //doc, txt, rtf
+            //doc, txt, rtf
             if ((cbDoc.Checked == true) && (cbTxt.Checked == true) && (cbRtf.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='txt' OR type='rtf'", con);
@@ -222,7 +222,7 @@ namespace Treeview
             DataSet ds = new DataSet();
             SqlConnection con = new SqlConnection(CONNECTION_STRING);
 
-            if ((cbDate1.Checked == true)&& (cbDate2.Checked == false))
+            if ((cbDate1.Checked == true) && (cbDate2.Checked == false))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE Date>='" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
                 da.Fill(ds, "TFile");
@@ -246,7 +246,7 @@ namespace Treeview
             }
         }
 
-        
+
         //---Типа полнотекстовый поиск---
         /*
             выделит строку, где упоминается слово из текстбокса
@@ -270,7 +270,7 @@ namespace Treeview
         //Даблклик по строке dgv открывает форму ContentForm с инфой о статье и текстом
         private void dgvTFile_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ContentForm frm = new ContentForm(); 
+            ContentForm frm = new ContentForm();
             frm.txtID.Text = this.dgvTFile.CurrentRow.Cells[0].Value.ToString();
             frm.txtFilename.Text = this.dgvTFile.CurrentRow.Cells[1].Value.ToString();
             frm.txtType.Text = this.dgvTFile.CurrentRow.Cells[2].Value.ToString();
@@ -331,9 +331,29 @@ namespace Treeview
             String.Format("keywords like '%{0}%'", txtKeywords.Text);
         }
 
-        //TODO 
-        // мегакнопка, которая объединит все фильтры!
+        private void btnAllSearch_Click(object sender, EventArgs e)
+        {
+            //select * from TFile where Type='doc' and Date >= '2017-11-29' and size > 10 and Keywords = 'nodejs'
+            DataSet ds = new DataSet();
+            SqlConnection con = new SqlConnection(CONNECTION_STRING);
+            if (
+                (cbDoc.Checked == true) //doc
+                && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+                && (txtMinSize.Text != "" && txtMaxSize.Text == "") //minSize
+                && (txtKeywords.Text != "") //Keywords
+                )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' AND size>=" + txtMinSize.Text + "AND keywords like '"+ txtKeywords.Text+"' and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+        }
+
+       
+
+    //TODO 
+    // мегакнопка, которая объединит все фильтры!
 
 
-    }// end SearchForm
+}// end SearchForm
 } //end namespace Treeview
