@@ -61,6 +61,8 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvTFile = new System.Windows.Forms.DataGridView();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.txtKeywords = new System.Windows.Forms.TextBox();
+            this.btnSearchKeywords = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).BeginInit();
@@ -335,7 +337,7 @@
             // 
             // btnFill
             // 
-            this.btnFill.Location = new System.Drawing.Point(873, 12);
+            this.btnFill.Location = new System.Drawing.Point(951, 12);
             this.btnFill.Name = "btnFill";
             this.btnFill.Size = new System.Drawing.Size(75, 23);
             this.btnFill.TabIndex = 16;
@@ -372,11 +374,30 @@
             this.treeView1.TabIndex = 19;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
+            // txtKeywords
+            // 
+            this.txtKeywords.Location = new System.Drawing.Point(452, 25);
+            this.txtKeywords.Name = "txtKeywords";
+            this.txtKeywords.Size = new System.Drawing.Size(225, 22);
+            this.txtKeywords.TabIndex = 20;
+            // 
+            // btnSearchKeywords
+            // 
+            this.btnSearchKeywords.Location = new System.Drawing.Point(683, 25);
+            this.btnSearchKeywords.Name = "btnSearchKeywords";
+            this.btnSearchKeywords.Size = new System.Drawing.Size(214, 32);
+            this.btnSearchKeywords.TabIndex = 21;
+            this.btnSearchKeywords.Text = "Поиск по ключевым словам";
+            this.btnSearchKeywords.UseVisualStyleBackColor = true;
+            this.btnSearchKeywords.Click += new System.EventHandler(this.btnSearchKeywords_Click);
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 532);
+            this.Controls.Add(this.btnSearchKeywords);
+            this.Controls.Add(this.txtKeywords);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.dgvTFile);
             this.Controls.Add(this.btnSearch);
@@ -437,5 +458,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvTFile;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TextBox txtKeywords;
+        private System.Windows.Forms.Button btnSearchKeywords;
     }
 }
