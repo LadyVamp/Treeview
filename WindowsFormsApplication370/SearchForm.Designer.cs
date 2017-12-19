@@ -216,14 +216,14 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(38, 21);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(166, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(196, 22);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(38, 48);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(166, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(196, 22);
             this.dateTimePicker2.TabIndex = 9;
             // 
             // groupBox3
@@ -235,14 +235,14 @@
             this.groupBox3.Controls.Add(this.dateTimePicker2);
             this.groupBox3.Location = new System.Drawing.Point(805, 45);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(353, 90);
+            this.groupBox3.Size = new System.Drawing.Size(411, 90);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Дата";
             // 
             // btnDateFilter
             // 
-            this.btnDateFilter.Location = new System.Drawing.Point(234, 20);
+            this.btnDateFilter.Location = new System.Drawing.Point(281, 21);
             this.btnDateFilter.Name = "btnDateFilter";
             this.btnDateFilter.Size = new System.Drawing.Size(105, 29);
             this.btnDateFilter.TabIndex = 13;
@@ -253,7 +253,7 @@
             // cbDate2
             // 
             this.cbDate2.AutoSize = true;
-            this.cbDate2.Location = new System.Drawing.Point(210, 49);
+            this.cbDate2.Location = new System.Drawing.Point(240, 53);
             this.cbDate2.Name = "cbDate2";
             this.cbDate2.Size = new System.Drawing.Size(18, 17);
             this.cbDate2.TabIndex = 12;
@@ -262,7 +262,7 @@
             // cbDate1
             // 
             this.cbDate1.AutoSize = true;
-            this.cbDate1.Location = new System.Drawing.Point(210, 22);
+            this.cbDate1.Location = new System.Drawing.Point(240, 24);
             this.cbDate1.Name = "cbDate1";
             this.cbDate1.Size = new System.Drawing.Size(18, 17);
             this.cbDate1.TabIndex = 11;
