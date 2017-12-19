@@ -363,11 +363,11 @@
             // dgvTFile
             // 
             this.dgvTFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTFile.Location = new System.Drawing.Point(12, 201);
+            this.dgvTFile.Location = new System.Drawing.Point(12, 243);
             this.dgvTFile.Name = "dgvTFile";
             this.dgvTFile.RowTemplate.Height = 24;
             this.dgvTFile.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTFile.Size = new System.Drawing.Size(1256, 319);
+            this.dgvTFile.Size = new System.Drawing.Size(1256, 277);
             this.dgvTFile.TabIndex = 18;
             this.dgvTFile.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTFile_CellDoubleClick);
             // 
@@ -375,7 +375,7 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(12, 12);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(278, 183);
+            this.treeView1.Size = new System.Drawing.Size(278, 225);
             this.treeView1.TabIndex = 19;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -398,9 +398,9 @@
             // 
             // btnAllSearch
             // 
-            this.btnAllSearch.Location = new System.Drawing.Point(1054, 158);
+            this.btnAllSearch.Location = new System.Drawing.Point(1067, 141);
             this.btnAllSearch.Name = "btnAllSearch";
-            this.btnAllSearch.Size = new System.Drawing.Size(104, 37);
+            this.btnAllSearch.Size = new System.Drawing.Size(91, 59);
             this.btnAllSearch.TabIndex = 22;
             this.btnAllSearch.Text = "Все фильтры";
             this.btnAllSearch.UseVisualStyleBackColor = true;
