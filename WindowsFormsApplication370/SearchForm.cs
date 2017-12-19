@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Configuration;
 
 namespace Treeview
 {
@@ -338,6 +332,9 @@ namespace Treeview
             }
         }
 
+
+
+
         //Поиск по ключевым словам 
         private void btnSearchKeywords_Click(object sender, EventArgs e)
         {
@@ -462,26 +459,6 @@ namespace Treeview
                     da.Fill(ds, "TFile");
                     dgvTFile.DataSource = ds.Tables["TFile"];
                 }
-
-            ////  select * from TFile where (Type='docx' or Type='txt' or Type='rtf') and (Date >= '2015-11-29') and (size <= 30) and (Keywords like '%sql%') order by date
-            //// + checked
-            //else if (
-            //       //( 
-            //        (cbDoc.Checked == false)// без doc
-            //        || (cbDocx.Checked == true)//docx
-            //        || (cbTxt.Checked == true)//txt
-            //        || (cbRtf.Checked == true)//rtf
-            //       && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
-            //       && (txtMaxSize.Text != "" && txtMinSize.Text == "") //maxSize
-            //       && (txtKeywords.Text != "") //Keywords
-            //       )
-            //    {
-            //        SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='docx' or type='txt' or type='rtf') AND (size<=" + txtMaxSize.Text + ") AND (keywords like '%" + txtKeywords.Text + "%') and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
-            //        da.Fill(ds, "TFile");
-            //        dgvTFile.DataSource = ds.Tables["TFile"];
-            //    }
-
-
             // end КОМБО 2
 
 
@@ -513,21 +490,6 @@ namespace Treeview
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-
-            ////  select * from TFile where Type='doc' or Type='docx' and Date >= '2015-11-29' and size >= 10 order by date
-            //// где-то в запросе ошибка
-            //else if (
-            //     (cbDoc.Checked == true) //doc
-            //     || (cbDocx.Checked == true)//docx
-            //     && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
-            //     && (txtMinSize.Text != "" && txtMaxSize.Text == "") //minSize
-            //     && (txtKeywords.Text == "") //Keywords
-            //     )
-            //{
-            //    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx') and size>=" + txtMinSize.Text +" AND Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
-            //    da.Fill(ds, "TFile");
-            //    dgvTFile.DataSource = ds.Tables["TFile"];
-            //}
 
             //  select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size >= 20) order by date
             // не все результаты показывает
@@ -679,9 +641,6 @@ namespace Treeview
             //  + checked
             else if (
                (
-               //(cbDoc.Checked == true) //doc
-               //|| (cbDocx.Checked == true)//docx
-               //|| 
                (cbTxt.Checked == true))//txt
                && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
                && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
@@ -790,18 +749,9 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
             // end КОМБО 4
-
-
-
-
-            //TODO админка для ключевых слов
-
         }
 
-
-
-        //TODO 
-        // мегакнопка, которая объединит все фильтры!
+        //TODO админка для ключевых слов
 
 
     }// end SearchForm
