@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Configuration;
 
 namespace Treeview
 {
     public partial class SearchForm : Form
     {
-           public SearchForm()
+        public SearchForm()
         {
             InitializeComponent();
         }
@@ -52,9 +46,10 @@ namespace Treeview
             dgvTFile.Columns[7].Width = 50;
         }
 
-        private void btnFill_Click(object sender, EventArgs e) //Кнопка Сброс
+        private void btnReset_Click(object sender, EventArgs e) //Кнопка Сброс
         {
             FillDgv();
+            ResetFilters();
         }
 
         private void SearchForm_Load(object sender, EventArgs e)
@@ -64,6 +59,22 @@ namespace Treeview
             LoadTreeviewKeyword();
         }
 
+        private void ResetFilters() //Сброс фильтров и текстбоксов
+        {
+            txtSearch.Text = "";
+            txtKeywords.Text = "";
+            cbDoc.Checked = false;
+            cbDocx.Checked = false;
+            cbTxt.Checked = false;
+            cbRtf.Checked = false;
+            txtMinSize.Text = "";
+            txtMaxSize.Text = "";
+            cbDate1.Checked = false;
+            cbDate2.Checked = false;
+        }
+      
+
+        //Поле поиска
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             (dgvTFile.DataSource as DataTable).DefaultView.RowFilter =
@@ -100,75 +111,72 @@ namespace Treeview
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-
             //выбрано 2 чекбокса
-                //doc и docx
+            //doc и docx
             if ((cbDoc.Checked == true) && (cbDocx.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //doc и txt
+            //doc и txt
             if ((cbDoc.Checked == true) && (cbTxt.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='txt'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-
-                //doc и rtf
+            //doc и rtf
             if ((cbDoc.Checked == true) && (cbRtf.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //docx и rtf
+            //docx и rtf
             if ((cbDocx.Checked == true) && (cbRtf.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //docx и txt
+            //docx и txt
             if ((cbDocx.Checked == true) && (cbTxt.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx' OR type='txt'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //rtf и txt
+            //rtf и txt
             if ((cbRtf.Checked == true) && (cbTxt.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='rtf' OR type='txt'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-
             //выбрано 3 чекбокса
-                //doc, docx, txt
+            //doc, docx, txt
             if ((cbDoc.Checked == true) && (cbDocx.Checked == true) && (cbTxt.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx' OR type='txt'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //doc, docx, rtf
+            //doc, docx, rtf
             if ((cbDoc.Checked == true) && (cbDocx.Checked == true) && (cbRtf.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='docx' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //docx, txt, rtf
+            //docx, txt, rtf
             if ((cbDocx.Checked == true) && (cbTxt.Checked == true) && (cbRtf.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx' OR type='txt' OR type='rtf'", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-                //doc, txt, rtf
+            //doc, txt, rtf
             if ((cbDoc.Checked == true) && (cbTxt.Checked == true) && (cbRtf.Checked == true))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' OR type='txt' OR type='rtf'", con);
@@ -222,7 +230,7 @@ namespace Treeview
             DataSet ds = new DataSet();
             SqlConnection con = new SqlConnection(CONNECTION_STRING);
 
-            if ((cbDate1.Checked == true)&& (cbDate2.Checked == false))
+            if ((cbDate1.Checked == true) && (cbDate2.Checked == false))
             {
                 SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE Date>='" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
                 da.Fill(ds, "TFile");
@@ -246,7 +254,7 @@ namespace Treeview
             }
         }
 
-        
+
         //---Типа полнотекстовый поиск---
         /*
             выделит строку, где упоминается слово из текстбокса
@@ -270,7 +278,7 @@ namespace Treeview
         //Даблклик по строке dgv открывает форму ContentForm с инфой о статье и текстом
         private void dgvTFile_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ContentForm frm = new ContentForm(); 
+            ContentForm frm = new ContentForm();
             frm.txtID.Text = this.dgvTFile.CurrentRow.Cells[0].Value.ToString();
             frm.txtFilename.Text = this.dgvTFile.CurrentRow.Cells[1].Value.ToString();
             frm.txtType.Text = this.dgvTFile.CurrentRow.Cells[2].Value.ToString();
@@ -324,6 +332,9 @@ namespace Treeview
             }
         }
 
+
+
+
         //Поиск по ключевым словам 
         private void btnSearchKeywords_Click(object sender, EventArgs e)
         {
@@ -331,8 +342,416 @@ namespace Treeview
             String.Format("keywords like '%{0}%'", txtKeywords.Text);
         }
 
-        //TODO 
-        // мегакнопка, которая объединит все фильтры!
+        // --- Применить Все фильтры ---
+        private void btnAllSearch_Click(object sender, EventArgs e)
+        {
+            //      КОМБО 1  Текстбокс + мин размер + мин дата + ключевое слово
+            //  + checked!
+            //select * from TFile where Type='doc' and Date >= '2017-11-29' and size >= 10 and Keywords like '%nodejs%' order by date
+            DataSet ds = new DataSet();
+            SqlConnection con = new SqlConnection(CONNECTION_STRING);
+            if (
+                (cbDoc.Checked == true) //doc
+                && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+                && (txtMinSize.Text != "" && txtMaxSize.Text == "") //minSize
+                && (txtKeywords.Text != "") //Keywords
+                )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' AND size>=" + txtMinSize.Text + "AND keywords like '%"+ txtKeywords.Text+"%' and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+          
+            //select * from TFile where (Type='doc' or Type='docx') and (Date >= '2015-11-29') and (size >= 10) and (Keywords like '%nodejs%') order by date
+            //  + checked!
+            else if (
+                ((cbDoc.Checked == true) //doc
+                || (cbDocx.Checked == true))//docx
+                && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+                && (txtMinSize.Text != "" && txtMaxSize.Text == "") //minSize
+                && (txtKeywords.Text != "") //Keywords
+                )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx') AND (size>=" + txtMinSize.Text + ") AND (keywords like '%" + txtKeywords.Text + "%') and (Date >= '" + dateTimePicker1.Value.Date + "') ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size >= 10) and (Keywords like '%nodejs%') order by date
+            //  + checked!
+            else if (
+               ((cbDoc.Checked == true) //doc
+               || (cbDocx.Checked == true)//docx
+               || (cbTxt.Checked == true))//txt
+               && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+               && (txtMinSize.Text != "" && txtMaxSize.Text == "") //minSize
+               && (txtKeywords.Text != "") //Keywords
+               )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx' or type='txt') AND size>=" + txtMinSize.Text + "AND keywords like '%" + txtKeywords.Text + "%' and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //select * from TFile where (Type='doc' or Type='docx' or Type='txt' or Type='rtf') and (Date >= '2015-11-29') and (size >= 10) and (Keywords like '%nodejs%') order by date
+            //  + checked!
+            else if (
+               ((cbDoc.Checked == true) //doc
+               || (cbDocx.Checked == true)//docx
+               || (cbTxt.Checked == true)//txt
+               || (cbRtf.Checked == true))//rtf
+               && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+               && (txtMinSize.Text != "" && txtMaxSize.Text == "") //minSize
+               && (txtKeywords.Text != "") //Keywords
+               )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx' or type='txt' or type='rtf') AND size>=" + txtMinSize.Text + "AND keywords like '%" + txtKeywords.Text + "%' and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+            // end КОМБО 1
+
+            
+            // КОМБО 2: вариации с чекбоксами + макс размер + мин дата
+            //select * from TFile where (Type='doc') and (Date >= '2015-11-29') and (size <= 50) and (Keywords like '%javascript%') order by date
+            //  + checked!
+                else if (
+                    (cbDoc.Checked == true) //doc
+                    && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+                    && (txtMaxSize.Text != "" && txtMinSize.Text == "") //maxSize
+                    && (txtKeywords.Text != "") //Keywords
+                )
+                {
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' AND size<=" + txtMaxSize.Text + "AND keywords like '%" + txtKeywords.Text + "%' and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                    da.Fill(ds, "TFile");
+                    dgvTFile.DataSource = ds.Tables["TFile"];
+                }
+
+            // select * from TFile where (Type='docx') and (Date >= '2015-11-29') and (Size <= 30) and (Keywords like '%c#%') order by date
+            //  + checked!
+            else if (
+                     //(
+                     //(cbDoc.Checked == true) //doc
+                     //&& 
+                     (cbDocx.Checked == true)//docx
+                     && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+                     && (txtMaxSize.Text != "" && txtMinSize.Text == "") //maxSize
+                     && (txtKeywords.Text != "") //Keywords
+                     )
+                {
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='docx') AND size<=" + txtMaxSize.Text + "AND keywords like '%" + txtKeywords.Text + "%' and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                    da.Fill(ds, "TFile");
+                    dgvTFile.DataSource = ds.Tables["TFile"];
+                }
+
+            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size <= 30) and (Keywords like '%nodejs%') order by date
+            //  + checked!
+            else if (
+                   ((cbDoc.Checked == true) //doc
+                   || (cbDocx.Checked == true)//docx
+                   || (cbTxt.Checked == true))//txt
+                   && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+                   && (txtMaxSize.Text != "" && txtMinSize.Text == "") //maxSize
+                   && (txtKeywords.Text != "") //Keywords
+                   )
+                {
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx' or type='txt') AND size<=" + txtMaxSize.Text + "AND keywords like '%" + txtKeywords.Text + "%' and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                    da.Fill(ds, "TFile");
+                    dgvTFile.DataSource = ds.Tables["TFile"];
+                }
+            // end КОМБО 2
+
+
+            // КОМБО 1 БЕЗ ключевых слов
+            //  select * from TFile where (Type='doc') and (Date >= '2017-11-29') and (size >= 10) order by date
+            //  + checked!
+            else if (
+                  (cbDoc.Checked == true) //doc
+                  && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+                  && (txtMinSize.Text != "" && txtMaxSize.Text == "") //minSize
+                  && (txtKeywords.Text == "") //Keywords
+                  )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc') AND (size>=" + txtMinSize.Text + ") and (Date >= '" + dateTimePicker1.Value.Date + "') ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //  select * from TFile where (Type = 'docx') and(Date >= '2015-11-29') and(size >= 20) order by date
+            // + checked
+            else if (
+                (cbDocx.Checked == true) //docx
+                && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+                && (txtMinSize.Text != "" && txtMaxSize.Text == "") //minSize
+                && (txtKeywords.Text == "") //Keywords
+                )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='docx' AND size>=" + txtMinSize.Text + " and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size >= 20) order by date
+            // не все результаты показывает
+            else if (
+               ((cbDoc.Checked == true) //doc
+               && (cbDocx.Checked == true)//docx
+               && (cbTxt.Checked == true))//txt
+               && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+               && (txtMinSize.Text != "" && txtMaxSize.Text == "") //minSize
+               && (txtKeywords.Text == "") //Keywords
+               )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx' or type='txt') AND size>=" + txtMinSize.Text + " and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //  select * from TFile where (Type='docx' or Type='txt' or Type='rtf') and (Date >= '2015-11-29') and (size >= 20) order by date
+            // + checked
+            else if (
+               ( //без doc
+               (cbDocx.Checked == true)//docx
+               && (cbTxt.Checked == true)//txt
+               && (cbRtf.Checked == true))//rtf
+               && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+               && (txtMinSize.Text != "" && txtMaxSize.Text == "") //minSize
+               && (txtKeywords.Text == "") //Keywords
+               )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='docx' or type='txt' or type='rtf') AND size>=" + txtMinSize.Text + " and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+            // end КОМБО 1 БЕЗ ключевых слов
+
+
+            // комбо 2: вариации с чекбоксами + макс размер + мин дата БЕЗ ключевых слов
+            //  select * from TFile where (Type='doc' or Type='docx') and (Date >= '2015-11-29') and (size <= 30) order by date
+            // не все результаты показывает
+            else if (
+                (cbDoc.Checked == true) //doc
+                && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+                && (txtMaxSize.Text != "" && txtMinSize.Text == "") //maxSize
+                && (txtKeywords.Text == "") //Keywords
+                )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' AND size<=" + txtMaxSize.Text + " and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //  select * from TFile where Type='docx' and Date >= '2015-11-29' and size <= 30 order by date
+            // + checked
+            else if (
+                 (cbDocx.Checked == true)//docx
+                 && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+                 && (txtMaxSize.Text != "" && txtMinSize.Text == "") //maxSize
+                 && (txtKeywords.Text == "") //Keywords
+                 )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='docx') AND size<=" + txtMaxSize.Text + " and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size <= 30) order by date
+            // не все результаты показывает
+            else if (
+               ((cbDoc.Checked == true) //doc
+               || (cbDocx.Checked == true)//docx
+               || (cbTxt.Checked == true))//txt
+               && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+               && (txtMaxSize.Text != "" && txtMinSize.Text == "") //maxSize
+               && (txtKeywords.Text == "") //Keywords
+               )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx' or type='txt') AND size<=" + txtMaxSize.Text + " and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //  select * from TFile where (Type='docx' or Type='txt' or Type='rtf') and (Date >= '2015-11-29') and (size <= 30) order by date
+            // + checked
+            else if (
+               ( // без doc
+               (cbDocx.Checked == true)//docx
+               || (cbTxt.Checked == true)//txt
+               || (cbRtf.Checked == true))//rtf
+               && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
+               && (txtMaxSize.Text != "" && txtMinSize.Text == "") //maxSize
+               && (txtKeywords.Text == "") //Keywords
+               )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx' or type='txt' or type='rtf') AND size<=" + txtMaxSize.Text +  /*"AND keywords like '" + txtKeywords.Text +*/ " and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+            // end КОМБО 2 БЕЗ ключевых слов
+
+
+
+
+            // КОМБО 3: вариации с чекбоксами + диапазон размеров + диапазон дат
+            //select * from TFile where (Type='doc') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50))  and keywords like '%nodejs%' order by date
+            // + checked
+            else if (
+                (cbDoc.Checked == true) //doc
+                && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
+                && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
+                && (txtKeywords.Text != "") //Keywords
+                )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") AND keywords like '%" + txtKeywords.Text + "%' and Date >= '" + dateTimePicker1.Value.Date + "' and Date <= '" + dateTimePicker2.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+
+            //select * from TFile where (Type='docx') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50)) and keywords like '%linux%' order by date
+            // + checked
+            else if (
+                (cbDocx.Checked == true) //doc
+                && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
+                && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
+                && (txtKeywords.Text != "") //Keywords
+                )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='docx') AND (size>=" + txtMinSize.Text + "and size<="+txtMaxSize.Text+") AND keywords like '%" + txtKeywords.Text + "%' and Date >= '" + dateTimePicker1.Value.Date + "' and Date <= '" + dateTimePicker2.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //select * from TFile where (Type='doc' or Type='docx') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) and (Keywords like '%nodejs%') order by date
+            //  + checked
+            else if (
+                ((cbDoc.Checked == true) //doc
+                || (cbDocx.Checked == true))//docx
+                && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
+                && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
+                && (txtKeywords.Text != "") //Keywords
+                )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") AND keywords like '%" + txtKeywords.Text + "%' and Date >= '" + dateTimePicker1.Value.Date + "' and Date <= '" + dateTimePicker2.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //select * from TFile where (Type='doc' or Type='docx' or Type='txt') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) and (Keywords like '%sql%') order by date 
+            //  + checked
+            else if (
+               (
+               (cbTxt.Checked == true))//txt
+               && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
+               && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
+               && (txtKeywords.Text != "") //Keywords
+               )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx' or type='txt') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") AND keywords like '%" + txtKeywords.Text + "%' and Date >= '" + dateTimePicker1.Value.Date + "' and Date <= '" + dateTimePicker2.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt' or Type='rtf') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) and (Keywords like '%nodejs%') order by date
+            //  + checked
+            else if (
+               ((cbDoc.Checked == true) //doc
+               || (cbDocx.Checked == true)//docx
+               || (cbTxt.Checked == true)//txt
+               || (cbRtf.Checked == true))//rtf
+               && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
+               && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
+               && (txtKeywords.Text != "") //Keywords
+               )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx' or type='txt' or type='rtf') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") AND keywords like '%" + txtKeywords.Text + "%' and Date >= '" + dateTimePicker1.Value.Date + "' and Date <= '" + dateTimePicker2.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+            // end КОМБО 3
+
+            // КОМБО 4: вариации с чекбоксами + диапазон размеров + диапазон дат БЕЗ КЛЮЧЕВЫХ СЛОВ
+            //select * from TFile where (Type='doc') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50)) order by date
+            // + checked
+            else if (
+                (cbDoc.Checked == true) //doc
+                && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
+                && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
+                && (txtKeywords.Text == "") 
+                )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") AND Date >= '" + dateTimePicker1.Value.Date + "' and Date <= '" + dateTimePicker2.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+
+            //  select * from TFile where (Type='docx') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50)) order by date
+            // + checked
+            else if (
+                (cbDocx.Checked == true) //docx
+                && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
+                && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
+                && (txtKeywords.Text == "") 
+                )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='docx') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") AND Date >= '" + dateTimePicker1.Value.Date + "' and Date <= '" + dateTimePicker2.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //  select * from TFile where (Type='doc' or Type='docx') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and (size <= 50)) order by date
+            //  + checked
+            else if (
+                (cbDoc.Checked == true //doc
+                && cbDocx.Checked == true)//docx
+                && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
+                && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
+                && (txtKeywords.Text == "") 
+                )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") AND ((Date >= '" + dateTimePicker1.Value.Date + "') and (Date <= '" + dateTimePicker2.Value.Date + "')) ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //select * from TFile where (Type='doc' or Type='docx' or Type='txt') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) order by date 
+            // + checked
+            else if (
+               ( //только txt
+               (cbDoc.Checked == false) // doc
+               && (cbDocx.Checked == false)//docx
+               && (cbTxt.Checked == true))//txt
+               && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
+               && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
+               && (txtKeywords.Text == "")
+               )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='txt') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") AND Date >= '" + dateTimePicker1.Value.Date + "' and Date <= '" + dateTimePicker2.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+
+            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt' or Type='rtf') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) order by date
+            // не все показывает
+            else if (
+               ((cbDoc.Checked == true) //doc
+               || (cbDocx.Checked == true)//docx
+               || (cbTxt.Checked == true)//txt
+               || (cbRtf.Checked == true))//rtf
+               && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
+               && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
+               && (txtKeywords.Text == "") 
+               )
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='doc' or type='docx' or type='txt' or type='rtf') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") AND Date >= '" + dateTimePicker1.Value.Date + "' and Date <= '" + dateTimePicker2.Value.Date + "' ORDER BY Date", con);
+                da.Fill(ds, "TFile");
+                dgvTFile.DataSource = ds.Tables["TFile"];
+            }
+            // end КОМБО 4
+        }
+
+        //TODO админка для ключевых слов
 
 
     }// end SearchForm

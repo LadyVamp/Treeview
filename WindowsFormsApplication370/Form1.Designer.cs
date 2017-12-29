@@ -30,6 +30,7 @@
         {
             this.btnCallLogin = new System.Windows.Forms.Button();
             this.btnOpenSearchForm = new System.Windows.Forms.Button();
+            this.treeView2 = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
             // btnCallLogin
@@ -58,15 +59,24 @@
             this.btnOpenSearchForm.UseVisualStyleBackColor = true;
             this.btnOpenSearchForm.Click += new System.EventHandler(this.btnOpenSearchForm_Click);
             // 
+            // treeView2
+            // 
+            this.treeView2.Location = new System.Drawing.Point(29, 208);
+            this.treeView2.Name = "treeView2";
+            this.treeView2.Size = new System.Drawing.Size(319, 225);
+            this.treeView2.TabIndex = 20;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 278);
+            this.ClientSize = new System.Drawing.Size(391, 456);
+            this.Controls.Add(this.treeView2);
             this.Controls.Add(this.btnCallLogin);
             this.Controls.Add(this.btnOpenSearchForm);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
@@ -75,5 +85,6 @@
 
         private System.Windows.Forms.Button btnOpenSearchForm;
         private System.Windows.Forms.Button btnCallLogin;
+        public System.Windows.Forms.TreeView treeView2;
     }
 }

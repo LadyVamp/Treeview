@@ -57,12 +57,13 @@
             this.cbRtf = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnType = new System.Windows.Forms.Button();
-            this.btnFill = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvTFile = new System.Windows.Forms.DataGridView();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.txtKeywords = new System.Windows.Forms.TextBox();
             this.btnSearchKeywords = new System.Windows.Forms.Button();
+            this.btnAllSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).BeginInit();
@@ -144,7 +145,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtMinSize);
-            this.groupBox2.Location = new System.Drawing.Point(650, 105);
+            this.groupBox2.Location = new System.Drawing.Point(547, 45);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(242, 90);
             this.groupBox2.TabIndex = 6;
@@ -215,14 +216,14 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(38, 21);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(166, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(196, 22);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(38, 48);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(166, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(196, 22);
             this.dateTimePicker2.TabIndex = 9;
             // 
             // groupBox3
@@ -232,16 +233,16 @@
             this.groupBox3.Controls.Add(this.cbDate1);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Location = new System.Drawing.Point(915, 105);
+            this.groupBox3.Location = new System.Drawing.Point(805, 45);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(353, 90);
+            this.groupBox3.Size = new System.Drawing.Size(411, 90);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Дата";
             // 
             // btnDateFilter
             // 
-            this.btnDateFilter.Location = new System.Drawing.Point(234, 20);
+            this.btnDateFilter.Location = new System.Drawing.Point(281, 21);
             this.btnDateFilter.Name = "btnDateFilter";
             this.btnDateFilter.Size = new System.Drawing.Size(105, 29);
             this.btnDateFilter.TabIndex = 13;
@@ -252,7 +253,7 @@
             // cbDate2
             // 
             this.cbDate2.AutoSize = true;
-            this.cbDate2.Location = new System.Drawing.Point(210, 49);
+            this.cbDate2.Location = new System.Drawing.Point(240, 53);
             this.cbDate2.Name = "cbDate2";
             this.cbDate2.Size = new System.Drawing.Size(18, 17);
             this.cbDate2.TabIndex = 12;
@@ -261,7 +262,7 @@
             // cbDate1
             // 
             this.cbDate1.AutoSize = true;
-            this.cbDate1.Location = new System.Drawing.Point(210, 22);
+            this.cbDate1.Location = new System.Drawing.Point(240, 24);
             this.cbDate1.Name = "cbDate1";
             this.cbDate1.Size = new System.Drawing.Size(18, 17);
             this.cbDate1.TabIndex = 11;
@@ -278,6 +279,7 @@
             this.cbDoc.Name = "cbDoc";
             this.cbDoc.Size = new System.Drawing.Size(57, 21);
             this.cbDoc.TabIndex = 12;
+            this.cbDoc.Tag = "doc";
             this.cbDoc.Text = ".doc";
             this.cbDoc.UseVisualStyleBackColor = true;
             // 
@@ -288,6 +290,7 @@
             this.cbDocx.Name = "cbDocx";
             this.cbDocx.Size = new System.Drawing.Size(63, 21);
             this.cbDocx.TabIndex = 13;
+            this.cbDocx.Tag = "docx";
             this.cbDocx.Text = ".docx";
             this.cbDocx.UseVisualStyleBackColor = true;
             // 
@@ -298,6 +301,7 @@
             this.cbTxt.Name = "cbTxt";
             this.cbTxt.Size = new System.Drawing.Size(48, 21);
             this.cbTxt.TabIndex = 14;
+            this.cbTxt.Tag = "txt";
             this.cbTxt.Text = ".txt";
             this.cbTxt.UseVisualStyleBackColor = true;
             // 
@@ -308,6 +312,7 @@
             this.cbRtf.Name = "cbRtf";
             this.cbRtf.Size = new System.Drawing.Size(47, 21);
             this.cbRtf.TabIndex = 15;
+            this.cbRtf.Tag = "rtf";
             this.cbRtf.Text = ".rtf";
             this.cbRtf.UseVisualStyleBackColor = true;
             // 
@@ -318,7 +323,7 @@
             this.groupBox1.Controls.Add(this.cbRtf);
             this.groupBox1.Controls.Add(this.cbDocx);
             this.groupBox1.Controls.Add(this.cbTxt);
-            this.groupBox1.Location = new System.Drawing.Point(323, 105);
+            this.groupBox1.Location = new System.Drawing.Point(296, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 90);
             this.groupBox1.TabIndex = 5;
@@ -335,15 +340,15 @@
             this.btnType.UseVisualStyleBackColor = true;
             this.btnType.Click += new System.EventHandler(this.btnType_Click);
             // 
-            // btnFill
+            // btnReset
             // 
-            this.btnFill.Location = new System.Drawing.Point(1193, 11);
-            this.btnFill.Name = "btnFill";
-            this.btnFill.Size = new System.Drawing.Size(75, 23);
-            this.btnFill.TabIndex = 16;
-            this.btnFill.Text = "Сброс";
-            this.btnFill.UseVisualStyleBackColor = true;
-            this.btnFill.Click += new System.EventHandler(this.btnFill_Click);
+            this.btnReset.Location = new System.Drawing.Point(1193, 11);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 16;
+            this.btnReset.Text = "Сброс";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnSearch
             // 
@@ -358,11 +363,11 @@
             // dgvTFile
             // 
             this.dgvTFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTFile.Location = new System.Drawing.Point(12, 201);
+            this.dgvTFile.Location = new System.Drawing.Point(12, 243);
             this.dgvTFile.Name = "dgvTFile";
             this.dgvTFile.RowTemplate.Height = 24;
             this.dgvTFile.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTFile.Size = new System.Drawing.Size(1256, 319);
+            this.dgvTFile.Size = new System.Drawing.Size(1256, 277);
             this.dgvTFile.TabIndex = 18;
             this.dgvTFile.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTFile_CellDoubleClick);
             // 
@@ -370,20 +375,20 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(12, 12);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(278, 183);
+            this.treeView1.Size = new System.Drawing.Size(278, 225);
             this.treeView1.TabIndex = 19;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // txtKeywords
             // 
-            this.txtKeywords.Location = new System.Drawing.Point(323, 62);
+            this.txtKeywords.Location = new System.Drawing.Point(296, 151);
             this.txtKeywords.Name = "txtKeywords";
             this.txtKeywords.Size = new System.Drawing.Size(245, 22);
             this.txtKeywords.TabIndex = 20;
             // 
             // btnSearchKeywords
             // 
-            this.btnSearchKeywords.Location = new System.Drawing.Point(574, 62);
+            this.btnSearchKeywords.Location = new System.Drawing.Point(547, 146);
             this.btnSearchKeywords.Name = "btnSearchKeywords";
             this.btnSearchKeywords.Size = new System.Drawing.Size(213, 32);
             this.btnSearchKeywords.TabIndex = 21;
@@ -391,17 +396,28 @@
             this.btnSearchKeywords.UseVisualStyleBackColor = true;
             this.btnSearchKeywords.Click += new System.EventHandler(this.btnSearchKeywords_Click);
             // 
+            // btnAllSearch
+            // 
+            this.btnAllSearch.Location = new System.Drawing.Point(1125, 141);
+            this.btnAllSearch.Name = "btnAllSearch";
+            this.btnAllSearch.Size = new System.Drawing.Size(91, 59);
+            this.btnAllSearch.TabIndex = 22;
+            this.btnAllSearch.Text = "Все фильтры";
+            this.btnAllSearch.UseVisualStyleBackColor = true;
+            this.btnAllSearch.Click += new System.EventHandler(this.btnAllSearch_Click);
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 532);
+            this.Controls.Add(this.btnAllSearch);
             this.Controls.Add(this.btnSearchKeywords);
             this.Controls.Add(this.txtKeywords);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.dgvTFile);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnFill);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.groupBox2);
@@ -449,7 +465,7 @@
         private System.Windows.Forms.CheckBox cbTxt;
         private System.Windows.Forms.CheckBox cbRtf;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnFill;
+        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnType;
         private System.Windows.Forms.Button btnSizeFilter;
         private System.Windows.Forms.CheckBox cbDate2;
@@ -460,5 +476,6 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TextBox txtKeywords;
         private System.Windows.Forms.Button btnSearchKeywords;
+        private System.Windows.Forms.Button btnAllSearch;
     }
 }
