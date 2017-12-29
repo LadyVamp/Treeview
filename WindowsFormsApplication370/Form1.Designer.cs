@@ -85,6 +85,6 @@
 
         private System.Windows.Forms.Button btnOpenSearchForm;
         private System.Windows.Forms.Button btnCallLogin;
-        private System.Windows.Forms.TreeView treeView2;
+        public System.Windows.Forms.TreeView treeView2;
     }
 }

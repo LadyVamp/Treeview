@@ -45,10 +45,11 @@ namespace Treeview
         DataTable dt = new DataTable();
 
         //Загрузить treeview для TCatalog
-        private void LoadTreeviewCatalog()
+        public void LoadTreeviewCatalog()
         {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter("Select * from TCatalog", con);
+           // SqlDataAdapter da = new SqlDataAdapter("Select * from TCatalog, TFile", con);
             da.Fill(dt);
             treeView2.Nodes.Add("Catalogs");
 
@@ -58,7 +59,8 @@ namespace Treeview
                 {
                     Text = dr["Catalog"].ToString(),
                     Name = dr["ID"].ToString(),
-                    Tag = dr["SubCatalogId"].ToString()
+                    Tag = dr["SubCatalogId"].ToString(),
+                    //Nodes = dr["CatalogId"].ToString()
                 };
 
                 // вариант 1: работа с указателем на ноду 
