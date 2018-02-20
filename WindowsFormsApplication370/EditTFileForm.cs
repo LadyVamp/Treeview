@@ -38,11 +38,14 @@ namespace Treeview
             dgvTFileEF.Columns[0].HeaderText = "ID";
             dgvTFileEF.Columns[1].HeaderText = "Название";
             dgvTFileEF.Columns[2].HeaderText = "Формат";
-            dgvTFileEF.Columns[3].HeaderText = "Дата изменения";
+            dgvTFileEF.Columns[3].HeaderText = "Дата создания";
             dgvTFileEF.Columns[4].HeaderText = "Размер, КБ";
             dgvTFileEF.Columns[5].HeaderText = "Ключевые слова";
             dgvTFileEF.Columns[6].HeaderText = "Содержание";
             dgvTFileEF.Columns[7].HeaderText = "IdCatalog";
+            dgvTFileEF.Columns[8].HeaderText = "Дата изменения";
+            dgvTFileEF.Columns[9].HeaderText = "Аннотация";
+            dgvTFileEF.Columns[10].HeaderText = "Автор";
             dgvTFileEF.Columns[0].Width = 20;
             dgvTFileEF.Columns[1].Width = 280;
             dgvTFileEF.Columns[2].Width = 40;
@@ -50,13 +53,14 @@ namespace Treeview
             dgvTFileEF.Columns[4].Width = 60;
             dgvTFileEF.Columns[5].Width = 100;
             dgvTFileEF.Columns[6].Width = 300;
-            dgvTFileEF.Columns[7].Width = 50;
+            dgvTFileEF.Columns[7].Width = 30;
+            dgvTFileEF.Columns[8].Width = 70;
+            dgvTFileEF.Columns[9].Width = 70;
+            dgvTFileEF.Columns[10].Width = 70;
         }
 
         private void EditTFileForm_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "repositoryDB3DataSetTFile.TFile". При необходимости она может быть перемещена или удалена.
-            //this.tFileTableAdapter.Fill(this.repositoryDB3DataSetTFile.TFile);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "repositoryDB3DataSetTCatalog.TCatalog". При необходимости она может быть перемещена или удалена.
             this.tCatalogTableAdapter.Fill(this.repositoryDB3DataSetTCatalog.TCatalog);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "repositoryDB3DataSetTCatalog.TCatalog". При необходимости она может быть перемещена или удалена.
@@ -68,17 +72,20 @@ namespace Treeview
 
         // --- CRUD for TFile ---
         //  Create
-        private void InsertFile(string title, string type, string date, string size, string keywords, string filecontent, string catalogId)
+        private void InsertFile(string title, string type, string datecreate, string size, string keywords, string filecontent, string catalogId, string datechange, string annotation, string author)
         {
-            string sql = "INSERT INTO TFile(title, type, date, size, keywords, filecontent, catalogId) VALUES(@title,@type,@date,@size,@keywords,@filecontent,@catalogId)";
+            string sql = "INSERT INTO TFile(title, type, datecreate, size, keywords, filecontent, catalogId, datechange, annotation, author) VALUES(@title,@type,@datecreate,@size,@keywords,@filecontent,@catalogId,@datechange,@annotation,@author)";
             cmd = new SqlCommand(sql, con);
             cmd.Parameters.AddWithValue("@title", title);
             cmd.Parameters.AddWithValue("@type", type);
-            cmd.Parameters.AddWithValue("@date", date);
+            cmd.Parameters.AddWithValue("@datecreate", datecreate);
             cmd.Parameters.AddWithValue("@size", size);
             cmd.Parameters.AddWithValue("@keywords", keywords);
             cmd.Parameters.AddWithValue("@filecontent", filecontent);
             cmd.Parameters.AddWithValue("@catalogId", catalogId);
+            cmd.Parameters.AddWithValue("@datechange", datechange);
+            cmd.Parameters.AddWithValue("@annotation", annotation);
+            cmd.Parameters.AddWithValue("@author", author);
             try
             {
                 con.Open();
@@ -103,15 +110,18 @@ namespace Treeview
             txtKeyEF.Text = "";
             cmbTypeEF.Text = "";
             txtSizeEF.Text = "";
-            dtpEF.Text = "";
+            dtpDateCreateEF.Text = "";
             cmbCatIDEF.Text = "";
             rtbContentEF.Text = "";
+            dtpDateChangeEF.Text = "";
+            rtbAnnotationEF.Text = "";
+            txtAuthorEF.Text = "";
         }
 
         //  Update
-        private void UpdateFile(int id, string title, string type, string date, string size, string keywords, string filecontent, string catalogId)
+        private void UpdateFile(int id, string title, string type, string datecreate, string size, string keywords, string filecontent, string catalogId, string datechange, string annotation, string author)
         {
-            string sql = "UPDATE TFile SET title='" + title + "',type='" + type + "',date='" + date + "',size='" + size + "',keywords='" + keywords + "',filecontent='" + filecontent + "',catalogId='" + catalogId + "' WHERE ID=" + id + "";
+            string sql = "UPDATE TFile SET title='" + title + "',type='" + type + "',datecreate='" + datecreate + "',size='" + size + "',keywords='" + keywords + "',filecontent='" + filecontent + "',catalogId='" + catalogId + "',datechange='" + datechange + "',annotation='" + annotation + "',author='" + author + "' WHERE ID=" + id + "";
             cmd = new SqlCommand(sql, con);
             try
             {
@@ -167,19 +177,19 @@ namespace Treeview
 
         private void btnInsertFile_Click(object sender, EventArgs e)
         {
-            if (txtTitleEF.Text == "" || cmbTypeEF.Text == "" || dtpEF.Value.ToString() == "" || txtSizeEF.Text == "" || txtKeyEF.Text == "" || rtbContentEF.Text == "" || cmbCatIDEF.Text == "")
+            if (txtTitleEF.Text == "" || cmbTypeEF.Text == "" || dtpDateCreateEF.Value.ToString() == "" || txtSizeEF.Text == "" || txtKeyEF.Text == "" || rtbContentEF.Text == "" || cmbCatIDEF.Text == "" || dtpDateChangeEF.Text == "" || rtbAnnotationEF.Text == "" || txtAuthorEF.Text == "")
             {
                 MessageBox.Show("Поля не заполнены");
             }
             else
             {
-                InsertFile(txtTitleEF.Text, cmbTypeEF.Text, dtpEF.Value.ToString(), txtSizeEF.Text, txtKeyEF.Text, rtbContentEF.Text, cmbCatIDEF.Text);
+                InsertFile(txtTitleEF.Text, cmbTypeEF.Text, dtpDateCreateEF.Value.ToString(), txtSizeEF.Text, txtKeyEF.Text, rtbContentEF.Text, cmbCatIDEF.Text, dtpDateChangeEF.Text, rtbAnnotationEF.Text, txtAuthorEF.Text);
             }
         }
 
         private void btnUpdFile_Click(object sender, EventArgs e)
         {
-            if (txtTitleEF.Text == "" || cmbTypeEF.Text == "" || dtpEF.Text == "" || txtSizeEF.Text == "" || txtKeyEF.Text == "" || rtbContentEF.Text == "" || cmbCatIDEF.Text == "")
+            if (txtTitleEF.Text == "" || cmbTypeEF.Text == "" || dtpDateCreateEF.Text == "" || txtSizeEF.Text == "" || txtKeyEF.Text == "" || rtbContentEF.Text == "" || cmbCatIDEF.Text == "" || dtpDateChangeEF.Text == "" || rtbAnnotationEF.Text == "" || txtAuthorEF.Text == "")
             {
                 MessageBox.Show("Поля не заполнены");
             }
@@ -187,7 +197,7 @@ namespace Treeview
             {
                 String selected = dgvTFileEF.SelectedRows[0].Cells[0].Value.ToString();
                 int id = Convert.ToInt32(selected);
-                UpdateFile(id, txtTitleEF.Text, cmbTypeEF.Text, dtpEF.Text, txtSizeEF.Text, txtKeyEF.Text, rtbContentEF.Text, cmbCatIDEF.Text);
+                UpdateFile(id, txtTitleEF.Text, cmbTypeEF.Text, dtpDateCreateEF.Text, txtSizeEF.Text, txtKeyEF.Text, rtbContentEF.Text, cmbCatIDEF.Text, dtpDateChangeEF.Text, rtbAnnotationEF.Text, txtAuthorEF.Text);
             }
         }
 
@@ -220,16 +230,20 @@ namespace Treeview
             {
                 txtTitleEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["title"].Value.ToString();
                 cmbTypeEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["type"].Value.ToString();
-                dtpEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["datecreate"].Value.ToString();
+                dtpDateCreateEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["datecreate"].Value.ToString();
                 txtSizeEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["size"].Value.ToString();
                 txtKeyEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["keywords"].Value.ToString();
                 rtbContentEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["filecontent"].Value.ToString();
                 cmbCatIDEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["catalogId"].Value.ToString();
+                dtpDateChangeEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["datechange"].Value.ToString();
+                rtbAnnotationEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["annotation"].Value.ToString();
+                txtAuthorEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["author"].Value.ToString();
             }
         }
 
-
-
-
+        private void btnClearEF_Click(object sender, EventArgs e)
+        {
+            clearTxts();
+        }
     }
 }

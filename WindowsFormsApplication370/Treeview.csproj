@@ -206,18 +206,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-database-administrator-26.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\icons8-search-filled-30.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-plus-26.png" />
-    <None Include="Resources\icons8-Save-26.png" />
-    <None Include="Resources\icons8-Trash-26.png" />
-    <None Include="Resources\icons8-Eye-26.png" />
-    <None Include="Resources\icons8-Data Backup-261.png" />
-    <None Include="Resources\icons8-Data Backup-26.png" />
+    <None Include="Resources\update_Data Backup-26.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-database-administrator-26.png" />
+    <None Include="Resources\view_Eye-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_Trash-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert_plus-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-broom-26.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
