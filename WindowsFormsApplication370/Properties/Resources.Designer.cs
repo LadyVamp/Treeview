@@ -75,7 +75,7 @@ namespace WindowsFormsApplication370.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_broom_26 {
             get {
-                object obj = ResourceManager.GetObject("icons8-broom-26", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_broom_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,7 +95,7 @@ namespace WindowsFormsApplication370.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_microsoft_admin_filled_26 {
             get {
-                object obj = ResourceManager.GetObject("icons8-microsoft-admin-filled-26", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_microsoft_admin_filled_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +106,16 @@ namespace WindowsFormsApplication370.Properties {
         internal static System.Drawing.Bitmap icons8_search_filled_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8_search_filled_30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap insert_plus_26 {
+            get {
+                object obj = ResourceManager.GetObject("insert_plus_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
