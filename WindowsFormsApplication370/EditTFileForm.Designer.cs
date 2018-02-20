@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditTFileForm));
             this.dgvTFileEF = new System.Windows.Forms.DataGridView();
             this.btnInsertFile = new System.Windows.Forms.Button();
             this.btnDelFile = new System.Windows.Forms.Button();
@@ -88,7 +89,7 @@
             // 
             // btnInsertFile
             // 
-            //this.btnInsertFile.Image = global::WindowsFormsApplication370.Properties.Resources.insert_plus_26;
+            this.btnInsertFile.Image = global::WindowsFormsApplication370.Properties.Resources.insert_plus_26;
             this.btnInsertFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInsertFile.Location = new System.Drawing.Point(9, 551);
             this.btnInsertFile.Name = "btnInsertFile";
@@ -176,7 +177,7 @@
             // btnClearEF
             // 
             this.btnClearEF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnClearEF.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_broom_26;
+            this.btnClearEF.Image = ((System.Drawing.Image)(resources.GetObject("btnClearEF.Image")));
             this.btnClearEF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClearEF.Location = new System.Drawing.Point(11, 609);
             this.btnClearEF.Name = "btnClearEF";

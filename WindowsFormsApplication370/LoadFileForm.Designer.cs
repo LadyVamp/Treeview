@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.txtKeywords = new System.Windows.Forms.TextBox();
             this.label108 = new System.Windows.Forms.Label();
@@ -58,6 +59,18 @@
             this.btnAnalyze = new System.Windows.Forms.Button();
             this.label109 = new System.Windows.Forms.Label();
             this.txtAuthor = new System.Windows.Forms.TextBox();
+            this.cmbCatID = new System.Windows.Forms.ComboBox();
+            this.cmbCatName = new System.Windows.Forms.ComboBox();
+            this.lbl7 = new System.Windows.Forms.Label();
+            this.repositoryDB3DataSetTCatalog = new WindowsFormsApplication370.RepositoryDB3DataSetTCatalog();
+            this.repositoryDB3DataSetTCatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryDB3TCatalog = new WindowsFormsApplication370.RepositoryDB3TCatalog();
+            this.tCatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tCatalogTableAdapter = new WindowsFormsApplication370.RepositoryDB3TCatalogTableAdapters.TCatalogTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTCatalog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTCatalogBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TCatalog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tCatalogBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // rtbDescription
@@ -273,9 +286,9 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(12, 482);
+            this.richTextBox2.Location = new System.Drawing.Point(12, 509);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(477, 181);
+            this.richTextBox2.Size = new System.Drawing.Size(477, 154);
             this.richTextBox2.TabIndex = 63;
             this.richTextBox2.Text = "";
             // 
@@ -309,7 +322,7 @@
             // 
             // btnAnalyze
             // 
-            this.btnAnalyze.Location = new System.Drawing.Point(12, 442);
+            this.btnAnalyze.Location = new System.Drawing.Point(12, 469);
             this.btnAnalyze.Name = "btnAnalyze";
             this.btnAnalyze.Size = new System.Drawing.Size(147, 34);
             this.btnAnalyze.TabIndex = 67;
@@ -320,7 +333,7 @@
             // label109
             // 
             this.label109.AutoSize = true;
-            this.label109.Location = new System.Drawing.Point(9, 398);
+            this.label109.Location = new System.Drawing.Point(10, 398);
             this.label109.Name = "label109";
             this.label109.Size = new System.Drawing.Size(54, 17);
             this.label109.TabIndex = 68;
@@ -333,11 +346,69 @@
             this.txtAuthor.Size = new System.Drawing.Size(384, 22);
             this.txtAuthor.TabIndex = 69;
             // 
+            // cmbCatID
+            // 
+            this.cmbCatID.DataSource = this.tCatalogBindingSource;
+            this.cmbCatID.DisplayMember = "ID";
+            this.cmbCatID.FormattingEnabled = true;
+            this.cmbCatID.Location = new System.Drawing.Point(104, 430);
+            this.cmbCatID.Name = "cmbCatID";
+            this.cmbCatID.Size = new System.Drawing.Size(55, 24);
+            this.cmbCatID.TabIndex = 72;
+            this.cmbCatID.ValueMember = "ID";
+            // 
+            // cmbCatName
+            // 
+            this.cmbCatName.DataSource = this.tCatalogBindingSource;
+            this.cmbCatName.DisplayMember = "Catalog";
+            this.cmbCatName.FormattingEnabled = true;
+            this.cmbCatName.Location = new System.Drawing.Point(165, 430);
+            this.cmbCatName.Name = "cmbCatName";
+            this.cmbCatName.Size = new System.Drawing.Size(224, 24);
+            this.cmbCatName.TabIndex = 71;
+            this.cmbCatName.ValueMember = "Catalog";
+            // 
+            // lbl7
+            // 
+            this.lbl7.AutoSize = true;
+            this.lbl7.Location = new System.Drawing.Point(14, 433);
+            this.lbl7.Name = "lbl7";
+            this.lbl7.Size = new System.Drawing.Size(69, 17);
+            this.lbl7.TabIndex = 70;
+            this.lbl7.Text = "CatalogID";
+            // 
+            // repositoryDB3DataSetTCatalog
+            // 
+            this.repositoryDB3DataSetTCatalog.DataSetName = "RepositoryDB3DataSetTCatalog";
+            this.repositoryDB3DataSetTCatalog.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // repositoryDB3DataSetTCatalogBindingSource
+            // 
+            this.repositoryDB3DataSetTCatalogBindingSource.DataSource = this.repositoryDB3DataSetTCatalog;
+            this.repositoryDB3DataSetTCatalogBindingSource.Position = 0;
+            // 
+            // repositoryDB3TCatalog
+            // 
+            this.repositoryDB3TCatalog.DataSetName = "RepositoryDB3TCatalog";
+            this.repositoryDB3TCatalog.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tCatalogBindingSource
+            // 
+            this.tCatalogBindingSource.DataMember = "TCatalog";
+            this.tCatalogBindingSource.DataSource = this.repositoryDB3TCatalog;
+            // 
+            // tCatalogTableAdapter
+            // 
+            this.tCatalogTableAdapter.ClearBeforeFill = true;
+            // 
             // LoadFileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 675);
+            this.Controls.Add(this.cmbCatID);
+            this.Controls.Add(this.cmbCatName);
+            this.Controls.Add(this.lbl7);
             this.Controls.Add(this.txtAuthor);
             this.Controls.Add(this.label109);
             this.Controls.Add(this.btnAnalyze);
@@ -371,6 +442,10 @@
             this.Name = "LoadFileForm";
             this.Text = "LoadFileForm";
             this.Load += new System.EventHandler(this.LoadFileForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTCatalog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTCatalogBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TCatalog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tCatalogBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,5 +483,13 @@
         private System.Windows.Forms.Button btnAnalyze;
         private System.Windows.Forms.Label label109;
         private System.Windows.Forms.TextBox txtAuthor;
+        private System.Windows.Forms.ComboBox cmbCatID;
+        private System.Windows.Forms.ComboBox cmbCatName;
+        private System.Windows.Forms.Label lbl7;
+        private System.Windows.Forms.BindingSource repositoryDB3DataSetTCatalogBindingSource;
+        private WindowsFormsApplication370.RepositoryDB3DataSetTCatalog repositoryDB3DataSetTCatalog;
+        private WindowsFormsApplication370.RepositoryDB3TCatalog repositoryDB3TCatalog;
+        private System.Windows.Forms.BindingSource tCatalogBindingSource;
+        private WindowsFormsApplication370.RepositoryDB3TCatalogTableAdapters.TCatalogTableAdapter tCatalogTableAdapter;
     }
 }

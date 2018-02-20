@@ -26,6 +26,8 @@ namespace Treeview
 
         private void LoadFileForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "repositoryDB3TCatalog.TCatalog". При необходимости она может быть перемещена или удалена.
+            this.tCatalogTableAdapter.Fill(this.repositoryDB3TCatalog.TCatalog);
 
         }
 
