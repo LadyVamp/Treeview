@@ -129,7 +129,6 @@
             this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 16;
             this.label3.Text = "CatalogID";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label
             // 
