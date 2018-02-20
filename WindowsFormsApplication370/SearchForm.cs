@@ -282,11 +282,14 @@ namespace Treeview
             frm.txtID.Text = this.dgvTFile.CurrentRow.Cells[0].Value.ToString();
             frm.txtFilename.Text = this.dgvTFile.CurrentRow.Cells[1].Value.ToString();
             frm.txtType.Text = this.dgvTFile.CurrentRow.Cells[2].Value.ToString();
-            frm.txtDate.Text = this.dgvTFile.CurrentRow.Cells[3].Value.ToString();
+            frm.txtDateCreate.Text = this.dgvTFile.CurrentRow.Cells[3].Value.ToString();
             frm.txtSize.Text = this.dgvTFile.CurrentRow.Cells[4].Value.ToString();
             frm.txtKeywords.Text = this.dgvTFile.CurrentRow.Cells[5].Value.ToString();
             frm.txtCatID.Text = this.dgvTFile.CurrentRow.Cells[7].Value.ToString();
             frm.rtbFilecontent.Text = this.dgvTFile.CurrentRow.Cells[6].Value.ToString();
+            frm.txtDateChange.Text = this.dgvTFile.CurrentRow.Cells[8].Value.ToString();
+            frm.rtbAnnotation.Text = this.dgvTFile.CurrentRow.Cells[9].Value.ToString();
+            frm.txtAuthor.Text = this.dgvTFile.CurrentRow.Cells[10].Value.ToString();
 
             frm.ShowDialog();
         }

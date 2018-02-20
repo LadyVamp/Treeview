@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.treeView2 = new System.Windows.Forms.TreeView();
             this.btnCallFileinfoForm = new System.Windows.Forms.Button();
             this.btnCallLogin = new System.Windows.Forms.Button();
@@ -36,7 +37,7 @@
             // 
             // treeView2
             // 
-            this.treeView2.Location = new System.Drawing.Point(29, 291);
+            this.treeView2.Location = new System.Drawing.Point(120, 273);
             this.treeView2.Name = "treeView2";
             this.treeView2.Size = new System.Drawing.Size(319, 142);
             this.treeView2.TabIndex = 20;
@@ -46,7 +47,7 @@
             this.btnCallFileinfoForm.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCallFileinfoForm.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_database_administrator_26;
             this.btnCallFileinfoForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCallFileinfoForm.Location = new System.Drawing.Point(29, 208);
+            this.btnCallFileinfoForm.Location = new System.Drawing.Point(120, 111);
             this.btnCallFileinfoForm.Name = "btnCallFileinfoForm";
             this.btnCallFileinfoForm.Size = new System.Drawing.Size(319, 46);
             this.btnCallFileinfoForm.TabIndex = 21;
@@ -57,9 +58,9 @@
             // btnCallLogin
             // 
             this.btnCallLogin.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCallLogin.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_microsoft_admin_filled_26;
+            this.btnCallLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnCallLogin.Image")));
             this.btnCallLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCallLogin.Location = new System.Drawing.Point(29, 138);
+            this.btnCallLogin.Location = new System.Drawing.Point(120, 183);
             this.btnCallLogin.Name = "btnCallLogin";
             this.btnCallLogin.Size = new System.Drawing.Size(319, 46);
             this.btnCallLogin.TabIndex = 1;
@@ -72,7 +73,7 @@
             this.btnOpenSearchForm.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnOpenSearchForm.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_search_filled_30;
             this.btnOpenSearchForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOpenSearchForm.Location = new System.Drawing.Point(29, 52);
+            this.btnOpenSearchForm.Location = new System.Drawing.Point(120, 34);
             this.btnOpenSearchForm.Name = "btnOpenSearchForm";
             this.btnOpenSearchForm.Size = new System.Drawing.Size(319, 51);
             this.btnOpenSearchForm.TabIndex = 0;
@@ -84,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 456);
+            this.ClientSize = new System.Drawing.Size(555, 456);
             this.Controls.Add(this.btnCallFileinfoForm);
             this.Controls.Add(this.treeView2);
             this.Controls.Add(this.btnCallLogin);

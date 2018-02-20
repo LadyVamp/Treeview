@@ -431,15 +431,23 @@ namespace Treeview
                 words.Sort(comparase);
                 if (words.Count >= 15) words.RemoveRange(15, words.Count - 15);
 
-                foreach (Word item in words)
-                {
-                    if (item.word.Length > 2) //длина слова >2, чтобы убрать "я", "с" и цифры
+              
+                    foreach (Word item in words)
                     {
-                        richTextBox2.AppendText("\n" + " " + item.word + " (" + item.count.ToString() + ")");
-                        txtKeywords.AppendText(item.word + ", ");
+                        if (item.word.Length > 2) //длина слова >2, чтобы убрать "я", "с" и цифры
+                        {
+                            richTextBox2.AppendText("\n" + " " + item.word + " (" + item.count.ToString() + ")");
+                            if (label2.Text != ".html") //для html из тега keywords
+                            {
+                                txtKeywords.AppendText(item.word + ", ");
+                            }
+                        }
                     }
+                if (label2.Text != ".html") 
+                {
+                    txtKeywords.Text = txtKeywords.Text.Remove((txtKeywords.Text.Length - 2)); //удалить запятую и пробел в конце
                 }
-                txtKeywords.Text = txtKeywords.Text.Remove((txtKeywords.Text.Length - 2)); //удалить запятую и пробел в конце
+              
 
             }
             catch (DivideByZeroException ex) //файл не выбран => cntWord = 0 => деление на ноль

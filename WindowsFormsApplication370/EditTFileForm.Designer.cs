@@ -191,7 +191,7 @@
             // lbl10
             // 
             this.lbl10.AutoSize = true;
-            this.lbl10.Location = new System.Drawing.Point(10, 512);
+            this.lbl10.Location = new System.Drawing.Point(8, 259);
             this.lbl10.Name = "lbl10";
             this.lbl10.Size = new System.Drawing.Size(47, 17);
             this.lbl10.TabIndex = 36;
@@ -199,7 +199,7 @@
             // 
             // txtAuthorEF
             // 
-            this.txtAuthorEF.Location = new System.Drawing.Point(155, 509);
+            this.txtAuthorEF.Location = new System.Drawing.Point(155, 259);
             this.txtAuthorEF.Name = "txtAuthorEF";
             this.txtAuthorEF.Size = new System.Drawing.Size(225, 22);
             this.txtAuthorEF.TabIndex = 35;
@@ -207,7 +207,7 @@
             // lbl9
             // 
             this.lbl9.AutoSize = true;
-            this.lbl9.Location = new System.Drawing.Point(10, 393);
+            this.lbl9.Location = new System.Drawing.Point(6, 300);
             this.lbl9.Name = "lbl9";
             this.lbl9.Size = new System.Drawing.Size(80, 17);
             this.lbl9.TabIndex = 34;
@@ -215,9 +215,9 @@
             // 
             // rtbAnnotationEF
             // 
-            this.rtbAnnotationEF.Location = new System.Drawing.Point(13, 410);
+            this.rtbAnnotationEF.Location = new System.Drawing.Point(9, 320);
             this.rtbAnnotationEF.Name = "rtbAnnotationEF";
-            this.rtbAnnotationEF.Size = new System.Drawing.Size(455, 93);
+            this.rtbAnnotationEF.Size = new System.Drawing.Size(455, 62);
             this.rtbAnnotationEF.TabIndex = 33;
             this.rtbAnnotationEF.Text = "";
             // 
@@ -294,16 +294,16 @@
             // 
             // rtbContentEF
             // 
-            this.rtbContentEF.Location = new System.Drawing.Point(12, 297);
+            this.rtbContentEF.Location = new System.Drawing.Point(9, 405);
             this.rtbContentEF.Name = "rtbContentEF";
-            this.rtbContentEF.Size = new System.Drawing.Size(456, 93);
+            this.rtbContentEF.Size = new System.Drawing.Size(456, 140);
             this.rtbContentEF.TabIndex = 26;
             this.rtbContentEF.Text = "";
             // 
             // lbl8
             // 
             this.lbl8.AutoSize = true;
-            this.lbl8.Location = new System.Drawing.Point(10, 277);
+            this.lbl8.Location = new System.Drawing.Point(8, 385);
             this.lbl8.Name = "lbl8";
             this.lbl8.Size = new System.Drawing.Size(91, 17);
             this.lbl8.TabIndex = 25;
