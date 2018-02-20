@@ -234,13 +234,13 @@
     <None Include="Resources\delete_Trash-26.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\insert_plus-26.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-broom-26.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-microsoft-admin-filled-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert_plus-26.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

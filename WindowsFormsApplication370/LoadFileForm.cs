@@ -240,7 +240,9 @@ namespace Treeview
                 connection.Open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = connection;
-                command.CommandText = @"INSERT INTO TFile VALUES (@Title, @Type, @DateCreate, @DateChange, @Size, @Keywords, @Filecontent, @CatalogId, @Annotation, @Author)";
+                //command.CommandText = @"INSERT INTO TFile VALUES (@Title, @Type, @DateCreate, @DateChange, @Size, @Keywords, @Filecontent, @CatalogId, @Annotation, @Author)";
+                command.CommandText = @"INSERT INTO TFile VALUES (@Title, @Type, CONVERT(Datetime, @DateCreate),CONVERT(Datetime, @DateChange), @Size, @Keywords, @Filecontent, @CatalogId, @Annotation, @Author)";
+                //command.CommandText = @"INSERT INTO TFile VALUES (@Title, @Type, CAST(@DateCreate AS Datetime), CAST(@DateChange AS Datetime), @Size, @Keywords, @Filecontent, @CatalogId, @Annotation, @Author)";
                 command.Parameters.Add("@Title", SqlDbType.NVarChar, 130);
                 command.Parameters.Add("@Type", SqlDbType.NVarChar, 10);
                 command.Parameters.Add("@DateCreate", SqlDbType.DateTime);
@@ -399,7 +401,8 @@ namespace Treeview
         {
             int cntWord = 0;
             int cntSymbol = 0;
-            float average = 0;
+            //float average = 0;
+            int average = 0;
 
             string[] slova = richTextBox3.Text.Split(new char[] { ' ', ',', '.', '!', ':', '?', ';', }, StringSplitOptions.RemoveEmptyEntries); //разбить текст на слова
             cntWord = slova.Length; //Кол-во слов в тексте

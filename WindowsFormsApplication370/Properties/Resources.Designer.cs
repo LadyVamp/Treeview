@@ -113,16 +113,6 @@ namespace WindowsFormsApplication370.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap insert_plus_261 {
-            get {
-                object obj = ResourceManager.GetObject("insert_plus-261", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap update_Data_Backup_26 {
             get {
                 object obj = ResourceManager.GetObject("update_Data_Backup_26", resourceCulture);

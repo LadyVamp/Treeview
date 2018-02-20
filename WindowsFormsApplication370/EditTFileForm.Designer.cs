@@ -88,7 +88,7 @@
             // 
             // btnInsertFile
             // 
-            this.btnInsertFile.Image = global::WindowsFormsApplication370.Properties.Resources.insert_plus_261;
+            //this.btnInsertFile.Image = global::WindowsFormsApplication370.Properties.Resources.insert_plus_26;
             this.btnInsertFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInsertFile.Location = new System.Drawing.Point(9, 551);
             this.btnInsertFile.Name = "btnInsertFile";
