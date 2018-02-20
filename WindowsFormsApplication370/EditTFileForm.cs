@@ -56,7 +56,7 @@ namespace Treeview
         private void EditTFileForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "repositoryDB3DataSetTFile.TFile". При необходимости она может быть перемещена или удалена.
-            this.tFileTableAdapter.Fill(this.repositoryDB3DataSetTFile.TFile);
+            //this.tFileTableAdapter.Fill(this.repositoryDB3DataSetTFile.TFile);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "repositoryDB3DataSetTCatalog.TCatalog". При необходимости она может быть перемещена или удалена.
             this.tCatalogTableAdapter.Fill(this.repositoryDB3DataSetTCatalog.TCatalog);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "repositoryDB3DataSetTCatalog.TCatalog". При необходимости она может быть перемещена или удалена.
@@ -220,7 +220,7 @@ namespace Treeview
             {
                 txtTitleEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["title"].Value.ToString();
                 cmbTypeEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["type"].Value.ToString();
-                dtpEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["date"].Value.ToString();
+                dtpEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["datecreate"].Value.ToString();
                 txtSizeEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["size"].Value.ToString();
                 txtKeyEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["keywords"].Value.ToString();
                 rtbContentEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["filecontent"].Value.ToString();

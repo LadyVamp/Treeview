@@ -56,7 +56,7 @@
             this.fKTCatalogTCatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryDB3DataSetTFile = new WindowsFormsApplication370.RepositoryDB3DataSetTFile();
             this.tFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tFileTableAdapter = new WindowsFormsApplication370.RepositoryDB3DataSetTFileTableAdapters.TFileTableAdapter();
+            //this.tFileTableAdapter = new WindowsFormsApplication370.RepositoryDB3DataSetTFileTableAdapters.TFileTableAdapter();
             this.tTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTFileEF)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -324,7 +324,7 @@
             // 
             // tFileTableAdapter
             // 
-            this.tFileTableAdapter.ClearBeforeFill = true;
+            //this.tFileTableAdapter.ClearBeforeFill = true;
             // 
             // EditTFileForm
             // 
@@ -377,7 +377,7 @@
         private System.Windows.Forms.ComboBox cmbCatIDEF;
         private WindowsFormsApplication370.RepositoryDB3DataSetTFile repositoryDB3DataSetTFile;
         private System.Windows.Forms.BindingSource tFileBindingSource;
-        private WindowsFormsApplication370.RepositoryDB3DataSetTFileTableAdapters.TFileTableAdapter tFileTableAdapter;
+        //private WindowsFormsApplication370.RepositoryDB3DataSetTFileTableAdapters.TFileTableAdapter tFileTableAdapter;
         private System.Windows.Forms.ComboBox cmbTypeEF;
         private System.Windows.Forms.BindingSource tTypeBindingSource;
         private System.Windows.Forms.TextBox txtSizeEF;

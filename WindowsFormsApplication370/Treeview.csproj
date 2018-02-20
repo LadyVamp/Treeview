@@ -100,7 +100,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RepositoryDB3DataSetTCatalog.xsd</DependentUpon>
     </Compile>
-    <Compile Include="RepositoryDB3DataSetTFile.Designer.cs">
+    <Compile Include="RepositoryDB3DataSetTFile.cs">
+      <DependentUpon>RepositoryDB3DataSetTFile.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepositoryDB3DataSetTFile1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RepositoryDB3DataSetTFile.xsd</DependentUpon>
@@ -180,9 +183,9 @@
       <DependentUpon>RepositoryDB3DataSetTFile.xsd</DependentUpon>
     </None>
     <None Include="RepositoryDB3DataSetTFile.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RepositoryDB3DataSetTFile.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepositoryDB3DataSetTFile1.Designer.cs</LastGenOutput>
     </None>
     <None Include="RepositoryDB3DataSetTFile.xss">
       <DependentUpon>RepositoryDB3DataSetTFile.xsd</DependentUpon>
