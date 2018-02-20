@@ -28,15 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.treeView2 = new System.Windows.Forms.TreeView();
+            this.btnCallFileinfoForm = new System.Windows.Forms.Button();
             this.btnCallLogin = new System.Windows.Forms.Button();
             this.btnOpenSearchForm = new System.Windows.Forms.Button();
-            this.treeView2 = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
+            // 
+            // treeView2
+            // 
+            this.treeView2.Location = new System.Drawing.Point(29, 291);
+            this.treeView2.Name = "treeView2";
+            this.treeView2.Size = new System.Drawing.Size(319, 142);
+            this.treeView2.TabIndex = 20;
+            // 
+            // btnCallFileinfoForm
+            // 
+            this.btnCallFileinfoForm.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCallFileinfoForm.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_database_administrator_26;
+            this.btnCallFileinfoForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCallFileinfoForm.Location = new System.Drawing.Point(29, 208);
+            this.btnCallFileinfoForm.Name = "btnCallFileinfoForm";
+            this.btnCallFileinfoForm.Size = new System.Drawing.Size(319, 46);
+            this.btnCallFileinfoForm.TabIndex = 21;
+            this.btnCallFileinfoForm.Text = "     Загрузить файл";
+            this.btnCallFileinfoForm.UseVisualStyleBackColor = true;
+            this.btnCallFileinfoForm.Click += new System.EventHandler(this.btnCallFileinfoForm_Click);
             // 
             // btnCallLogin
             // 
             this.btnCallLogin.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCallLogin.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_database_administrator_26;
+            this.btnCallLogin.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_microsoft_admin_filled_26;
             this.btnCallLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCallLogin.Location = new System.Drawing.Point(29, 138);
             this.btnCallLogin.Name = "btnCallLogin";
@@ -59,18 +80,12 @@
             this.btnOpenSearchForm.UseVisualStyleBackColor = true;
             this.btnOpenSearchForm.Click += new System.EventHandler(this.btnOpenSearchForm_Click);
             // 
-            // treeView2
-            // 
-            this.treeView2.Location = new System.Drawing.Point(29, 208);
-            this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(319, 225);
-            this.treeView2.TabIndex = 20;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(391, 456);
+            this.Controls.Add(this.btnCallFileinfoForm);
             this.Controls.Add(this.treeView2);
             this.Controls.Add(this.btnCallLogin);
             this.Controls.Add(this.btnOpenSearchForm);
@@ -86,5 +101,6 @@
         private System.Windows.Forms.Button btnOpenSearchForm;
         private System.Windows.Forms.Button btnCallLogin;
         public System.Windows.Forms.TreeView treeView2;
+        private System.Windows.Forms.Button btnCallFileinfoForm;
     }
 }

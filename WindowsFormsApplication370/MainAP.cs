@@ -17,11 +17,6 @@ namespace Treeview
             InitializeComponent();
         }
 
-        private void MainAP_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnEditTFile_Click(object sender, EventArgs e)
         {
             EditTFileForm f = new EditTFileForm();
