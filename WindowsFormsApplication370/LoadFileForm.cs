@@ -398,8 +398,7 @@ namespace Treeview
         {
             int cntWord = 0;
             int cntSymbol = 0;
-            //float average = 0;
-            int average = 0;
+            float average = 0;
 
             string[] slova = richTextBox3.Text.Split(new char[] { ' ', ',', '.', '!', ':', '?', ';', }, StringSplitOptions.RemoveEmptyEntries); //разбить текст на слова
             cntWord = slova.Length; //Кол-во слов в тексте
@@ -448,11 +447,15 @@ namespace Treeview
                 MessageBox.Show("Сначала выберите файл!!!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            //для description, первые 500 символов
+            //annotation, первые 500 символов
             string original = richTextBox1.Text;
             int maxLength = 500;
-            string first500 = original.Substring(0, Math.Min(original.Length, maxLength));
-            rtbDescription.AppendText(first500);
+            if (label2.Text != ".html") //у html берется из тега description
+            {
+                string first500 = original.Substring(0, Math.Min(original.Length, maxLength));
+                rtbDescription.AppendText(first500);
+            }
+
         }
     }
 }
