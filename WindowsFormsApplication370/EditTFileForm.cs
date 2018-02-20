@@ -68,11 +68,11 @@ namespace Treeview
 
         // --- CRUD for TFile ---
         //  Create
-        private void InsertFile(string filename, string type, string date, string size, string keywords, string filecontent, string catalogId)
+        private void InsertFile(string title, string type, string date, string size, string keywords, string filecontent, string catalogId)
         {
-            string sql = "INSERT INTO TFile(filename, type, date, size, keywords, filecontent, catalogId) VALUES(@filename,@type,@date,@size,@keywords,@filecontent,@catalogId)";
+            string sql = "INSERT INTO TFile(title, type, date, size, keywords, filecontent, catalogId) VALUES(@title,@type,@date,@size,@keywords,@filecontent,@catalogId)";
             cmd = new SqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@filename", filename);
+            cmd.Parameters.AddWithValue("@title", title);
             cmd.Parameters.AddWithValue("@type", type);
             cmd.Parameters.AddWithValue("@date", date);
             cmd.Parameters.AddWithValue("@size", size);
@@ -99,7 +99,7 @@ namespace Treeview
 
         private void clearTxts()
         {
-            txtFilenameEF.Text = "";
+            txtTitleEF.Text = "";
             txtKeyEF.Text = "";
             cmbTypeEF.Text = "";
             txtSizeEF.Text = "";
@@ -109,9 +109,9 @@ namespace Treeview
         }
 
         //  Update
-        private void UpdateFile(int id, string filename, string type, string date, string size, string keywords, string filecontent, string catalogId)
+        private void UpdateFile(int id, string title, string type, string date, string size, string keywords, string filecontent, string catalogId)
         {
-            string sql = "UPDATE TFile SET filename='" + filename + "',type='" + type + "',date='" + date + "',size='" + size + "',keywords='" + keywords + "',filecontent='" + filecontent + "',catalogId='" + catalogId + "' WHERE ID=" + id + "";
+            string sql = "UPDATE TFile SET title='" + title + "',type='" + type + "',date='" + date + "',size='" + size + "',keywords='" + keywords + "',filecontent='" + filecontent + "',catalogId='" + catalogId + "' WHERE ID=" + id + "";
             cmd = new SqlCommand(sql, con);
             try
             {
@@ -167,19 +167,19 @@ namespace Treeview
 
         private void btnInsertFile_Click(object sender, EventArgs e)
         {
-            if (txtFilenameEF.Text == "" || cmbTypeEF.Text == "" || dtpEF.Value.ToString() == "" || txtSizeEF.Text == "" || txtKeyEF.Text == "" || rtbContentEF.Text == "" || cmbCatIDEF.Text == "")
+            if (txtTitleEF.Text == "" || cmbTypeEF.Text == "" || dtpEF.Value.ToString() == "" || txtSizeEF.Text == "" || txtKeyEF.Text == "" || rtbContentEF.Text == "" || cmbCatIDEF.Text == "")
             {
                 MessageBox.Show("Поля не заполнены");
             }
             else
             {
-                InsertFile(txtFilenameEF.Text, cmbTypeEF.Text, dtpEF.Value.ToString(), txtSizeEF.Text, txtKeyEF.Text, rtbContentEF.Text, cmbCatIDEF.Text);
+                InsertFile(txtTitleEF.Text, cmbTypeEF.Text, dtpEF.Value.ToString(), txtSizeEF.Text, txtKeyEF.Text, rtbContentEF.Text, cmbCatIDEF.Text);
             }
         }
 
         private void btnUpdFile_Click(object sender, EventArgs e)
         {
-            if (txtFilenameEF.Text == "" || cmbTypeEF.Text == "" || dtpEF.Text == "" || txtSizeEF.Text == "" || txtKeyEF.Text == "" || rtbContentEF.Text == "" || cmbCatIDEF.Text == "")
+            if (txtTitleEF.Text == "" || cmbTypeEF.Text == "" || dtpEF.Text == "" || txtSizeEF.Text == "" || txtKeyEF.Text == "" || rtbContentEF.Text == "" || cmbCatIDEF.Text == "")
             {
                 MessageBox.Show("Поля не заполнены");
             }
@@ -187,7 +187,7 @@ namespace Treeview
             {
                 String selected = dgvTFileEF.SelectedRows[0].Cells[0].Value.ToString();
                 int id = Convert.ToInt32(selected);
-                UpdateFile(id, txtFilenameEF.Text, cmbTypeEF.Text, dtpEF.Text, txtSizeEF.Text, txtKeyEF.Text, rtbContentEF.Text, cmbCatIDEF.Text);
+                UpdateFile(id, txtTitleEF.Text, cmbTypeEF.Text, dtpEF.Text, txtSizeEF.Text, txtKeyEF.Text, rtbContentEF.Text, cmbCatIDEF.Text);
             }
         }
 
@@ -218,7 +218,7 @@ namespace Treeview
         {
             if (dgvTFileEF.CurrentCell != null && dgvTFileEF.CurrentCell.RowIndex >= 0)
             {
-                txtFilenameEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["filename"].Value.ToString();
+                txtTitleEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["title"].Value.ToString();
                 cmbTypeEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["type"].Value.ToString();
                 dtpEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["date"].Value.ToString();
                 txtSizeEF.Text = dgvTFileEF.Rows[dgvTFileEF.CurrentCell.RowIndex].Cells["size"].Value.ToString();

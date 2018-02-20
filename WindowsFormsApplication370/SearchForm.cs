@@ -232,19 +232,19 @@ namespace Treeview
 
             if ((cbDate1.Checked == true) && (cbDate2.Checked == false))
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE Date>='" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE DateCreate>='" + dateTimePicker1.Value.Date + "' ORDER BY DateCreate", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
             if ((cbDate2.Checked == true) && (cbDate1.Checked == false))
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE Date<='" + dateTimePicker2.Value.Date + "' ORDER BY Date", con);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE DateCreate<='" + dateTimePicker2.Value.Date + "' ORDER BY DateCreate", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
             if ((cbDate1.Checked == true) && (cbDate2.Checked == true))
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE Date>='" + dateTimePicker1.Value.Date + "' AND date<='" + dateTimePicker2.Value.Date + "' ORDER BY Date", con);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE DateCreate>='" + dateTimePicker1.Value.Date + "' AND DateCreate<='" + dateTimePicker2.Value.Date + "' ORDER BY DateCreate", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
@@ -347,7 +347,7 @@ namespace Treeview
         {
             //      КОМБО 1  Текстбокс + мин размер + мин дата + ключевое слово
             //  + checked!
-            //select * from TFile where Type='doc' and Date >= '2017-11-29' and size >= 10 and Keywords like '%nodejs%' order by date
+            //select * from TFile where Type='doc' and Date >= '2017-11-29' and size >= 10 and Keywords like '%nodejs%' order by DateCreate
             DataSet ds = new DataSet();
             SqlConnection con = new SqlConnection(CONNECTION_STRING);
             if (
@@ -357,12 +357,12 @@ namespace Treeview
                 && (txtKeywords.Text != "") //Keywords
                 )
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' AND size>=" + txtMinSize.Text + "AND keywords like '%"+ txtKeywords.Text+"%' and Date >= '" + dateTimePicker1.Value.Date + "' ORDER BY Date", con);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE type='doc' AND size>=" + txtMinSize.Text + "AND keywords like '%"+ txtKeywords.Text+"%' and DateCreate >= '" + dateTimePicker1.Value.Date + "' ORDER BY DateCreate", con);
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
           
-            //select * from TFile where (Type='doc' or Type='docx') and (Date >= '2015-11-29') and (size >= 10) and (Keywords like '%nodejs%') order by date
+            //select * from TFile where (Type='doc' or Type='docx') and (Date >= '2015-11-29') and (size >= 10) and (Keywords like '%nodejs%') order by DateCreate
             //  + checked!
             else if (
                 ((cbDoc.Checked == true) //doc
@@ -377,7 +377,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size >= 10) and (Keywords like '%nodejs%') order by date
+            //select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size >= 10) and (Keywords like '%nodejs%') order by DateCreate
             //  + checked!
             else if (
                ((cbDoc.Checked == true) //doc
@@ -393,7 +393,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //select * from TFile where (Type='doc' or Type='docx' or Type='txt' or Type='rtf') and (Date >= '2015-11-29') and (size >= 10) and (Keywords like '%nodejs%') order by date
+            //select * from TFile where (Type='doc' or Type='docx' or Type='txt' or Type='rtf') and (Date >= '2015-11-29') and (size >= 10) and (Keywords like '%nodejs%') order by DateCreate
             //  + checked!
             else if (
                ((cbDoc.Checked == true) //doc
@@ -413,7 +413,7 @@ namespace Treeview
 
             
             // КОМБО 2: вариации с чекбоксами + макс размер + мин дата
-            //select * from TFile where (Type='doc') and (Date >= '2015-11-29') and (size <= 50) and (Keywords like '%javascript%') order by date
+            //select * from TFile where (Type='doc') and (Date >= '2015-11-29') and (size <= 50) and (Keywords like '%javascript%') order by DateCreate
             //  + checked!
                 else if (
                     (cbDoc.Checked == true) //doc
@@ -427,7 +427,7 @@ namespace Treeview
                     dgvTFile.DataSource = ds.Tables["TFile"];
                 }
 
-            // select * from TFile where (Type='docx') and (Date >= '2015-11-29') and (Size <= 30) and (Keywords like '%c#%') order by date
+            // select * from TFile where (Type='docx') and (Date >= '2015-11-29') and (Size <= 30) and (Keywords like '%c#%') order by DateCreate
             //  + checked!
             else if (
                      //(
@@ -444,7 +444,7 @@ namespace Treeview
                     dgvTFile.DataSource = ds.Tables["TFile"];
                 }
 
-            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size <= 30) and (Keywords like '%nodejs%') order by date
+            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size <= 30) and (Keywords like '%nodejs%') order by DateCreate
             //  + checked!
             else if (
                    ((cbDoc.Checked == true) //doc
@@ -463,7 +463,7 @@ namespace Treeview
 
 
             // КОМБО 1 БЕЗ ключевых слов
-            //  select * from TFile where (Type='doc') and (Date >= '2017-11-29') and (size >= 10) order by date
+            //  select * from TFile where (Type='doc') and (Date >= '2017-11-29') and (size >= 10) order by DateCreate
             //  + checked!
             else if (
                   (cbDoc.Checked == true) //doc
@@ -477,7 +477,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //  select * from TFile where (Type = 'docx') and(Date >= '2015-11-29') and(size >= 20) order by date
+            //  select * from TFile where (Type = 'docx') and(Date >= '2015-11-29') and(size >= 20) order by DateCreate
             // + checked
             else if (
                 (cbDocx.Checked == true) //docx
@@ -491,7 +491,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size >= 20) order by date
+            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size >= 20) order by DateCreate
             // не все результаты показывает
             else if (
                ((cbDoc.Checked == true) //doc
@@ -507,7 +507,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //  select * from TFile where (Type='docx' or Type='txt' or Type='rtf') and (Date >= '2015-11-29') and (size >= 20) order by date
+            //  select * from TFile where (Type='docx' or Type='txt' or Type='rtf') and (Date >= '2015-11-29') and (size >= 20) order by DateCreate
             // + checked
             else if (
                ( //без doc
@@ -527,7 +527,7 @@ namespace Treeview
 
 
             // комбо 2: вариации с чекбоксами + макс размер + мин дата БЕЗ ключевых слов
-            //  select * from TFile where (Type='doc' or Type='docx') and (Date >= '2015-11-29') and (size <= 30) order by date
+            //  select * from TFile where (Type='doc' or Type='docx') and (Date >= '2015-11-29') and (size <= 30) order by DateCreate
             // не все результаты показывает
             else if (
                 (cbDoc.Checked == true) //doc
@@ -541,7 +541,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //  select * from TFile where Type='docx' and Date >= '2015-11-29' and size <= 30 order by date
+            //  select * from TFile where Type='docx' and Date >= '2015-11-29' and size <= 30 order by DateCreate
             // + checked
             else if (
                  (cbDocx.Checked == true)//docx
@@ -555,7 +555,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size <= 30) order by date
+            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt') and (Date >= '2015-11-29') and (size <= 30) order by DateCreate
             // не все результаты показывает
             else if (
                ((cbDoc.Checked == true) //doc
@@ -571,7 +571,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //  select * from TFile where (Type='docx' or Type='txt' or Type='rtf') and (Date >= '2015-11-29') and (size <= 30) order by date
+            //  select * from TFile where (Type='docx' or Type='txt' or Type='rtf') and (Date >= '2015-11-29') and (size <= 30) order by DateCreate
             // + checked
             else if (
                ( // без doc
@@ -593,7 +593,7 @@ namespace Treeview
 
 
             // КОМБО 3: вариации с чекбоксами + диапазон размеров + диапазон дат
-            //select * from TFile where (Type='doc') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50))  and keywords like '%nodejs%' order by date
+            //select * from TFile where (Type='doc') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50))  and keywords like '%nodejs%' order by DateCreate
             // + checked
             else if (
                 (cbDoc.Checked == true) //doc
@@ -608,7 +608,7 @@ namespace Treeview
             }
 
 
-            //select * from TFile where (Type='docx') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50)) and keywords like '%linux%' order by date
+            //select * from TFile where (Type='docx') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50)) and keywords like '%linux%' order by DateCreate
             // + checked
             else if (
                 (cbDocx.Checked == true) //doc
@@ -622,7 +622,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //select * from TFile where (Type='doc' or Type='docx') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) and (Keywords like '%nodejs%') order by date
+            //select * from TFile where (Type='doc' or Type='docx') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) and (Keywords like '%nodejs%') order by DateCreate
             //  + checked
             else if (
                 ((cbDoc.Checked == true) //doc
@@ -637,7 +637,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //select * from TFile where (Type='doc' or Type='docx' or Type='txt') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) and (Keywords like '%sql%') order by date 
+            //select * from TFile where (Type='doc' or Type='docx' or Type='txt') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) and (Keywords like '%sql%') order by DateCreate 
             //  + checked
             else if (
                (
@@ -652,7 +652,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt' or Type='rtf') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) and (Keywords like '%nodejs%') order by date
+            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt' or Type='rtf') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) and (Keywords like '%nodejs%') order by DateCreate
             //  + checked
             else if (
                ((cbDoc.Checked == true) //doc
@@ -671,7 +671,7 @@ namespace Treeview
             // end КОМБО 3
 
             // КОМБО 4: вариации с чекбоксами + диапазон размеров + диапазон дат БЕЗ КЛЮЧЕВЫХ СЛОВ
-            //select * from TFile where (Type='doc') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50)) order by date
+            //select * from TFile where (Type='doc') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50)) order by DateCreate
             // + checked
             else if (
                 (cbDoc.Checked == true) //doc
@@ -686,7 +686,7 @@ namespace Treeview
             }
 
 
-            //  select * from TFile where (Type='docx') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50)) order by date
+            //  select * from TFile where (Type='docx') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50)) order by DateCreate
             // + checked
             else if (
                 (cbDocx.Checked == true) //docx
@@ -700,7 +700,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //  select * from TFile where (Type='doc' or Type='docx') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and (size <= 50)) order by date
+            //  select * from TFile where (Type='doc' or Type='docx') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and (size <= 50)) order by DateCreate
             //  + checked
             else if (
                 (cbDoc.Checked == true //doc
@@ -715,7 +715,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //select * from TFile where (Type='doc' or Type='docx' or Type='txt') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) order by date 
+            //select * from TFile where (Type='doc' or Type='docx' or Type='txt') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) order by DateCreate 
             // + checked
             else if (
                ( //только txt
@@ -732,7 +732,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt' or Type='rtf') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) order by date
+            //  select * from TFile where (Type='doc' or Type='docx' or Type='txt' or Type='rtf') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) order by DateCreate
             // не все показывает
             else if (
                ((cbDoc.Checked == true) //doc

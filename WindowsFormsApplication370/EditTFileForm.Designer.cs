@@ -50,7 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtKeyEF = new System.Windows.Forms.TextBox();
-            this.txtFilenameEF = new System.Windows.Forms.TextBox();
+            this.txtTitleEF = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
             this.tCatalogTableAdapter = new WindowsFormsApplication370.RepositoryDB3DataSetTCatalogTableAdapters.TCatalogTableAdapter();
             this.fKTCatalogTCatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -82,7 +82,6 @@
             // 
             // btnInsertFile
             // 
-            this.btnInsertFile.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_Save_26;
             this.btnInsertFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInsertFile.Location = new System.Drawing.Point(13, 404);
             this.btnInsertFile.Name = "btnInsertFile";
@@ -95,7 +94,6 @@
             // 
             // btnDelFile
             // 
-            this.btnDelFile.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_Trash_26;
             this.btnDelFile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnDelFile.Location = new System.Drawing.Point(129, 452);
             this.btnDelFile.Name = "btnDelFile";
@@ -108,7 +106,6 @@
             // 
             // btnUpdFile
             // 
-            this.btnUpdFile.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_Data_Backup_261;
             this.btnUpdFile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnUpdFile.Location = new System.Drawing.Point(129, 404);
             this.btnUpdFile.Name = "btnUpdFile";
@@ -121,7 +118,6 @@
             // 
             // btnViewFile
             // 
-            this.btnViewFile.BackgroundImage = global::WindowsFormsApplication370.Properties.Resources.icons8_Eye_26;
             this.btnViewFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnViewFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnViewFile.Location = new System.Drawing.Point(256, 404);
@@ -152,7 +148,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnUpdFile);
             this.groupBox1.Controls.Add(this.txtKeyEF);
-            this.groupBox1.Controls.Add(this.txtFilenameEF);
+            this.groupBox1.Controls.Add(this.txtTitleEF);
             this.groupBox1.Controls.Add(this.label);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -291,12 +287,12 @@
             this.txtKeyEF.Size = new System.Drawing.Size(224, 22);
             this.txtKeyEF.TabIndex = 19;
             // 
-            // txtFilenameEF
+            // txtTitleEF
             // 
-            this.txtFilenameEF.Location = new System.Drawing.Point(86, 21);
-            this.txtFilenameEF.Name = "txtFilenameEF";
-            this.txtFilenameEF.Size = new System.Drawing.Size(293, 22);
-            this.txtFilenameEF.TabIndex = 6;
+            this.txtTitleEF.Location = new System.Drawing.Point(86, 21);
+            this.txtTitleEF.Name = "txtTitleEF";
+            this.txtTitleEF.Size = new System.Drawing.Size(293, 22);
+            this.txtTitleEF.TabIndex = 6;
             // 
             // label
             // 
@@ -365,7 +361,7 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox txtKeyEF;
         private System.Windows.Forms.Label label;
-        public System.Windows.Forms.TextBox txtFilenameEF;
+        public System.Windows.Forms.TextBox txtTitleEF;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpEF;

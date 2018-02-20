@@ -113,16 +113,6 @@ namespace WindowsFormsApplication370.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_microsoft_admin_filled_50 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-microsoft-admin-filled-50", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icons8_plus_26 {
             get {
                 object obj = ResourceManager.GetObject("icons8-plus-26", resourceCulture);
