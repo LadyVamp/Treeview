@@ -240,28 +240,23 @@ namespace Treeview
                 connection.Open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = connection;
-                //command.CommandText = @"INSERT INTO TFile VALUES (@Title, @Type, @DateCreate, @DateChange, @Size, @Keywords, @Filecontent, @CatalogId, @Annotation, @Author)";
-                command.CommandText = @"INSERT INTO TFile VALUES (@Title, @Type, CONVERT(Datetime, @DateCreate),CONVERT(Datetime, @DateChange), @Size, @Keywords, @Filecontent, @CatalogId, @Annotation, @Author)";
-                //command.CommandText = @"INSERT INTO TFile VALUES (@Title, @Type, CAST(@DateCreate AS Datetime), CAST(@DateChange AS Datetime), @Size, @Keywords, @Filecontent, @CatalogId, @Annotation, @Author)";
+                command.CommandText = @"INSERT INTO TFile VALUES (@Title, @Type, @DateCreate, @Size, @Keywords, @Filecontent, @CatalogId, 
+                                                                  @DateChange, @Annotation, @Author)"; //параметры дб в том же порядке, что и поля в БД
                 command.Parameters.Add("@Title", SqlDbType.NVarChar, 130);
                 command.Parameters.Add("@Type", SqlDbType.NVarChar, 10);
                 command.Parameters.Add("@DateCreate", SqlDbType.DateTime);
-                command.Parameters.Add("@DateChange", SqlDbType.DateTime);
                 command.Parameters.Add("@Size", SqlDbType.Int);
                 command.Parameters.Add("@Keywords", SqlDbType.NVarChar, 100);
                 command.Parameters.Add("@Filecontent", SqlDbType.NVarChar, 10000);
                 command.Parameters.Add("@CatalogId", SqlDbType.Int);
+                command.Parameters.Add("@DateChange", SqlDbType.DateTime);
                 command.Parameters.Add("@Annotation", SqlDbType.NVarChar, 600);
                 command.Parameters.Add("@Author", SqlDbType.NVarChar, 100);
 
                 string title = label1.Text; // заголовок файла
                 string type = label2.Text; // расширение
-
-                //ошибка: неявное преобразование из типа данных datetime в float не разрешено для выполнения этого запроса используйте функцию convert
-                //убрать записывание даты в бд - не вариант :(
                 string dateCreate = label3.Text; // дата создания
                 string dateChange = label4.Text; //  дата изменения
-
                 string path = label6.Text;  //путь к файлу для загрузки
                 string size = label7.Text; // размер
                 string keyword = txtKeywords.Text; // ключевые слова
@@ -273,11 +268,11 @@ namespace Treeview
                 command.Parameters["@Title"].Value = title;
                 command.Parameters["@Type"].Value = type;
                 command.Parameters["@DateCreate"].Value = dateCreate;
-                command.Parameters["@DateChange"].Value = dateChange;
                 command.Parameters["@Size"].Value = size;
                 command.Parameters["@Keywords"].Value = keyword;
                 command.Parameters["@Filecontent"].Value = fileContent;
-                command.Parameters["@CatalogId"].Value = 1;
+                command.Parameters["@CatalogId"].Value = 29;
+                command.Parameters["@DateChange"].Value = dateChange;
                 command.Parameters["@Annotation"].Value = annotation;
                 command.Parameters["@Author"].Value = author;
 
