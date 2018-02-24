@@ -120,17 +120,38 @@
   <metadata name="tRootBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>211, 17</value>
   </metadata>
-  <metadata name="tTypeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>355, 189</value>
-  </metadata>
-  <metadata name="tCatalogBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>375, 146</value>
+  <metadata name="tRootBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>211, 17</value>
   </metadata>
   <metadata name="repositoryDB3TRoot.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="tRootBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>211, 17</value>
+  <metadata name="repositoryDB3TRoot.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="tTypeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>355, 189</value>
+  </metadata>
+  <metadata name="tTypeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>355, 189</value>
+  </metadata>
+  <metadata name="repositoryDB3TTypeForEditTCatalogForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 189</value>
+  </metadata>
+  <metadata name="repositoryDB3TTypeForEditTCatalogForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 189</value>
+  </metadata>
+  <metadata name="tCatalogBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>375, 146</value>
+  </metadata>
+  <metadata name="tCatalogBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>375, 146</value>
+  </metadata>
+  <metadata name="repositoryDB3TCatalogForEditTCatalogForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 146</value>
+  </metadata>
+  <metadata name="repositoryDB3TCatalogForEditTCatalogForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 146</value>
   </metadata>
   <metadata name="tRootTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>404, 17</value>
@@ -147,9 +168,6 @@
   <metadata name="repositoryDB3TCatalogBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>597, 60</value>
   </metadata>
-  <metadata name="repositoryDB3TCatalog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>383, 60</value>
-  </metadata>
   <metadata name="tCatalogBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 103</value>
   </metadata>
@@ -159,16 +177,25 @@
   <metadata name="repositoryDB3DataSetTCatalogBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>436, 103</value>
   </metadata>
-  <metadata name="repositoryDB3TCatalogForEditTCatalogForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 146</value>
-  </metadata>
   <metadata name="tCatalogTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>596, 146</value>
-  </metadata>
-  <metadata name="repositoryDB3TTypeForEditTCatalogForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 189</value>
   </metadata>
   <metadata name="tTypeTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>548, 189</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnClearEF.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAflJREFUSEvtVM8rRFEUHsROQlJ2NJn33rAhpZSlhR8rC/4A7MjWxn2PMBaytrCm
+        YaFo5t4xK7ZIWbDEglKiKL8y4zt3zpue8mPwpihfTfe+c8/5vnvOPWcCfx/RaFFAiEL+yhMgYgi1bNhq
+        MX9iLGLaKk2rzsx3/It8CX6LGE68C10UB+E6CDu00VeRdLoAAmOmkClDyFvTlncgfjZsOeibSGh2rRSE
+        K0SmCZFVw1SyGmIHrg37pR+JhCcSJogOtQBujKwukdW1IRKtwalYlStGmXHI1wGSPhDcmELdg3iAbIaI
+        N70j9oySduvAXNG8sFOMwHm+6UnYibXwkcZbYvC7wm+bXT5HSCRqUKKtTKlkkkjIbgkZ1A4Mrxgybsf+
+        HOsOH3+Meke1ZQJkCkER93GxH8Ftn0yR6NSODI9Yii5m2XKYjz5GyJG9yOIRxBf1k6qWbPgeZaLdxpmN
+        cu3oAc6jJIJ3mmNTbnDFUL5jCExzCfdQugp2yQI+Q1pEqFWaMzbnjmxmWkTtG9OblfRGsI27hNQgKNsD
+        RI7qIptlOvA7eJ0ZPbY8wXpviZilu0yoU5zfmhPxMId8H68yw+1DjurJ/K/JJGfbz64/h6dBzqhBsEb0
+        u2DO2MU/eMQuqANpMC0RLeFjf5F9M8wZDTWb8wMSo6Hmz9+MQOAFiQZ6cl2MTiMAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
