@@ -68,6 +68,12 @@
     <Compile Include="ContentForm.Designer.cs">
       <DependentUpon>ContentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditTCatalogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTCatalogForm.Designer.cs">
+      <DependentUpon>EditTCatalogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditTFileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,10 +129,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RepositoryDB3TCatalog.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RepositoryDB3TCatalogForEditTCatalogForm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryDB3TCatalogForEditTCatalogForm.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RepositoryDB3TFile.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RepositoryDB3TFile.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepositoryDB3TRoot.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryDB3TRoot.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepositoryDB3TTypeForEditTCatalogForm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryDB3TTypeForEditTCatalogForm.xsd</DependentUpon>
     </Compile>
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
@@ -136,6 +157,9 @@
     </Compile>
     <EmbeddedResource Include="ContentForm.resx">
       <DependentUpon>ContentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTCatalogForm.resx">
+      <DependentUpon>EditTCatalogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditTFileForm.resx">
       <DependentUpon>EditTFileForm.cs</DependentUpon>
@@ -219,6 +243,17 @@
     <None Include="RepositoryDB3TCatalog.xss">
       <DependentUpon>RepositoryDB3TCatalog.xsd</DependentUpon>
     </None>
+    <None Include="RepositoryDB3TCatalogForEditTCatalogForm.xsc">
+      <DependentUpon>RepositoryDB3TCatalogForEditTCatalogForm.xsd</DependentUpon>
+    </None>
+    <None Include="RepositoryDB3TCatalogForEditTCatalogForm.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepositoryDB3TCatalogForEditTCatalogForm.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepositoryDB3TCatalogForEditTCatalogForm.xss">
+      <DependentUpon>RepositoryDB3TCatalogForEditTCatalogForm.xsd</DependentUpon>
+    </None>
     <None Include="RepositoryDB3TFile.xsc">
       <DependentUpon>RepositoryDB3TFile.xsd</DependentUpon>
     </None>
@@ -235,6 +270,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="RepositoryDB3TRoot.xsc">
+      <DependentUpon>RepositoryDB3TRoot.xsd</DependentUpon>
+    </None>
+    <None Include="RepositoryDB3TRoot.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepositoryDB3TRoot.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepositoryDB3TRoot.xss">
+      <DependentUpon>RepositoryDB3TRoot.xsd</DependentUpon>
+    </None>
+    <None Include="RepositoryDB3TTypeForEditTCatalogForm.xsc">
+      <DependentUpon>RepositoryDB3TTypeForEditTCatalogForm.xsd</DependentUpon>
+    </None>
+    <None Include="RepositoryDB3TTypeForEditTCatalogForm.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepositoryDB3TTypeForEditTCatalogForm.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepositoryDB3TTypeForEditTCatalogForm.xss">
+      <DependentUpon>RepositoryDB3TTypeForEditTCatalogForm.xsd</DependentUpon>
+    </None>
     <None Include="Resources\icons8-database-administrator-26.png" />
   </ItemGroup>
   <ItemGroup>

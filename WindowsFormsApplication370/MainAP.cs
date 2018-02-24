@@ -23,8 +23,16 @@ namespace Treeview
             f.Show();
         }
 
+        private void btnEditTCatalog_Click(object sender, EventArgs e)
+        {
+            EditTCatalogForm f = new EditTCatalogForm();
+            f.Show();
+        }
+
         //TODO
         // Редактирование остальных таблиц: TCatalog, TUser, TKeyword
         // как в EditTFileForm
+
+
     }
 }

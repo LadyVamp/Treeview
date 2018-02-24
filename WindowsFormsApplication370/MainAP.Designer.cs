@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnEditTFile = new System.Windows.Forms.Button();
+            this.btnEditTCatalog = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEditTFile
@@ -41,11 +42,22 @@
             this.btnEditTFile.UseVisualStyleBackColor = true;
             this.btnEditTFile.Click += new System.EventHandler(this.btnEditTFile_Click);
             // 
+            // btnEditTCatalog
+            // 
+            this.btnEditTCatalog.Location = new System.Drawing.Point(48, 110);
+            this.btnEditTCatalog.Name = "btnEditTCatalog";
+            this.btnEditTCatalog.Size = new System.Drawing.Size(387, 38);
+            this.btnEditTCatalog.TabIndex = 1;
+            this.btnEditTCatalog.Text = "Редактировать таблицу TCatalog (Каталоги)";
+            this.btnEditTCatalog.UseVisualStyleBackColor = true;
+            this.btnEditTCatalog.Click += new System.EventHandler(this.btnEditTCatalog_Click);
+            // 
             // MainAP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 258);
+            this.Controls.Add(this.btnEditTCatalog);
             this.Controls.Add(this.btnEditTFile);
             this.Name = "MainAP";
             this.Text = "MainAP";
@@ -56,5 +68,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnEditTFile;
+        private System.Windows.Forms.Button btnEditTCatalog;
     }
 }
