@@ -81,6 +81,10 @@ namespace Treeview
             }
         }
 
-
+        private void btnCallFileinfoForm_Click(object sender, EventArgs e)
+        {
+            LoadFileForm f = new LoadFileForm();
+            f.Show();
+        }
     }
 }

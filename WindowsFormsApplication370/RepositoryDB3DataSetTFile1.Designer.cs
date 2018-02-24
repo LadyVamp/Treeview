@@ -20,7 +20,7 @@ namespace WindowsFormsApplication370 {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("RepositoryDB3DataSetTFile")]
+    [global::System.Xml.Serialization.XmlRootAttribute("repositoryDB3DataSetTFile")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class RepositoryDB3DataSetTFile : global::System.Data.DataSet {
         
@@ -199,9 +199,9 @@ namespace WindowsFormsApplication370 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "RepositoryDB3DataSetTFile";
+            this.DataSetName = "repositoryDB3DataSetTFile";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/RepositoryDB3DataSetTFile.xsd";
+            this.Namespace = "http://tempuri.org/repositoryDB3DataSetTFile.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableTFile = new TFileDataTable();
@@ -281,11 +281,11 @@ namespace WindowsFormsApplication370 {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnFilename;
+            private global::System.Data.DataColumn columnTitle;
             
             private global::System.Data.DataColumn columnType;
             
-            private global::System.Data.DataColumn columnDate;
+            private global::System.Data.DataColumn columnDateCreate;
             
             private global::System.Data.DataColumn columnSize;
             
@@ -294,6 +294,12 @@ namespace WindowsFormsApplication370 {
             private global::System.Data.DataColumn columnFilecontent;
             
             private global::System.Data.DataColumn columnCatalogId;
+            
+            private global::System.Data.DataColumn columnDateChange;
+            
+            private global::System.Data.DataColumn columnAnnotation;
+            
+            private global::System.Data.DataColumn columnAuthor;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -338,9 +344,9 @@ namespace WindowsFormsApplication370 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FilenameColumn {
+            public global::System.Data.DataColumn TitleColumn {
                 get {
-                    return this.columnFilename;
+                    return this.columnTitle;
                 }
             }
             
@@ -354,9 +360,9 @@ namespace WindowsFormsApplication370 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DateColumn {
+            public global::System.Data.DataColumn DateCreateColumn {
                 get {
-                    return this.columnDate;
+                    return this.columnDateCreate;
                 }
             }
             
@@ -389,6 +395,30 @@ namespace WindowsFormsApplication370 {
             public global::System.Data.DataColumn CatalogIdColumn {
                 get {
                     return this.columnCatalogId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateChangeColumn {
+                get {
+                    return this.columnDateChange;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AnnotationColumn {
+                get {
+                    return this.columnAnnotation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AuthorColumn {
+                get {
+                    return this.columnAuthor;
                 }
             }
             
@@ -429,17 +459,20 @@ namespace WindowsFormsApplication370 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TFileRow AddTFileRow(string Filename, string Type, System.DateTime Date, double Size, string Keywords, string Filecontent, int CatalogId) {
+            public TFileRow AddTFileRow(string Title, string Type, System.DateTime DateCreate, double Size, string Keywords, string Filecontent, int CatalogId, System.DateTime DateChange, string Annotation, string Author) {
                 TFileRow rowTFileRow = ((TFileRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Filename,
+                        Title,
                         Type,
-                        Date,
+                        DateCreate,
                         Size,
                         Keywords,
                         Filecontent,
-                        CatalogId};
+                        CatalogId,
+                        DateChange,
+                        Annotation,
+                        Author};
                 rowTFileRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTFileRow);
                 return rowTFileRow;
@@ -470,13 +503,16 @@ namespace WindowsFormsApplication370 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnFilename = base.Columns["Filename"];
+                this.columnTitle = base.Columns["Title"];
                 this.columnType = base.Columns["Type"];
-                this.columnDate = base.Columns["Date"];
+                this.columnDateCreate = base.Columns["DateCreate"];
                 this.columnSize = base.Columns["Size"];
                 this.columnKeywords = base.Columns["Keywords"];
                 this.columnFilecontent = base.Columns["Filecontent"];
                 this.columnCatalogId = base.Columns["CatalogId"];
+                this.columnDateChange = base.Columns["DateChange"];
+                this.columnAnnotation = base.Columns["Annotation"];
+                this.columnAuthor = base.Columns["Author"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -484,12 +520,12 @@ namespace WindowsFormsApplication370 {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnFilename = new global::System.Data.DataColumn("Filename", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFilename);
+                this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTitle);
                 this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnType);
-                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDate);
+                this.columnDateCreate = new global::System.Data.DataColumn("DateCreate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateCreate);
                 this.columnSize = new global::System.Data.DataColumn("Size", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSize);
                 this.columnKeywords = new global::System.Data.DataColumn("Keywords", typeof(string), null, global::System.Data.MappingType.Element);
@@ -498,6 +534,12 @@ namespace WindowsFormsApplication370 {
                 base.Columns.Add(this.columnFilecontent);
                 this.columnCatalogId = new global::System.Data.DataColumn("CatalogId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCatalogId);
+                this.columnDateChange = new global::System.Data.DataColumn("DateChange", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateChange);
+                this.columnAnnotation = new global::System.Data.DataColumn("Annotation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAnnotation);
+                this.columnAuthor = new global::System.Data.DataColumn("Author", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAuthor);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -506,16 +548,18 @@ namespace WindowsFormsApplication370 {
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
-                this.columnFilename.AllowDBNull = false;
-                this.columnFilename.MaxLength = 130;
+                this.columnTitle.AllowDBNull = false;
+                this.columnTitle.MaxLength = 130;
                 this.columnType.AllowDBNull = false;
                 this.columnType.MaxLength = 50;
-                this.columnDate.AllowDBNull = false;
+                this.columnDateCreate.AllowDBNull = false;
                 this.columnSize.AllowDBNull = false;
                 this.columnKeywords.AllowDBNull = false;
                 this.columnKeywords.MaxLength = 100;
                 this.columnFilecontent.AllowDBNull = false;
                 this.columnFilecontent.MaxLength = 2147483647;
+                this.columnAnnotation.MaxLength = 600;
+                this.columnAuthor.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -669,12 +713,12 @@ namespace WindowsFormsApplication370 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Filename {
+            public string Title {
                 get {
-                    return ((string)(this[this.tableTFile.FilenameColumn]));
+                    return ((string)(this[this.tableTFile.TitleColumn]));
                 }
                 set {
-                    this[this.tableTFile.FilenameColumn] = value;
+                    this[this.tableTFile.TitleColumn] = value;
                 }
             }
             
@@ -691,12 +735,12 @@ namespace WindowsFormsApplication370 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Date {
+            public System.DateTime DateCreate {
                 get {
-                    return ((global::System.DateTime)(this[this.tableTFile.DateColumn]));
+                    return ((global::System.DateTime)(this[this.tableTFile.DateCreateColumn]));
                 }
                 set {
-                    this[this.tableTFile.DateColumn] = value;
+                    this[this.tableTFile.DateCreateColumn] = value;
                 }
             }
             
@@ -751,6 +795,54 @@ namespace WindowsFormsApplication370 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateChange {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTFile.DateChangeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'DateChange\' в таблице \'TFile\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTFile.DateChangeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Annotation {
+                get {
+                    try {
+                        return ((string)(this[this.tableTFile.AnnotationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Annotation\' в таблице \'TFile\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTFile.AnnotationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Author {
+                get {
+                    try {
+                        return ((string)(this[this.tableTFile.AuthorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Author\' в таблице \'TFile\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTFile.AuthorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsCatalogIdNull() {
                 return this.IsNull(this.tableTFile.CatalogIdColumn);
             }
@@ -759,6 +851,42 @@ namespace WindowsFormsApplication370 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCatalogIdNull() {
                 this[this.tableTFile.CatalogIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateChangeNull() {
+                return this.IsNull(this.tableTFile.DateChangeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateChangeNull() {
+                this[this.tableTFile.DateChangeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAnnotationNull() {
+                return this.IsNull(this.tableTFile.AnnotationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAnnotationNull() {
+                this[this.tableTFile.AnnotationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAuthorNull() {
+                return this.IsNull(this.tableTFile.AuthorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAuthorNull() {
+                this[this.tableTFile.AuthorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -797,7 +925,7 @@ namespace WindowsFormsApplication370 {
         }
     }
 }
-namespace WindowsFormsApplication370.RepositoryDB3DataSetTFileTableAdapters {
+namespace WindowsFormsApplication370.repositoryDB3DataSetTFileTableAdapters {
     
     
     /// <summary>
@@ -922,58 +1050,79 @@ namespace WindowsFormsApplication370.RepositoryDB3DataSetTFileTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "TFile";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Filename", "Filename");
+            tableMapping.ColumnMappings.Add("Title", "Title");
             tableMapping.ColumnMappings.Add("Type", "Type");
-            tableMapping.ColumnMappings.Add("Date", "Date");
+            tableMapping.ColumnMappings.Add("DateCreate", "DateCreate");
             tableMapping.ColumnMappings.Add("Size", "Size");
             tableMapping.ColumnMappings.Add("Keywords", "Keywords");
             tableMapping.ColumnMappings.Add("Filecontent", "Filecontent");
             tableMapping.ColumnMappings.Add("CatalogId", "CatalogId");
+            tableMapping.ColumnMappings.Add("DateChange", "DateChange");
+            tableMapping.ColumnMappings.Add("Annotation", "Annotation");
+            tableMapping.ColumnMappings.Add("Author", "Author");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TFile] WHERE (([ID] = @Original_ID) AND ([Filename] = @Original_Filename) AND ([Type] = @Original_Type) AND ([Date] = @Original_Date) AND ([Size] = @Original_Size) AND ([Keywords] = @Original_Keywords) AND ((@IsNull_CatalogId = 1 AND [CatalogId] IS NULL) OR ([CatalogId] = @Original_CatalogId)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TFile] WHERE (([ID] = @Original_ID) AND ([Title] = @Original_Title) AND ([Type] = @Original_Type) AND ([DateCreate] = @Original_DateCreate) AND ([Size] = @Original_Size) AND ([Keywords] = @Original_Keywords) AND ((@IsNull_CatalogId = 1 AND [CatalogId] IS NULL) OR ([CatalogId] = @Original_CatalogId)) AND ((@IsNull_DateChange = 1 AND [DateChange] IS NULL) OR ([DateChange] = @Original_DateChange)) AND ((@IsNull_Annotation = 1 AND [Annotation] IS NULL) OR ([Annotation] = @Original_Annotation)) AND ((@IsNull_Author = 1 AND [Author] IS NULL) OR ([Author] = @Original_Author)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Filename", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Filename", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateCreate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateCreate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Keywords", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Keywords", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CatalogId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CatalogId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CatalogId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CatalogId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateChange", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateChange", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateChange", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateChange", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Annotation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Annotation", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Annotation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Annotation", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Author", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Author", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Author", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Author", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TFile] ([Filename], [Type], [Date], [Size], [Keywords], [Filecontent], [CatalogId]) VALUES (@Filename, @Type, @Date, @Size, @Keywords, @Filecontent, @CatalogId);
-SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM TFile WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TFile] ([Title], [Type], [DateCreate], [Size], [Keywords], [Filecontent], [CatalogId], [DateChange], [Annotation], [Author]) VALUES (@Title, @Type, @DateCreate, @Size, @Keywords, @Filecontent, @CatalogId, @DateChange, @Annotation, @Author);
+SELECT ID, Title, Type, DateCreate, Size, Keywords, Filecontent, CatalogId, DateChange, Annotation, Author FROM TFile WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Filename", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Filename", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateCreate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateCreate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Keywords", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Keywords", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Filecontent", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Filecontent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CatalogId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CatalogId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateChange", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateChange", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Annotation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Annotation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Author", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Author", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TFile] SET [Filename] = @Filename, [Type] = @Type, [Date] = @Date, [Size] = @Size, [Keywords] = @Keywords, [Filecontent] = @Filecontent, [CatalogId] = @CatalogId WHERE (([ID] = @Original_ID) AND ([Filename] = @Original_Filename) AND ([Type] = @Original_Type) AND ([Date] = @Original_Date) AND ([Size] = @Original_Size) AND ([Keywords] = @Original_Keywords) AND ((@IsNull_CatalogId = 1 AND [CatalogId] IS NULL) OR ([CatalogId] = @Original_CatalogId)));
-SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM TFile WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TFile] SET [Title] = @Title, [Type] = @Type, [DateCreate] = @DateCreate, [Size] = @Size, [Keywords] = @Keywords, [Filecontent] = @Filecontent, [CatalogId] = @CatalogId, [DateChange] = @DateChange, [Annotation] = @Annotation, [Author] = @Author WHERE (([ID] = @Original_ID) AND ([Title] = @Original_Title) AND ([Type] = @Original_Type) AND ([DateCreate] = @Original_DateCreate) AND ([Size] = @Original_Size) AND ([Keywords] = @Original_Keywords) AND ((@IsNull_CatalogId = 1 AND [CatalogId] IS NULL) OR ([CatalogId] = @Original_CatalogId)) AND ((@IsNull_DateChange = 1 AND [DateChange] IS NULL) OR ([DateChange] = @Original_DateChange)) AND ((@IsNull_Annotation = 1 AND [Annotation] IS NULL) OR ([Annotation] = @Original_Annotation)) AND ((@IsNull_Author = 1 AND [Author] IS NULL) OR ([Author] = @Original_Author)));
+SELECT ID, Title, Type, DateCreate, Size, Keywords, Filecontent, CatalogId, DateChange, Annotation, Author FROM TFile WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Filename", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Filename", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateCreate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateCreate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Keywords", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Keywords", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Filecontent", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Filecontent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CatalogId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CatalogId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateChange", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateChange", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Annotation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Annotation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Author", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Author", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Filename", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Filename", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateCreate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateCreate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Keywords", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Keywords", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CatalogId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CatalogId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CatalogId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CatalogId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateChange", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateChange", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateChange", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateChange", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Annotation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Annotation", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Annotation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Annotation", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Author", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Author", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Author", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Author", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -990,8 +1139,8 @@ SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM TFi
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM dbo." +
-                "TFile";
+            this._commandCollection[0].CommandText = "SELECT ID, Title, Type, DateCreate, Size, Keywords, Filecontent, CatalogId, DateC" +
+                "hange, Annotation, Author FROM dbo.TFile";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1052,13 +1201,13 @@ SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM TFi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Filename, string Original_Type, System.DateTime Original_Date, double Original_Size, string Original_Keywords, global::System.Nullable<int> Original_CatalogId) {
+        public virtual int Delete(int Original_ID, string Original_Title, string Original_Type, System.DateTime Original_DateCreate, double Original_Size, string Original_Keywords, global::System.Nullable<int> Original_CatalogId, global::System.Nullable<global::System.DateTime> Original_DateChange, string Original_Annotation, string Original_Author) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
-            if ((Original_Filename == null)) {
-                throw new global::System.ArgumentNullException("Original_Filename");
+            if ((Original_Title == null)) {
+                throw new global::System.ArgumentNullException("Original_Title");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Filename));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Title));
             }
             if ((Original_Type == null)) {
                 throw new global::System.ArgumentNullException("Original_Type");
@@ -1066,7 +1215,7 @@ SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM TFi
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Type));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_Date));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_DateCreate));
             this.Adapter.DeleteCommand.Parameters[4].Value = ((double)(Original_Size));
             if ((Original_Keywords == null)) {
                 throw new global::System.ArgumentNullException("Original_Keywords");
@@ -1081,6 +1230,30 @@ SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM TFi
             else {
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DateChange.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_DateChange.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Annotation == null)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_Annotation));
+            }
+            if ((Original_Author == null)) {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_Author));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1102,12 +1275,12 @@ SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM TFi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Filename, string Type, System.DateTime Date, double Size, string Keywords, string Filecontent, global::System.Nullable<int> CatalogId) {
-            if ((Filename == null)) {
-                throw new global::System.ArgumentNullException("Filename");
+        public virtual int Insert(string Title, string Type, System.DateTime DateCreate, double Size, string Keywords, string Filecontent, global::System.Nullable<int> CatalogId, global::System.Nullable<global::System.DateTime> DateChange, string Annotation, string Author) {
+            if ((Title == null)) {
+                throw new global::System.ArgumentNullException("Title");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Filename));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Title));
             }
             if ((Type == null)) {
                 throw new global::System.ArgumentNullException("Type");
@@ -1115,7 +1288,7 @@ SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM TFi
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Type));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Date));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DateCreate));
             this.Adapter.InsertCommand.Parameters[3].Value = ((double)(Size));
             if ((Keywords == null)) {
                 throw new global::System.ArgumentNullException("Keywords");
@@ -1134,6 +1307,24 @@ SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM TFi
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((DateChange.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(DateChange.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Annotation == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Annotation));
+            }
+            if ((Author == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Author));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1155,12 +1346,33 @@ SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM TFi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Filename, string Type, System.DateTime Date, double Size, string Keywords, string Filecontent, global::System.Nullable<int> CatalogId, int Original_ID, string Original_Filename, string Original_Type, System.DateTime Original_Date, double Original_Size, string Original_Keywords, global::System.Nullable<int> Original_CatalogId, int ID) {
-            if ((Filename == null)) {
-                throw new global::System.ArgumentNullException("Filename");
+        public virtual int Update(
+                    string Title, 
+                    string Type, 
+                    System.DateTime DateCreate, 
+                    double Size, 
+                    string Keywords, 
+                    string Filecontent, 
+                    global::System.Nullable<int> CatalogId, 
+                    global::System.Nullable<global::System.DateTime> DateChange, 
+                    string Annotation, 
+                    string Author, 
+                    int Original_ID, 
+                    string Original_Title, 
+                    string Original_Type, 
+                    System.DateTime Original_DateCreate, 
+                    double Original_Size, 
+                    string Original_Keywords, 
+                    global::System.Nullable<int> Original_CatalogId, 
+                    global::System.Nullable<global::System.DateTime> Original_DateChange, 
+                    string Original_Annotation, 
+                    string Original_Author, 
+                    int ID) {
+            if ((Title == null)) {
+                throw new global::System.ArgumentNullException("Title");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Filename));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Title));
             }
             if ((Type == null)) {
                 throw new global::System.ArgumentNullException("Type");
@@ -1168,7 +1380,7 @@ SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM TFi
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Type));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Date));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DateCreate));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((double)(Size));
             if ((Keywords == null)) {
                 throw new global::System.ArgumentNullException("Keywords");
@@ -1188,36 +1400,78 @@ SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM TFi
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ID));
-            if ((Original_Filename == null)) {
-                throw new global::System.ArgumentNullException("Original_Filename");
+            if ((DateChange.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(DateChange.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Filename));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Annotation == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Annotation));
+            }
+            if ((Author == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Author));
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID));
+            if ((Original_Title == null)) {
+                throw new global::System.ArgumentNullException("Original_Title");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Title));
             }
             if ((Original_Type == null)) {
                 throw new global::System.ArgumentNullException("Original_Type");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Type));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Type));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_Date));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(Original_Size));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_DateCreate));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Original_Size));
             if ((Original_Keywords == null)) {
                 throw new global::System.ArgumentNullException("Original_Keywords");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Keywords));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Keywords));
             }
             if ((Original_CatalogId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_CatalogId.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_CatalogId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(ID));
+            if ((Original_DateChange.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_DateChange.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Annotation == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Annotation));
+            }
+            if ((Original_Author == null)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Author));
+            }
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1238,8 +1492,28 @@ SELECT ID, Filename, Type, Date, Size, Keywords, Filecontent, CatalogId FROM TFi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Filename, string Type, System.DateTime Date, double Size, string Keywords, string Filecontent, global::System.Nullable<int> CatalogId, int Original_ID, string Original_Filename, string Original_Type, System.DateTime Original_Date, double Original_Size, string Original_Keywords, global::System.Nullable<int> Original_CatalogId) {
-            return this.Update(Filename, Type, Date, Size, Keywords, Filecontent, CatalogId, Original_ID, Original_Filename, Original_Type, Original_Date, Original_Size, Original_Keywords, Original_CatalogId, Original_ID);
+        public virtual int Update(
+                    string Title, 
+                    string Type, 
+                    System.DateTime DateCreate, 
+                    double Size, 
+                    string Keywords, 
+                    string Filecontent, 
+                    global::System.Nullable<int> CatalogId, 
+                    global::System.Nullable<global::System.DateTime> DateChange, 
+                    string Annotation, 
+                    string Author, 
+                    int Original_ID, 
+                    string Original_Title, 
+                    string Original_Type, 
+                    System.DateTime Original_DateCreate, 
+                    double Original_Size, 
+                    string Original_Keywords, 
+                    global::System.Nullable<int> Original_CatalogId, 
+                    global::System.Nullable<global::System.DateTime> Original_DateChange, 
+                    string Original_Annotation, 
+                    string Original_Author) {
+            return this.Update(Title, Type, DateCreate, Size, Keywords, Filecontent, CatalogId, DateChange, Annotation, Author, Original_ID, Original_Title, Original_Type, Original_DateCreate, Original_Size, Original_Keywords, Original_CatalogId, Original_DateChange, Original_Annotation, Original_Author, Original_ID);
         }
     }
     

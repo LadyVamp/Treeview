@@ -17,11 +17,6 @@ namespace Treeview
             InitializeComponent();
         }
 
-        private void MainAP_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnEditTFile_Click(object sender, EventArgs e)
         {
             EditTFileForm f = new EditTFileForm();
@@ -29,6 +24,7 @@ namespace Treeview
         }
 
         //TODO
-        // CRUD https://metanit.com/sharp/adonet/3.5.php
+        // Редактирование остальных таблиц: TCatalog, TUser, TKeyword
+        // как в EditTFileForm
     }
 }

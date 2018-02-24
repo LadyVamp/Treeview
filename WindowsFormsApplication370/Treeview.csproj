@@ -38,6 +38,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ExternalDll\FastTree.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.7.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.7.0\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\CRUD v3\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -76,6 +80,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadFileForm.Designer.cs">
+      <DependentUpon>LoadFileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,10 +110,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RepositoryDB3DataSetTCatalog.xsd</DependentUpon>
     </Compile>
-    <Compile Include="RepositoryDB3DataSetTFile.Designer.cs">
+    <Compile Include="RepositoryDB3DataSetTFile.cs">
+      <DependentUpon>RepositoryDB3DataSetTFile.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepositoryDB3DataSetTFile1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RepositoryDB3DataSetTFile.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RepositoryDB3TCatalog.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepositoryDB3TCatalog.xsd</DependentUpon>
     </Compile>
     <Compile Include="RepositoryDB3TFile.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -124,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadFileForm.resx">
+      <DependentUpon>LoadFileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -180,12 +201,23 @@
       <DependentUpon>RepositoryDB3DataSetTFile.xsd</DependentUpon>
     </None>
     <None Include="RepositoryDB3DataSetTFile.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RepositoryDB3DataSetTFile.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepositoryDB3DataSetTFile1.Designer.cs</LastGenOutput>
     </None>
     <None Include="RepositoryDB3DataSetTFile.xss">
       <DependentUpon>RepositoryDB3DataSetTFile.xsd</DependentUpon>
+    </None>
+    <None Include="RepositoryDB3TCatalog.xsc">
+      <DependentUpon>RepositoryDB3TCatalog.xsd</DependentUpon>
+    </None>
+    <None Include="RepositoryDB3TCatalog.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RepositoryDB3TCatalog.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RepositoryDB3TCatalog.xss">
+      <DependentUpon>RepositoryDB3TCatalog.xsd</DependentUpon>
     </None>
     <None Include="RepositoryDB3TFile.xsc">
       <DependentUpon>RepositoryDB3TFile.xsd</DependentUpon>
@@ -203,18 +235,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-database-administrator-26.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\icons8-search-filled-30.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-plus-26.png" />
-    <None Include="Resources\icons8-Save-26.png" />
-    <None Include="Resources\icons8-Trash-26.png" />
-    <None Include="Resources\icons8-Eye-26.png" />
-    <None Include="Resources\icons8-Data Backup-261.png" />
-    <None Include="Resources\icons8-Data Backup-26.png" />
+    <None Include="Resources\update_Data Backup-26.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-database-administrator-26.png" />
+    <None Include="Resources\view_Eye-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_Trash-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-broom-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-microsoft-admin-filled-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert_plus-26.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

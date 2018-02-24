@@ -49,7 +49,6 @@
             this.Controls.Add(this.btnEditTFile);
             this.Name = "MainAP";
             this.Text = "MainAP";
-            this.Load += new System.EventHandler(this.MainAP_Load);
             this.ResumeLayout(false);
 
         }

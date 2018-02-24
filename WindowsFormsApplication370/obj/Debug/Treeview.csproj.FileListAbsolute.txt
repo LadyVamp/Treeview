@@ -28,3 +28,7 @@ C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplic
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.MainAP.resources
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.EditTFileForm.resources
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.Form1.resources
+C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.LoadFileForm.resources
+C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\bin\Debug\HtmlAgilityPack.dll
+C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\bin\Debug\HtmlAgilityPack.xml

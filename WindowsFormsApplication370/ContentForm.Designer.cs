@@ -40,7 +40,7 @@
             this.label = new System.Windows.Forms.Label();
             this.txtSize = new System.Windows.Forms.TextBox();
             this.txtCatID = new System.Windows.Forms.TextBox();
-            this.txtDate = new System.Windows.Forms.TextBox();
+            this.txtDateCreate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtKeywords = new System.Windows.Forms.TextBox();
             this.txtSearchContent = new System.Windows.Forms.TextBox();
@@ -48,14 +48,19 @@
             this.btnSearchContent = new System.Windows.Forms.Button();
             this.btnClearHighlight = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDateChange = new System.Windows.Forms.TextBox();
+            this.rtbAnnotation = new System.Windows.Forms.RichTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtbFilecontent
             // 
-            this.rtbFilecontent.Location = new System.Drawing.Point(16, 164);
+            this.rtbFilecontent.Location = new System.Drawing.Point(28, 265);
             this.rtbFilecontent.Name = "rtbFilecontent";
-            this.rtbFilecontent.Size = new System.Drawing.Size(816, 285);
+            this.rtbFilecontent.Size = new System.Drawing.Size(1072, 376);
             this.rtbFilecontent.TabIndex = 0;
             this.rtbFilecontent.Text = "";
             // 
@@ -110,16 +115,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(472, 18);
+            this.label2.Location = new System.Drawing.Point(537, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 17);
+            this.label2.Size = new System.Drawing.Size(108, 17);
             this.label2.TabIndex = 17;
-            this.label2.Text = "Дата";
+            this.label2.Text = "Дата создания";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(684, 16);
+            this.label3.Location = new System.Drawing.Point(958, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 16;
@@ -143,17 +148,17 @@
             // 
             // txtCatID
             // 
-            this.txtCatID.Location = new System.Drawing.Point(759, 11);
+            this.txtCatID.Location = new System.Drawing.Point(1033, 75);
             this.txtCatID.Name = "txtCatID";
             this.txtCatID.Size = new System.Drawing.Size(45, 22);
             this.txtCatID.TabIndex = 13;
             // 
-            // txtDate
+            // txtDateCreate
             // 
-            this.txtDate.Location = new System.Drawing.Point(520, 11);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(144, 22);
-            this.txtDate.TabIndex = 12;
+            this.txtDateCreate.Location = new System.Drawing.Point(651, 12);
+            this.txtDateCreate.Name = "txtDateCreate";
+            this.txtDateCreate.Size = new System.Drawing.Size(144, 22);
+            this.txtDateCreate.TabIndex = 12;
             // 
             // label6
             // 
@@ -168,7 +173,7 @@
             // 
             this.txtKeywords.Location = new System.Drawing.Point(129, 75);
             this.txtKeywords.Name = "txtKeywords";
-            this.txtKeywords.Size = new System.Drawing.Size(272, 22);
+            this.txtKeywords.Size = new System.Drawing.Size(584, 22);
             this.txtKeywords.TabIndex = 19;
             // 
             // txtSearchContent
@@ -209,6 +214,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.txtAuthor);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtDateChange);
             this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
@@ -220,19 +229,60 @@
             this.groupBox1.Controls.Add(this.txtCatID);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtDate);
+            this.groupBox1.Controls.Add(this.txtDateCreate);
             this.groupBox1.Location = new System.Drawing.Point(16, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(816, 108);
+            this.groupBox1.Size = new System.Drawing.Size(1084, 108);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(810, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 17);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Дата изменения";
+            // 
+            // txtDateChange
+            // 
+            this.txtDateChange.Location = new System.Drawing.Point(934, 12);
+            this.txtDateChange.Name = "txtDateChange";
+            this.txtDateChange.Size = new System.Drawing.Size(144, 22);
+            this.txtDateChange.TabIndex = 20;
+            // 
+            // rtbAnnotation
+            // 
+            this.rtbAnnotation.Location = new System.Drawing.Point(28, 174);
+            this.rtbAnnotation.Name = "rtbAnnotation";
+            this.rtbAnnotation.Size = new System.Drawing.Size(1072, 85);
+            this.rtbAnnotation.TabIndex = 25;
+            this.rtbAnnotation.Text = "";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(748, 47);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 17);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Автор";
+            // 
+            // txtAuthor
+            // 
+            this.txtAuthor.Location = new System.Drawing.Point(801, 44);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(277, 22);
+            this.txtAuthor.TabIndex = 22;
             // 
             // ContentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.ClientSize = new System.Drawing.Size(841, 461);
+            this.ClientSize = new System.Drawing.Size(1112, 653);
+            this.Controls.Add(this.rtbAnnotation);
             this.Controls.Add(this.btnClearHighlight);
             this.Controls.Add(this.btnSearchContent);
             this.Controls.Add(this.txtSearchContent);
@@ -264,7 +314,7 @@
         public System.Windows.Forms.TextBox txtFilename;
         public System.Windows.Forms.TextBox txtSize;
         public System.Windows.Forms.TextBox txtCatID;
-        public System.Windows.Forms.TextBox txtDate;
+        public System.Windows.Forms.TextBox txtDateCreate;
         public System.Windows.Forms.TextBox txtKeywords;
         public System.Windows.Forms.RichTextBox rtbFilecontent;
         public System.Windows.Forms.TextBox txtSearchContent;
@@ -272,5 +322,10 @@
         private System.Windows.Forms.Button btnSearchContent;
         private System.Windows.Forms.Button btnClearHighlight;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox txtDateChange;
+        public System.Windows.Forms.RichTextBox rtbAnnotation;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.TextBox txtAuthor;
     }
 }

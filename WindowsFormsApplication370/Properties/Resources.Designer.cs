@@ -63,9 +63,9 @@ namespace WindowsFormsApplication370.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_Data_Backup_26 {
+        internal static System.Drawing.Bitmap delete_Trash_26 {
             get {
-                object obj = ResourceManager.GetObject("icons8-Data Backup-26", resourceCulture);
+                object obj = ResourceManager.GetObject("delete_Trash_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace WindowsFormsApplication370.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_Data_Backup_261 {
+        internal static System.Drawing.Bitmap icons8_broom_26 {
             get {
-                object obj = ResourceManager.GetObject("icons8-Data Backup-261", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_broom_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication370.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_database_administrator_26 {
             get {
-                object obj = ResourceManager.GetObject("icons8-database-administrator-26", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_database_administrator_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,29 +93,9 @@ namespace WindowsFormsApplication370.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_Eye_26 {
+        internal static System.Drawing.Bitmap icons8_microsoft_admin_filled_26 {
             get {
-                object obj = ResourceManager.GetObject("icons8-Eye-26", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_plus_26 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-plus-26", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_Save_26 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-Save-26", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_microsoft_admin_filled_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +105,7 @@ namespace WindowsFormsApplication370.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap icons8_search_filled_30 {
             get {
-                object obj = ResourceManager.GetObject("icons8-search-filled-30", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_search_filled_30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +113,29 @@ namespace WindowsFormsApplication370.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_Trash_26 {
+        internal static System.Drawing.Bitmap insert_plus_26 {
             get {
-                object obj = ResourceManager.GetObject("icons8-Trash-26", resourceCulture);
+                object obj = ResourceManager.GetObject("insert_plus_26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap update_Data_Backup_26 {
+            get {
+                object obj = ResourceManager.GetObject("update_Data_Backup_26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap view_Eye_26 {
+            get {
+                object obj = ResourceManager.GetObject("view_Eye_26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

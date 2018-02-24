@@ -43,5 +43,6 @@ namespace Treeview
             rtbFilecontent.SelectAll();
             rtbFilecontent.SelectionBackColor = Color.White;
         }
+
     }
 }
