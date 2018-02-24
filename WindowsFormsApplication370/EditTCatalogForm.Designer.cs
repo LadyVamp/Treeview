@@ -58,11 +58,11 @@
             this.tCatalogTableAdapter1 = new WindowsFormsApplication370.RepositoryDB3TCatalogForEditTCatalogFormTableAdapters.TCatalogTableAdapter();
             this.tTypeTableAdapter = new WindowsFormsApplication370.RepositoryDB3TTypeForEditTCatalogFormTableAdapters.TTypeTableAdapter();
             this.btnClearEF = new System.Windows.Forms.Button();
-            this.btnDelCatalog = new System.Windows.Forms.Button();
-            this.btnViewCatalog = new System.Windows.Forms.Button();
             this.dgvTCatalogEF = new System.Windows.Forms.DataGridView();
             this.btnInsertCatalog = new System.Windows.Forms.Button();
             this.btnUpdCatalog = new System.Windows.Forms.Button();
+            this.btnViewCatalog = new System.Windows.Forms.Button();
+            this.btnDelCatalog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tRootBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TRoot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tTypeBindingSource)).BeginInit();
@@ -189,13 +189,13 @@
             // cmbSubCatalogId
             // 
             this.cmbSubCatalogId.DataSource = this.tCatalogBindingSource1;
-            this.cmbSubCatalogId.DisplayMember = "SubCatalogId";
+            this.cmbSubCatalogId.DisplayMember = "ID";
             this.cmbSubCatalogId.FormattingEnabled = true;
             this.cmbSubCatalogId.Location = new System.Drawing.Point(171, 123);
             this.cmbSubCatalogId.Name = "cmbSubCatalogId";
             this.cmbSubCatalogId.Size = new System.Drawing.Size(55, 24);
             this.cmbSubCatalogId.TabIndex = 39;
-            this.cmbSubCatalogId.ValueMember = "SubCatalogId";
+            this.cmbSubCatalogId.ValueMember = "ID";
             // 
             // comboBox5
             // 
@@ -277,31 +277,6 @@
             this.btnClearEF.UseVisualStyleBackColor = true;
             this.btnClearEF.Click += new System.EventHandler(this.btnClearEF_Click);
             // 
-            // btnDelCatalog
-            // 
-            this.btnDelCatalog.Image = global::WindowsFormsApplication370.Properties.Resources.delete_Trash_26;
-            this.btnDelCatalog.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnDelCatalog.Location = new System.Drawing.Point(363, 288);
-            this.btnDelCatalog.Name = "btnDelCatalog";
-            this.btnDelCatalog.Size = new System.Drawing.Size(93, 40);
-            this.btnDelCatalog.TabIndex = 42;
-            this.btnDelCatalog.Text = "Delete";
-            this.btnDelCatalog.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelCatalog.UseVisualStyleBackColor = true;
-            // 
-            // btnViewCatalog
-            // 
-            this.btnViewCatalog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnViewCatalog.Image = global::WindowsFormsApplication370.Properties.Resources.view_Eye_26;
-            this.btnViewCatalog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnViewCatalog.Location = new System.Drawing.Point(363, 230);
-            this.btnViewCatalog.Name = "btnViewCatalog";
-            this.btnViewCatalog.Size = new System.Drawing.Size(93, 42);
-            this.btnViewCatalog.TabIndex = 40;
-            this.btnViewCatalog.Text = "View";
-            this.btnViewCatalog.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnViewCatalog.UseVisualStyleBackColor = true;
-            // 
             // dgvTCatalogEF
             // 
             this.dgvTCatalogEF.BackgroundColor = System.Drawing.SystemColors.MenuBar;
@@ -315,35 +290,63 @@
             // 
             // btnInsertCatalog
             // 
+            this.btnInsertCatalog.Image = global::WindowsFormsApplication370.Properties.Resources.insert_plus_26;
+            this.btnInsertCatalog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInsertCatalog.Location = new System.Drawing.Point(27, 230);
             this.btnInsertCatalog.Name = "btnInsertCatalog";
-            this.btnInsertCatalog.Size = new System.Drawing.Size(96, 42);
+            this.btnInsertCatalog.Size = new System.Drawing.Size(98, 42);
             this.btnInsertCatalog.TabIndex = 46;
-            this.btnInsertCatalog.Text = "Insert";
+            this.btnInsertCatalog.Text = "    Insert";
             this.btnInsertCatalog.UseVisualStyleBackColor = true;
             this.btnInsertCatalog.Click += new System.EventHandler(this.btnInsertCatalog_Click);
             // 
             // btnUpdCatalog
             // 
+            this.btnUpdCatalog.Image = global::WindowsFormsApplication370.Properties.Resources.update_Data_Backup_26;
+            this.btnUpdCatalog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdCatalog.Location = new System.Drawing.Point(171, 230);
             this.btnUpdCatalog.Name = "btnUpdCatalog";
-            this.btnUpdCatalog.Size = new System.Drawing.Size(98, 42);
+            this.btnUpdCatalog.Size = new System.Drawing.Size(105, 42);
             this.btnUpdCatalog.TabIndex = 47;
-            this.btnUpdCatalog.Text = "Update";
+            this.btnUpdCatalog.Text = "    Update";
             this.btnUpdCatalog.UseVisualStyleBackColor = true;
             this.btnUpdCatalog.Click += new System.EventHandler(this.btnUpdCatalog_Click);
+            // 
+            // btnViewCatalog
+            // 
+            this.btnViewCatalog.Image = global::WindowsFormsApplication370.Properties.Resources.view_Eye_26;
+            this.btnViewCatalog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnViewCatalog.Location = new System.Drawing.Point(352, 230);
+            this.btnViewCatalog.Name = "btnViewCatalog";
+            this.btnViewCatalog.Size = new System.Drawing.Size(101, 42);
+            this.btnViewCatalog.TabIndex = 48;
+            this.btnViewCatalog.Text = "    View";
+            this.btnViewCatalog.UseVisualStyleBackColor = true;
+            this.btnViewCatalog.Click += new System.EventHandler(this.btnViewCatalog_Click);
+            // 
+            // btnDelCatalog
+            // 
+            this.btnDelCatalog.Image = global::WindowsFormsApplication370.Properties.Resources.delete_Trash_26;
+            this.btnDelCatalog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelCatalog.Location = new System.Drawing.Point(352, 288);
+            this.btnDelCatalog.Name = "btnDelCatalog";
+            this.btnDelCatalog.Size = new System.Drawing.Size(101, 40);
+            this.btnDelCatalog.TabIndex = 49;
+            this.btnDelCatalog.Text = "    Delete";
+            this.btnDelCatalog.UseVisualStyleBackColor = true;
+            this.btnDelCatalog.Click += new System.EventHandler(this.btnDelCatalog_Click);
             // 
             // EditTCatalogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1151, 366);
+            this.Controls.Add(this.btnDelCatalog);
+            this.Controls.Add(this.btnViewCatalog);
             this.Controls.Add(this.btnUpdCatalog);
             this.Controls.Add(this.btnInsertCatalog);
             this.Controls.Add(this.dgvTCatalogEF);
             this.Controls.Add(this.btnClearEF);
-            this.Controls.Add(this.btnDelCatalog);
-            this.Controls.Add(this.btnViewCatalog);
             this.Controls.Add(this.cmbSubCatalogId);
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.label2);
@@ -406,10 +409,10 @@
         private System.Windows.Forms.BindingSource tTypeBindingSource;
         private WindowsFormsApplication370.RepositoryDB3TTypeForEditTCatalogFormTableAdapters.TTypeTableAdapter tTypeTableAdapter;
         private System.Windows.Forms.Button btnClearEF;
-        private System.Windows.Forms.Button btnDelCatalog;
-        private System.Windows.Forms.Button btnViewCatalog;
         private System.Windows.Forms.DataGridView dgvTCatalogEF;
         private System.Windows.Forms.Button btnInsertCatalog;
         private System.Windows.Forms.Button btnUpdCatalog;
+        private System.Windows.Forms.Button btnViewCatalog;
+        private System.Windows.Forms.Button btnDelCatalog;
     }
 }

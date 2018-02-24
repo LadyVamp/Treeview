@@ -49,7 +49,7 @@ namespace Treeview
             da.Fill(ds, "catalogs");
             dgvTCatalogEF.DataSource = ds.Tables[0];
             dgvTCatalogEF.Columns[0].Width = 20;
-            dgvTCatalogEF.Columns[1].Width = 150;
+            dgvTCatalogEF.Columns[1].Width = 200;
             dgvTCatalogEF.Columns[2].Width = 40;
             dgvTCatalogEF.Columns[3].Width = 80;
             dgvTCatalogEF.Columns[4].Width = 60;
@@ -206,7 +206,6 @@ namespace Treeview
             }
         }
 
-     
 
     }
 }
