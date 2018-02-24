@@ -60,9 +60,9 @@
             this.btnClearEF = new System.Windows.Forms.Button();
             this.btnDelCatalog = new System.Windows.Forms.Button();
             this.btnViewCatalog = new System.Windows.Forms.Button();
-            this.btnUpdCatalog = new System.Windows.Forms.Button();
             this.dgvTCatalogEF = new System.Windows.Forms.DataGridView();
             this.btnInsertCatalog = new System.Windows.Forms.Button();
+            this.btnUpdCatalog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tRootBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TRoot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tTypeBindingSource)).BeginInit();
@@ -302,18 +302,6 @@
             this.btnViewCatalog.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewCatalog.UseVisualStyleBackColor = true;
             // 
-            // btnUpdCatalog
-            // 
-            this.btnUpdCatalog.Image = global::WindowsFormsApplication370.Properties.Resources.update_Data_Backup_26;
-            this.btnUpdCatalog.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnUpdCatalog.Location = new System.Drawing.Point(171, 230);
-            this.btnUpdCatalog.Name = "btnUpdCatalog";
-            this.btnUpdCatalog.Size = new System.Drawing.Size(97, 42);
-            this.btnUpdCatalog.TabIndex = 41;
-            this.btnUpdCatalog.Text = "Update";
-            this.btnUpdCatalog.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdCatalog.UseVisualStyleBackColor = true;
-            // 
             // dgvTCatalogEF
             // 
             this.dgvTCatalogEF.BackgroundColor = System.Drawing.SystemColors.MenuBar;
@@ -335,17 +323,27 @@
             this.btnInsertCatalog.UseVisualStyleBackColor = true;
             this.btnInsertCatalog.Click += new System.EventHandler(this.btnInsertCatalog_Click);
             // 
+            // btnUpdCatalog
+            // 
+            this.btnUpdCatalog.Location = new System.Drawing.Point(171, 230);
+            this.btnUpdCatalog.Name = "btnUpdCatalog";
+            this.btnUpdCatalog.Size = new System.Drawing.Size(98, 42);
+            this.btnUpdCatalog.TabIndex = 47;
+            this.btnUpdCatalog.Text = "Update";
+            this.btnUpdCatalog.UseVisualStyleBackColor = true;
+            this.btnUpdCatalog.Click += new System.EventHandler(this.btnUpdCatalog_Click);
+            // 
             // EditTCatalogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1151, 366);
+            this.Controls.Add(this.btnUpdCatalog);
             this.Controls.Add(this.btnInsertCatalog);
             this.Controls.Add(this.dgvTCatalogEF);
             this.Controls.Add(this.btnClearEF);
             this.Controls.Add(this.btnDelCatalog);
             this.Controls.Add(this.btnViewCatalog);
-            this.Controls.Add(this.btnUpdCatalog);
             this.Controls.Add(this.cmbSubCatalogId);
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.label2);
@@ -410,8 +408,8 @@
         private System.Windows.Forms.Button btnClearEF;
         private System.Windows.Forms.Button btnDelCatalog;
         private System.Windows.Forms.Button btnViewCatalog;
-        private System.Windows.Forms.Button btnUpdCatalog;
         private System.Windows.Forms.DataGridView dgvTCatalogEF;
         private System.Windows.Forms.Button btnInsertCatalog;
+        private System.Windows.Forms.Button btnUpdCatalog;
     }
 }

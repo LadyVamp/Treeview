@@ -150,12 +150,21 @@ namespace Treeview
             }
         }
 
-        
+        private void btnInsertCatalog_Click(object sender, EventArgs e)
+        {
+            if (txtCatalog.Text == "" || cmbRootId.Text == "" || comboBox1.Text == "" || cmbAccessId.Text == "" || comboBox3.Text == "" || cmbSubCatalogId.Text == "" || comboBox5.Text == "")
+            {
+                MessageBox.Show("Поля не заполнены");
+            }
+            else
+            {
+                InsertCatalog(txtCatalog.Text, cmbRootId.Text, cmbSubCatalogId.Text, cmbAccessId.Text);
+            }
+        }
 
         private void btnUpdCatalog_Click(object sender, EventArgs e)
         {
-
-            if (txtCatalog.Text == "" || cmbRootId.Text == "" || comboBox1.Text == "" || cmbAccessId.Text == "" || comboBox3.Text == "" || cmbSubCatalogId.Text == "" || comboBox5.Text == "")
+            if (txtCatalog.Text == "" || cmbRootId.Text == "" || cmbAccessId.Text == "" || cmbSubCatalogId.Text == "")
             {
                 MessageBox.Show("Поля не заполнены");
             }
@@ -165,6 +174,7 @@ namespace Treeview
                 int id = Convert.ToInt32(selected);
                 UpdateCatalog(id, txtCatalog.Text, cmbRootId.Text, cmbSubCatalogId.Text, cmbAccessId.Text);
             }
+
         }
 
         private void btnViewCatalog_Click(object sender, EventArgs e)
@@ -196,17 +206,7 @@ namespace Treeview
             }
         }
 
-        private void btnInsertCatalog_Click(object sender, EventArgs e)
-        {
-            if (txtCatalog.Text == "" || cmbRootId.Text == "" || comboBox1.Text == "" || cmbAccessId.Text == "" || comboBox3.Text == "" || cmbSubCatalogId.Text == "" || comboBox5.Text == "")
-            {
-                MessageBox.Show("Поля не заполнены");
-            }
-            else
-            {
-                InsertCatalog(txtCatalog.Text, cmbRootId.Text, cmbSubCatalogId.Text, cmbAccessId.Text);
-            }
-        }
+     
 
     }
 }
