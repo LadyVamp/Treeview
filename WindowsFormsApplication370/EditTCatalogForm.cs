@@ -46,7 +46,7 @@ namespace Treeview
             SqlDataAdapter da = new SqlDataAdapter("select * from TCatalog", con);
             SqlCommandBuilder cb = new SqlCommandBuilder(da);
             DataSet ds = new DataSet();
-            da.Fill(ds, "Catalogs");
+            da.Fill(ds, "catalogs");
             dgvTCatalogEF.DataSource = ds.Tables[0];
             dgvTCatalogEF.Columns[0].Width = 20;
             dgvTCatalogEF.Columns[1].Width = 150;
@@ -59,7 +59,7 @@ namespace Treeview
         //  Create
         private void InsertCatalog(string catalog, string rootId, string subCatalogId, string accessId)
         {
-            string sql = "INSERT INTO TCatalog(catalog, rootId, subCatalogId, accessId) VALUES(@catalog,@rootId,@subCatalogId,@subCatalogId,@accessId)";
+            string sql = "INSERT INTO TCatalog(catalog, rootId, subCatalogId, accessId) VALUES(@catalog,@rootId,@subCatalogId,@accessId)";
             cmd = new SqlCommand(sql, con);
             cmd.Parameters.AddWithValue("@catalog", catalog);
             cmd.Parameters.AddWithValue("@rootId", rootId);
@@ -150,17 +150,7 @@ namespace Treeview
             }
         }
 
-        private void btnInsertCatalog_Click(object sender, EventArgs e)
-        {
-            if (txtCatalog.Text == "" || cmbRootId.Text == "" || comboBox1.Text == "" || cmbAccessId.Text == "" || comboBox3.Text == "" || cmbSubCatalogId.Text == "" || comboBox5.Text == "")
-            {
-                MessageBox.Show("Поля не заполнены");
-            }
-            else
-            {
-                InsertCatalog(txtCatalog.Text, cmbRootId.Text, cmbSubCatalogId.Text, cmbAccessId.Text);
-            }
-        }
+        
 
         private void btnUpdCatalog_Click(object sender, EventArgs e)
         {
@@ -205,5 +195,18 @@ namespace Treeview
                 cmbAccessId.Text = dgvTCatalogEF.Rows[dgvTCatalogEF.CurrentCell.RowIndex].Cells["accessId"].Value.ToString();
             }
         }
+
+        private void btnInsertCatalog_Click(object sender, EventArgs e)
+        {
+            if (txtCatalog.Text == "" || cmbRootId.Text == "" || comboBox1.Text == "" || cmbAccessId.Text == "" || comboBox3.Text == "" || cmbSubCatalogId.Text == "" || comboBox5.Text == "")
+            {
+                MessageBox.Show("Поля не заполнены");
+            }
+            else
+            {
+                InsertCatalog(txtCatalog.Text, cmbRootId.Text, cmbSubCatalogId.Text, cmbAccessId.Text);
+            }
+        }
+
     }
 }

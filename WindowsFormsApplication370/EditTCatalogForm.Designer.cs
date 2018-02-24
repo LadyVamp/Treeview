@@ -59,10 +59,10 @@
             this.tTypeTableAdapter = new WindowsFormsApplication370.RepositoryDB3TTypeForEditTCatalogFormTableAdapters.TTypeTableAdapter();
             this.btnClearEF = new System.Windows.Forms.Button();
             this.btnDelCatalog = new System.Windows.Forms.Button();
-            this.btnInsertCatalog = new System.Windows.Forms.Button();
             this.btnViewCatalog = new System.Windows.Forms.Button();
             this.btnUpdCatalog = new System.Windows.Forms.Button();
             this.dgvTCatalogEF = new System.Windows.Forms.DataGridView();
+            this.btnInsertCatalog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tRootBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TRoot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tTypeBindingSource)).BeginInit();
@@ -289,18 +289,6 @@
             this.btnDelCatalog.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelCatalog.UseVisualStyleBackColor = true;
             // 
-            // btnInsertCatalog
-            // 
-            this.btnInsertCatalog.Image = global::WindowsFormsApplication370.Properties.Resources.insert_plus_26;
-            this.btnInsertCatalog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsertCatalog.Location = new System.Drawing.Point(25, 230);
-            this.btnInsertCatalog.Name = "btnInsertCatalog";
-            this.btnInsertCatalog.Size = new System.Drawing.Size(92, 42);
-            this.btnInsertCatalog.TabIndex = 43;
-            this.btnInsertCatalog.Text = "Insert";
-            this.btnInsertCatalog.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInsertCatalog.UseVisualStyleBackColor = true;
-            // 
             // btnViewCatalog
             // 
             this.btnViewCatalog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -337,15 +325,25 @@
             this.dgvTCatalogEF.Size = new System.Drawing.Size(630, 287);
             this.dgvTCatalogEF.TabIndex = 45;
             // 
+            // btnInsertCatalog
+            // 
+            this.btnInsertCatalog.Location = new System.Drawing.Point(27, 230);
+            this.btnInsertCatalog.Name = "btnInsertCatalog";
+            this.btnInsertCatalog.Size = new System.Drawing.Size(96, 42);
+            this.btnInsertCatalog.TabIndex = 46;
+            this.btnInsertCatalog.Text = "Insert";
+            this.btnInsertCatalog.UseVisualStyleBackColor = true;
+            this.btnInsertCatalog.Click += new System.EventHandler(this.btnInsertCatalog_Click);
+            // 
             // EditTCatalogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1151, 366);
+            this.Controls.Add(this.btnInsertCatalog);
             this.Controls.Add(this.dgvTCatalogEF);
             this.Controls.Add(this.btnClearEF);
             this.Controls.Add(this.btnDelCatalog);
-            this.Controls.Add(this.btnInsertCatalog);
             this.Controls.Add(this.btnViewCatalog);
             this.Controls.Add(this.btnUpdCatalog);
             this.Controls.Add(this.cmbSubCatalogId);
@@ -411,9 +409,9 @@
         private WindowsFormsApplication370.RepositoryDB3TTypeForEditTCatalogFormTableAdapters.TTypeTableAdapter tTypeTableAdapter;
         private System.Windows.Forms.Button btnClearEF;
         private System.Windows.Forms.Button btnDelCatalog;
-        private System.Windows.Forms.Button btnInsertCatalog;
         private System.Windows.Forms.Button btnViewCatalog;
         private System.Windows.Forms.Button btnUpdCatalog;
         private System.Windows.Forms.DataGridView dgvTCatalogEF;
+        private System.Windows.Forms.Button btnInsertCatalog;
     }
 }
