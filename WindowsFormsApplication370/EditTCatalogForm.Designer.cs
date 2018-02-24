@@ -30,21 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditTCatalogForm));
-            this.cmbCatIDEF = new System.Windows.Forms.ComboBox();
+            this.cmbRootId = new System.Windows.Forms.ComboBox();
             this.tRootBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryDB3TRoot = new WindowsFormsApplication370.RepositoryDB3TRoot();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl7 = new System.Windows.Forms.Label();
-            this.txtCatalogName = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtCatalog = new System.Windows.Forms.TextBox();
+            this.cmbAccessId = new System.Windows.Forms.ComboBox();
             this.tTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryDB3TTypeForEditTCatalogForm = new WindowsFormsApplication370.RepositoryDB3TTypeForEditTCatalogForm();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.tCatalogBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryDB3TCatalogForEditTCatalogForm = new WindowsFormsApplication370.RepositoryDB3TCatalogForEditTCatalogForm();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cmbSubCatalogId = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tRootTableAdapter = new WindowsFormsApplication370.RepositoryDB3TRootTableAdapters.TRootTableAdapter();
@@ -78,16 +78,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTCatalogEF)).BeginInit();
             this.SuspendLayout();
             // 
-            // cmbCatIDEF
+            // cmbRootId
             // 
-            this.cmbCatIDEF.DataSource = this.tRootBindingSource;
-            this.cmbCatIDEF.DisplayMember = "ID";
-            this.cmbCatIDEF.FormattingEnabled = true;
-            this.cmbCatIDEF.Location = new System.Drawing.Point(171, 83);
-            this.cmbCatIDEF.Name = "cmbCatIDEF";
-            this.cmbCatIDEF.Size = new System.Drawing.Size(55, 24);
-            this.cmbCatIDEF.TabIndex = 33;
-            this.cmbCatIDEF.ValueMember = "ID";
+            this.cmbRootId.DataSource = this.tRootBindingSource;
+            this.cmbRootId.DisplayMember = "ID";
+            this.cmbRootId.FormattingEnabled = true;
+            this.cmbRootId.Location = new System.Drawing.Point(171, 83);
+            this.cmbRootId.Name = "cmbRootId";
+            this.cmbRootId.Size = new System.Drawing.Size(55, 24);
+            this.cmbRootId.TabIndex = 33;
+            this.cmbRootId.ValueMember = "ID";
             // 
             // tRootBindingSource
             // 
@@ -128,23 +128,23 @@
             this.lbl7.TabIndex = 29;
             this.lbl7.Text = "Корневой каталог";
             // 
-            // txtCatalogName
+            // txtCatalog
             // 
-            this.txtCatalogName.Location = new System.Drawing.Point(171, 41);
-            this.txtCatalogName.Name = "txtCatalogName";
-            this.txtCatalogName.Size = new System.Drawing.Size(224, 22);
-            this.txtCatalogName.TabIndex = 30;
+            this.txtCatalog.Location = new System.Drawing.Point(171, 41);
+            this.txtCatalog.Name = "txtCatalog";
+            this.txtCatalog.Size = new System.Drawing.Size(224, 22);
+            this.txtCatalog.TabIndex = 30;
             // 
-            // comboBox2
+            // cmbAccessId
             // 
-            this.comboBox2.DataSource = this.tTypeBindingSource;
-            this.comboBox2.DisplayMember = "ID";
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(171, 167);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(55, 24);
-            this.comboBox2.TabIndex = 36;
-            this.comboBox2.ValueMember = "ID";
+            this.cmbAccessId.DataSource = this.tTypeBindingSource;
+            this.cmbAccessId.DisplayMember = "ID";
+            this.cmbAccessId.FormattingEnabled = true;
+            this.cmbAccessId.Location = new System.Drawing.Point(171, 167);
+            this.cmbAccessId.Name = "cmbAccessId";
+            this.cmbAccessId.Size = new System.Drawing.Size(55, 24);
+            this.cmbAccessId.TabIndex = 36;
+            this.cmbAccessId.ValueMember = "ID";
             // 
             // tTypeBindingSource
             // 
@@ -186,16 +186,16 @@
             this.label1.TabIndex = 34;
             this.label1.Text = "Доступ";
             // 
-            // comboBox4
+            // cmbSubCatalogId
             // 
-            this.comboBox4.DataSource = this.tCatalogBindingSource1;
-            this.comboBox4.DisplayMember = "SubCatalogId";
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(171, 123);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(55, 24);
-            this.comboBox4.TabIndex = 39;
-            this.comboBox4.ValueMember = "SubCatalogId";
+            this.cmbSubCatalogId.DataSource = this.tCatalogBindingSource1;
+            this.cmbSubCatalogId.DisplayMember = "SubCatalogId";
+            this.cmbSubCatalogId.FormattingEnabled = true;
+            this.cmbSubCatalogId.Location = new System.Drawing.Point(171, 123);
+            this.cmbSubCatalogId.Name = "cmbSubCatalogId";
+            this.cmbSubCatalogId.Size = new System.Drawing.Size(55, 24);
+            this.cmbSubCatalogId.TabIndex = 39;
+            this.cmbSubCatalogId.ValueMember = "SubCatalogId";
             // 
             // comboBox5
             // 
@@ -348,17 +348,17 @@
             this.Controls.Add(this.btnInsertCatalog);
             this.Controls.Add(this.btnViewCatalog);
             this.Controls.Add(this.btnUpdCatalog);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.cmbSubCatalogId);
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbAccessId);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbCatIDEF);
+            this.Controls.Add(this.cmbRootId);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl7);
-            this.Controls.Add(this.txtCatalogName);
+            this.Controls.Add(this.txtCatalog);
             this.Name = "EditTCatalogForm";
             this.Text = "EditTCatalogForm";
             this.Load += new System.EventHandler(this.EditTCatalogForm_Load);
@@ -382,15 +382,15 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cmbCatIDEF;
+        private System.Windows.Forms.ComboBox cmbRootId;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl7;
-        public System.Windows.Forms.TextBox txtCatalogName;
-        private System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.TextBox txtCatalog;
+        private System.Windows.Forms.ComboBox cmbAccessId;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cmbSubCatalogId;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label2;
         private WindowsFormsApplication370.RepositoryDB3TRoot repositoryDB3TRoot;
