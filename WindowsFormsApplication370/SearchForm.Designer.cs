@@ -121,9 +121,9 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(296, 12);
+            this.txtSearch.Location = new System.Drawing.Point(12, 12);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(375, 22);
+            this.txtSearch.Size = new System.Drawing.Size(348, 22);
             this.txtSearch.TabIndex = 3;
             // 
             // tFileBindingSource1
@@ -145,7 +145,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtMinSize);
-            this.groupBox2.Location = new System.Drawing.Point(547, 45);
+            this.groupBox2.Location = new System.Drawing.Point(118, 141);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(242, 90);
             this.groupBox2.TabIndex = 6;
@@ -214,14 +214,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(38, 21);
+            this.dateTimePicker1.Location = new System.Drawing.Point(29, 20);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(196, 22);
             this.dateTimePicker1.TabIndex = 8;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(38, 48);
+            this.dateTimePicker2.Location = new System.Drawing.Point(29, 47);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(196, 22);
             this.dateTimePicker2.TabIndex = 9;
@@ -230,19 +230,19 @@
             // 
             this.groupBox3.Controls.Add(this.btnDateFilter);
             this.groupBox3.Controls.Add(this.cbDate2);
-            this.groupBox3.Controls.Add(this.cbDate1);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Location = new System.Drawing.Point(805, 45);
+            this.groupBox3.Controls.Add(this.cbDate1);
+            this.groupBox3.Location = new System.Drawing.Point(128, 237);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(411, 90);
+            this.groupBox3.Size = new System.Drawing.Size(235, 109);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Дата";
             // 
             // btnDateFilter
             // 
-            this.btnDateFilter.Location = new System.Drawing.Point(281, 21);
+            this.btnDateFilter.Location = new System.Drawing.Point(120, 74);
             this.btnDateFilter.Name = "btnDateFilter";
             this.btnDateFilter.Size = new System.Drawing.Size(105, 29);
             this.btnDateFilter.TabIndex = 13;
@@ -253,7 +253,7 @@
             // cbDate2
             // 
             this.cbDate2.AutoSize = true;
-            this.cbDate2.Location = new System.Drawing.Point(240, 53);
+            this.cbDate2.Location = new System.Drawing.Point(6, 52);
             this.cbDate2.Name = "cbDate2";
             this.cbDate2.Size = new System.Drawing.Size(18, 17);
             this.cbDate2.TabIndex = 12;
@@ -262,7 +262,7 @@
             // cbDate1
             // 
             this.cbDate1.AutoSize = true;
-            this.cbDate1.Location = new System.Drawing.Point(240, 24);
+            this.cbDate1.Location = new System.Drawing.Point(6, 25);
             this.cbDate1.Name = "cbDate1";
             this.cbDate1.Size = new System.Drawing.Size(18, 17);
             this.cbDate1.TabIndex = 11;
@@ -323,7 +323,7 @@
             this.groupBox1.Controls.Add(this.cbRtf);
             this.groupBox1.Controls.Add(this.cbDocx);
             this.groupBox1.Controls.Add(this.cbTxt);
-            this.groupBox1.Location = new System.Drawing.Point(296, 40);
+            this.groupBox1.Location = new System.Drawing.Point(115, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 90);
             this.groupBox1.TabIndex = 5;
@@ -332,7 +332,7 @@
             // 
             // btnType
             // 
-            this.btnType.Location = new System.Drawing.Point(128, 29);
+            this.btnType.Location = new System.Drawing.Point(138, 30);
             this.btnType.Name = "btnType";
             this.btnType.Size = new System.Drawing.Size(97, 30);
             this.btnType.TabIndex = 16;
@@ -342,9 +342,9 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(1193, 11);
+            this.btnReset.Location = new System.Drawing.Point(12, 323);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.Size = new System.Drawing.Size(87, 23);
             this.btnReset.TabIndex = 16;
             this.btnReset.Text = "Сброс";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -355,45 +355,45 @@
             this.btnSearch.BackColor = System.Drawing.SystemColors.Window;
             this.btnSearch.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_search_filled_26;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(677, 11);
+            this.btnSearch.Location = new System.Drawing.Point(9, 50);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(112, 36);
+            this.btnSearch.Size = new System.Drawing.Size(97, 36);
             this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "  Поиск";
+            this.btnSearch.Text = "   Поиск";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvTFile
             // 
             this.dgvTFile.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTFile.Location = new System.Drawing.Point(12, 243);
+            this.dgvTFile.Location = new System.Drawing.Point(366, 12);
             this.dgvTFile.Name = "dgvTFile";
             this.dgvTFile.RowTemplate.Height = 24;
             this.dgvTFile.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTFile.Size = new System.Drawing.Size(1256, 277);
+            this.dgvTFile.Size = new System.Drawing.Size(905, 536);
             this.dgvTFile.TabIndex = 18;
             this.dgvTFile.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTFile_CellDoubleClick);
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(12, 12);
+            this.treeView1.Location = new System.Drawing.Point(12, 352);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(278, 225);
+            this.treeView1.Size = new System.Drawing.Size(245, 168);
             this.treeView1.TabIndex = 19;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // txtKeywords
             // 
-            this.txtKeywords.Location = new System.Drawing.Point(296, 151);
+            this.txtKeywords.Location = new System.Drawing.Point(12, 526);
             this.txtKeywords.Name = "txtKeywords";
             this.txtKeywords.Size = new System.Drawing.Size(245, 22);
             this.txtKeywords.TabIndex = 20;
             // 
             // btnSearchKeywords
             // 
-            this.btnSearchKeywords.Location = new System.Drawing.Point(547, 146);
+            this.btnSearchKeywords.Location = new System.Drawing.Point(263, 481);
             this.btnSearchKeywords.Name = "btnSearchKeywords";
-            this.btnSearchKeywords.Size = new System.Drawing.Size(213, 32);
+            this.btnSearchKeywords.Size = new System.Drawing.Size(90, 67);
             this.btnSearchKeywords.TabIndex = 21;
             this.btnSearchKeywords.Text = "Поиск по ключевым словам";
             this.btnSearchKeywords.UseVisualStyleBackColor = true;
@@ -401,9 +401,9 @@
             // 
             // btnAllSearch
             // 
-            this.btnAllSearch.Location = new System.Drawing.Point(1125, 141);
+            this.btnAllSearch.Location = new System.Drawing.Point(12, 257);
             this.btnAllSearch.Name = "btnAllSearch";
-            this.btnAllSearch.Size = new System.Drawing.Size(91, 59);
+            this.btnAllSearch.Size = new System.Drawing.Size(87, 60);
             this.btnAllSearch.TabIndex = 22;
             this.btnAllSearch.Text = "Все фильтры";
             this.btnAllSearch.UseVisualStyleBackColor = true;
@@ -413,7 +413,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 532);
+            this.ClientSize = new System.Drawing.Size(1283, 554);
             this.Controls.Add(this.btnAllSearch);
             this.Controls.Add(this.btnSearchKeywords);
             this.Controls.Add(this.txtKeywords);
