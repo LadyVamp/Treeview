@@ -493,7 +493,7 @@ namespace Treeview
             }
 
             //  select * from TFile where (Type='docx' or type='.html' or type='.rtf') and (Date >= '2015-11-29') and (size >= 20) ORDER BY DateCreate
-            // + checked
+            // только html показывает
             else if (
                ( 
                (cbHtml.Checked == true)//html
@@ -524,61 +524,11 @@ namespace Treeview
                 da.Fill(ds, "TFile");
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
-
-            //  select * from TFile where Type='docx' and DateCreate >= '2015-11-29' and size <= 30 ORDER BY DateCreate
-            // + checked
-            else if (
-                 //(cbDocx.Checked == true)//docx  && 
-                 ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
-                 && (txtMaxSize.Text != "" && txtMinSize.Text == "") //maxSize
-                 && (txtKeywords.Text == "") //Keywords
-                 )
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='docx') AND size<=" + txtMaxSize.Text + " and DateCreate >= '" + dateTimePicker1.Value.Date + "' ORDER BY DateCreate", con);
-                da.Fill(ds, "TFile");
-                dgvTFile.DataSource = ds.Tables["TFile"];
-            }
-
-            //  select * from TFile where (type='.doc' or Type='docx' or type='.html') and (Date >= '2015-11-29') and (size <= 30) ORDER BY DateCreate
-            // не все результаты показывает
-            else if (
-               ((cbDoc.Checked == true) //doc
-               //|| (cbDocx.Checked == true)//docx
-               || (cbHtml.Checked == true))//txt
-               && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
-               && (txtMaxSize.Text != "" && txtMinSize.Text == "") //maxSize
-               && (txtKeywords.Text == "") //Keywords
-               )
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='.doc' or type='docx' or type='.html') AND size<=" + txtMaxSize.Text + " and DateCreate >= '" + dateTimePicker1.Value.Date + "' ORDER BY DateCreate", con);
-                da.Fill(ds, "TFile");
-                dgvTFile.DataSource = ds.Tables["TFile"];
-            }
-
-            //  select * from TFile where (Type='docx' or type='.html' or type='.rtf') and (Date >= '2015-11-29') and (size <= 30) ORDER BY DateCreate
-            // + checked
-            else if (
-               ( // без doc
-               //(cbDocx.Checked == true)//docx
-               (cbHtml.Checked == true)//txt
-               || (cbRtf.Checked == true))//rtf
-               && ((cbDate1.Checked == true) && (cbDate2.Checked == false))    //minDate
-               && (txtMaxSize.Text != "" && txtMinSize.Text == "") //maxSize
-               && (txtKeywords.Text == "") //Keywords
-               )
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='.doc' or type='docx' or type='.html' or type='.rtf') AND size<=" + txtMaxSize.Text +  /*"AND keywords like '" + txtKeywords.Text +*/ " and DateCreate >= '" + dateTimePicker1.Value.Date + "' ORDER BY DateCreate", con);
-                da.Fill(ds, "TFile");
-                dgvTFile.DataSource = ds.Tables["TFile"];
-            }
             // end КОМБО 2 БЕЗ ключевых слов
-
-
-
 
             // КОМБО 3: вариации с чекбоксами + диапазон размеров + диапазон дат
             //select * from TFile where (type='.doc') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50))  and keywords like '%nodejs%' ORDER BY DateCreate
-            // + checked
+            // +checked!!!
             else if (
                 (cbDoc.Checked == true) //doc
                 && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
@@ -591,41 +541,11 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
 
-
-            //select * from TFile where (Type='docx') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50)) and keywords like '%linux%' ORDER BY DateCreate
-            // + checked
-            else if (
-                //(cbDocx.Checked == true) && //doc
-                ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
-                && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
-                && (txtKeywords.Text != "") //Keywords
-                )
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='docx') AND (size>=" + txtMinSize.Text + "and size<="+txtMaxSize.Text+") AND keywords like '%" + txtKeywords.Text + "%' and DateCreate >= '" + dateTimePicker1.Value.Date + "' and DateCreate <= '" + dateTimePicker2.Value.Date + "' ORDER BY DateCreate", con);
-                da.Fill(ds, "TFile");
-                dgvTFile.DataSource = ds.Tables["TFile"];
-            }
-
-            //select * from TFile where (type='.doc' or Type='docx') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) and (Keywords like '%nodejs%') ORDER BY DateCreate
-            //  + checked
-            else if (
-                ((cbDoc.Checked == true) //doc
-                //|| (cbDocx.Checked == true))//docx
-                && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
-                && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
-                && (txtKeywords.Text != "") //Keywords
-                ))
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='.doc' or type='docx') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") AND keywords like '%" + txtKeywords.Text + "%' and DateCreate >= '" + dateTimePicker1.Value.Date + "' and DateCreate <= '" + dateTimePicker2.Value.Date + "' ORDER BY DateCreate", con);
-                da.Fill(ds, "TFile");
-                dgvTFile.DataSource = ds.Tables["TFile"];
-            }
-
             //select * from TFile where (type='.doc' or Type='docx' or type='.html') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) and (Keywords like '%sql%') ORDER BY DateCreate 
-            //  + checked
+            // +checked!!!
             else if (
                (
-               (cbHtml.Checked == true))//txt
+               (cbHtml.Checked == true))//html
                && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
                && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
                && (txtKeywords.Text != "") //Keywords
@@ -637,10 +557,9 @@ namespace Treeview
             }
 
             //  select * from TFile where (type='.doc' or Type='docx' or type='.html' or type='.rtf') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) and (Keywords like '%nodejs%') ORDER BY DateCreate
-            //  + checked
+            //только html 
             else if (
                ((cbDoc.Checked == true) //doc
-               //|| (cbDocx.Checked == true)//docx
                || (cbHtml.Checked == true)//txt
                || (cbRtf.Checked == true))//rtf
                && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
@@ -653,66 +572,7 @@ namespace Treeview
                 dgvTFile.DataSource = ds.Tables["TFile"];
             }
             // end КОМБО 3
-
-            // КОМБО 4: вариации с чекбоксами + диапазон размеров + диапазон дат БЕЗ КЛЮЧЕВЫХ СЛОВ
-            //select * from TFile where (type='.doc') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50)) ORDER BY DateCreate
-            // + checked
-            else if (
-                (cbDoc.Checked == true) //doc
-                && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
-                && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
-                && (txtKeywords.Text == "") 
-                )
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='.doc') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") and DateCreate >= '" + dateTimePicker1.Value.Date + "' and DateCreate <= '" + dateTimePicker2.Value.Date + "' ORDER BY DateCreate", con);
-                da.Fill(ds, "TFile");
-                dgvTFile.DataSource = ds.Tables["TFile"];
-            }
-
-
-            //  select * from TFile where (Type='docx') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and(size <= 50)) ORDER BY DateCreate
-            // + checked
-            else if (
-                //(cbDocx.Checked == true) //docx && 
-                ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
-                && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
-                && (txtKeywords.Text == "") 
-                )
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='docx') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") and DateCreate >= '" + dateTimePicker1.Value.Date + "' and DateCreate <= '" + dateTimePicker2.Value.Date + "' ORDER BY DateCreate", con);
-                da.Fill(ds, "TFile");
-                dgvTFile.DataSource = ds.Tables["TFile"];
-            }
-
-            //  select * from TFile where (type='.doc' or Type='docx') and ((Date >= '2016-12-18') and (Date <= '2017-12-18')) and ((size >= 20) and (size <= 50)) ORDER BY DateCreate
-            //  + checked
-            else if (
-                (cbDoc.Checked == true //doc && cbDocx.Checked == true)//docx
-                && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
-                && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
-                && (txtKeywords.Text == "") 
-                ))
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='.doc' or type='docx') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") AND ((Date >= '" + dateTimePicker1.Value.Date + "') and (Date <= '" + dateTimePicker2.Value.Date + "')) ORDER BY DateCreate", con);
-                da.Fill(ds, "TFile");
-                dgvTFile.DataSource = ds.Tables["TFile"];
-            }
-
-            //select * from TFile where (type='.doc' or Type='docx' or type='.html') and ((Date >= '2016-10-29') and (Date <= '2017-11-29')) and ((size >= 20) and (size <= 50)) ORDER BY DateCreate 
-            // + checked
-            else if (
-               ( //только txt
-               (cbDoc.Checked == false) // doc               && (cbDocx.Checked == false)//docx
-               && (cbHtml.Checked == true))//txt
-               && ((cbDate1.Checked == true) && (cbDate2.Checked == true))    //minDate & maxDate
-               && (txtMinSize.Text != "" && txtMaxSize.Text != "") //minSize & maxSize
-               && (txtKeywords.Text == "")
-               )
-            {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TFile WHERE (type='.html') AND (size>=" + txtMinSize.Text + "and size<=" + txtMaxSize.Text + ") and DateCreate >= '" + dateTimePicker1.Value.Date + "' and DateCreate <= '" + dateTimePicker2.Value.Date + "' ORDER BY DateCreate", con);
-                da.Fill(ds, "TFile");
-                dgvTFile.DataSource = ds.Tables["TFile"];
-            }
+            
 
 
         }
