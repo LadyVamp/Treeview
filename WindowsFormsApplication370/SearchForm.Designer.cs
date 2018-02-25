@@ -123,7 +123,7 @@
             // 
             this.txtSearch.Location = new System.Drawing.Point(296, 12);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(348, 22);
+            this.txtSearch.Size = new System.Drawing.Size(375, 22);
             this.txtSearch.TabIndex = 3;
             // 
             // tFileBindingSource1
@@ -352,12 +352,15 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(650, 7);
+            this.btnSearch.BackColor = System.Drawing.SystemColors.Window;
+            this.btnSearch.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_search_filled_26;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch.Location = new System.Drawing.Point(677, 11);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(90, 32);
+            this.btnSearch.Size = new System.Drawing.Size(112, 36);
             this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "Поиск";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Text = "  Поиск";
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvTFile

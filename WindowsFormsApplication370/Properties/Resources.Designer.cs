@@ -103,6 +103,16 @@ namespace WindowsFormsApplication370.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_filled_26 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-filled-26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_search_filled_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8_search_filled_30", resourceCulture);
