@@ -60,17 +60,17 @@
             this.label109 = new System.Windows.Forms.Label();
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.cmbCatID = new System.Windows.Forms.ComboBox();
+            this.tCatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryDB3TCatalog = new WindowsFormsApplication370.RepositoryDB3TCatalog();
             this.cmbCatName = new System.Windows.Forms.ComboBox();
             this.lbl7 = new System.Windows.Forms.Label();
             this.repositoryDB3DataSetTCatalog = new WindowsFormsApplication370.RepositoryDB3DataSetTCatalog();
             this.repositoryDB3DataSetTCatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.repositoryDB3TCatalog = new WindowsFormsApplication370.RepositoryDB3TCatalog();
-            this.tCatalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tCatalogTableAdapter = new WindowsFormsApplication370.RepositoryDB3TCatalogTableAdapters.TCatalogTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.tCatalogBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TCatalog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTCatalog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTCatalogBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TCatalog)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tCatalogBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // rtbDescription
@@ -111,10 +111,10 @@
             this.rbHtml.AutoSize = true;
             this.rbHtml.Location = new System.Drawing.Point(99, 12);
             this.rbHtml.Name = "rbHtml";
-            this.rbHtml.Size = new System.Drawing.Size(55, 21);
+            this.rbHtml.Size = new System.Drawing.Size(59, 21);
             this.rbHtml.TabIndex = 57;
             this.rbHtml.TabStop = true;
-            this.rbHtml.Text = "html";
+            this.rbHtml.Text = ".html";
             this.rbHtml.UseVisualStyleBackColor = true;
             // 
             // rbDocx
@@ -214,10 +214,10 @@
             this.rbRtf.AutoSize = true;
             this.rbRtf.Location = new System.Drawing.Point(12, 39);
             this.rbRtf.Name = "rbRtf";
-            this.rbRtf.Size = new System.Drawing.Size(42, 21);
+            this.rbRtf.Size = new System.Drawing.Size(46, 21);
             this.rbRtf.TabIndex = 44;
             this.rbRtf.TabStop = true;
-            this.rbRtf.Text = "rtf";
+            this.rbRtf.Text = ".rtf";
             this.rbRtf.UseVisualStyleBackColor = true;
             // 
             // rbDoc
@@ -225,10 +225,10 @@
             this.rbDoc.AutoSize = true;
             this.rbDoc.Location = new System.Drawing.Point(12, 12);
             this.rbDoc.Name = "rbDoc";
-            this.rbDoc.Size = new System.Drawing.Size(52, 21);
+            this.rbDoc.Size = new System.Drawing.Size(56, 21);
             this.rbDoc.TabIndex = 43;
             this.rbDoc.TabStop = true;
-            this.rbDoc.Text = "doc";
+            this.rbDoc.Text = ".doc";
             this.rbDoc.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -357,6 +357,16 @@
             this.cmbCatID.TabIndex = 72;
             this.cmbCatID.ValueMember = "ID";
             // 
+            // tCatalogBindingSource
+            // 
+            this.tCatalogBindingSource.DataMember = "TCatalog";
+            this.tCatalogBindingSource.DataSource = this.repositoryDB3TCatalog;
+            // 
+            // repositoryDB3TCatalog
+            // 
+            this.repositoryDB3TCatalog.DataSetName = "RepositoryDB3TCatalog";
+            this.repositoryDB3TCatalog.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmbCatName
             // 
             this.cmbCatName.DataSource = this.tCatalogBindingSource;
@@ -386,16 +396,6 @@
             // 
             this.repositoryDB3DataSetTCatalogBindingSource.DataSource = this.repositoryDB3DataSetTCatalog;
             this.repositoryDB3DataSetTCatalogBindingSource.Position = 0;
-            // 
-            // repositoryDB3TCatalog
-            // 
-            this.repositoryDB3TCatalog.DataSetName = "RepositoryDB3TCatalog";
-            this.repositoryDB3TCatalog.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tCatalogBindingSource
-            // 
-            this.tCatalogBindingSource.DataMember = "TCatalog";
-            this.tCatalogBindingSource.DataSource = this.repositoryDB3TCatalog;
             // 
             // tCatalogTableAdapter
             // 
@@ -442,10 +442,10 @@
             this.Name = "LoadFileForm";
             this.Text = "LoadFileForm";
             this.Load += new System.EventHandler(this.LoadFileForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tCatalogBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TCatalog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTCatalog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTCatalogBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TCatalog)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tCatalogBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -52,8 +52,7 @@
             this.cbDate1 = new System.Windows.Forms.CheckBox();
             this.tFileTableAdapter1 = new WindowsFormsApplication370.RepositoryDB3TFileTableAdapters.TFileTableAdapter();
             this.cbDoc = new System.Windows.Forms.CheckBox();
-            this.cbDocx = new System.Windows.Forms.CheckBox();
-            this.cbTxt = new System.Windows.Forms.CheckBox();
+            this.cbHtml = new System.Windows.Forms.CheckBox();
             this.cbRtf = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnType = new System.Windows.Forms.Button();
@@ -283,32 +282,21 @@
             this.cbDoc.Text = ".doc";
             this.cbDoc.UseVisualStyleBackColor = true;
             // 
-            // cbDocx
+            // cbHtml
             // 
-            this.cbDocx.AutoSize = true;
-            this.cbDocx.Location = new System.Drawing.Point(6, 57);
-            this.cbDocx.Name = "cbDocx";
-            this.cbDocx.Size = new System.Drawing.Size(63, 21);
-            this.cbDocx.TabIndex = 13;
-            this.cbDocx.Tag = "docx";
-            this.cbDocx.Text = ".docx";
-            this.cbDocx.UseVisualStyleBackColor = true;
-            // 
-            // cbTxt
-            // 
-            this.cbTxt.AutoSize = true;
-            this.cbTxt.Location = new System.Drawing.Point(74, 30);
-            this.cbTxt.Name = "cbTxt";
-            this.cbTxt.Size = new System.Drawing.Size(48, 21);
-            this.cbTxt.TabIndex = 14;
-            this.cbTxt.Tag = "txt";
-            this.cbTxt.Text = ".txt";
-            this.cbTxt.UseVisualStyleBackColor = true;
+            this.cbHtml.AutoSize = true;
+            this.cbHtml.Location = new System.Drawing.Point(79, 30);
+            this.cbHtml.Name = "cbHtml";
+            this.cbHtml.Size = new System.Drawing.Size(60, 21);
+            this.cbHtml.TabIndex = 14;
+            this.cbHtml.Tag = "html";
+            this.cbHtml.Text = ".html";
+            this.cbHtml.UseVisualStyleBackColor = true;
             // 
             // cbRtf
             // 
             this.cbRtf.AutoSize = true;
-            this.cbRtf.Location = new System.Drawing.Point(74, 57);
+            this.cbRtf.Location = new System.Drawing.Point(6, 57);
             this.cbRtf.Name = "cbRtf";
             this.cbRtf.Size = new System.Drawing.Size(47, 21);
             this.cbRtf.TabIndex = 15;
@@ -321,8 +309,7 @@
             this.groupBox1.Controls.Add(this.btnType);
             this.groupBox1.Controls.Add(this.cbDoc);
             this.groupBox1.Controls.Add(this.cbRtf);
-            this.groupBox1.Controls.Add(this.cbDocx);
-            this.groupBox1.Controls.Add(this.cbTxt);
+            this.groupBox1.Controls.Add(this.cbHtml);
             this.groupBox1.Location = new System.Drawing.Point(115, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 90);
@@ -464,8 +451,7 @@
         private System.Windows.Forms.BindingSource tFileBindingSource1;
         private WindowsFormsApplication370.RepositoryDB3TFileTableAdapters.TFileTableAdapter tFileTableAdapter1;
         private System.Windows.Forms.CheckBox cbDoc;
-        private System.Windows.Forms.CheckBox cbDocx;
-        private System.Windows.Forms.CheckBox cbTxt;
+        private System.Windows.Forms.CheckBox cbHtml;
         private System.Windows.Forms.CheckBox cbRtf;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnReset;
