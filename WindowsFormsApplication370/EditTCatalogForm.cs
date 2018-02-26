@@ -70,6 +70,12 @@ namespace Treeview
             }
         }
 
+        //Нажатие на элемент treeview вставит значение в поле ключевых слов
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            txtCatalog.Text = Convert.ToString(treeView1.SelectedNode.Text);
+        }
+
         //заполнить dgvTCatalog
         private void FillDgv()
         {
@@ -83,7 +89,6 @@ namespace Treeview
             dgvTCatalogEF.Columns[2].Width = 40;
             dgvTCatalogEF.Columns[3].Width = 80;
             dgvTCatalogEF.Columns[4].Width = 60;
-            LoadTreeviewCatalog(); //обновить дерево
         }
 
         // --- CRUD for TCatalog ---

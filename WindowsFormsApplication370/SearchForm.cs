@@ -16,8 +16,6 @@ namespace Treeview
         private const string CONNECTION_STRING =
   "Data Source=DESKTOP-O9H5H8N;Initial Catalog=RepositoryDB3;Integrated Security=True";
         SqlConnection con = new SqlConnection(CONNECTION_STRING);
-        //SqlCommand cmd;
-        //SqlDataAdapter adapter;
         DataTable dt = new DataTable();
 
         //заполнить datagridview dgvTFile
