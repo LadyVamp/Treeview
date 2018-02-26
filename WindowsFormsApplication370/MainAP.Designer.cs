@@ -30,6 +30,7 @@
         {
             this.btnEditTFile = new System.Windows.Forms.Button();
             this.btnEditTCatalog = new System.Windows.Forms.Button();
+            this.btnEditTKeyword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEditTFile
@@ -52,11 +53,22 @@
             this.btnEditTCatalog.UseVisualStyleBackColor = true;
             this.btnEditTCatalog.Click += new System.EventHandler(this.btnEditTCatalog_Click);
             // 
+            // btnEditTKeyword
+            // 
+            this.btnEditTKeyword.Location = new System.Drawing.Point(48, 166);
+            this.btnEditTKeyword.Name = "btnEditTKeyword";
+            this.btnEditTKeyword.Size = new System.Drawing.Size(387, 38);
+            this.btnEditTKeyword.TabIndex = 2;
+            this.btnEditTKeyword.Text = "Редактировать таблицу TKeyword (Ключевые слова)";
+            this.btnEditTKeyword.UseVisualStyleBackColor = true;
+            this.btnEditTKeyword.Click += new System.EventHandler(this.btnEditTKeyword_Click);
+            // 
             // MainAP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 258);
+            this.Controls.Add(this.btnEditTKeyword);
             this.Controls.Add(this.btnEditTCatalog);
             this.Controls.Add(this.btnEditTFile);
             this.Name = "MainAP";
@@ -69,5 +81,6 @@
 
         private System.Windows.Forms.Button btnEditTFile;
         private System.Windows.Forms.Button btnEditTCatalog;
+        private System.Windows.Forms.Button btnEditTKeyword;
     }
 }

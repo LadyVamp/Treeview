@@ -29,6 +29,12 @@ namespace Treeview
             f.Show();
         }
 
+        private void btnEditTKeyword_Click(object sender, EventArgs e)
+        {
+            EditTKeywordForm f = new EditTKeywordForm();
+            f.Show();
+        }
+
         //TODO
         // Редактирование остальных таблиц: TCatalog, TUser, TKeyword
         // как в EditTFileForm
