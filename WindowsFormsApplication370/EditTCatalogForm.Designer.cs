@@ -63,6 +63,7 @@
             this.btnUpdCatalog = new System.Windows.Forms.Button();
             this.btnViewCatalog = new System.Windows.Forms.Button();
             this.btnDelCatalog = new System.Windows.Forms.Button();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.tRootBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TRoot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tTypeBindingSource)).BeginInit();
@@ -83,7 +84,7 @@
             this.cmbRootId.DataSource = this.tRootBindingSource;
             this.cmbRootId.DisplayMember = "ID";
             this.cmbRootId.FormattingEnabled = true;
-            this.cmbRootId.Location = new System.Drawing.Point(171, 83);
+            this.cmbRootId.Location = new System.Drawing.Point(171, 68);
             this.cmbRootId.Name = "cmbRootId";
             this.cmbRootId.Size = new System.Drawing.Size(55, 24);
             this.cmbRootId.TabIndex = 33;
@@ -104,7 +105,7 @@
             this.comboBox1.DataSource = this.tRootBindingSource;
             this.comboBox1.DisplayMember = "Root";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(232, 83);
+            this.comboBox1.Location = new System.Drawing.Point(232, 68);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(163, 24);
             this.comboBox1.TabIndex = 32;
@@ -113,7 +114,7 @@
             // lbl2
             // 
             this.lbl2.AutoSize = true;
-            this.lbl2.Location = new System.Drawing.Point(22, 43);
+            this.lbl2.Location = new System.Drawing.Point(22, 28);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(135, 17);
             this.lbl2.TabIndex = 31;
@@ -122,7 +123,7 @@
             // lbl7
             // 
             this.lbl7.AutoSize = true;
-            this.lbl7.Location = new System.Drawing.Point(24, 83);
+            this.lbl7.Location = new System.Drawing.Point(24, 68);
             this.lbl7.Name = "lbl7";
             this.lbl7.Size = new System.Drawing.Size(127, 17);
             this.lbl7.TabIndex = 29;
@@ -130,7 +131,7 @@
             // 
             // txtCatalog
             // 
-            this.txtCatalog.Location = new System.Drawing.Point(171, 41);
+            this.txtCatalog.Location = new System.Drawing.Point(171, 26);
             this.txtCatalog.Name = "txtCatalog";
             this.txtCatalog.Size = new System.Drawing.Size(224, 22);
             this.txtCatalog.TabIndex = 30;
@@ -140,7 +141,7 @@
             this.cmbAccessId.DataSource = this.tTypeBindingSource;
             this.cmbAccessId.DisplayMember = "ID";
             this.cmbAccessId.FormattingEnabled = true;
-            this.cmbAccessId.Location = new System.Drawing.Point(171, 167);
+            this.cmbAccessId.Location = new System.Drawing.Point(171, 152);
             this.cmbAccessId.Name = "cmbAccessId";
             this.cmbAccessId.Size = new System.Drawing.Size(55, 24);
             this.cmbAccessId.TabIndex = 36;
@@ -161,7 +162,7 @@
             this.comboBox3.DataSource = this.tCatalogBindingSource1;
             this.comboBox3.DisplayMember = "Catalog";
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(232, 123);
+            this.comboBox3.Location = new System.Drawing.Point(232, 108);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(224, 24);
             this.comboBox3.TabIndex = 35;
@@ -180,7 +181,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 174);
+            this.label1.Location = new System.Drawing.Point(24, 159);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 34;
@@ -191,7 +192,7 @@
             this.cmbSubCatalogId.DataSource = this.tCatalogBindingSource1;
             this.cmbSubCatalogId.DisplayMember = "ID";
             this.cmbSubCatalogId.FormattingEnabled = true;
-            this.cmbSubCatalogId.Location = new System.Drawing.Point(171, 123);
+            this.cmbSubCatalogId.Location = new System.Drawing.Point(171, 108);
             this.cmbSubCatalogId.Name = "cmbSubCatalogId";
             this.cmbSubCatalogId.Size = new System.Drawing.Size(55, 24);
             this.cmbSubCatalogId.TabIndex = 39;
@@ -202,7 +203,7 @@
             this.comboBox5.DataSource = this.tTypeBindingSource;
             this.comboBox5.DisplayMember = "Type";
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(232, 167);
+            this.comboBox5.Location = new System.Drawing.Point(232, 152);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(224, 24);
             this.comboBox5.TabIndex = 38;
@@ -211,7 +212,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 126);
+            this.label2.Location = new System.Drawing.Point(24, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 17);
             this.label2.TabIndex = 37;
@@ -268,7 +269,7 @@
             this.btnClearEF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnClearEF.Image = ((System.Drawing.Image)(resources.GetObject("btnClearEF.Image")));
             this.btnClearEF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClearEF.Location = new System.Drawing.Point(27, 288);
+            this.btnClearEF.Location = new System.Drawing.Point(27, 273);
             this.btnClearEF.Name = "btnClearEF";
             this.btnClearEF.Size = new System.Drawing.Size(160, 35);
             this.btnClearEF.TabIndex = 44;
@@ -281,18 +282,18 @@
             // 
             this.dgvTCatalogEF.BackgroundColor = System.Drawing.SystemColors.MenuBar;
             this.dgvTCatalogEF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTCatalogEF.Location = new System.Drawing.Point(491, 41);
+            this.dgvTCatalogEF.Location = new System.Drawing.Point(491, 26);
             this.dgvTCatalogEF.Name = "dgvTCatalogEF";
             this.dgvTCatalogEF.RowTemplate.Height = 24;
             this.dgvTCatalogEF.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTCatalogEF.Size = new System.Drawing.Size(630, 287);
+            this.dgvTCatalogEF.Size = new System.Drawing.Size(630, 502);
             this.dgvTCatalogEF.TabIndex = 45;
             // 
             // btnInsertCatalog
             // 
             this.btnInsertCatalog.Image = global::WindowsFormsApplication370.Properties.Resources.insert_plus_26;
             this.btnInsertCatalog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsertCatalog.Location = new System.Drawing.Point(27, 230);
+            this.btnInsertCatalog.Location = new System.Drawing.Point(27, 215);
             this.btnInsertCatalog.Name = "btnInsertCatalog";
             this.btnInsertCatalog.Size = new System.Drawing.Size(98, 42);
             this.btnInsertCatalog.TabIndex = 46;
@@ -304,7 +305,7 @@
             // 
             this.btnUpdCatalog.Image = global::WindowsFormsApplication370.Properties.Resources.update_Data_Backup_26;
             this.btnUpdCatalog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdCatalog.Location = new System.Drawing.Point(171, 230);
+            this.btnUpdCatalog.Location = new System.Drawing.Point(171, 215);
             this.btnUpdCatalog.Name = "btnUpdCatalog";
             this.btnUpdCatalog.Size = new System.Drawing.Size(105, 42);
             this.btnUpdCatalog.TabIndex = 47;
@@ -316,7 +317,7 @@
             // 
             this.btnViewCatalog.Image = global::WindowsFormsApplication370.Properties.Resources.view_Eye_26;
             this.btnViewCatalog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnViewCatalog.Location = new System.Drawing.Point(352, 230);
+            this.btnViewCatalog.Location = new System.Drawing.Point(352, 215);
             this.btnViewCatalog.Name = "btnViewCatalog";
             this.btnViewCatalog.Size = new System.Drawing.Size(101, 42);
             this.btnViewCatalog.TabIndex = 48;
@@ -328,7 +329,7 @@
             // 
             this.btnDelCatalog.Image = global::WindowsFormsApplication370.Properties.Resources.delete_Trash_26;
             this.btnDelCatalog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelCatalog.Location = new System.Drawing.Point(352, 288);
+            this.btnDelCatalog.Location = new System.Drawing.Point(352, 273);
             this.btnDelCatalog.Name = "btnDelCatalog";
             this.btnDelCatalog.Size = new System.Drawing.Size(101, 40);
             this.btnDelCatalog.TabIndex = 49;
@@ -336,11 +337,19 @@
             this.btnDelCatalog.UseVisualStyleBackColor = true;
             this.btnDelCatalog.Click += new System.EventHandler(this.btnDelCatalog_Click);
             // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(27, 332);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(426, 196);
+            this.treeView1.TabIndex = 50;
+            // 
             // EditTCatalogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 366);
+            this.ClientSize = new System.Drawing.Size(1151, 540);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.btnDelCatalog);
             this.Controls.Add(this.btnViewCatalog);
             this.Controls.Add(this.btnUpdCatalog);
@@ -414,5 +423,6 @@
         private System.Windows.Forms.Button btnUpdCatalog;
         private System.Windows.Forms.Button btnViewCatalog;
         private System.Windows.Forms.Button btnDelCatalog;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }

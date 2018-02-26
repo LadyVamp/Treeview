@@ -31,6 +31,7 @@ namespace Treeview
             con.Open(); //подключение открывается только при запуске формы
             FillDgv();
             con.Close();
+            LoadTreeviewCatalog();
         }
 
         private const string CONNECTION_STRING =
@@ -39,6 +40,35 @@ namespace Treeview
         SqlCommand cmd;
         SqlDataAdapter adapter;
         DataTable dt = new DataTable();
+
+        //Загрузить treeview для TCatalog
+        public void LoadTreeviewCatalog()
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("Select * from TCatalog", con);
+            da.Fill(dt);
+            treeView1.Nodes.Add("Catalogs");
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                TreeNode myTreeNode = new TreeNode
+                {
+                    Text = dr["Catalog"].ToString(),
+                    Name = dr["ID"].ToString(),
+                    Tag = dr["SubCatalogId"].ToString(),
+                };
+
+                TreeNode rooTreeNode = treeView1.Nodes.Find(myTreeNode.Tag.ToString(), true).FirstOrDefault();
+                if (rooTreeNode == null)
+                {
+                    treeView1.Nodes.Add(myTreeNode);
+                }
+                else
+                {
+                    rooTreeNode.Nodes.Add(myTreeNode);
+                }
+            }
+        }
 
         //заполнить dgvTCatalog
         private void FillDgv()
@@ -53,6 +83,7 @@ namespace Treeview
             dgvTCatalogEF.Columns[2].Width = 40;
             dgvTCatalogEF.Columns[3].Width = 80;
             dgvTCatalogEF.Columns[4].Width = 60;
+            LoadTreeviewCatalog(); //обновить дерево
         }
 
         // --- CRUD for TCatalog ---
