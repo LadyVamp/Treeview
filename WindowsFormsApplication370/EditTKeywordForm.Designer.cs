@@ -52,6 +52,7 @@
             this.tFileBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cmbFileId = new System.Windows.Forms.ComboBox();
+            this.tFileBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTKeywordEF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TKeywordForEditTKeywordForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tKeywordBindingSource)).BeginInit();
@@ -61,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +78,7 @@
             // 
             this.txtKeyword.Location = new System.Drawing.Point(151, 34);
             this.txtKeyword.Name = "txtKeyword";
-            this.txtKeyword.Size = new System.Drawing.Size(243, 22);
+            this.txtKeyword.Size = new System.Drawing.Size(275, 22);
             this.txtKeyword.TabIndex = 1;
             // 
             // cmbParentKeyId
@@ -86,7 +88,7 @@
             this.cmbParentKeyId.FormattingEnabled = true;
             this.cmbParentKeyId.Location = new System.Drawing.Point(151, 79);
             this.cmbParentKeyId.Name = "cmbParentKeyId";
-            this.cmbParentKeyId.Size = new System.Drawing.Size(121, 24);
+            this.cmbParentKeyId.Size = new System.Drawing.Size(64, 24);
             this.cmbParentKeyId.TabIndex = 2;
             this.cmbParentKeyId.ValueMember = "ParentKeyId";
             // 
@@ -136,11 +138,11 @@
             // 
             this.btnViewKeyword.Image = global::WindowsFormsApplication370.Properties.Resources.view_Eye_26;
             this.btnViewKeyword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnViewKeyword.Location = new System.Drawing.Point(271, 190);
+            this.btnViewKeyword.Location = new System.Drawing.Point(328, 190);
             this.btnViewKeyword.Name = "btnViewKeyword";
             this.btnViewKeyword.Size = new System.Drawing.Size(98, 42);
             this.btnViewKeyword.TabIndex = 8;
-            this.btnViewKeyword.Text = "View";
+            this.btnViewKeyword.Text = "   View";
             this.btnViewKeyword.UseVisualStyleBackColor = true;
             this.btnViewKeyword.Click += new System.EventHandler(this.btnViewKeyword_Click);
             // 
@@ -148,7 +150,7 @@
             // 
             this.btnDelKeyword.Image = global::WindowsFormsApplication370.Properties.Resources.delete_Trash_26;
             this.btnDelKeyword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelKeyword.Location = new System.Drawing.Point(271, 270);
+            this.btnDelKeyword.Location = new System.Drawing.Point(328, 270);
             this.btnDelKeyword.Name = "btnDelKeyword";
             this.btnDelKeyword.Size = new System.Drawing.Size(98, 42);
             this.btnDelKeyword.TabIndex = 9;
@@ -171,10 +173,10 @@
             // dgvTKeywordEF
             // 
             this.dgvTKeywordEF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTKeywordEF.Location = new System.Drawing.Point(432, 34);
+            this.dgvTKeywordEF.Location = new System.Drawing.Point(450, 34);
             this.dgvTKeywordEF.Name = "dgvTKeywordEF";
             this.dgvTKeywordEF.RowTemplate.Height = 24;
-            this.dgvTKeywordEF.Size = new System.Drawing.Size(533, 278);
+            this.dgvTKeywordEF.Size = new System.Drawing.Size(525, 278);
             this.dgvTKeywordEF.TabIndex = 11;
             // 
             // repositoryDB3TKeywordForEditTKeywordForm
@@ -230,9 +232,9 @@
             this.comboBox1.DataSource = this.tKeywordBindingSource;
             this.comboBox1.DisplayMember = "Keyword";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(278, 79);
+            this.comboBox1.Location = new System.Drawing.Point(221, 79);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(205, 24);
             this.comboBox1.TabIndex = 13;
             this.comboBox1.ValueMember = "Keyword";
             // 
@@ -243,15 +245,20 @@
             this.cmbFileId.FormattingEnabled = true;
             this.cmbFileId.Location = new System.Drawing.Point(151, 121);
             this.cmbFileId.Name = "cmbFileId";
-            this.cmbFileId.Size = new System.Drawing.Size(121, 24);
+            this.cmbFileId.Size = new System.Drawing.Size(64, 24);
             this.cmbFileId.TabIndex = 14;
             this.cmbFileId.ValueMember = "FileId";
+            // 
+            // tFileBindingSource2
+            // 
+            this.tFileBindingSource2.DataMember = "TFile";
+            this.tFileBindingSource2.DataSource = this.repositoryDB3DataSetTFile;
             // 
             // EditTKeywordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 327);
+            this.ClientSize = new System.Drawing.Size(986, 327);
             this.Controls.Add(this.cmbFileId);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dgvTKeywordEF);
@@ -277,6 +284,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3DataSetTFileBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,5 +315,6 @@
         private WindowsFormsApplication370.RepositoryDB3DataSetTFile repositoryDB3DataSetTFile;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox cmbFileId;
+        private System.Windows.Forms.BindingSource tFileBindingSource2;
     }
 }

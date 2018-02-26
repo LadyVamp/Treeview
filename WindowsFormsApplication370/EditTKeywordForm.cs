@@ -43,8 +43,8 @@ namespace Treeview
             da.Fill(ds, "keywords");
             dgvTKeywordEF.DataSource = ds.Tables[0];
             dgvTKeywordEF.Columns[0].Width = 20;
-            dgvTKeywordEF.Columns[1].Width = 200;
-            dgvTKeywordEF.Columns[2].Width = 40;
+            dgvTKeywordEF.Columns[1].Width = 150;
+            dgvTKeywordEF.Columns[2].Width = 80;
             dgvTKeywordEF.Columns[3].Width = 80;
         }
 
