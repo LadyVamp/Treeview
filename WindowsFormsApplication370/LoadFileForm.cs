@@ -168,6 +168,13 @@ namespace Treeview
                         rtbDescription.Text = descrip;
                     }
 
+                    //author 
+                    var author = htmlDoc.DocumentNode.SelectSingleNode("//header//span[@class='user-info__nickname user-info__nickname_small']"); 
+                    if (author != null)
+                    {
+                        txtAuthor.Text = author.InnerText;
+                    }
+
                     //post
                     try
                     {
