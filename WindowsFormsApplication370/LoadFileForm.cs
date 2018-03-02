@@ -137,8 +137,16 @@ namespace Treeview
                     richTextBox1.AppendText(node.OuterHtml);
 
                     //title 
-                    var title = htmlDoc.DocumentNode.SelectSingleNode("//title");
-                    label1.Text = title.InnerText;
+                    try
+                    {
+                        var title = htmlDoc.DocumentNode.SelectSingleNode("//title");
+                        label1.Text = title.InnerText;
+                    }
+                    catch (NullReferenceException ex)
+                    {
+                        MessageBox.Show("Замени сохраненную страницу на: просмотр кода страницы -> Ctrl+A -> Ctrl+C.. ", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
 
                     //keywords
                     HtmlNode mdnode1 = htmlDoc.DocumentNode.SelectSingleNode("//meta[@name='keywords']");
