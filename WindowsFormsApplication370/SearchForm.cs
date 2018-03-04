@@ -40,8 +40,8 @@ namespace Treeview
             dgvTFile.Columns[0].Width = 20;
             dgvTFile.Columns[1].Width = 280;
             dgvTFile.Columns[2].Width = 40;
-            dgvTFile.Columns[3].Width = 80;
-            dgvTFile.Columns[4].Width = 60;
+            dgvTFile.Columns[3].Width = 65;
+            dgvTFile.Columns[4].Width = 50;
             dgvTFile.Columns[5].Width = 100;
             dgvTFile.Columns[6].Width = 300;
             dgvTFile.Columns[7].Width = 50;
