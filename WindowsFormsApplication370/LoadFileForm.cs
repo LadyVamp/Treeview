@@ -357,7 +357,7 @@ namespace Treeview
             static char[] _delimiters = new char[]
             {
                     '.', ' ', ',', ':', ';',
-                    '"', '-', '=', '·', '%', '<', '>', '!', '@', '#', '$', '%', '^', '&', '+', ')', '(', '{', '}', '«', '»', '?','/', '|', '\'',
+                    '"', '-', '=', '·', '%', '<', '>', '!', '@', '#', '$', '%', '^', '&', '+', ')', '(', '{', '}', '«', '»', '/', '|', '\'',
             };
 
             /// <summary>
@@ -442,6 +442,30 @@ namespace Treeview
                     }
                     words.Add(new Word(value, n));
                 }
+
+
+                //Перед квантификатором { x,y} ничего нет
+                // почитать http://www.cyberforum.ru/csharp-beginners/thread1866584.html
+                //try
+                //{
+                //    foreach (string value in duplicate_words.ToList())
+                //    {
+                //        Regex reg = new Regex(value + " ", RegexOptions.IgnoreCase);
+                //        int n = 0;
+                //        foreach (Match match in reg.Matches(richTextBox3.Text))
+                //        {
+                //            richTextBox3.Select(match.Index, match.Length);
+                //            n++;
+                //        }
+                //        words.Add(new Word(value, n));
+                //    }
+
+                //}
+                //catch (ArgumentException ex)
+                //{
+                //    MessageBox.Show(ex.Message);
+                //}
+
 
                 words.Sort(comparase);
                 if (words.Count >= 15) words.RemoveRange(15, words.Count - 15);
