@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditTKeywordForm));
             this.label1 = new System.Windows.Forms.Label();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.cmbParentKeyId = new System.Windows.Forms.ComboBox();
+            this.tKeywordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryDB3TKeywordForEditTKeywordForm = new WindowsFormsApplication370.RepositoryDB3TKeywordForEditTKeywordForm();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnInsertKeyword = new System.Windows.Forms.Button();
@@ -40,8 +43,6 @@
             this.btnDelKeyword = new System.Windows.Forms.Button();
             this.btnClearEF = new System.Windows.Forms.Button();
             this.dgvTKeywordEF = new System.Windows.Forms.DataGridView();
-            this.repositoryDB3TKeywordForEditTKeywordForm = new WindowsFormsApplication370.RepositoryDB3TKeywordForEditTKeywordForm();
-            this.tKeywordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tKeywordTableAdapter = new WindowsFormsApplication370.RepositoryDB3TKeywordForEditTKeywordFormTableAdapters.TKeywordTableAdapter();
             this.repositoryDB3TFile = new WindowsFormsApplication370.RepositoryDB3TFile();
             this.repositoryDB3TFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -53,9 +54,9 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cmbFileId = new System.Windows.Forms.ComboBox();
             this.tFileBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTKeywordEF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TKeywordForEditTKeywordForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tKeywordBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TKeywordForEditTKeywordForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTKeywordEF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
@@ -91,6 +92,16 @@
             this.cmbParentKeyId.Size = new System.Drawing.Size(64, 24);
             this.cmbParentKeyId.TabIndex = 2;
             this.cmbParentKeyId.ValueMember = "ParentKeyId";
+            // 
+            // tKeywordBindingSource
+            // 
+            this.tKeywordBindingSource.DataMember = "TKeyword";
+            this.tKeywordBindingSource.DataSource = this.repositoryDB3TKeywordForEditTKeywordForm;
+            // 
+            // repositoryDB3TKeywordForEditTKeywordForm
+            // 
+            this.repositoryDB3TKeywordForEditTKeywordForm.DataSetName = "RepositoryDB3TKeywordForEditTKeywordForm";
+            this.repositoryDB3TKeywordForEditTKeywordForm.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -179,16 +190,6 @@
             this.dgvTKeywordEF.Size = new System.Drawing.Size(525, 278);
             this.dgvTKeywordEF.TabIndex = 11;
             // 
-            // repositoryDB3TKeywordForEditTKeywordForm
-            // 
-            this.repositoryDB3TKeywordForEditTKeywordForm.DataSetName = "RepositoryDB3TKeywordForEditTKeywordForm";
-            this.repositoryDB3TKeywordForEditTKeywordForm.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tKeywordBindingSource
-            // 
-            this.tKeywordBindingSource.DataMember = "TKeyword";
-            this.tKeywordBindingSource.DataSource = this.repositoryDB3TKeywordForEditTKeywordForm;
-            // 
             // tKeywordTableAdapter
             // 
             this.tKeywordTableAdapter.ClearBeforeFill = true;
@@ -272,12 +273,13 @@
             this.Controls.Add(this.cmbParentKeyId);
             this.Controls.Add(this.txtKeyword);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditTKeywordForm";
             this.Text = "EditTKeywordForm";
             this.Load += new System.EventHandler(this.EditTKeywordForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTKeywordEF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TKeywordForEditTKeywordForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tKeywordBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TKeywordForEditTKeywordForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTKeywordEF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB3TFileBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).EndInit();

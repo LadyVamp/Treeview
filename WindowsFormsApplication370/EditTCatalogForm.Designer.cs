@@ -367,6 +367,7 @@
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl7);
             this.Controls.Add(this.txtCatalog);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditTCatalogForm";
             this.Text = "EditTCatalogForm";
             this.Load += new System.EventHandler(this.EditTCatalogForm_Load);

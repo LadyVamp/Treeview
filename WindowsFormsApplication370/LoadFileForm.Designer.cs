@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadFileForm));
             this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.txtKeywords = new System.Windows.Forms.TextBox();
             this.label108 = new System.Windows.Forms.Label();
@@ -439,6 +440,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoadFileForm";
             this.Text = "LoadFileForm";
             this.Load += new System.EventHandler(this.LoadFileForm_Load);

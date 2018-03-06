@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainAP));
             this.btnEditTFile = new System.Windows.Forms.Button();
             this.btnEditTCatalog = new System.Windows.Forms.Button();
             this.btnEditTKeyword = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@
             this.Controls.Add(this.btnEditTKeyword);
             this.Controls.Add(this.btnEditTCatalog);
             this.Controls.Add(this.btnEditTFile);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainAP";
             this.Text = "MainAP";
             this.ResumeLayout(false);

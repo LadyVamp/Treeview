@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContentForm));
             this.rtbFilecontent = new System.Windows.Forms.RichTextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtType = new System.Windows.Forms.TextBox();
@@ -48,11 +49,11 @@
             this.btnSearchContent = new System.Windows.Forms.Button();
             this.btnClearHighlight = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDateChange = new System.Windows.Forms.TextBox();
             this.rtbAnnotation = new System.Windows.Forms.RichTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtAuthor = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -236,6 +237,22 @@
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(748, 47);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 17);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Автор";
+            // 
+            // txtAuthor
+            // 
+            this.txtAuthor.Location = new System.Drawing.Point(801, 44);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(277, 22);
+            this.txtAuthor.TabIndex = 22;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -260,22 +277,6 @@
             this.rtbAnnotation.TabIndex = 25;
             this.rtbAnnotation.Text = "";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(748, 47);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 17);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Автор";
-            // 
-            // txtAuthor
-            // 
-            this.txtAuthor.Location = new System.Drawing.Point(801, 44);
-            this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(277, 22);
-            this.txtAuthor.TabIndex = 22;
-            // 
             // ContentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -291,6 +292,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.rtbFilecontent);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContentForm";
             this.Text = "ContentForm";
             this.Load += new System.EventHandler(this.ContentForm_Load);
