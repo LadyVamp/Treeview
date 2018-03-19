@@ -86,6 +86,18 @@
     <Compile Include="EditTKeywordForm.Designer.cs">
       <DependentUpon>EditTKeywordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditTRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTRoleForm.Designer.cs">
+      <DependentUpon>EditTRoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditTTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTTypeForm.Designer.cs">
+      <DependentUpon>EditTTypeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditTKeywordForm.resx">
       <DependentUpon>EditTKeywordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTRoleForm.resx">
+      <DependentUpon>EditTRoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTTypeForm.resx">
+      <DependentUpon>EditTTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

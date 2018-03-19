@@ -34,3 +34,5 @@ C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplic
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\bin\Debug\HtmlAgilityPack.xml
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.EditTCatalogForm.resources
 C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.EditTKeywordForm.resources
+C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.EditTRoleForm.resources
+C:\Users\front\Documents\Visual Studio 2015\Projects\Treeview\WindowsFormsApplication370\obj\Debug\Treeview.EditTTypeForm.resources
