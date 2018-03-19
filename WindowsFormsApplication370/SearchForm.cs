@@ -14,7 +14,7 @@ namespace Treeview
         }
 
         private const string CONNECTION_STRING =
-  "Data Source=DESKTOP-O9H5H8N;Initial Catalog=RepositoryDB3;Integrated Security=True";
+  "Data Source=DESKTOP-O9H5H8N;Initial Catalog=RepositoryDB5_sheets;Integrated Security=True"; //   БД для листов!!!
         SqlConnection con = new SqlConnection(CONNECTION_STRING);
         DataTable dt = new DataTable();
 
@@ -31,12 +31,12 @@ namespace Treeview
             dgvTFile.Columns[2].HeaderText = "Формат";
             dgvTFile.Columns[3].HeaderText = "Дата создания";
             dgvTFile.Columns[4].HeaderText = "Размер, КБ";
-            dgvTFile.Columns[5].HeaderText = "Ключевые слова";
-            dgvTFile.Columns[6].HeaderText = "Содержание";
-            dgvTFile.Columns[7].HeaderText = "IdCatalog";
-            dgvTFile.Columns[8].HeaderText = "Дата изменения";
-            dgvTFile.Columns[9].HeaderText = "Аннотация";
-            dgvTFile.Columns[10].HeaderText = "Автор";
+            //dgvTFile.Columns[5].HeaderText = "Ключевые слова";
+            dgvTFile.Columns[5].HeaderText = "Содержание";
+            dgvTFile.Columns[6].HeaderText = "IdCatalog";
+            dgvTFile.Columns[7].HeaderText = "Дата изменения";
+            dgvTFile.Columns[8].HeaderText = "Аннотация";
+            dgvTFile.Columns[9].HeaderText = "Автор";
             dgvTFile.Columns[0].Width = 20;
             dgvTFile.Columns[1].Width = 280;
             dgvTFile.Columns[2].Width = 40;
