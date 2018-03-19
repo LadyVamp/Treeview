@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
-using System.Xml;
-using System.Net;
 
 namespace Treeview
 {
@@ -137,8 +132,16 @@ namespace Treeview
                     richTextBox1.AppendText(node.OuterHtml);
 
                     //title 
-                    var title = htmlDoc.DocumentNode.SelectSingleNode("//title");
-                    label1.Text = title.InnerText;
+                    try
+                    {
+                        var title = htmlDoc.DocumentNode.SelectSingleNode("//title");
+                        label1.Text = title.InnerText;
+                    }
+                    catch (NullReferenceException ex)
+                    {
+                        MessageBox.Show("Замени сохраненную страницу на: просмотр кода страницы -> Ctrl+A -> Ctrl+C.. ", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
 
                     //keywords
                     HtmlNode mdnode1 = htmlDoc.DocumentNode.SelectSingleNode("//meta[@name='keywords']");
@@ -158,6 +161,13 @@ namespace Treeview
                         descr = mdnode2.Attributes["content"];
                         string descrip = descr.Value;
                         rtbDescription.Text = descrip;
+                    }
+
+                    //author 
+                    var author = htmlDoc.DocumentNode.SelectSingleNode("//header//span[@class='user-info__nickname user-info__nickname_small']"); 
+                    if (author != null)
+                    {
+                        txtAuthor.Text = author.InnerText;
                     }
 
                     //post
@@ -342,7 +352,7 @@ namespace Treeview
             static char[] _delimiters = new char[]
             {
                     '.', ' ', ',', ':', ';',
-                    '"', '-', '=', '·', '%', '<', '>', '!', '@', '#', '$', '%', '^', '&', '+', ')', '(', '{', '}', '«', '»', '?','/', '|', '\'',
+                    '"', '-', '=', '·', '%', '<', '>', '!', '@', '#', '$', '%', '^', '&', '+', ')', '(', '{', '}', '«', '»', '/', '|', '\'',
             };
 
             /// <summary>
@@ -427,6 +437,30 @@ namespace Treeview
                     }
                     words.Add(new Word(value, n));
                 }
+
+
+                //Перед квантификатором { x,y} ничего нет
+                // почитать http://www.cyberforum.ru/csharp-beginners/thread1866584.html
+                //try
+                //{
+                //    foreach (string value in duplicate_words.ToList())
+                //    {
+                //        Regex reg = new Regex(value + " ", RegexOptions.IgnoreCase);
+                //        int n = 0;
+                //        foreach (Match match in reg.Matches(richTextBox3.Text))
+                //        {
+                //            richTextBox3.Select(match.Index, match.Length);
+                //            n++;
+                //        }
+                //        words.Add(new Word(value, n));
+                //    }
+
+                //}
+                //catch (ArgumentException ex)
+                //{
+                //    MessageBox.Show(ex.Message);
+                //}
+
 
                 words.Sort(comparase);
                 if (words.Count >= 15) words.RemoveRange(15, words.Count - 15);

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchForm));
             this.tFileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryDB2TFileWithoutId = new WindowsFormsApplication370.RepositoryDB2TFileWithoutId();
             this.tFileTableAdapter = new WindowsFormsApplication370.RepositoryDB2TFileWithoutIdTableAdapters.TFileTableAdapter();
@@ -122,7 +123,7 @@
             // 
             this.txtSearch.Location = new System.Drawing.Point(12, 12);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(348, 22);
+            this.txtSearch.Size = new System.Drawing.Size(342, 22);
             this.txtSearch.TabIndex = 3;
             // 
             // tFileBindingSource1
@@ -144,7 +145,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtMinSize);
-            this.groupBox2.Location = new System.Drawing.Point(118, 141);
+            this.groupBox2.Location = new System.Drawing.Point(112, 141);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(242, 90);
             this.groupBox2.TabIndex = 6;
@@ -232,7 +233,7 @@
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.dateTimePicker2);
             this.groupBox3.Controls.Add(this.cbDate1);
-            this.groupBox3.Location = new System.Drawing.Point(128, 237);
+            this.groupBox3.Location = new System.Drawing.Point(118, 237);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(235, 109);
             this.groupBox3.TabIndex = 11;
@@ -310,7 +311,7 @@
             this.groupBox1.Controls.Add(this.cbDoc);
             this.groupBox1.Controls.Add(this.cbRtf);
             this.groupBox1.Controls.Add(this.cbHtml);
-            this.groupBox1.Location = new System.Drawing.Point(115, 45);
+            this.groupBox1.Location = new System.Drawing.Point(109, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(245, 90);
             this.groupBox1.TabIndex = 5;
@@ -342,9 +343,9 @@
             this.btnSearch.BackColor = System.Drawing.SystemColors.Window;
             this.btnSearch.Image = global::WindowsFormsApplication370.Properties.Resources.icons8_search_filled_26;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(9, 50);
+            this.btnSearch.Location = new System.Drawing.Point(38, 45);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(97, 36);
+            this.btnSearch.Size = new System.Drawing.Size(48, 40);
             this.btnSearch.TabIndex = 17;
             this.btnSearch.Text = "   Поиск";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -412,6 +413,7 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SearchForm";
             this.Text = "SearchForm";
             this.Load += new System.EventHandler(this.SearchForm_Load);

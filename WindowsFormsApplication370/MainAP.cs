@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Treeview
@@ -32,6 +25,18 @@ namespace Treeview
         private void btnEditTKeyword_Click(object sender, EventArgs e)
         {
             EditTKeywordForm f = new EditTKeywordForm();
+            f.Show();
+        }
+
+        private void btnEditTRole_Click(object sender, EventArgs e)
+        {
+            EditTRoleForm f = new EditTRoleForm();
+            f.Show();
+        }
+
+        private void btnEditTType_Click(object sender, EventArgs e)
+        {
+            EditTTypeForm f = new EditTTypeForm();
             f.Show();
         }
 

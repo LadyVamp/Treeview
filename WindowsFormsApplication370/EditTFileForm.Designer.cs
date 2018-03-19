@@ -413,6 +413,7 @@
             this.ClientSize = new System.Drawing.Size(1357, 679);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvTFileEF);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditTFileForm";
             this.Text = "EditTFileForm";
             this.Load += new System.EventHandler(this.EditTFileForm_Load);
