@@ -84,7 +84,7 @@
             this.cmbRootId.DataSource = this.tRootBindingSource;
             this.cmbRootId.DisplayMember = "ID";
             this.cmbRootId.FormattingEnabled = true;
-            this.cmbRootId.Location = new System.Drawing.Point(171, 68);
+            this.cmbRootId.Location = new System.Drawing.Point(186, 68);
             this.cmbRootId.Name = "cmbRootId";
             this.cmbRootId.Size = new System.Drawing.Size(55, 24);
             this.cmbRootId.TabIndex = 33;
@@ -105,7 +105,7 @@
             this.comboBox1.DataSource = this.tRootBindingSource;
             this.comboBox1.DisplayMember = "Root";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(232, 68);
+            this.comboBox1.Location = new System.Drawing.Point(249, 68);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(163, 24);
             this.comboBox1.TabIndex = 32;
@@ -131,9 +131,9 @@
             // 
             // txtCatalog
             // 
-            this.txtCatalog.Location = new System.Drawing.Point(171, 26);
+            this.txtCatalog.Location = new System.Drawing.Point(186, 28);
             this.txtCatalog.Name = "txtCatalog";
-            this.txtCatalog.Size = new System.Drawing.Size(224, 22);
+            this.txtCatalog.Size = new System.Drawing.Size(287, 22);
             this.txtCatalog.TabIndex = 30;
             // 
             // cmbAccessId
@@ -141,7 +141,7 @@
             this.cmbAccessId.DataSource = this.tTypeBindingSource;
             this.cmbAccessId.DisplayMember = "ID";
             this.cmbAccessId.FormattingEnabled = true;
-            this.cmbAccessId.Location = new System.Drawing.Point(171, 152);
+            this.cmbAccessId.Location = new System.Drawing.Point(186, 152);
             this.cmbAccessId.Name = "cmbAccessId";
             this.cmbAccessId.Size = new System.Drawing.Size(55, 24);
             this.cmbAccessId.TabIndex = 36;
@@ -162,7 +162,7 @@
             this.comboBox3.DataSource = this.tCatalogBindingSource1;
             this.comboBox3.DisplayMember = "Catalog";
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(232, 108);
+            this.comboBox3.Location = new System.Drawing.Point(249, 108);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(224, 24);
             this.comboBox3.TabIndex = 35;
@@ -192,7 +192,7 @@
             this.cmbSubCatalogId.DataSource = this.tCatalogBindingSource1;
             this.cmbSubCatalogId.DisplayMember = "ID";
             this.cmbSubCatalogId.FormattingEnabled = true;
-            this.cmbSubCatalogId.Location = new System.Drawing.Point(171, 108);
+            this.cmbSubCatalogId.Location = new System.Drawing.Point(186, 108);
             this.cmbSubCatalogId.Name = "cmbSubCatalogId";
             this.cmbSubCatalogId.Size = new System.Drawing.Size(55, 24);
             this.cmbSubCatalogId.TabIndex = 39;
@@ -203,7 +203,7 @@
             this.comboBox5.DataSource = this.tTypeBindingSource;
             this.comboBox5.DisplayMember = "Type";
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(232, 152);
+            this.comboBox5.Location = new System.Drawing.Point(249, 152);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(224, 24);
             this.comboBox5.TabIndex = 38;
@@ -214,9 +214,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(24, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 17);
+            this.label2.Size = new System.Drawing.Size(156, 17);
             this.label2.TabIndex = 37;
-            this.label2.Text = "Подкаталог";
+            this.label2.Text = "Родительский каталог";
             // 
             // tRootTableAdapter
             // 

@@ -44,8 +44,8 @@ namespace Treeview
             dgvTFileEF.Columns[1].Width = 280;
             dgvTFileEF.Columns[2].Width = 40;
             dgvTFileEF.Columns[3].Width = 80;
-            dgvTFileEF.Columns[4].Width = 60;
-            dgvTFileEF.Columns[5].Width = 100;
+            dgvTFileEF.Columns[4].Width = 30;
+            dgvTFileEF.Columns[5].Width = 150;
             dgvTFileEF.Columns[6].Width = 300;
             dgvTFileEF.Columns[7].Width = 30;
             dgvTFileEF.Columns[8].Width = 70;

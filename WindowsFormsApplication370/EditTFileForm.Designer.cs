@@ -83,7 +83,7 @@
             this.dgvTFileEF.Name = "dgvTFileEF";
             this.dgvTFileEF.RowTemplate.Height = 24;
             this.dgvTFileEF.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTFileEF.Size = new System.Drawing.Size(853, 655);
+            this.dgvTFileEF.Size = new System.Drawing.Size(976, 655);
             this.dgvTFileEF.TabIndex = 5;
             this.dgvTFileEF.CurrentCellChanged += new System.EventHandler(this.dgvTFileEF_CurrentCellChanged);
             // 
@@ -251,10 +251,9 @@
             // 
             this.cmbTypeEF.FormattingEnabled = true;
             this.cmbTypeEF.Items.AddRange(new object[] {
-            "doc",
-            "docx",
-            "txt",
-            "rtf"});
+            ".doc",
+            ".rtf",
+            ".html"});
             this.cmbTypeEF.Location = new System.Drawing.Point(155, 83);
             this.cmbTypeEF.Name = "cmbTypeEF";
             this.cmbTypeEF.Size = new System.Drawing.Size(55, 24);
@@ -410,7 +409,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.ClientSize = new System.Drawing.Size(1357, 679);
+            this.ClientSize = new System.Drawing.Size(1480, 679);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvTFileEF);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
