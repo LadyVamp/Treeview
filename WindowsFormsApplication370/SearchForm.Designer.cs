@@ -66,6 +66,7 @@
             this.btnAllSearch = new System.Windows.Forms.Button();
             this.txtLessKeywords = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDB2TFileWithoutId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tFileBindingSource1)).BeginInit();
@@ -360,7 +361,7 @@
             this.dgvTFile.Name = "dgvTFile";
             this.dgvTFile.RowTemplate.Height = 24;
             this.dgvTFile.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTFile.Size = new System.Drawing.Size(1113, 587);
+            this.dgvTFile.Size = new System.Drawing.Size(1113, 614);
             this.dgvTFile.TabIndex = 18;
             this.dgvTFile.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTFile_CellDoubleClick);
             // 
@@ -374,14 +375,14 @@
             // 
             // txtKeywords
             // 
-            this.txtKeywords.Location = new System.Drawing.Point(12, 526);
+            this.txtKeywords.Location = new System.Drawing.Point(15, 553);
             this.txtKeywords.Name = "txtKeywords";
-            this.txtKeywords.Size = new System.Drawing.Size(245, 22);
+            this.txtKeywords.Size = new System.Drawing.Size(242, 22);
             this.txtKeywords.TabIndex = 20;
             // 
             // btnSearchKeywords
             // 
-            this.btnSearchKeywords.Location = new System.Drawing.Point(263, 526);
+            this.btnSearchKeywords.Location = new System.Drawing.Point(263, 553);
             this.btnSearchKeywords.Name = "btnSearchKeywords";
             this.btnSearchKeywords.Size = new System.Drawing.Size(91, 73);
             this.btnSearchKeywords.TabIndex = 21;
@@ -401,7 +402,7 @@
             // 
             // txtLessKeywords
             // 
-            this.txtLessKeywords.Location = new System.Drawing.Point(15, 577);
+            this.txtLessKeywords.Location = new System.Drawing.Point(15, 604);
             this.txtLessKeywords.Name = "txtLessKeywords";
             this.txtLessKeywords.Size = new System.Drawing.Size(242, 22);
             this.txtLessKeywords.TabIndex = 23;
@@ -409,17 +410,27 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 557);
+            this.label5.Location = new System.Drawing.Point(12, 584);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(196, 17);
             this.label5.TabIndex = 24;
             this.label5.Text = "Исключить ключевые слова:";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 533);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(188, 17);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Добавить ключевые слова:";
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1491, 612);
+            this.ClientSize = new System.Drawing.Size(1491, 638);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtLessKeywords);
             this.Controls.Add(this.btnAllSearch);
@@ -490,5 +501,6 @@
         private System.Windows.Forms.Button btnAllSearch;
         private System.Windows.Forms.TextBox txtLessKeywords;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

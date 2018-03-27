@@ -64,13 +64,14 @@ namespace Treeview
         {
             txtSearch.Text = "";
             txtKeywords.Text = "";
+            txtLessKeywords.Text = "";
             cbDoc.Checked = false;
             cbHtml.Checked = false;
             cbRtf.Checked = false;
             txtMinSize.Text = "";
             txtMaxSize.Text = "";
             cbDate1.Checked = false;
-            cbDate2.Checked = false;
+            cbDate2.Checked = false; 
         }
       
 
